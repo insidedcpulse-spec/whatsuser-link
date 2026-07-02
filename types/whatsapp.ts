@@ -6,5 +6,6 @@ export interface UsernameValidationResult {
 export interface GeneratedLink {
   url: string;
   username: string;
+  usernameKey?: string;
   message?: string;
 }
