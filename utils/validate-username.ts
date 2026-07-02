@@ -20,23 +20,23 @@ export function validateUsername(username: string): UsernameValidationResult {
   const errors: string[] = [];
 
   if (username.length < MIN_LENGTH || username.length > MAX_LENGTH) {
-    errors.push(`O username deve ter entre ${MIN_LENGTH} e ${MAX_LENGTH} caracteres.`);
+    errors.push("errors.length");
   }
 
   if (!ALLOWED_CHARS_REGEX.test(username)) {
-    errors.push("O username só pode conter letras minúsculas, números, pontos e underscores.");
+    errors.push("errors.invalidChars");
   }
 
   if (!HAS_LETTER_REGEX.test(username)) {
-    errors.push("O username deve conter pelo menos uma letra.");
+    errors.push("errors.noLetter");
   }
 
   if (username.startsWith("www.")) {
-    errors.push('O username não pode começar com "www.".');
+    errors.push("errors.startsWithWww");
   }
 
   if (RESERVED_DOMAIN_SUFFIXES.some((suffix) => username.endsWith(suffix))) {
-    errors.push("O username não pode terminar como um domínio (ex: .com, .net).");
+    errors.push("errors.reservedDomain");
   }
 
   return { valid: errors.length === 0, errors };

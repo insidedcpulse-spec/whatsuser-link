@@ -21,7 +21,9 @@ describe("sanitizeUsernameInput", () => {
 
 describe("validateUsername", () => {
   it("rejects a username with 2 characters", () => {
-    expect(validateUsername("ab").valid).toBe(false);
+    const result = validateUsername("ab");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.length");
   });
 
   it("accepts a username with 3 characters", () => {
@@ -33,23 +35,33 @@ describe("validateUsername", () => {
   });
 
   it("rejects a username with 36 characters", () => {
-    expect(validateUsername("a".repeat(36)).valid).toBe(false);
+    const result = validateUsername("a".repeat(36));
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.length");
   });
 
   it("rejects a username starting with www.", () => {
-    expect(validateUsername("www.joao").valid).toBe(false);
+    const result = validateUsername("www.joao");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.startsWithWww");
   });
 
   it("rejects a username ending in a domain suffix", () => {
-    expect(validateUsername("joaosilva.com").valid).toBe(false);
+    const result = validateUsername("joaosilva.com");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.reservedDomain");
   });
 
   it("rejects a username with only digits", () => {
-    expect(validateUsername("123456").valid).toBe(false);
+    const result = validateUsername("123456");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.noLetter");
   });
 
   it("rejects a username with only symbols", () => {
-    expect(validateUsername("..___..").valid).toBe(false);
+    const result = validateUsername("..___..");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.noLetter");
   });
 
   it("accepts a valid alphanumeric username with dot and underscore", () => {
