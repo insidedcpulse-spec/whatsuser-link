@@ -699,11 +699,14 @@ export function LinkResult({ link, onReset }: LinkResultProps) {
 
       <div className="flex flex-wrap justify-center gap-3">
         <Button onClick={handleCopy}>Copiar</Button>
-        <Button variant="outline" asChild>
-          <a href={link.url} target="_blank" rel="noopener noreferrer">
-            Abrir
-          </a>
-        </Button>
+        <Button
+          variant="outline"
+          render={
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              Abrir
+            </a>
+          }
+        />
       </div>
 
       <QrCodeDisplay value={link.url} />
