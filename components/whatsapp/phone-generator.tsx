@@ -6,6 +6,13 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { PhoneLinkResult } from "@/components/whatsapp/phone-link-result";
 import { createPhoneWhatsAppLink } from "@/services/phone-link-service";
 import { sanitizePhoneInput } from "@/utils/validate-phone";
@@ -69,18 +76,21 @@ export function PhoneGenerator() {
     >
       <div className="flex flex-col gap-2">
         <Label htmlFor="country">{t("countryLabel")}</Label>
-        <select
-          id="country"
+        <Select
           value={countryCode}
-          onChange={(event) => setCountryCode(event.target.value)}
-          className="h-9 rounded-md border border-input bg-transparent px-3 text-sm"
+          onValueChange={(value) => value && setCountryCode(value)}
         >
-          {COUNTRY_CODES.map((country) => (
-            <option key={country.code} value={country.code}>
-              {country.name} (+{country.dialCode})
-            </option>
-          ))}
-        </select>
+          <SelectTrigger id="country" className="h-9 w-full">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {COUNTRY_CODES.map((country) => (
+              <SelectItem key={country.code} value={country.code}>
+                {country.name} (+{country.dialCode})
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="flex flex-col gap-2">
