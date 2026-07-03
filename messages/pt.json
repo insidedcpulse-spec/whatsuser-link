@@ -4,6 +4,7 @@
     "subtitle": "Cria um link e QR code partilhável para o teu WhatsApp Username em segundos. Simples, rápido e gratuito."
   },
   "form": {
+    "sectionTitle": "Gerar por Username",
     "usernameLabel": "WhatsApp Username",
     "usernamePlaceholder": "@username",
     "keyLabel": "Username Key (opcional)",
@@ -12,6 +13,16 @@
     "messageLabel": "Mensagem (opcional)",
     "messagePlaceholder": "Olá! Gostava de falar contigo.",
     "submit": "Gerar Link"
+  },
+  "phone": {
+    "sectionTitle": "Gerar por Número de Telefone",
+    "countryLabel": "País",
+    "phoneLabel": "Número de WhatsApp",
+    "phonePlaceholder": "912 345 678",
+    "submit": "Gerar Link"
+  },
+  "phoneErrors": {
+    "invalidFormat": "Introduz um número de telefone válido."
   },
   "result": {
     "usernameLabel": "Username",
