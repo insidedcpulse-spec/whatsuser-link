@@ -9,3 +9,9 @@ export interface GeneratedLink {
   usernameKey?: string;
   message?: string;
 }
+
+export interface GeneratedPhoneLink {
+  url: string;
+  phone: string;
+  message?: string;
+}
