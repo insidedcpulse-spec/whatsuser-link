@@ -27,28 +27,30 @@ export function LinkResult({ link, onReset }: LinkResultProps) {
 
   return (
     <div className="flex flex-col items-center gap-6 rounded-2xl border border-border bg-card p-8 text-center">
-      <div className="flex w-full flex-col gap-3">
-        <div className="flex items-center justify-between gap-3 rounded-lg bg-muted px-4 py-3">
-          <div className="text-left">
+      <div className="flex w-full items-center justify-between gap-3 rounded-lg bg-muted px-4 py-3">
+        <div className="flex flex-col gap-2 text-left">
+          <div>
             <p className="text-xs text-muted-foreground">{t("usernameLabel")}</p>
             <p className="font-mono text-sm break-all">{link.username}</p>
           </div>
-          <Button size="sm" variant="outline" onClick={() => handleCopy(link.username)}>
-            {t("copyButton")}
-          </Button>
-        </div>
-
-        {link.usernameKey && (
-          <div className="flex items-center justify-between gap-3 rounded-lg bg-muted px-4 py-3">
-            <div className="text-left">
+          {link.usernameKey && (
+            <div>
               <p className="text-xs text-muted-foreground">{t("keyLabel")}</p>
               <p className="font-mono text-sm break-all">{link.usernameKey}</p>
             </div>
-            <Button size="sm" variant="outline" onClick={() => handleCopy(link.usernameKey!)}>
-              {t("copyButton")}
-            </Button>
-          </div>
-        )}
+          )}
+        </div>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={() =>
+            handleCopy(
+              link.usernameKey ? `${link.username}\n${link.usernameKey}` : link.username
+            )
+          }
+        >
+          {t("copyButton")}
+        </Button>
       </div>
 
       <p className="max-w-md text-xs text-muted-foreground">{t("formatNote")}</p>
