@@ -11,5 +11,5 @@ export function generatePhoneWhatsAppLink(phone: string, message?: string): stri
     return baseUrl;
   }
 
-  return `${baseUrl}?text=${encodeURIComponent(message)}`;
+  return `${baseUrl}?text=${encodeURIComponent(message.trim())}`;
 }
