@@ -13,6 +13,10 @@ describe("sanitizePhoneInput", () => {
   it("removes a leading plus sign", () => {
     expect(sanitizePhoneInput("+351912345678")).toBe("351912345678");
   });
+
+  it("removes a leading trunk-prefix zero", () => {
+    expect(sanitizePhoneInput("0612345678")).toBe("612345678");
+  });
 });
 
 describe("validatePhoneNumber", () => {
