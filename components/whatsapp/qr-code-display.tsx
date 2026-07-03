@@ -64,6 +64,7 @@ export function QrCodeDisplay({ value, downloadLabel }: QrCodeDisplayProps) {
     if (format === "svg") {
       const svg = svgRef.current;
       if (!svg) return;
+      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
       const blob = new Blob([svg.outerHTML], { type: "image/svg+xml" });
       const url = URL.createObjectURL(blob);
       triggerDownload(url, "whatsuser-link-qrcode.svg");
@@ -71,7 +72,7 @@ export function QrCodeDisplay({ value, downloadLabel }: QrCodeDisplayProps) {
       return;
     }
 
-    const doc = new jsPDF({ unit: "px", format: [QR_SIZE + 20, QR_SIZE + 20] });
+    const doc = new jsPDF({ unit: "px", hotfixes: ["px_scaling"], format: [QR_SIZE + 20, QR_SIZE + 20] });
     doc.addImage(canvas.toDataURL("image/png"), "PNG", 10, 10, QR_SIZE, QR_SIZE);
     doc.save("whatsuser-link-qrcode.pdf");
   }
@@ -145,6 +146,7 @@ export function QrCodeDisplay({ value, downloadLabel }: QrCodeDisplayProps) {
             type="button"
             size="sm"
             variant={format === f ? "secondary" : "outline"}
+            aria-pressed={format === f}
             onClick={() => selectFormat(f)}
           >
             {f.toUpperCase()}
