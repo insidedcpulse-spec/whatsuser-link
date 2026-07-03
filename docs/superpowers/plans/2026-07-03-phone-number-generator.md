@@ -484,7 +484,7 @@ export function PhoneGenerator() {
   const tForm = useTranslations("form");
   const tPhoneErrors = useTranslations("phoneErrors");
 
-  const [dialCode, setDialCode] = useState(COUNTRY_CODES[0].dialCode);
+  const [countryCode, setCountryCode] = useState(COUNTRY_CODES[0].code);
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
@@ -501,7 +501,8 @@ export function PhoneGenerator() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const result = createPhoneWhatsAppLink(`${dialCode}${phone}`, message);
+    const country = COUNTRY_CODES.find((c) => c.code === countryCode) ?? COUNTRY_CODES[0];
+    const result = createPhoneWhatsAppLink(`${country.dialCode}${phone}`, message);
 
     if (!result.success) {
       setErrors(result.errors);
@@ -533,12 +534,12 @@ export function PhoneGenerator() {
         <Label htmlFor="country">{t("countryLabel")}</Label>
         <select
           id="country"
-          value={dialCode}
-          onChange={(event) => setDialCode(event.target.value)}
+          value={countryCode}
+          onChange={(event) => setCountryCode(event.target.value)}
           className="h-9 rounded-md border border-input bg-transparent px-3 text-sm"
         >
           {COUNTRY_CODES.map((country) => (
-            <option key={country.code} value={country.dialCode}>
+            <option key={country.code} value={country.code}>
               {country.name} (+{country.dialCode})
             </option>
           ))}
