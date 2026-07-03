@@ -27,24 +27,30 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
+  const path = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return {
     metadataBase: new URL(siteConfig.url),
-    title: siteConfig.name,
+    title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: "/",
+      canonical: path,
+      languages: {
+        en: "/",
+        pt: "/pt",
+        es: "/es",
+      },
     },
     openGraph: {
-      title: siteConfig.name,
+      title: t("title"),
       description: t("description"),
-      url: siteConfig.url,
+      url: path,
       siteName: siteConfig.name,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: siteConfig.name,
+      title: t("title"),
       description: t("description"),
     },
     verification: {
