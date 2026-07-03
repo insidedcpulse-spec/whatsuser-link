@@ -20,9 +20,11 @@
     "openButton": "Abrir",
     "copySuccess": "¡Copiado!",
     "copyError": "No se pudo copiar. Cópialo manualmente.",
-    "downloadQr": "Descargar código QR (PNG)",
+    "downloadQr": "Descargar código QR",
     "resetButton": "Generar nuevo enlace",
-    "formatNote": "WhatsApp aún no ha publicado un formato oficial de enlace para usernames. Para contactar a esta persona, abre WhatsApp y busca el username de arriba (y la key, si se indicó)."
+    "formatNote": "WhatsApp aún no ha publicado un formato oficial de enlace para usernames. Para contactar a esta persona, abre WhatsApp y busca el username de arriba (y la key, si se indicó).",
+    "copyAllButton": "Copiar todo",
+    "shortLinkLabel": "Enlace"
   },
   "errors": {
     "length": "Debe tener entre 3 y 35 caracteres.",
@@ -36,6 +38,11 @@
   },
   "footer": {
     "disclaimer": "WhatsUser.link no está afiliado, respaldado ni asociado con WhatsApp Inc. o Meta."
+  },
+  "qr": {
+    "colorLabel": "Color del QR",
+    "logoLabel": "Incluir icono de chat",
+    "transparentLabel": "Fondo transparente"
   },
   "metadata": {
     "description": "Crea un enlace y código QR para compartir tu WhatsApp Username en segundos. Simple, rápido y gratis."
