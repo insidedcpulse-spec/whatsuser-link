@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const AD_KEY = "be1a6e88263543f800888d44d479ffcd";
+const AD_KEY = "6e3184e9a48a98558cf24fe95745c8ed";
 const AD_WIDTH = 300;
 const AD_HEIGHT = 250;
 
