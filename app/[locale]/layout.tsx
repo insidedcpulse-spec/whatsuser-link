@@ -47,6 +47,9 @@ export async function generateMetadata({
       title: siteConfig.name,
       description: t("description"),
     },
+    verification: {
+      google: "zBjmXIsAi9VFDR2U7YoXPMmNBXNT_88e2Vr4m0RfoeI",
+    },
   };
 }
 
