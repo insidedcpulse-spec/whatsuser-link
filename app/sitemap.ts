@@ -22,5 +22,10 @@ function entries(slug?: string, priority = 0.8) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [...entries(undefined, 1), ...entries("how-to-create-a-whatsapp-link", 0.6)];
+  return [
+    ...entries(undefined, 1),
+    ...entries("how-to-create-a-whatsapp-link", 0.6),
+    ...entries("privacy-policy", 0.3),
+    ...entries("terms-of-service", 0.3),
+  ];
 }

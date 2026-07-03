@@ -44,6 +44,15 @@ export default async function Home() {
         {tGuide("linkLabel")}
       </Link>
 
+      <div className="flex gap-4 text-xs text-muted-foreground">
+        <Link href="/privacy-policy" className="underline underline-offset-4">
+          {t("privacyLink")}
+        </Link>
+        <Link href="/terms-of-service" className="underline underline-offset-4">
+          {t("termsLink")}
+        </Link>
+      </div>
+
       <p className="max-w-md text-center text-xs text-muted-foreground">{t("disclaimer")}</p>
     </main>
   );

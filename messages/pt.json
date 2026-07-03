@@ -48,7 +48,9 @@
     "invalidFormat": "Deve ter entre 4 e 8 letras ou números."
   },
   "footer": {
-    "disclaimer": "WhatsUser.link não é afiliado, endossado ou associado à WhatsApp Inc. ou Meta."
+    "disclaimer": "WhatsUser.link não é afiliado, endossado ou associado à WhatsApp Inc. ou Meta.",
+    "privacyLink": "Política de Privacidade",
+    "termsLink": "Termos de Serviço"
   },
   "qr": {
     "colorLabel": "Cor do QR",
@@ -139,5 +141,110 @@
     "ctaText": "Gera já o teu link de Username do WhatsApp.",
     "ctaButton": "Ir para o gerador",
     "linkLabel": "Como criar um link do WhatsApp"
+  },
+  "legal": {
+    "lastUpdated": "Última atualização: 3 de julho de 2026",
+    "privacy": {
+      "title": "Política de Privacidade",
+      "metaDescription": "Como o WhatsUser.link lida com dados: o que não recolhemos, o que o alojamento e o fornecedor de anúncios processam, e os teus direitos.",
+      "intro": "O WhatsUser.link (\"nós\") opera o whatsusernames.link. Esta página explica o pouco que envolve dados quando usas esta ferramenta gratuita, e porquê.",
+      "sections": [
+        {
+          "heading": "Esta ferramenta é stateless",
+          "body": ["O WhatsUser.link cria o teu link e QR code do WhatsApp inteiramente no teu navegador. O Username, a Username Key, o número de telefone e a mensagem que introduzes nunca são enviados nem guardados nos nossos servidores. Fechar ou atualizar a página apaga-os."]
+        },
+        {
+          "heading": "Sem contas, sem registo",
+          "body": ["Não existe registo, login ou conta de utilizador. Não temos base de dados de utilizadores nem de usernames."]
+        },
+        {
+          "heading": "Registos do servidor",
+          "body": ["Como qualquer site, o nosso fornecedor de alojamento (Vercel) processa registos técnicos padrão para servir as páginas — endereço IP, tipo de navegador e hora do pedido. Estes são usados apenas para segurança, prevenção de abuso e fiabilidade, e não os associamos a nenhum perfil pessoal."]
+        },
+        {
+          "heading": "Cookies e armazenamento local",
+          "body": ["Não definimos cookies de rastreio. A tua preferência de tema claro/escuro é guardada apenas no armazenamento local do teu navegador e nunca sai do teu dispositivo."]
+        },
+        {
+          "heading": "Publicidade",
+          "body": ["Este site mostra anúncios servidos pela Adsterra, uma rede de publicidade de terceiros. O conteúdo publicitário da Adsterra pode usar cookies ou tecnologias semelhantes no teu navegador para exibir e medir anúncios. Não controlamos esses dados. Se preferires não ver anúncios ou ser medido por eles, consulta as práticas de privacidade da própria Adsterra ou usa um bloqueador de anúncios / a proteção contra rastreio do teu navegador."]
+        },
+        {
+          "heading": "Análise (Analytics)",
+          "body": ["Atualmente não corremos nenhum script de analytics ou rastreio próprio. Se isto mudar, esta política será atualizada primeiro."]
+        },
+        {
+          "heading": "Os teus direitos",
+          "body": ["Como não recolhemos nem guardamos dados pessoais nos nossos servidores, geralmente não há nada para acedermos, corrigirmos ou apagarmos. Se acreditares que temos dados sobre ti, contacta-nos através dos detalhes abaixo e vamos verificar."]
+        },
+        {
+          "heading": "Privacidade de crianças",
+          "body": ["Esta ferramenta não é dirigida a crianças e não recolhemos conscientemente informação de crianças."]
+        },
+        {
+          "heading": "Alterações a esta política",
+          "body": ["Podemos atualizar esta página à medida que a ferramenta evolui. A data acima reflete a última revisão."]
+        },
+        {
+          "heading": "Contacto",
+          "body": ["Dúvidas sobre esta política? Envia email para contact@whatsusernames.link."]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Termos de Serviço",
+      "metaDescription": "Termos para usar o gerador gratuito de links e QR codes do WhatsApp do WhatsUser.link.",
+      "intro": "Ao usares o whatsusernames.link (\"o Serviço\"), concordas com estes termos. Se não concordares, por favor não uses o Serviço.",
+      "sections": [
+        {
+          "heading": "O que este Serviço faz",
+          "body": ["O WhatsUser.link é uma ferramenta gratuita que gera um link e QR code partilhável do WhatsApp a partir de um Username, Username Key ou número de telefone que introduzires, inteiramente no teu navegador."]
+        },
+        {
+          "heading": "Sem conta, gratuito",
+          "body": ["O Serviço é 100% gratuito, sem registo nem pagamento necessário para as suas funcionalidades atuais."]
+        },
+        {
+          "heading": "A precisão é da tua responsabilidade",
+          "body": ["És responsável por introduzir o teu próprio username, número de telefone e mensagem corretos. Não verificamos a identidade nem a titularidade de nenhum username ou número introduzido no gerador."]
+        },
+        {
+          "heading": "Utilização aceitável",
+          "body": ["Não uses o Serviço para gerar links de números ou usernames que não tenhas o direito de partilhar, nem para spam, assédio, fraude ou personificação."]
+        },
+        {
+          "heading": "Limitação do wa.me/username",
+          "body": ["À data destes termos, os links wa.me/username não abrem uma conversa do WhatsApp de forma fiável, porque o WhatsApp ainda não publicou um formato oficial para eles. Não garantimos que este ou qualquer link gerado se comporte como esperado, e disponibilizamos um gerador por número de telefone como alternativa atualmente funcional."]
+        },
+        {
+          "heading": "Sem garantia",
+          "body": ["O Serviço é fornecido \"tal como está\", sem garantia de qualquer tipo, incluindo disponibilidade, exatidão ou adequação a um fim específico."]
+        },
+        {
+          "heading": "Limitação de responsabilidade",
+          "body": ["Na medida permitida por lei, não somos responsáveis por danos indiretos, incidentais ou consequenciais resultantes do uso do Serviço."]
+        },
+        {
+          "heading": "Links e anúncios de terceiros",
+          "body": ["O Serviço liga e mostra conteúdo de terceiros que não controlamos nem pelos quais somos responsáveis, incluindo publicidade servida pela Adsterra e o próprio WhatsApp."]
+        },
+        {
+          "heading": "Sem afiliação",
+          "body": ["O WhatsUser.link é uma ferramenta independente, não afiliada, endossada ou associada à WhatsApp Inc. ou Meta Platforms, Inc."]
+        },
+        {
+          "heading": "Alterações",
+          "body": ["Podemos atualizar estes termos à medida que o Serviço evolui. Continuar a usar após alterações significa que aceitas a versão atual."]
+        },
+        {
+          "heading": "Lei aplicável",
+          "body": ["Estes termos são regidos pelas leis de Portugal, sem prejuízo de qualquer lei de proteção do consumidor de aplicação obrigatória no teu país de residência."]
+        },
+        {
+          "heading": "Contacto",
+          "body": ["Dúvidas sobre estes termos? Envia email para contact@whatsusernames.link."]
+        }
+      ]
+    }
   }
 }

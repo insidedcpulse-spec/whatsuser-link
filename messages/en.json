@@ -48,7 +48,9 @@
     "invalidFormat": "Must be 4 to 8 letters or numbers."
   },
   "footer": {
-    "disclaimer": "WhatsUser.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta."
+    "disclaimer": "WhatsUser.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta.",
+    "privacyLink": "Privacy Policy",
+    "termsLink": "Terms of Service"
   },
   "qr": {
     "colorLabel": "QR color",
@@ -139,5 +141,110 @@
     "ctaText": "Generate your WhatsApp Username link now.",
     "ctaButton": "Go to the generator",
     "linkLabel": "How to create a WhatsApp link"
+  },
+  "legal": {
+    "lastUpdated": "Last updated: July 3, 2026",
+    "privacy": {
+      "title": "Privacy Policy",
+      "metaDescription": "How WhatsUser.link handles data: what we don't collect, what our hosting and ad provider process, and your rights.",
+      "intro": "WhatsUser.link (\"we\", \"us\") operates whatsusernames.link. This page explains what little data is involved when you use this free tool, and why.",
+      "sections": [
+        {
+          "heading": "This tool is stateless",
+          "body": ["WhatsUser.link builds your WhatsApp link and QR code entirely in your browser. The WhatsApp Username, Username Key, phone number, and message you enter are never sent to or stored on our servers. Closing or refreshing the page erases them."]
+        },
+        {
+          "heading": "No accounts, no sign-up",
+          "body": ["There is no registration, login, or user account. We have no database of users or usernames."]
+        },
+        {
+          "heading": "Server logs",
+          "body": ["Like any website, our hosting provider (Vercel) processes standard technical logs to serve pages — IP address, browser type, and request timestamps. These are used only for security, abuse prevention, and reliability, and we don't link them to any personal profile."]
+        },
+        {
+          "heading": "Cookies and local storage",
+          "body": ["We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device."]
+        },
+        {
+          "heading": "Advertising",
+          "body": ["This site shows ads served by Adsterra, a third-party advertising network. Adsterra's ad content may use cookies or similar technologies in your browser to serve and measure ads. We don't control this data. If you prefer not to see ads or be measured by them, review Adsterra's own privacy practices or use an ad blocker / your browser's tracking protection."]
+        },
+        {
+          "heading": "Analytics",
+          "body": ["We don't currently run any first-party analytics or tracking script. If this changes, this policy will be updated first."]
+        },
+        {
+          "heading": "Your rights",
+          "body": ["Because we don't collect or store personal data on our servers, there is generally nothing for us to access, correct, or delete. If you believe we hold data about you, contact us using the details below and we'll look into it."]
+        },
+        {
+          "heading": "Children's privacy",
+          "body": ["This tool isn't directed at children, and we don't knowingly collect information from children."]
+        },
+        {
+          "heading": "Changes to this policy",
+          "body": ["We may update this page as the tool evolves. The date above reflects the latest revision."]
+        },
+        {
+          "heading": "Contact",
+          "body": ["Questions about this policy? Email contact@whatsusernames.link."]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "metaDescription": "Terms for using WhatsUser.link's free WhatsApp link and QR code generator.",
+      "intro": "By using whatsusernames.link (\"the Service\"), you agree to these terms. If you don't agree, please don't use the Service.",
+      "sections": [
+        {
+          "heading": "What this Service does",
+          "body": ["WhatsUser.link is a free tool that generates a shareable WhatsApp link and QR code from a WhatsApp Username, Username Key, or phone number you provide, entirely in your browser."]
+        },
+        {
+          "heading": "No account, free to use",
+          "body": ["The Service is 100% free, with no signup and no payment required for its current features."]
+        },
+        {
+          "heading": "Accuracy is your responsibility",
+          "body": ["You're responsible for entering your own correct username, phone number, and message. We don't verify identity or ownership of any username or phone number entered into the generator."]
+        },
+        {
+          "heading": "Acceptable use",
+          "body": ["Don't use the Service to generate links for numbers or usernames you don't have the right to share, or for spam, harassment, fraud, or impersonation."]
+        },
+        {
+          "heading": "wa.me/username limitation",
+          "body": ["As of the date of these terms, wa.me/username links don't reliably open a WhatsApp chat, because WhatsApp hasn't published an official format for them. We make no guarantee that this or any generated link will behave as expected, and we provide a phone-number generator as a currently working alternative."]
+        },
+        {
+          "heading": "No warranty",
+          "body": ["The Service is provided \"as is,\" without warranty of any kind, including uptime, accuracy, or fitness for a particular purpose."]
+        },
+        {
+          "heading": "Limitation of liability",
+          "body": ["To the extent permitted by law, we aren't liable for indirect, incidental, or consequential damages arising from use of the Service."]
+        },
+        {
+          "heading": "Third-party links and ads",
+          "body": ["The Service links to and displays content from third parties we don't control and aren't responsible for, including advertising served by Adsterra and WhatsApp itself."]
+        },
+        {
+          "heading": "No affiliation",
+          "body": ["WhatsUser.link is an independent tool, not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta Platforms, Inc."]
+        },
+        {
+          "heading": "Changes",
+          "body": ["We may update these terms as the Service evolves. Continued use after changes means you accept the current version."]
+        },
+        {
+          "heading": "Governing law",
+          "body": ["These terms are governed by the laws of Portugal, without prejudice to any mandatory consumer-protection law of your country of residence."]
+        },
+        {
+          "heading": "Contact",
+          "body": ["Questions about these terms? Email contact@whatsusernames.link."]
+        }
+      ]
+    }
   }
 }
