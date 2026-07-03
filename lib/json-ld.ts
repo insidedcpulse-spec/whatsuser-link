@@ -22,6 +22,24 @@ export function getSoftwareApplicationJsonLd(description: string) {
   };
 }
 
+export type HowToStep = {
+  title: string;
+  description: string;
+};
+
+export function getHowToJsonLd(name: string, steps: HowToStep[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    step: steps.map((step) => ({
+      "@type": "HowToStep",
+      name: step.title,
+      text: step.description,
+    })),
+  };
+}
+
 export function getFaqJsonLd(items: FaqItem[]) {
   return {
     "@context": "https://schema.org",

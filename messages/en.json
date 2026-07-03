@@ -84,7 +84,60 @@
       {
         "question": "Is WhatsUser.link affiliated with WhatsApp or Meta?",
         "answer": "No. We're an independent tool, not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta."
+      },
+      {
+        "question": "What is wa.me?",
+        "answer": "wa.me is WhatsApp's official short domain for links that open a chat, such as wa.me/1234567890 for a phone number. WhatsUser.link builds these links for you automatically."
+      },
+      {
+        "question": "How do I create a WhatsApp link without saving the contact first?",
+        "answer": "Generate a link with your phone number or username here, then share it. Anyone who opens the link can message you on WhatsApp without adding your number to their contacts first."
+      },
+      {
+        "question": "Is my phone number or username stored anywhere?",
+        "answer": "No. WhatsUser.link is stateless — your link and QR code are built entirely in your browser and nothing is saved on our servers."
+      },
+      {
+        "question": "Can I use this for a WhatsApp Business account?",
+        "answer": "Yes. The generator works the same way for personal and WhatsApp Business numbers and usernames."
+      },
+      {
+        "question": "How do I create a WhatsApp QR code?",
+        "answer": "Enter your username or phone number in the generator above, then use the QR code panel to customize the color and download it as PNG, JPEG, SVG, or PDF."
       }
     ]
+  },
+  "guide": {
+    "title": "How to Create a WhatsApp Link From Your Username",
+    "metaDescription": "Step-by-step guide to creating a shareable WhatsApp link from your Username, including what to do until wa.me/username officially works.",
+    "intro": "WhatsApp is rolling out @Username handles, letting people message you without knowing your phone number. Here's how to turn yours into a link and QR code you can share anywhere.",
+    "stepsHeading": "Steps",
+    "steps": [
+      {
+        "title": "Set your WhatsApp Username",
+        "description": "In the WhatsApp app, go to Settings → Profile and set your Username (requires an app version that supports the 2026 rollout)."
+      },
+      {
+        "title": "Add a Username Key (optional)",
+        "description": "If WhatsApp assigns you a Username Key to disambiguate you from others with the same username, note it down."
+      },
+      {
+        "title": "Generate your link",
+        "description": "Paste your Username (and Key, if you have one) into the generator on this site."
+      },
+      {
+        "title": "Copy your link or download your QR code",
+        "description": "Use \"Copy all\" to share your username and key together, or download the QR code as PNG, JPEG, SVG, or PDF."
+      },
+      {
+        "title": "Share it anywhere",
+        "description": "Add it to your bio, business card, email signature, or storefront."
+      }
+    ],
+    "noteHeading": "Important: wa.me/username doesn't open a chat automatically yet",
+    "note": "As of now, WhatsApp hasn't published a working deep-link format for usernames — wa.me/<username> does not open a chat. Whoever receives your link or QR code needs to open WhatsApp and search for your username manually. If you need a link that works today, use the phone-number generator on the home page instead.",
+    "ctaText": "Generate your WhatsApp Username link now.",
+    "ctaButton": "Go to the generator",
+    "linkLabel": "How to create a WhatsApp link"
   }
 }

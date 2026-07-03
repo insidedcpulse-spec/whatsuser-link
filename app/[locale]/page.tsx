@@ -4,11 +4,13 @@ import { Faq } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { PhoneGenerator } from "@/components/whatsapp/phone-generator";
 import { UsernameGenerator } from "@/components/whatsapp/username-generator";
+import { Link } from "@/i18n/navigation";
 
 export default async function Home() {
   const t = await getTranslations("footer");
   const tPhone = await getTranslations("phone");
   const tForm = await getTranslations("form");
+  const tGuide = await getTranslations("guide");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-12 px-4 py-24">
@@ -34,6 +36,13 @@ export default async function Home() {
       <AdBanner />
 
       <Faq />
+
+      <Link
+        href="/how-to-create-a-whatsapp-link"
+        className="text-sm text-muted-foreground underline underline-offset-4"
+      >
+        {tGuide("linkLabel")}
+      </Link>
 
       <p className="max-w-md text-center text-xs text-muted-foreground">{t("disclaimer")}</p>
     </main>
