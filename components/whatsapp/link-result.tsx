@@ -16,7 +16,7 @@ interface LinkResultProps {
 export function LinkResult({ link, onReset }: LinkResultProps) {
   const t = useTranslations("result");
   const { copy } = useCopyToClipboard();
-  const shortUrl = `${siteConfig.url}/${link.username}`;
+  const shortUrl = `${siteConfig.url.replace(/\/+$/, "")}/${link.username}`;
 
   async function handleCopy(text: string) {
     const success = await copy(text);
@@ -53,6 +53,7 @@ export function LinkResult({ link, onReset }: LinkResultProps) {
         <Button
           size="sm"
           variant="outline"
+          aria-label={`${t("copyButton")} ${link.username}${link.usernameKey ? ` ${t("keyLabel")}` : ""}`}
           onClick={() =>
             handleCopy(
               link.usernameKey ? `${link.username}\n${link.usernameKey}` : link.username
@@ -82,6 +83,7 @@ export function LinkResult({ link, onReset }: LinkResultProps) {
         </Button>
       </div>
 
+      {/* Intentionally link.url (wa.me), not shortUrl — the QR must keep working even if our redirect route is ever down. */}
       <QrCodeDisplay value={link.url} downloadLabel={t("downloadQr")} />
 
       <Button variant="ghost" onClick={onReset}>
