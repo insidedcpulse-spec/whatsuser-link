@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { AdBanner } from "@/components/ad-banner";
 import { Faq } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { PhoneGenerator } from "@/components/whatsapp/phone-generator";
@@ -29,6 +30,8 @@ export default async function Home() {
         <h2 className="mb-4 text-center text-lg font-semibold">{tForm("sectionTitle")}</h2>
         <UsernameGenerator />
       </div>
+
+      <AdBanner />
 
       <Faq />
 
