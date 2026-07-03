@@ -2,6 +2,7 @@ import type { UsernameValidationResult } from "@/types/whatsapp";
 
 const MIN_DIGITS = 8;
 const MAX_DIGITS = 15;
+const DIGITS_ONLY_REGEX = /^\d+$/;
 
 export function sanitizePhoneInput(raw: string): string {
   return raw.replace(/\D/g, "").replace(/^0/, "");
@@ -12,7 +13,10 @@ export function sanitizePhoneInput(raw: string): string {
 export function validatePhoneNumber(phone: string): UsernameValidationResult {
   const errors: string[] = [];
 
-  if (phone.length < MIN_DIGITS || phone.length > MAX_DIGITS) {
+  const hasValidLength = phone.length >= MIN_DIGITS && phone.length <= MAX_DIGITS;
+  const isDigitsOnly = DIGITS_ONLY_REGEX.test(phone);
+
+  if (!hasValidLength || !isDigitsOnly) {
     errors.push("phoneErrors.invalidFormat");
   }
 

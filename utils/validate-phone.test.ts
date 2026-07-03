@@ -39,4 +39,16 @@ describe("validatePhoneNumber", () => {
     expect(result.valid).toBe(false);
     expect(result.errors).toContain("phoneErrors.invalidFormat");
   });
+
+  it("rejects a string of the right length containing non-digit characters", () => {
+    const result = validatePhoneNumber("1234567?x=1");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("phoneErrors.invalidFormat");
+  });
+
+  it("rejects a string of the right length containing only letters", () => {
+    const result = validatePhoneNumber("abcdefgh");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("phoneErrors.invalidFormat");
+  });
 });
