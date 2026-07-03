@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Faq } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { PhoneGenerator } from "@/components/whatsapp/phone-generator";
 import { UsernameGenerator } from "@/components/whatsapp/username-generator";
@@ -28,6 +29,8 @@ export default async function Home() {
         <h2 className="mb-4 text-center text-lg font-semibold">{tForm("sectionTitle")}</h2>
         <UsernameGenerator />
       </div>
+
+      <Faq />
 
       <p className="max-w-md text-center text-xs text-muted-foreground">{t("disclaimer")}</p>
     </main>

@@ -60,5 +60,30 @@
   },
   "common": {
     "themeToggleLabel": "Cambiar tema"
+  },
+  "faq": {
+    "sectionTitle": "Preguntas Frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es WhatsUser.link?",
+        "answer": "Es una herramienta gratuita para crear un enlace y código QR compartible de tu WhatsApp Username, para que te contacten sin guardar tu número."
+      },
+      {
+        "question": "¿Es gratis?",
+        "answer": "Sí. Generar tu enlace y código QR es totalmente gratis y no requiere registro."
+      },
+      {
+        "question": "¿El enlace wa.me/username ya funciona?",
+        "answer": "Todavía no. WhatsApp aún no ha publicado un formato oficial de enlace para usernames, por eso también ofrecemos un generador por número de teléfono que ya funciona hoy."
+      },
+      {
+        "question": "¿Qué es la Username Key?",
+        "answer": "Es un código opcional que WhatsApp permite asociar a tu username, útil cuando varias personas pueden tener usernames parecidos. Si la configuraste, puedes compartirla junto con tu enlace."
+      },
+      {
+        "question": "¿WhatsUser.link está afiliado con WhatsApp o Meta?",
+        "answer": "No. Somos una herramienta independiente, no afiliada, respaldada ni asociada con WhatsApp Inc. o Meta."
+      }
+    ]
   }
 }

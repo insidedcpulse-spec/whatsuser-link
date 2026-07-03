@@ -6,9 +6,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { JsonLdScript } from "@/components/json-ld-script";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
+import { getSoftwareApplicationJsonLd } from "@/lib/json-ld";
 import "../globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -61,9 +63,12 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <JsonLdScript data={getSoftwareApplicationJsonLd(t("description"))} />
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="light">
             <div className="fixed right-4 top-4 flex items-center gap-2">
