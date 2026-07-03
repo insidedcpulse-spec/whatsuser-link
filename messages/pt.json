@@ -18,11 +18,11 @@
     "sectionTitle": "Gerar por Número de Telefone",
     "countryLabel": "País",
     "phoneLabel": "Número de WhatsApp",
-    "phonePlaceholder": "912 345 678",
+    "phonePlaceholder": "123 456 789",
     "submit": "Gerar Link"
   },
   "phoneErrors": {
-    "invalidFormat": "Introduz um número de telefone válido."
+    "invalidFormat": "Deve ser um número de telefone válido."
   },
   "result": {
     "usernameLabel": "Username",

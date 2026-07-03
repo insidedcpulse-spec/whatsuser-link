@@ -18,11 +18,11 @@
     "sectionTitle": "Generar por Número de Teléfono",
     "countryLabel": "País",
     "phoneLabel": "Número de WhatsApp",
-    "phonePlaceholder": "912 345 678",
+    "phonePlaceholder": "123 456 789",
     "submit": "Generar Enlace"
   },
   "phoneErrors": {
-    "invalidFormat": "Introduce un número de teléfono válido."
+    "invalidFormat": "Debe ser un número de teléfono válido."
   },
   "result": {
     "usernameLabel": "Username",
