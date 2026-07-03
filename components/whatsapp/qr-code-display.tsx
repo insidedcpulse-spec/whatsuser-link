@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 
 interface QrCodeDisplayProps {
   value: string;
+  downloadLabel: string;
 }
 
-export function QrCodeDisplay({ value }: QrCodeDisplayProps) {
+export function QrCodeDisplay({ value, downloadLabel }: QrCodeDisplayProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   function handleDownload() {
@@ -27,7 +28,7 @@ export function QrCodeDisplay({ value }: QrCodeDisplayProps) {
         <QRCodeCanvas value={value} size={200} />
       </div>
       <Button variant="outline" onClick={handleDownload}>
-        Download QR Code (PNG)
+        {downloadLabel}
       </Button>
     </div>
   );
