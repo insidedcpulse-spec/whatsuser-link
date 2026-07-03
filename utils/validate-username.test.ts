@@ -52,6 +52,12 @@ describe("validateUsername", () => {
     expect(result.errors).toContain("errors.reservedDomain");
   });
 
+  it("rejects a username ending in a static file extension", () => {
+    const result = validateUsername("alguem.js");
+    expect(result.valid).toBe(false);
+    expect(result.errors).toContain("errors.reservedDomain");
+  });
+
   it("rejects a username with only digits", () => {
     const result = validateUsername("123456");
     expect(result.valid).toBe(false);

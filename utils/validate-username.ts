@@ -4,7 +4,31 @@ const MIN_LENGTH = 3;
 const MAX_LENGTH = 35;
 const ALLOWED_CHARS_REGEX = /^[a-z0-9._]*$/;
 const HAS_LETTER_REGEX = /[a-z]/;
-const RESERVED_DOMAIN_SUFFIXES = [".com", ".net", ".org", ".io", ".co", ".app"];
+const RESERVED_DOMAIN_SUFFIXES = [
+  ".com",
+  ".net",
+  ".org",
+  ".io",
+  ".co",
+  ".app",
+  ".ico",
+  ".png",
+  ".jpg",
+  ".jpeg",
+  ".gif",
+  ".svg",
+  ".css",
+  ".js",
+  ".mjs",
+  ".map",
+  ".json",
+  ".txt",
+  ".xml",
+  ".webmanifest",
+  ".woff",
+  ".woff2",
+  ".ttf",
+];
 
 export function sanitizeUsernameInput(raw: string): string {
   return raw
