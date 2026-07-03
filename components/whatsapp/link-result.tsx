@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { QrCodeDisplay } from "@/components/whatsapp/qr-code-display";
@@ -12,42 +13,64 @@ interface LinkResultProps {
 }
 
 export function LinkResult({ link, onReset }: LinkResultProps) {
+  const t = useTranslations("result");
   const { copy } = useCopyToClipboard();
 
-  async function handleCopy() {
-    const success = await copy(link.url);
+  async function handleCopy(text: string) {
+    const success = await copy(text);
     if (success) {
-      toast.success("Link copiado!");
+      toast.success(t("copySuccess"));
     } else {
-      toast.error("Não foi possível copiar. Copia manualmente.");
+      toast.error(t("copyError"));
     }
   }
 
   return (
     <div className="flex flex-col items-center gap-6 rounded-2xl border border-border bg-card p-8 text-center">
+      <div className="flex w-full flex-col gap-3">
+        <div className="flex items-center justify-between gap-3 rounded-lg bg-muted px-4 py-3">
+          <div className="text-left">
+            <p className="text-xs text-muted-foreground">{t("usernameLabel")}</p>
+            <p className="font-mono text-sm break-all">{link.username}</p>
+          </div>
+          <Button size="sm" variant="outline" onClick={() => handleCopy(link.username)}>
+            {t("copyButton")}
+          </Button>
+        </div>
+
+        {link.usernameKey && (
+          <div className="flex items-center justify-between gap-3 rounded-lg bg-muted px-4 py-3">
+            <div className="text-left">
+              <p className="text-xs text-muted-foreground">{t("keyLabel")}</p>
+              <p className="font-mono text-sm break-all">{link.usernameKey}</p>
+            </div>
+            <Button size="sm" variant="outline" onClick={() => handleCopy(link.usernameKey!)}>
+              {t("copyButton")}
+            </Button>
+          </div>
+        )}
+      </div>
+
+      <p className="max-w-md text-xs text-muted-foreground">{t("formatNote")}</p>
+
       <p className="break-all rounded-lg bg-muted px-4 py-3 font-mono text-sm">{link.url}</p>
 
       <div className="flex flex-wrap justify-center gap-3">
-        <Button onClick={handleCopy}>Copiar</Button>
+        <Button onClick={() => handleCopy(link.url)}>{t("copyButton")}</Button>
         <Button
           variant="outline"
           render={
             <a href={link.url} target="_blank" rel="noopener noreferrer">
-              Abrir
+              {t("openButton")}
             </a>
           }
         />
       </div>
 
-      <QrCodeDisplay value={link.url} />
-
-      <p className="max-w-md text-xs text-muted-foreground">
-        Este link segue o formato mais recente disponível publicamente. Se a WhatsApp ainda
-        não suportar o teu dispositivo/versão, atualiza a app.
-      </p>
+      <QrCodeDisplay value={link.url} downloadLabel={t("downloadQr")} />
 
       <Button variant="ghost" onClick={onReset}>
-        Gerar novo link
+        {t("resetButton")}
       </Button>
     </div>
   );
