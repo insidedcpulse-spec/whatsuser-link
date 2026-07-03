@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Create WhatsApp Username Link",
+    "subtitle": "Create a shareable link and QR code for your WhatsApp Username in seconds. Simple, fast, and free."
+  },
+  "form": {
+    "usernameLabel": "WhatsApp Username",
+    "usernamePlaceholder": "@username",
+    "keyLabel": "Username Key (optional)",
+    "keyPlaceholder": "e.g. 4821",
+    "keyHint": "If you've set a Username Key in WhatsApp, add it here so people can share it together with your username.",
+    "messageLabel": "Message (optional)",
+    "messagePlaceholder": "Hi! I'd like to get in touch.",
+    "submit": "Generate Link"
+  },
+  "result": {
+    "usernameLabel": "Username",
+    "keyLabel": "Username Key",
+    "copyButton": "Copy",
+    "openButton": "Open",
+    "copySuccess": "Copied!",
+    "copyError": "Couldn't copy. Copy it manually.",
+    "downloadQr": "Download QR Code (PNG)",
+    "resetButton": "Generate a new link",
+    "formatNote": "WhatsApp hasn't published an official link format for usernames yet. To reach this person, open WhatsApp and search for the username above (and the key, if provided)."
+  },
+  "errors": {
+    "length": "Must be between 3 and 35 characters.",
+    "invalidChars": "Only lowercase letters, numbers, dots, and underscores are allowed.",
+    "noLetter": "Must contain at least one letter.",
+    "startsWithWww": "Cannot start with \"www.\".",
+    "reservedDomain": "Cannot end like a domain (e.g. .com, .net)."
+  },
+  "keyErrors": {
+    "invalidFormat": "Must be 4 to 8 letters or numbers."
+  },
+  "footer": {
+    "disclaimer": "WhatsUser.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta."
+  },
+  "metadata": {
+    "description": "Create a shareable link and QR code for your WhatsApp Username in seconds. Simple, fast, and free."
+  },
+  "common": {
+    "themeToggleLabel": "Toggle theme"
+  }
+}

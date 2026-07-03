@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "title": "Crea el Enlace de tu WhatsApp Username",
+    "subtitle": "Crea un enlace y código QR para compartir tu WhatsApp Username en segundos. Simple, rápido y gratis."
+  },
+  "form": {
+    "usernameLabel": "WhatsApp Username",
+    "usernamePlaceholder": "@username",
+    "keyLabel": "Username Key (opcional)",
+    "keyPlaceholder": "ej: 4821",
+    "keyHint": "Si configuraste una Username Key en WhatsApp, añádela aquí para compartir ambas cosas juntas.",
+    "messageLabel": "Mensaje (opcional)",
+    "messagePlaceholder": "¡Hola! Me gustaría hablar contigo.",
+    "submit": "Generar Enlace"
+  },
+  "result": {
+    "usernameLabel": "Username",
+    "keyLabel": "Username Key",
+    "copyButton": "Copiar",
+    "openButton": "Abrir",
+    "copySuccess": "¡Copiado!",
+    "copyError": "No se pudo copiar. Cópialo manualmente.",
+    "downloadQr": "Descargar código QR (PNG)",
+    "resetButton": "Generar nuevo enlace",
+    "formatNote": "WhatsApp aún no ha publicado un formato oficial de enlace para usernames. Para contactar a esta persona, abre WhatsApp y busca el username de arriba (y la key, si se indicó)."
+  },
+  "errors": {
+    "length": "Debe tener entre 3 y 35 caracteres.",
+    "invalidChars": "Solo se permiten letras minúsculas, números, puntos y guiones bajos.",
+    "noLetter": "Debe contener al menos una letra.",
+    "startsWithWww": "No puede empezar con \"www.\".",
+    "reservedDomain": "No puede terminar como un dominio (ej: .com, .net)."
+  },
+  "keyErrors": {
+    "invalidFormat": "Debe tener entre 4 y 8 letras o números."
+  },
+  "footer": {
+    "disclaimer": "WhatsUser.link no está afiliado, respaldado ni asociado con WhatsApp Inc. o Meta."
+  },
+  "metadata": {
+    "description": "Crea un enlace y código QR para compartir tu WhatsApp Username en segundos. Simple, rápido y gratis."
+  },
+  "common": {
+    "themeToggleLabel": "Cambiar tema"
+  }
+}
