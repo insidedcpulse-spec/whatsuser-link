@@ -12,6 +12,8 @@ import { sanitizePhoneInput } from "@/utils/validate-phone";
 import { COUNTRY_CODES } from "@/lib/countryCodes";
 import type { GeneratedPhoneLink } from "@/types/whatsapp";
 
+const MAX_COMBINED_DIGITS = 15;
+
 export function PhoneGenerator() {
   const t = useTranslations("phone");
   const tForm = useTranslations("form");
@@ -22,6 +24,9 @@ export function PhoneGenerator() {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
   const [link, setLink] = useState<GeneratedPhoneLink | null>(null);
+
+  const selectedCountry = COUNTRY_CODES.find((c) => c.code === countryCode) ?? COUNTRY_CODES[0];
+  const maxPhoneLength = MAX_COMBINED_DIGITS - selectedCountry.dialCode.length;
 
   function handlePhoneChange(event: ChangeEvent<HTMLInputElement>) {
     setPhone(sanitizePhoneInput(event.target.value));
@@ -34,8 +39,7 @@ export function PhoneGenerator() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const country = COUNTRY_CODES.find((c) => c.code === countryCode) ?? COUNTRY_CODES[0];
-    const result = createPhoneWhatsAppLink(`${country.dialCode}${phone}`, message);
+    const result = createPhoneWhatsAppLink(`${selectedCountry.dialCode}${phone}`, message);
 
     if (!result.success) {
       setErrors(result.errors);
@@ -86,7 +90,7 @@ export function PhoneGenerator() {
           value={phone}
           onChange={handlePhoneChange}
           placeholder={t("phonePlaceholder")}
-          maxLength={15}
+          maxLength={maxPhoneLength}
         />
         {errors.length > 0 && (
           <ul className="flex flex-col gap-1 text-sm text-destructive">
