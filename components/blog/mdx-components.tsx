@@ -9,6 +9,7 @@ export const blogMdxComponents: MDXComponents = {
   li: (props) => <li className="mb-1" {...props} />,
   a: (props) => <a className="text-primary underline underline-offset-4" {...props} />,
   strong: (props) => <strong className="font-semibold text-foreground" {...props} />,
+  code: (props) => <code className="rounded bg-muted px-1 py-0.5 font-mono text-sm" {...props} />,
   table: (props) => (
     <div className="mb-4 overflow-x-auto">
       <table className="w-full border-collapse text-sm" {...props} />
