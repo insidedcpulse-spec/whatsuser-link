@@ -22,6 +22,25 @@ export function getSoftwareApplicationJsonLd(description: string) {
   };
 }
 
+export function getOrganizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/icon.svg`,
+  };
+}
+
+export function getWebSiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  };
+}
+
 export type HowToStep = {
   title: string;
   description: string;

@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { JsonLdScript } from "@/components/json-ld-script";
 import { buttonVariants } from "@/components/ui/button";
-import { getHowToJsonLd, type HowToStep } from "@/lib/json-ld";
+import { getHowToJsonLd, getBreadcrumbJsonLd, type HowToStep } from "@/lib/json-ld";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
 
@@ -40,7 +40,12 @@ export default async function GuidePage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "guide" });
+  const tBlog = await getTranslations({ locale, namespace: "blog" });
   const steps = t.raw("steps") as HowToStep[];
+  const path =
+    locale === routing.defaultLocale
+      ? "/how-to-create-a-whatsapp-link"
+      : `/${locale}/how-to-create-a-whatsapp-link`;
 
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-8 px-4 py-24">
@@ -76,6 +81,12 @@ export default async function GuidePage({
       </div>
 
       <JsonLdScript data={getHowToJsonLd(t("title"), steps)} />
+      <JsonLdScript
+        data={getBreadcrumbJsonLd([
+          { name: tBlog("breadcrumbHome"), url: siteConfig.url },
+          { name: t("title"), url: `${siteConfig.url}${path}` },
+        ])}
+      />
     </main>
   );
 }
