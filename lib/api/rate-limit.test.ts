@@ -36,6 +36,15 @@ describe("checkRateLimit", () => {
     expect(spy).toHaveBeenCalledWith("9.8.7.6");
   });
 
+  it("prefers x-real-ip over x-forwarded-for when both are present", async () => {
+    const spy = vi.fn(allowLimiter.limit);
+    const request = new Request("http://localhost/api/v1/username-link?username=test", {
+      headers: { "x-real-ip": "5.5.5.5", "x-forwarded-for": "9.8.7.6, 10.0.0.1" },
+    });
+    await checkRateLimit(request, "json", { limit: spy });
+    expect(spy).toHaveBeenCalledWith("5.5.5.5");
+  });
+
   it("fails open when the limiter throws", async () => {
     const result = await checkRateLimit(makeRequest("1.2.3.4"), "json", {
       limit: async () => {
