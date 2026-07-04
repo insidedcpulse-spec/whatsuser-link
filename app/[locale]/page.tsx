@@ -45,6 +45,9 @@ export default async function Home() {
       </Link>
 
       <div className="flex gap-4 text-xs text-muted-foreground">
+        <Link href="/blog" className="underline underline-offset-4">
+          {t("blogLink")}
+        </Link>
         <Link href="/privacy-policy" className="underline underline-offset-4">
           {t("privacyLink")}
         </Link>

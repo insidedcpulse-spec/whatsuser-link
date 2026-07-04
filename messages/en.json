@@ -50,7 +50,8 @@
   "footer": {
     "disclaimer": "WhatsUser.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta.",
     "privacyLink": "Privacy Policy",
-    "termsLink": "Terms of Service"
+    "termsLink": "Terms of Service",
+    "blogLink": "Blog"
   },
   "qr": {
     "colorLabel": "QR color",
