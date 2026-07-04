@@ -6,7 +6,7 @@ describe("createWhatsAppLink", () => {
     const result = createWhatsAppLink("joao.silva", undefined, "Olá!");
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.link.url).toBe("https://wa.me/u/joao.silva?text=Ol%C3%A1!");
+      expect(result.link.url).toBe("https://wa.me/joao.silva?text=Ol%C3%A1!");
       expect(result.link.usernameKey).toBeUndefined();
     }
   });
