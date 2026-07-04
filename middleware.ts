@@ -6,11 +6,20 @@ import { routing } from "@/i18n/routing";
 const intlMiddleware = createMiddleware(routing);
 
 /**
- * Non-exhaustive by design (MVP): only covers Portugal and the largest
- * Spanish-speaking countries. Everything else falls back to English.
+ * Covers all Portuguese- and Spanish-speaking countries this site has
+ * translations for (pt, es). Everything else falls back to English.
  */
 const GEO_LOCALE_MAP: Record<string, string> = {
+  // Portuguese-speaking
   PT: "pt",
+  BR: "pt",
+  AO: "pt",
+  MZ: "pt",
+  CV: "pt",
+  GW: "pt",
+  ST: "pt",
+  TL: "pt",
+  // Spanish-speaking
   ES: "es",
   MX: "es",
   AR: "es",
@@ -18,6 +27,20 @@ const GEO_LOCALE_MAP: Record<string, string> = {
   CL: "es",
   PE: "es",
   VE: "es",
+  EC: "es",
+  GT: "es",
+  CU: "es",
+  BO: "es",
+  DO: "es",
+  HN: "es",
+  PY: "es",
+  SV: "es",
+  NI: "es",
+  CR: "es",
+  PA: "es",
+  UY: "es",
+  PR: "es",
+  GQ: "es",
 };
 
 export default function middleware(request: NextRequest) {
