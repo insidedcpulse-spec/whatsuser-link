@@ -8,7 +8,7 @@ export function AdBanner() {
         src="/ad-frame.html"
         width={AD_WIDTH}
         height={AD_HEIGHT}
-        sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
         loading="lazy"
         title="Advertisement"
         style={{ border: "none" }}
