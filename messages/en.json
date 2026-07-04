@@ -69,6 +69,10 @@
     "sectionTitle": "Frequently Asked Questions",
     "items": [
       {
+        "question": "How do I create a WhatsApp link from my username?",
+        "answer": "Open WhatsApp, go to Settings → Profile, tap your name to set a Username, then enter that same username above and WhatsUser.link generates a shareable link, a short link, and a downloadable QR code for it — no signup needed."
+      },
+      {
         "question": "What is WhatsUser.link?",
         "answer": "It's a free tool to create a shareable link and QR code for your WhatsApp Username, so people can reach you without saving your number."
       },

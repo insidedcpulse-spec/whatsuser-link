@@ -69,6 +69,10 @@
     "sectionTitle": "Perguntas Frequentes",
     "items": [
       {
+        "question": "Como crio um link do WhatsApp a partir do meu username?",
+        "answer": "Abre o WhatsApp, vai a Definições → Perfil, toca no teu nome para definires um Username, depois introduz esse mesmo username acima e o WhatsUser.link gera um link partilhável, um link curto e um código QR descarregável — sem precisares de te registares."
+      },
+      {
         "question": "O que é o WhatsUser.link?",
         "answer": "É uma ferramenta gratuita para criares um link e código QR partilhável do teu WhatsApp Username, para as pessoas te contactarem sem guardarem o teu número."
       },
