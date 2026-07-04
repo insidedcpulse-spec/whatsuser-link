@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { QrCodeDisplay } from "@/components/whatsapp/qr-code-display";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
-import { siteConfig } from "@/config/site";
+import { buildShortLink } from "@/lib/short-link";
 import type { GeneratedLink } from "@/types/whatsapp";
 
 interface LinkResultProps {
@@ -16,7 +16,7 @@ interface LinkResultProps {
 export function LinkResult({ link, onReset }: LinkResultProps) {
   const t = useTranslations("result");
   const { copy } = useCopyToClipboard();
-  const shortUrl = `${siteConfig.url.replace(/\/+$/, "")}/${link.username}`;
+  const shortUrl = buildShortLink(link.username);
 
   async function handleCopy(text: string) {
     const success = await copy(text);
