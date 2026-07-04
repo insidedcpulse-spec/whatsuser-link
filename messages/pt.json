@@ -246,5 +246,18 @@
         }
       ]
     }
+  },
+  "blog": {
+    "metaTitle": "Blog — WhatsUser.link",
+    "metaDescription": "Guias práticos sobre usernames do WhatsApp, links wa.me e QR codes.",
+    "heading": "Blog",
+    "intro": "Guias práticos sobre usernames do WhatsApp, partilha de links e QR codes.",
+    "emptyStateTitle": "Artigos em breve",
+    "emptyStateBody": "Ainda não temos artigos nesta língua. Volta em breve ou lê a versão em português.",
+    "readMore": "Ler artigo",
+    "ctaText": "Já tens o teu link do WhatsApp pronto?",
+    "ctaButton": "Criar o meu link",
+    "breadcrumbHome": "Início",
+    "breadcrumbBlog": "Blog"
   }
 }

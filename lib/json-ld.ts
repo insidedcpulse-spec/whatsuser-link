@@ -54,3 +54,49 @@ export function getFaqJsonLd(items: FaqItem[]) {
     })),
   };
 }
+
+export function getBlogPostingJsonLd({
+  headline,
+  description,
+  datePublished,
+  image,
+  url,
+}: {
+  headline: string;
+  description: string;
+  datePublished: string;
+  image: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline,
+    description,
+    datePublished,
+    image,
+    url,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+    },
+  };
+}
+
+export type BreadcrumbItem = {
+  name: string;
+  url: string;
+};
+
+export function getBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}

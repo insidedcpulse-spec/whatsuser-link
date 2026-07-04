@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
+import { getAllPosts } from "@/lib/blog";
 
 function localeUrl(locale: string, slug?: string) {
   const base = locale === routing.defaultLocale ? siteConfig.url : `${siteConfig.url}/${locale}`;
@@ -21,10 +22,47 @@ function entries(slug?: string, priority = 0.8) {
   }));
 }
 
+function blogPostEntries(): MetadataRoute.Sitemap {
+  const slugLocales = new Map<string, string[]>();
+
+  for (const locale of routing.locales) {
+    for (const post of getAllPosts(locale)) {
+      const slugs = slugLocales.get(post.frontmatter.slug) ?? [];
+      slugs.push(locale);
+      slugLocales.set(post.frontmatter.slug, slugs);
+    }
+  }
+
+  const results: MetadataRoute.Sitemap = [];
+
+  for (const [slug, locales] of slugLocales) {
+    const languages = Object.fromEntries(
+      locales.map((locale) => [locale, localeUrl(locale, `blog/${slug}`)]),
+    );
+
+    for (const locale of locales) {
+      const post = getAllPosts(locale).find((p) => p.frontmatter.slug === slug);
+      if (!post) continue;
+
+      results.push({
+        url: localeUrl(locale, `blog/${slug}`),
+        lastModified: new Date(post.frontmatter.date),
+        changeFrequency: "monthly" as const,
+        priority: locale === routing.defaultLocale ? 0.6 : 0.4,
+        alternates: { languages },
+      });
+    }
+  }
+
+  return results;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...entries(undefined, 1),
     ...entries("how-to-create-a-whatsapp-link", 0.6),
+    ...entries("blog", 0.6),
+    ...blogPostEntries(),
     ...entries("privacy-policy", 0.3),
     ...entries("terms-of-service", 0.3),
   ];
