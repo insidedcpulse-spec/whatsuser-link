@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#075E54"/>
+      <stop offset="100%" stop-color="#25D366"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="200" cy="500" r="200" fill="#ffffff" opacity="0.06"/>
+  <g transform="translate(450,115)">
+    <rect x="0" y="0" width="400" height="400" rx="16" fill="#ffffff"/>
+    <g fill="#075E54">
+      <rect x="30" y="30" width="90" height="90"/>
+      <rect x="280" y="30" width="90" height="90"/>
+      <rect x="30" y="280" width="90" height="90"/>
+      <rect x="150" y="30" width="24" height="24"/>
+      <rect x="200" y="30" width="24" height="24"/>
+      <rect x="150" y="80" width="24" height="24"/>
+      <rect x="200" y="140" width="24" height="24"/>
+      <rect x="150" y="180" width="24" height="24"/>
+      <rect x="250" y="150" width="24" height="24"/>
+      <rect x="30" y="180" width="24" height="24"/>
+      <rect x="180" y="230" width="24" height="24"/>
+      <rect x="230" y="230" width="24" height="24"/>
+      <rect x="280" y="200" width="24" height="24"/>
+      <rect x="150" y="280" width="24" height="24"/>
+      <rect x="200" y="320" width="24" height="24"/>
+      <rect x="250" y="280" width="24" height="24"/>
+      <rect x="330" y="280" width="24" height="24"/>
+      <rect x="280" y="330" width="24" height="24"/>
+    </g>
+    <g fill="#ffffff">
+      <rect x="60" y="60" width="30" height="30"/>
+      <rect x="310" y="60" width="30" height="30"/>
+      <rect x="60" y="310" width="30" height="30"/>
+    </g>
+  </g>
+</svg>
