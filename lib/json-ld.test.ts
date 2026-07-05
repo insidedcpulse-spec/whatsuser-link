@@ -14,7 +14,7 @@ describe("getBlogPostingJsonLd", () => {
     expect(result["@type"]).toBe("BlogPosting");
     expect(result.headline).toBe("Title");
     expect(result.datePublished).toBe("2026-01-01");
-    expect(result.author).toEqual({ "@type": "Organization", name: "WhatsUser.link" });
+    expect(result.author).toEqual({ "@type": "Organization", name: "WhatsUsernames.link" });
   });
 });
 

@@ -48,7 +48,7 @@
     "invalidFormat": "Debe tener entre 4 y 8 letras o números."
   },
   "footer": {
-    "disclaimer": "WhatsUser.link no está afiliado, respaldado ni asociado con WhatsApp Inc. o Meta.",
+    "disclaimer": "WhatsUsernames.link no está afiliado, respaldado ni asociado con WhatsApp Inc. o Meta.",
     "privacyLink": "Política de Privacidad",
     "termsLink": "Términos de Servicio",
     "blogLink": "Blog",
@@ -97,7 +97,7 @@
     "transparentLabel": "Fondo transparente"
   },
   "metadata": {
-    "title": "Generador de Enlace de WhatsApp por Username + Código QR (Gratis) | WhatsUser.link",
+    "title": "Generador de Enlace de WhatsApp por Username + Código QR (Gratis) | WhatsUsernames.link",
     "description": "Crea un enlace y código QR para compartir tu WhatsApp Username en segundos. Simple, rápido y gratis."
   },
   "common": {
@@ -108,10 +108,10 @@
     "items": [
       {
         "question": "¿Cómo creo un enlace de WhatsApp a partir de mi username?",
-        "answer": "Abre WhatsApp, ve a Ajustes → Perfil, toca en tu nombre para definir un Username, luego introduce ese mismo username arriba y WhatsUser.link genera un enlace compartible, un enlace corto y un código QR descargable — sin necesidad de registro."
+        "answer": "Abre WhatsApp, ve a Ajustes → Perfil, toca en tu nombre para definir un Username, luego introduce ese mismo username arriba y WhatsUsernames.link genera un enlace compartible, un enlace corto y un código QR descargable — sin necesidad de registro."
       },
       {
-        "question": "¿Qué es WhatsUser.link?",
+        "question": "¿Qué es WhatsUsernames.link?",
         "answer": "Es una herramienta gratuita para crear un enlace y código QR compartible de tu WhatsApp Username, para que te contacten sin guardar tu número."
       },
       {
@@ -127,12 +127,12 @@
         "answer": "Es un código opcional que WhatsApp permite asociar a tu username, útil cuando varias personas pueden tener usernames parecidos. Si la configuraste, puedes compartirla junto con tu enlace."
       },
       {
-        "question": "¿WhatsUser.link está afiliado con WhatsApp o Meta?",
+        "question": "¿WhatsUsernames.link está afiliado con WhatsApp o Meta?",
         "answer": "No. Somos una herramienta independiente, no afiliada, respaldada ni asociada con WhatsApp Inc. o Meta."
       },
       {
         "question": "¿Qué es wa.me?",
-        "answer": "wa.me es el dominio corto oficial de WhatsApp para enlaces que abren una conversación, como wa.me/1234567890 para un número de teléfono. WhatsUser.link crea estos enlaces automáticamente por ti."
+        "answer": "wa.me es el dominio corto oficial de WhatsApp para enlaces que abren una conversación, como wa.me/1234567890 para un número de teléfono. WhatsUsernames.link crea estos enlaces automáticamente por ti."
       },
       {
         "question": "¿Cómo creo un enlace de WhatsApp sin guardar el contacto primero?",
@@ -140,7 +140,7 @@
       },
       {
         "question": "¿Mi número o username se guarda en algún sitio?",
-        "answer": "No. WhatsUser.link es stateless — tu enlace y código QR se crean completamente en tu navegador y no se guarda nada en nuestros servidores."
+        "answer": "No. WhatsUsernames.link es stateless — tu enlace y código QR se crean completamente en tu navegador y no se guarda nada en nuestros servidores."
       },
       {
         "question": "¿Puedo usar esto para una cuenta de WhatsApp Business?",
@@ -189,12 +189,12 @@
     "lastUpdated": "Última actualización: 3 de julio de 2026",
     "privacy": {
       "title": "Política de Privacidad",
-      "metaDescription": "Cómo maneja WhatsUser.link los datos: qué no recopilamos, qué procesan nuestro alojamiento y proveedor de anuncios, y tus derechos.",
-      "intro": "WhatsUser.link (\"nosotros\") opera whatsusernames.link. Esta página explica el poco dato que interviene al usar esta herramienta gratuita, y por qué.",
+      "metaDescription": "Cómo maneja WhatsUsernames.link los datos: qué no recopilamos, qué procesan nuestro alojamiento y proveedor de anuncios, y tus derechos.",
+      "intro": "WhatsUsernames.link (\"nosotros\") opera whatsusernames.link. Esta página explica el poco dato que interviene al usar esta herramienta gratuita, y por qué.",
       "sections": [
         {
           "heading": "Esta herramienta es stateless",
-          "body": ["WhatsUser.link crea tu enlace y código QR de WhatsApp completamente en tu navegador. El Username, la Username Key, el número de teléfono y el mensaje que introduces nunca se envían ni se guardan en nuestros servidores. Cerrar o actualizar la página los borra."]
+          "body": ["WhatsUsernames.link crea tu enlace y código QR de WhatsApp completamente en tu navegador. El Username, la Username Key, el número de teléfono y el mensaje que introduces nunca se envían ni se guardan en nuestros servidores. Cerrar o actualizar la página los borra."]
         },
         {
           "heading": "Sin cuentas, sin registro",
@@ -236,12 +236,12 @@
     },
     "terms": {
       "title": "Términos de Servicio",
-      "metaDescription": "Términos para usar el generador gratuito de enlaces y códigos QR de WhatsApp de WhatsUser.link.",
+      "metaDescription": "Términos para usar el generador gratuito de enlaces y códigos QR de WhatsApp de WhatsUsernames.link.",
       "intro": "Al usar whatsusernames.link (\"el Servicio\"), aceptas estos términos. Si no estás de acuerdo, por favor no uses el Servicio.",
       "sections": [
         {
           "heading": "Qué hace este Servicio",
-          "body": ["WhatsUser.link es una herramienta gratuita que genera un enlace y código QR compartible de WhatsApp a partir de un Username, Username Key o número de teléfono que proporciones, completamente en tu navegador."]
+          "body": ["WhatsUsernames.link es una herramienta gratuita que genera un enlace y código QR compartible de WhatsApp a partir de un Username, Username Key o número de teléfono que proporciones, completamente en tu navegador."]
         },
         {
           "heading": "Sin cuenta, gratis",
@@ -273,7 +273,7 @@
         },
         {
           "heading": "Sin afiliación",
-          "body": ["WhatsUser.link es una herramienta independiente, no afiliada, respaldada ni asociada con WhatsApp Inc. o Meta Platforms, Inc."]
+          "body": ["WhatsUsernames.link es una herramienta independiente, no afiliada, respaldada ni asociada con WhatsApp Inc. o Meta Platforms, Inc."]
         },
         {
           "heading": "Cambios",
@@ -291,7 +291,7 @@
     }
   },
   "blog": {
-    "metaTitle": "Blog — WhatsUser.link",
+    "metaTitle": "Blog — WhatsUsernames.link",
     "metaDescription": "Guías prácticas sobre usernames de WhatsApp, enlaces wa.me y códigos QR.",
     "heading": "Blog",
     "intro": "Guías prácticas sobre usernames de WhatsApp, cómo compartir tu enlace y códigos QR.",
