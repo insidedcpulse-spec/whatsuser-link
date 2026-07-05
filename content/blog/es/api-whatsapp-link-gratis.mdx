@@ -1,0 +1,100 @@
+---
+title: "Lanzamos una API gratuita para generar enlaces de WhatsApp"
+description: "API REST pública para generar enlaces de WhatsApp, validar usernames y crear códigos QR — sin clave de API, sin registro, con CORS habilitado. Documentación y ejemplos incluidos."
+date: "2026-07-05"
+slug: "api-whatsapp-link-gratis"
+heroImage: "/blog/api-whatsapp-link-gratis/hero.svg"
+heroImageAlt: "Ilustración de una terminal con una petición curl a la API y la respuesta JSON con un enlace wa.me"
+---
+
+## Qué acabamos de lanzar
+
+A partir de hoy, todo lo que WhatsUsernames.link hace en la web también está disponible por API: generar enlaces de WhatsApp a partir de usernames o números de teléfono, validar inputs y crear códigos QR personalizados — todo con simples peticiones HTTP GET.
+
+Tres decisiones definen esta API:
+
+- **Sin clave de API y sin registro.** Llamas al endpoint y recibes la respuesta. Nada de dashboards, tokens ni correos de confirmación.
+- **Gratuita**, con límites de uso generosos para un uso normal.
+- **CORS habilitado en todos los endpoints** — puedes llamarla directamente desde el navegador, en un sitio estático, sin backend.
+
+La documentación completa está en [whatsusernames.link/developers](https://whatsusernames.link/developers) y existe una [especificación OpenAPI 3.1](https://whatsusernames.link/api/v1/openapi.json) legible por máquinas — útil para generar clientes automáticamente o dar contexto a asistentes de IA.
+
+## Los siete endpoints
+
+| Endpoint | Qué hace |
+| --- | --- |
+| `GET /api/v1/username-link` | Enlace de WhatsApp + enlace corto a partir de un username |
+| `GET /api/v1/phone-link` | Enlace oficial wa.me a partir de un número de teléfono |
+| `GET /api/v1/validate/username` | Valida la estructura de un username |
+| `GET /api/v1/validate/key` | Valida una Username Key (4-8 letras/números) |
+| `GET /api/v1/validate/phone` | Valida un número de teléfono internacional |
+| `GET /api/v1/qr` | Código QR (PNG o SVG) con tamaño y colores personalizables |
+| `GET /api/v1/openapi.json` | La especificación OpenAPI 3.1 de la propia API |
+
+## Ejemplos rápidos
+
+Generar un enlace a partir de un username, con curl:
+
+```bash
+curl "https://whatsusernames.link/api/v1/username-link?username=joao.silva"
+```
+
+Respuesta:
+
+```json
+{
+  "username": "joao.silva",
+  "link": "https://wa.me/joao.silva",
+  "shortLink": "https://whatsusernames.link/joao.silva",
+  "notice": "As of 2026-07-04, wa.me/<username> links do not yet open a chat for most accounts..."
+}
+```
+
+Desde el navegador o Node.js, sin ninguna librería:
+
+```javascript
+const res = await fetch(
+  "https://whatsusernames.link/api/v1/phone-link?phone=351912345678&text=hola"
+);
+const data = await res.json();
+console.log(data.link); // https://wa.me/351912345678?text=hola
+```
+
+Un código QR verde de WhatsApp en SVG, listo para incluir en una página:
+
+```
+https://whatsusernames.link/api/v1/qr?username=joao.silva&format=svg&color=25d366
+```
+
+## Límites de uso y errores
+
+Los límites son por IP: **60 peticiones por minuto** en los endpoints JSON y **20 por minuto** en el endpoint QR. Cada respuesta incluye las cabeceras `X-RateLimit-Limit`, `X-RateLimit-Remaining` y `X-RateLimit-Reset`; si superas el límite, recibes HTTP 429 con `Retry-After`. Las peticiones idénticas se sirven desde la caché CDN y no cuentan para el límite.
+
+Los errores son siempre JSON con un código estable, pensado para máquinas:
+
+```json
+{
+  "error": {
+    "code": "username_length",
+    "message": "Username must be 3-35 characters."
+  }
+}
+```
+
+Los códigos de error nunca cambian dentro de la v1 — puedes construir lógica sobre ellos con confianza.
+
+## Una nota honesta sobre los enlaces de username
+
+Como explicamos [en otro artículo](/blog/wa-me-username-alternativas), los enlaces `wa.me/username` todavía no abren un chat para la mayoría de las cuentas — el despliegue de usernames de WhatsApp es por fases y regional. Por eso, la respuesta del endpoint `username-link` incluye siempre un campo `notice` con el estado actual, para que tu aplicación (o tu usuario) no se lleve una sorpresa.
+
+Los enlaces por número de teléfono (`wa.me/<número>`) están oficialmente documentados y funcionan para todo el mundo, hoy.
+
+## Para qué sirve en la práctica
+
+- **Webs y landing pages** que generan el enlace de contacto dinámicamente, sin backend.
+- **Herramientas internas y CRMs** que validan números antes de crear campañas de contacto.
+- **Generadores de material impreso** que necesitan códigos QR en SVG con los colores de la marca.
+- **Bots y automatizaciones** (n8n, Zapier, scripts) que montan enlaces de WhatsApp al vuelo.
+- **Asistentes de IA** — apunta un agente a la especificación OpenAPI y sabrá generar enlaces de WhatsApp correctos.
+
+Empieza en [whatsusernames.link/developers](https://whatsusernames.link/developers). Si construyes algo con la API, nos encantaría saberlo.

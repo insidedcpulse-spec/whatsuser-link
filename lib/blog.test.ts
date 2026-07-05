@@ -14,9 +14,10 @@ describe("blog content loader", () => {
     expect(getPost("en", "does-not-exist")).toBeNull();
   });
 
-  it("finds all 5 Portuguese articles", () => {
+  it("finds all 6 Portuguese articles", () => {
     expect(getPostSlugs("pt").sort()).toEqual(
       [
+        "api-whatsapp-link-gratis",
         "como-reservar-username-whatsapp-2026",
         "username-key-whatsapp",
         "wa-me-username-alternativas",
@@ -40,8 +41,8 @@ describe("blog content loader", () => {
   it("sorts posts by date, most recent first", () => {
     const posts = getAllPosts("pt");
 
-    expect(posts).toHaveLength(5);
-    expect(posts[0].frontmatter.slug).toBe("usernames-vs-numero-telefone-privacidade");
+    expect(posts).toHaveLength(6);
+    expect(posts[0].frontmatter.slug).toBe("api-whatsapp-link-gratis");
     expect(posts[posts.length - 1].frontmatter.slug).toBe(
       "como-reservar-username-whatsapp-2026"
     );
