@@ -1,0 +1,64 @@
+---
+title: "We launched whatsusernames-sdk: an npm client for our API"
+description: "Zero-dependency TypeScript/JavaScript package for all 12 WhatsUsernames.link endpoints — links, QR codes, and Business Platform BSUID/webhook tools, fully typed."
+date: "2026-07-05"
+slug: "whatsusernames-sdk-npm"
+heroImage: "/blog/whatsusernames-sdk-npm/hero.svg"
+heroImageAlt: "Illustration of a terminal installing whatsusernames-sdk via npm and creating a client"
+---
+
+## What we just shipped
+
+After the [free WhatsApp link API](/blog/api-whatsapp-link-gratis) and the [Business Platform (BSUID) API](/blog/api-whatsapp-business-bsuid), one piece was missing: a ready-to-install client, so you don't have to hand-write `fetch` calls and error parsing every time you use the API from TypeScript or JavaScript.
+
+It's called **[whatsusernames-sdk](https://www.npmjs.com/package/whatsusernames-sdk)** — open source (MIT), zero runtime dependencies, covering all 12 endpoints: the 7 link/QR/validation ones and the 5 Business Platform ones.
+
+## Install and use
+
+```bash
+npm install whatsusernames-sdk
+```
+
+```ts
+import { createClient } from "whatsusernames-sdk";
+
+const wa = createClient();
+
+const { link, shortLink } = await wa.usernameLink({ username: "joao.silva" });
+const qr = await wa.qr({ username: "joao.silva", format: "svg" });
+// qr.body is a Uint8Array, qr.contentType is "image/svg+xml"
+```
+
+And for the Business Platform:
+
+```ts
+const parsed = await wa.business.bsuid.parse({ bsuid: "US.13491208655302741918" });
+// { countryCode: "US", id: "13491208655302741918", isParent: false }
+
+const contact = await wa.business.contact.resolve({ username: "joao.silva" });
+
+const normalized = await wa.business.webhook.normalize(rawCloudApiWebhookPayload);
+```
+
+## Why an SDK, not just the REST API
+
+The REST API itself is already free and keyless — any `fetch` call reaches it. The SDK exists for anyone who wants:
+
+- **Ready-made TypeScript types** for all 12 responses (`UsernameLinkResult`, `ResolvedContact`, `NormalizedWebhook`, and more), no hand-written interfaces.
+- **Consistent errors**: any non-200 response throws `WhatsUsernamesApiError` with `status`, `code`, and `message` — one `catch` covers everything.
+- **Zero dependencies**: uses only native `fetch`, works on Node 18+, browsers, and edge runtimes, without bloating your `node_modules`.
+- **ESM and CommonJS**: `import` or `require()`, both work with no extra config.
+
+## Self-hosted
+
+Running your own instance (or testing against `localhost`)? Point the client there:
+
+```ts
+const wa = createClient({ baseUrl: "http://localhost:3000" });
+```
+
+## Open source
+
+The SDK is on GitHub, MIT licensed: [github.com/insidedcpulse-spec/whatsusernames-sdk](https://github.com/insidedcpulse-spec/whatsusernames-sdk). Issues and PRs welcome — it's the first concrete step toward making WhatsUsernames.link an open platform for developers, not just a closed product.
+
+Full docs at [whatsusernames.link/developers](https://whatsusernames.link/developers) and the [OpenAPI 3.1 specification](https://whatsusernames.link/api/v1/openapi.json).

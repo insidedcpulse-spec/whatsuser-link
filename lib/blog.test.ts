@@ -14,11 +14,12 @@ describe("blog content loader", () => {
     expect(getPost("en", "does-not-exist")).toBeNull();
   });
 
-  it("finds all 7 Portuguese articles", () => {
+  it("finds all 8 Portuguese articles", () => {
     expect(getPostSlugs("pt").sort()).toEqual(
       [
         "api-whatsapp-link-gratis",
         "api-whatsapp-business-bsuid",
+        "whatsusernames-sdk-npm",
         "como-reservar-username-whatsapp-2026",
         "username-key-whatsapp",
         "wa-me-username-alternativas",
@@ -42,9 +43,9 @@ describe("blog content loader", () => {
   it("sorts posts by date, most recent first", () => {
     const posts = getAllPosts("pt");
 
-    expect(posts).toHaveLength(7);
-    expect(posts.map((p) => p.frontmatter.slug).slice(0, 2).sort()).toEqual(
-      ["api-whatsapp-link-gratis", "api-whatsapp-business-bsuid"].sort()
+    expect(posts).toHaveLength(8);
+    expect(posts.map((p) => p.frontmatter.slug).slice(0, 3).sort()).toEqual(
+      ["api-whatsapp-link-gratis", "api-whatsapp-business-bsuid", "whatsusernames-sdk-npm"].sort()
     );
     expect(posts[posts.length - 1].frontmatter.slug).toBe(
       "como-reservar-username-whatsapp-2026"
