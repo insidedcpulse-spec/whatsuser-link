@@ -1,37 +1,59 @@
-# WhatsUser.link
+# WhatsUsernames.link
 
-Cria um link/cartão para o teu WhatsApp Username (`@username`) em segundos — link partilhável + QR code, sem login, sem base de dados.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-## Stack
+Open source toolkit for developers working with **WhatsApp Usernames** and the **WhatsApp Business Platform / Cloud API** — link generators, QR codes, and a free public REST API for both the consumer `@username` feature and Business-Scoped User IDs (BSUID).
 
-Next.js 15 (App Router) · React 19 · TypeScript estrito · Tailwind CSS · shadcn/ui · pnpm.
+Live site: **[whatsusernames.link](https://whatsusernames.link)** (English, Português, Español).
 
-## Desenvolvimento
+## What's in here
+
+- **Link + QR generator** — turn a WhatsApp username or phone number into a shareable `wa.me` link and a customizable QR code (PNG/SVG, color, logo, transparency). No login, no database.
+- **Public REST API v1** (`/api/v1/*`) — generate links, validate usernames/keys/phone numbers, render QR codes. Free, keyless, CORS-enabled, rate-limited by IP. Full docs at [`/developers`](https://whatsusernames.link/developers), machine-readable spec at [`/api/v1/openapi.json`](https://whatsusernames.link/api/v1/openapi.json) (OpenAPI 3.1).
+- **Business Platform API** (`/api/v1/business/*`) — validate and parse BSUIDs, validate business usernames, resolve a contact from bsuid/phone/username, and normalize raw WhatsApp Cloud API webhook payloads into a consistent shape.
+- **Blog** — trilingual (EN/PT/ES) articles on WhatsApp usernames, BSUID, and the Cloud API, at [`/blog`](https://whatsusernames.link/blog).
+
+## Why it's stateless
+
+There is no database. Short links, QR codes, and BSUID/webhook parsing are all pure, deterministic functions of their input — the username or phone number *is* the link. This keeps the whole project self-hostable with zero infrastructure beyond a Next.js deploy target.
+
+## Tech stack
+
+Next.js 15 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS · shadcn/ui · next-intl (i18n) · Vitest · pnpm.
+
+## Getting started
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000).
-
-## Testes
+Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
-pnpm test        # Vitest — validação de username e geração de link
-pnpm lint        # ESLint
-pnpm exec tsc --noEmit   # type-check
-pnpm build       # build de produção
+pnpm test                 # Vitest — link generation, validators, business/BSUID logic, API routes
+pnpm lint                 # ESLint
+pnpm exec tsc --noEmit    # Type-check
+pnpm build                # Production build
 ```
 
-## Nota importante: formato do link
-
-A WhatsApp ainda não publicou uma spec oficial para deep-links por `@username`. Toda a lógica de formato do link está isolada em `lib/whatsapp/generateLink.ts` — é o único ficheiro que constrói o URL, e é a única alteração necessária quando a WhatsApp publicar o formato real. Ver `docs/superpowers/specs/2026-07-02-whatsuser-link-mvp-design.md` para o design completo.
-
-## Variáveis de ambiente
+## Environment variables
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-`NEXT_PUBLIC_SITE_URL` — domínio usado em metadata/OG/canonical (fallback `http://localhost:3000` em dev; o domínio `whatsuser.link` ainda não foi comprado).
+- `NEXT_PUBLIC_SITE_URL` — domain used in metadata/OG/canonical URLs (defaults to `http://localhost:3000` in dev).
+- `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` (or the Vercel-Upstash-injected `KV_REST_API_URL` / `KV_REST_API_TOKEN`) — optional, power API rate limiting. The rate limiter fails open (allows requests) when absent, so the app runs fine without them.
+
+## A note on `wa.me/<username>` links
+
+WhatsApp's consumer username feature is in a phased regional rollout, and `wa.me/<username>` links do not open a chat for every account yet. All link-format logic lives in `lib/whatsapp/generateLink.ts` — the single file to update once WhatsApp publishes an official deep-link format. Phone-number links (`wa.me/<phone>`) are officially documented and work everywhere today.
+
+## Contributing
+
+Issues and PRs welcome. This project has no formal contribution process yet — open an issue to discuss non-trivial changes before sending a PR.
+
+## License
+
+[MIT](./LICENSE)
