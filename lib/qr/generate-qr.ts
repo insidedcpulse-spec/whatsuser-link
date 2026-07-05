@@ -12,7 +12,7 @@ export interface QrOptions {
 }
 
 export interface QrOutput {
-  body: string | Uint8Array;
+  body: string | Uint8Array<ArrayBuffer>;
   contentType: "image/svg+xml" | "image/png";
 }
 

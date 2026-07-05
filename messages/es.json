@@ -51,7 +51,36 @@
     "disclaimer": "WhatsUser.link no está afiliado, respaldado ni asociado con WhatsApp Inc. o Meta.",
     "privacyLink": "Política de Privacidad",
     "termsLink": "Términos de Servicio",
-    "blogLink": "Blog"
+    "blogLink": "Blog",
+    "apiLink": "API"
+  },
+  "developers": {
+    "title": "API Gratuita de Enlaces de WhatsApp para Desarrolladores",
+    "metaDescription": "API REST pública y gratuita para generar enlaces de WhatsApp y códigos QR a partir de usernames o números de teléfono. Sin clave de API, sin registro. Respuestas JSON, CORS habilitado.",
+    "intro": "Genera enlaces de WhatsApp, valida usernames y números de teléfono y crea códigos QR con simples peticiones HTTP GET. Sin clave de API, sin registro, gratis. Todos los endpoints devuelven JSON (el endpoint QR devuelve una imagen), envían cabeceras CORS y pueden llamarse directamente desde el navegador.",
+    "endpointsHeading": "Endpoints",
+    "endpointsIntro": "URL base: {baseUrl}. Todos los endpoints son GET.",
+    "tableEndpoint": "Endpoint",
+    "tableDescription": "Descripción",
+    "endpointDescriptions": {
+      "usernameLink": "Enlace de WhatsApp + enlace corto a partir de un username (key y texto predefinido opcionales).",
+      "phoneLink": "Enlace oficial wa.me click-to-chat a partir de un número de teléfono internacional.",
+      "validateUsername": "Comprueba si un username es estructuralmente válido.",
+      "validateKey": "Comprueba si una Username Key es válida (4-8 letras/números).",
+      "validatePhone": "Comprueba si un número de teléfono es válido para enlaces de WhatsApp.",
+      "qr": "Código QR (PNG o SVG) para un enlace de username o teléfono. Tamaño y colores personalizables.",
+      "openapi": "Descripción OpenAPI 3.1 de esta API, legible por máquinas."
+    },
+    "examplesHeading": "Ejemplos",
+    "exampleCurlLabel": "curl",
+    "exampleJsLabel": "JavaScript (fetch)",
+    "rateLimitHeading": "Límites de uso",
+    "rateLimitBody": "60 peticiones por minuto por IP en los endpoints JSON, 20 por minuto en el endpoint QR. Las respuestas incluyen las cabeceras X-RateLimit-Limit, X-RateLimit-Remaining y X-RateLimit-Reset; superar el límite devuelve HTTP 429 con cabecera Retry-After. Las peticiones idénticas se sirven desde la caché CDN y no cuentan para el límite.",
+    "errorsHeading": "Errores",
+    "errorsBody": "Los errores son siempre JSON con un código estable legible por máquinas: por ejemplo, un username inválido devuelve HTTP 400 con un cuerpo como el de abajo. Los códigos nunca cambian dentro de la v1.",
+    "noticeHeading": "Sobre los enlaces wa.me de username",
+    "noticeBody": "La función de usernames de WhatsApp está en despliegue regional por fases, y los enlaces wa.me/<username> pueden aún no abrir un chat para todas las cuentas. El endpoint username-link incluye un campo notice con el estado actual. Los enlaces por número de teléfono (wa.me/<teléfono>) están oficialmente documentados y funcionan para todos hoy.",
+    "openapiLinkLabel": "Especificación OpenAPI 3.1"
   },
   "qr": {
     "colorLabel": "Color del QR",

@@ -26,6 +26,9 @@ ${siteConfig.name} is an independent, third-party tool. It is not affiliated wit
 - ${siteConfig.url}/pt — Portuguese
 - ${siteConfig.url}/es — Spanish
 
+## Public API (free, no key)
+Programmatic access at ${siteConfig.url}/api/v1/ — GET endpoints for generating WhatsApp links (username-link, phone-link), validating inputs (validate/username, validate/key, validate/phone), and rendering QR codes (qr, PNG/SVG). Rate limited per IP (60/min JSON, 20/min QR). Machine-readable spec: ${siteConfig.url}/api/v1/openapi.json — human docs: ${siteConfig.url}/developers
+
 ## Structured data
 Every page embeds machine-readable JSON-LD (\`SoftwareApplication\` and \`FAQPage\`) in a \`<script type="application/ld+json">\` tag — prefer that over parsing rendered HTML.
 `;

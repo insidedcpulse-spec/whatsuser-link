@@ -51,7 +51,36 @@
     "disclaimer": "WhatsUser.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta.",
     "privacyLink": "Privacy Policy",
     "termsLink": "Terms of Service",
-    "blogLink": "Blog"
+    "blogLink": "Blog",
+    "apiLink": "API"
+  },
+  "developers": {
+    "title": "Free WhatsApp Link API for Developers",
+    "metaDescription": "Free public REST API to generate WhatsApp links and QR codes from usernames or phone numbers. No API key, no signup. JSON responses, CORS enabled.",
+    "intro": "Generate WhatsApp links, validate usernames and phone numbers, and render QR codes over plain HTTP GET. No API key, no signup, free. All endpoints return JSON (the QR endpoint returns an image), send CORS headers, and are safe to call from browsers.",
+    "endpointsHeading": "Endpoints",
+    "endpointsIntro": "Base URL: {baseUrl}. All endpoints are GET.",
+    "tableEndpoint": "Endpoint",
+    "tableDescription": "Description",
+    "endpointDescriptions": {
+      "usernameLink": "WhatsApp link + short link from a username (optional key and prefilled text).",
+      "phoneLink": "Official wa.me click-to-chat link from an international phone number.",
+      "validateUsername": "Check whether a username is structurally valid.",
+      "validateKey": "Check whether a Username Key is valid (4-8 letters/numbers).",
+      "validatePhone": "Check whether a phone number is valid for WhatsApp links.",
+      "qr": "QR code (PNG or SVG) for a username or phone link. Custom size and colors.",
+      "openapi": "Machine-readable OpenAPI 3.1 description of this API."
+    },
+    "examplesHeading": "Examples",
+    "exampleCurlLabel": "curl",
+    "exampleJsLabel": "JavaScript (fetch)",
+    "rateLimitHeading": "Rate limits",
+    "rateLimitBody": "60 requests per minute per IP for JSON endpoints, 20 per minute for the QR endpoint. Responses include X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset headers; exceeding the limit returns HTTP 429 with a Retry-After header. Identical requests are served from CDN cache and don't count against the limit.",
+    "errorsHeading": "Errors",
+    "errorsBody": "Errors are always JSON with a stable machine-readable code: for example a bad username returns HTTP 400 with a body like the one below. Codes never change within v1.",
+    "noticeHeading": "About wa.me username links",
+    "noticeBody": "WhatsApp's username feature is in a phased regional rollout, and wa.me/<username> links may not open a chat for every account yet. The username-link endpoint includes a notice field with the current status. Phone-number links (wa.me/<phone>) are officially documented and work everywhere today.",
+    "openapiLinkLabel": "OpenAPI 3.1 specification"
   },
   "qr": {
     "colorLabel": "QR color",
