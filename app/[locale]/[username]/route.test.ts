@@ -18,4 +18,12 @@ describe("[locale]/[username] redirect route", () => {
     expect(res.status).toBe(307);
     expect(res.headers.get("location")).toBe("https://wa.me/joao.silva");
   });
+
+  it.each(["about", "privacy", "faq", "contact", "legal", "terms"])(
+    "404s for reserved site path '%s' instead of redirecting it as a username",
+    async (reserved) => {
+      const res = await call("en", reserved);
+      expect(res.status).toBe(404);
+    }
+  );
 });
