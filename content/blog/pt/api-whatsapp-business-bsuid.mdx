@@ -1,0 +1,74 @@
+---
+title: "Nova API: BSUID e usernames da WhatsApp Business Platform"
+description: "Cinco novos endpoints para validar BSUID, validar usernames de negócio, resolver contactos e normalizar webhooks da WhatsApp Cloud API — gratuitos, sem chave de API."
+date: "2026-07-05"
+slug: "api-whatsapp-business-bsuid"
+heroImage: "/blog/api-whatsapp-business-bsuid/hero.svg"
+heroImageAlt: "Ilustração de um terminal com um pedido POST à API business e a resposta JSON com um BSUID parseado"
+---
+
+## O que acabámos de lançar
+
+Depois de lançar a [API gratuita de links do WhatsApp](/blog/api-whatsapp-link-gratis), expandimos para o outro lado do WhatsApp: a **Business Platform / Cloud API**. Cinco novos endpoints, todos `POST` com corpo JSON, para quem constrói integrações, bots ou CRMs sobre a Cloud API oficial da Meta.
+
+Esta API resolve um problema concreto: a Cloud API introduziu recentemente o **BSUID** (Business-Scoped User ID) e os **usernames de negócio**, e ambos aparecem agora em webhooks de mensagens e de estado — mas sem ferramentas prontas para validar, parsear ou normalizar esses dados. É isso que preenchemos.
+
+## O que é um BSUID
+
+Um BSUID é um identificador único de utilizador, criado para conseguires mandar mensagem a alguém sem saberes o número de telefone. Formato: código de país ISO 3166 + ponto + até 128 caracteres alfanuméricos — por exemplo `US.13491208655302741918`. Contas geridas com múltiplos portfólios usam uma variante "parent": `US.ENT.11815799212886844830`.
+
+BSUIDs são **scoped a portfólio**: só números de negócio dentro do mesmo portfólio conseguem usar um dado BSUID. É opaco — não deve ser dividido para uso em pedidos — mas às vezes precisas de o parsear para debug, logging ou apresentar numa dashboard interna. Daí os dois primeiros endpoints.
+
+## Os cinco endpoints
+
+| Endpoint | O que faz |
+| --- | --- |
+| `POST /api/v1/business/bsuid/validate` | Valida se um BSUID tem o formato correto |
+| `POST /api/v1/business/bsuid/parse` | Extrai código de país, id e se é uma conta "parent" |
+| `POST /api/v1/business/username/validate` | Valida a estrutura de um username de negócio |
+| `POST /api/v1/business/contact/resolve` | Resolve um contacto a partir de bsuid, phone ou username — sempre a mesma forma |
+| `POST /api/v1/business/webhook/normalize` | Normaliza um payload bruto de webhook da Cloud API em eventos consistentes |
+
+Mesmas garantias da API original: sem chave de API, sem registo, CORS ativo, 60 pedidos por minuto por IP, erros sempre em JSON com código estável.
+
+## Exemplos rápidos
+
+Parsear um BSUID:
+
+```bash
+curl -X POST "https://whatsusernames.link/api/v1/business/bsuid/parse" \
+  -H "Content-Type: application/json" \
+  -d '{"bsuid": "US.13491208655302741918"}'
+```
+
+Resposta:
+
+```json
+{ "countryCode": "US", "id": "13491208655302741918", "isParent": false }
+```
+
+Resolver um contacto a partir de um username (ou de um phone, ou de um bsuid — sempre exatamente um dos três):
+
+```bash
+curl -X POST "https://whatsusernames.link/api/v1/business/contact/resolve" \
+  -H "Content-Type: application/json" \
+  -d '{"username": "joao.silva"}'
+```
+
+Normalizar um webhook recebido diretamente da Cloud API, sem teres de escrever o teu próprio parser de payloads:
+
+```bash
+curl -X POST "https://whatsusernames.link/api/v1/business/webhook/normalize" \
+  -H "Content-Type: application/json" \
+  -d @webhook-payload.json
+```
+
+## Porque normalizar webhooks importa
+
+A Cloud API expõe o BSUID e o username em formas ligeiramente diferentes consoante o tipo de webhook: mensagens recebidas trazem `from_user_id` e um bloco `contacts`; atualizações de estado trazem `recipient_user_id`; falhas omitem o bloco `contacts` inteiramente. O endpoint `webhook/normalize` absorve essa variação e devolve sempre a mesma forma — `kind`, `bsuid`, `phone`, `username`, `displayName`, `raw` — para o teu handler de webhook não precisar de conhecer todos os casos.
+
+## Documentação completa
+
+Todos os cinco endpoints estão documentados em [whatsusernames.link/developers](https://whatsusernames.link/developers), com exemplos de corpo JSON para cada um, e na [especificação OpenAPI 3.1](https://whatsusernames.link/api/v1/openapi.json) — agora com doze paths no total, incluindo os schemas novos (`BsuidValidation`, `BsuidParse`, `ResolvedContact`, `NormalizedWebhook`, entre outros).
+
+Se estás a construir sobre a Cloud API e isto te poupa trabalho, adorávamos saber.
