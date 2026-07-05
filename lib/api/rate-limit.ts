@@ -21,10 +21,14 @@ let limiters: Record<LimiterKind, Ratelimit> | null | undefined;
 
 function getLimiter(kind: LimiterKind): MinimalLimiter | null {
   if (limiters === undefined) {
-    if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+    // Vercel's Upstash marketplace integration injects KV_REST_API_*;
+    // a direct Upstash setup injects UPSTASH_REDIS_REST_*. Accept both.
+    const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
+    const token = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
+    if (!url || !token) {
       limiters = null;
     } else {
-      const redis = Redis.fromEnv();
+      const redis = new Redis({ url, token });
       limiters = {
         json: new Ratelimit({
           redis,
