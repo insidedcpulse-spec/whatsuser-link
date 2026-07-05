@@ -9,13 +9,13 @@ function localeUrl(locale: string, slug?: string) {
 }
 
 function entries(slug?: string, priority = 0.8) {
-  const languages = Object.fromEntries(
-    routing.locales.map((locale) => [locale, localeUrl(locale, slug)]),
-  );
+  const languages = Object.fromEntries([
+    ...routing.locales.map((locale) => [locale, localeUrl(locale, slug)]),
+    ["x-default", localeUrl(routing.defaultLocale, slug)],
+  ]);
 
   return routing.locales.map((locale) => ({
     url: localeUrl(locale, slug),
-    lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: locale === routing.defaultLocale ? priority : Math.round((priority - 0.2) * 10) / 10,
     alternates: { languages },
@@ -36,9 +36,12 @@ function blogPostEntries(): MetadataRoute.Sitemap {
   const results: MetadataRoute.Sitemap = [];
 
   for (const [slug, locales] of slugLocales) {
-    const languages = Object.fromEntries(
-      locales.map((locale) => [locale, localeUrl(locale, `blog/${slug}`)]),
-    );
+    const languages = Object.fromEntries([
+      ...locales.map((locale) => [locale, localeUrl(locale, `blog/${slug}`)]),
+      ...(locales.includes(routing.defaultLocale)
+        ? [["x-default", localeUrl(routing.defaultLocale, `blog/${slug}`)]]
+        : []),
+    ]);
 
     for (const locale of locales) {
       const post = getAllPosts(locale).find((p) => p.frontmatter.slug === slug);
