@@ -33,7 +33,7 @@
     "copyError": "Couldn't copy. Copy it manually.",
     "downloadQr": "Download QR Code",
     "resetButton": "Generate a new link",
-    "formatNote": "WhatsApp hasn't published an official link format for usernames yet. To reach this person, open WhatsApp and search for the username above (and the key, if provided).",
+    "formatNote": "wa.me/<username> is now WhatsApp's documented link format, but it's still in a phased regional rollout and won't open a chat for most people yet. To reach this person today, open WhatsApp and search for the username above (and the key, if provided).",
     "copyAllButton": "Copy all",
     "shortLinkLabel": "Link"
   },
@@ -120,7 +120,7 @@
       },
       {
         "question": "Does wa.me/username work yet?",
-        "answer": "Not yet. WhatsApp hasn't published an official link format for usernames, so we also offer a phone-number generator that works today."
+        "answer": "Not for most people yet. WhatsApp has published wa.me/<username> as the official format, but the rollout is regional and phased, so it doesn't open a chat everywhere today — that's why we also offer a phone-number generator that works right now."
       },
       {
         "question": "What is the Username Key?",
@@ -179,8 +179,8 @@
         "description": "Add it to your bio, business card, email signature, or storefront."
       }
     ],
-    "noteHeading": "Important: wa.me/username doesn't open a chat automatically yet",
-    "note": "As of now, WhatsApp hasn't published a working deep-link format for usernames — wa.me/<username> does not open a chat. Whoever receives your link or QR code needs to open WhatsApp and search for your username manually. If you need a link that works today, use the phone-number generator on the home page instead.",
+    "noteHeading": "Important: wa.me/username's regional rollout means it may not open a chat yet",
+    "note": "wa.me/<username> is the link format WhatsApp has documented, but it's still in a phased regional rollout, so it doesn't open a chat for most users yet. Whoever receives your link or QR code may need to open WhatsApp and search for your username manually until the rollout reaches their region. If you need a link that works today, use the phone-number generator on the home page instead.",
     "ctaText": "Generate your WhatsApp Username link now.",
     "ctaButton": "Go to the generator",
     "linkLabel": "How to create a WhatsApp link"
@@ -257,7 +257,7 @@
         },
         {
           "heading": "wa.me/username limitation",
-          "body": ["As of the date of these terms, wa.me/username links don't reliably open a WhatsApp chat, because WhatsApp hasn't published an official format for them. We make no guarantee that this or any generated link will behave as expected, and we provide a phone-number generator as a currently working alternative."]
+          "body": ["As of the date of these terms, wa.me/username links may not reliably open a WhatsApp chat for everyone, because WhatsApp's username rollout is regional and phased. We make no guarantee that this or any generated link will behave as expected, and we provide a phone-number generator as a currently working alternative."]
         },
         {
           "heading": "No warranty",

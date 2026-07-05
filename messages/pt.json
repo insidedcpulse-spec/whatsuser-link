@@ -33,7 +33,7 @@
     "copyError": "Não foi possível copiar. Copia manualmente.",
     "downloadQr": "Descarregar QR Code",
     "resetButton": "Gerar novo link",
-    "formatNote": "A WhatsApp ainda não publicou um formato oficial de link para usernames. Para contactar esta pessoa, abre a WhatsApp e pesquisa o username acima (e a key, se preenchida).",
+    "formatNote": "O wa.me/<username> já é o formato de link documentado pela WhatsApp, mas ainda está em rollout regional faseado e pode não abrir conversa para a maioria das pessoas. Para contactar esta pessoa hoje, abre a WhatsApp e pesquisa o username acima (e a key, se preenchida).",
     "copyAllButton": "Copiar tudo",
     "shortLinkLabel": "Link"
   },
@@ -120,7 +120,7 @@
       },
       {
         "question": "O link wa.me/username já funciona?",
-        "answer": "Ainda não. A WhatsApp ainda não publicou um formato oficial de link para usernames, por isso disponibilizamos também um gerador por número de telefone que já funciona hoje."
+        "answer": "Ainda não para a maioria. A WhatsApp já publicou o wa.me/<username> como formato oficial, mas o rollout é regional e faseado, por isso ainda não abre conversa em todo o lado — por isso disponibilizamos também um gerador por número de telefone que já funciona hoje."
       },
       {
         "question": "O que é a Username Key?",
@@ -179,8 +179,8 @@
         "description": "Adiciona à tua bio, cartão de visita, assinatura de email ou montra da loja."
       }
     ],
-    "noteHeading": "Importante: o wa.me/username ainda não abre conversa automaticamente",
-    "note": "Neste momento, o WhatsApp ainda não publicou um formato de link funcional para usernames — o wa.me/<username> não abre uma conversa. Quem receber o teu link ou QR code precisa de abrir o WhatsApp e procurar o teu username manualmente. Se precisares de um link que funcione já hoje, usa o gerador por número de telefone na página inicial.",
+    "noteHeading": "Importante: o rollout regional do wa.me/username pode significar que ainda não abre conversa",
+    "note": "O wa.me/<username> é o formato de link que a WhatsApp já documentou, mas ainda está em rollout regional faseado, por isso não abre conversa para a maioria das pessoas. Quem receber o teu link ou QR code pode precisar de abrir o WhatsApp e procurar o teu username manualmente até o rollout chegar à região dele. Se precisares de um link que funcione já hoje, usa o gerador por número de telefone na página inicial.",
     "ctaText": "Gera já o teu link de Username do WhatsApp.",
     "ctaButton": "Ir para o gerador",
     "linkLabel": "Como criar um link do WhatsApp"
@@ -257,7 +257,7 @@
         },
         {
           "heading": "Limitação do wa.me/username",
-          "body": ["À data destes termos, os links wa.me/username não abrem uma conversa do WhatsApp de forma fiável, porque o WhatsApp ainda não publicou um formato oficial para eles. Não garantimos que este ou qualquer link gerado se comporte como esperado, e disponibilizamos um gerador por número de telefone como alternativa atualmente funcional."]
+          "body": ["À data destes termos, os links wa.me/username podem não abrir uma conversa do WhatsApp de forma fiável para todos, porque o rollout de usernames da WhatsApp é regional e faseado. Não garantimos que este ou qualquer link gerado se comporte como esperado, e disponibilizamos um gerador por número de telefone como alternativa atualmente funcional."]
         },
         {
           "heading": "Sem garantia",
