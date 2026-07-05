@@ -1,5 +1,6 @@
 # WhatsUsernames.link
 
+[![CI](https://github.com/insidedcpulse-spec/whatsuser-link/actions/workflows/ci.yml/badge.svg)](https://github.com/insidedcpulse-spec/whatsuser-link/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 Open source toolkit for developers working with **WhatsApp Usernames** and the **WhatsApp Business Platform / Cloud API** — link generators, QR codes, and a free public REST API for both the consumer `@username` feature and Business-Scoped User IDs (BSUID).
