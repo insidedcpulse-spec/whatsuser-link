@@ -108,11 +108,11 @@
     "items": [
       {
         "question": "How do I create a WhatsApp link from my username?",
-        "answer": "Open WhatsApp, go to Settings → Profile, tap your name to set a Username, then enter that same username above and WhatsUsernames.link generates a shareable link, a short link, and a downloadable QR code for it — no signup needed."
+        "answer": "Open WhatsApp, go to Settings → Profile, tap your name, and set a Username (WhatsApp lets you pick one and change it occasionally). Come back here, enter that exact same username in the generator above, and WhatsUsernames.link instantly builds three things: a wa.me/<username> link in WhatsApp's own documented format, a shorter whatsusernames.link/<username> link that's easier to share verbally or on a business card, and a downloadable QR code in PNG, JPEG, SVG, or PDF. None of this needs an account, an email address, or a WhatsApp Business API integration — it all runs in your browser and nothing you type is saved on our servers. Because WhatsApp's username feature is still rolling out region by region, some people who click your link today may need to search for your username manually inside the app until the rollout reaches their area."
       },
       {
         "question": "What is WhatsUsernames.link?",
-        "answer": "It's a free tool to create a shareable link and QR code for your WhatsApp Username, so people can reach you without saving your number."
+        "answer": "WhatsUsernames.link is a free, independent tool that turns your WhatsApp Username or phone number into a shareable wa.me link and a matching QR code, so people can start a conversation with you without ever needing to save your number in their contacts. It's built to be stateless: everything runs in your browser, nothing you enter is stored on our servers, and there's no account or signup required. Beyond the link/QR generator, the site also publishes a free, keyless public REST API and a TypeScript SDK for developers who want the same link/QR/validation logic in their own apps, plus tools for the WhatsApp Business Platform's Business-Scoped User IDs (BSUID). It is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta."
       },
       {
         "question": "Is it free?",
@@ -120,7 +120,7 @@
       },
       {
         "question": "Does wa.me/username work yet?",
-        "answer": "Not for most people yet. WhatsApp has published wa.me/<username> as the official format, but the rollout is regional and phased, so it doesn't open a chat everywhere today — that's why we also offer a phone-number generator that works right now."
+        "answer": "Not for most people yet. As of 2026-07-04, WhatsApp's Help Center documents wa.me/<username> (no /u/ prefix) as the official link format, so the format itself is real and confirmed. What's still missing is the server-side resolution behind it: WhatsApp is rolling it out region by region — a first wave of countries from 2026-07-07, a second wave from 2026-07-20, and the rest from September 2026 — so clicking a username link today may do nothing or show an error outside those regions. Until your region is covered, whoever receives your link needs to open WhatsApp and search for your username manually. That's exactly why we also offer a phone-number generator: wa.me/<phone> is officially documented and works everywhere today, with no rollout to wait for."
       },
       {
         "question": "What is the Username Key?",
@@ -140,7 +140,7 @@
       },
       {
         "question": "Is my phone number or username stored anywhere?",
-        "answer": "No. WhatsUsernames.link is stateless — your link and QR code are built entirely in your browser and nothing is saved on our servers."
+        "answer": "No. WhatsUsernames.link is deliberately stateless: there is no database, no user accounts, and no server-side storage of anything you type. Your phone number, username, Username Key, and any pre-filled message stay in your browser the entire time — the link and QR code are built client-side using WhatsApp's own documented wa.me format, not sent to us for processing or saved anywhere. Closing the tab or refreshing the page erases everything instantly, since there was never a copy kept elsewhere. This also means we can't recover a link for you later if you lose it — you'd simply regenerate it by entering the same username or number again. See our Privacy Policy for the full breakdown of what little data (like anonymous analytics) our hosting and ad provider process."
       },
       {
         "question": "Can I use this for a WhatsApp Business account?",
@@ -148,7 +148,7 @@
       },
       {
         "question": "How do I create a WhatsApp QR code?",
-        "answer": "Enter your username or phone number in the generator above, then use the QR code panel to customize the color and download it as PNG, JPEG, SVG, or PDF."
+        "answer": "Enter your username or phone number in the generator above — either works, so pick whichever you'd rather share. As soon as you generate the link, a matching QR code appears automatically in the panel below it; there's no separate tool or extra step. From there you can customize the QR code's color to match your branding, choose a transparent or solid background, and download it in whichever format suits your use case: PNG for social media and screens, JPEG as a lighter alternative, SVG if you're printing at large scale like a poster or storefront sign without losing sharpness, or PDF if you're sending it straight to a print shop. The QR code always encodes the same wa.me link shown above it, so scanning it opens exactly the same WhatsApp conversation."
       }
     ]
   },
