@@ -33,4 +33,10 @@ describe("POST /api/v1/business/bsuid/validate", () => {
     expect(res.status).toBe(400);
     expect((await res.json()).error.code).toBe("invalid_json");
   });
+
+  it("400s with missing_bsuid when the JSON body is null", async () => {
+    const res = await POST(req(null));
+    expect(res.status).toBe(400);
+    expect((await res.json()).error.code).toBe("missing_bsuid");
+  });
 });

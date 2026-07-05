@@ -13,7 +13,7 @@ export async function POST(request: Request): Promise<Response> {
     return apiError(400, "invalid_json", "Request body must be valid JSON.", rate.headers);
   }
 
-  const bsuid = (body as { bsuid?: unknown }).bsuid;
+  const bsuid = body && typeof body === "object" ? (body as { bsuid?: unknown }).bsuid : undefined;
   if (typeof bsuid !== "string" || bsuid === "") {
     return apiError(400, "missing_bsuid", '"bsuid" field is required.', rate.headers);
   }
