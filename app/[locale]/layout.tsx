@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -82,6 +83,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5219655673819952"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <JsonLdScript data={getSoftwareApplicationJsonLd(t("description"))} />
         <JsonLdScript data={getOrganizationJsonLd()} />
         <JsonLdScript data={getWebSiteJsonLd()} />
