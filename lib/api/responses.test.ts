@@ -40,6 +40,7 @@ describe("apiOptions", () => {
     const res = apiOptions();
     expect(res.status).toBe(204);
     expect(res.headers.get("Access-Control-Allow-Methods")).toContain("GET");
+    expect(res.headers.get("Access-Control-Allow-Methods")).toContain("POST");
   });
 });
 
