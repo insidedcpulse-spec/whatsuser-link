@@ -78,12 +78,14 @@ export function getBlogPostingJsonLd({
   headline,
   description,
   datePublished,
+  dateModified,
   image,
   url,
 }: {
   headline: string;
   description: string;
   datePublished: string;
+  dateModified?: string;
   image: string;
   url: string;
 }) {
@@ -93,11 +95,24 @@ export function getBlogPostingJsonLd({
     headline,
     description,
     datePublished,
+    dateModified: dateModified ?? datePublished,
     image,
     url,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
     author: {
       "@type": "Organization",
       name: siteConfig.name,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/icon.svg`,
+      },
     },
   };
 }
