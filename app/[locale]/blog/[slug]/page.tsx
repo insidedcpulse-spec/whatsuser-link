@@ -27,6 +27,13 @@ function blogIndexPath(locale: string) {
   return locale === routing.defaultLocale ? "/blog" : `/${locale}/blog`;
 }
 
+// Article rich results and OG/Twitter card readers require a raster image;
+// SVG hero images (used on-page, where they render crisply) aren't valid there.
+// Each hero.svg ships with a hero.png twin at the same path for that purpose.
+function heroImagePng(heroImage: string): string {
+  return heroImage.replace(/\.svg$/, ".png");
+}
+
 function localesWithSlug(slug: string) {
   return routing.locales.filter((locale) => getPost(locale, slug) !== null);
 }
@@ -58,7 +65,7 @@ export async function generateMetadata({
       url: path,
       siteName: siteConfig.name,
       type: "article",
-      images: [{ url: post.frontmatter.heroImage }],
+      images: [{ url: heroImagePng(post.frontmatter.heroImage) }],
     },
   };
 }
@@ -121,7 +128,7 @@ export default async function BlogPostPage({
           headline: post.frontmatter.title,
           description: post.frontmatter.description,
           datePublished: post.frontmatter.date,
-          image: `${siteConfig.url}${post.frontmatter.heroImage}`,
+          image: `${siteConfig.url}${heroImagePng(post.frontmatter.heroImage)}`,
           url: `${siteConfig.url}${path}`,
         })}
       />
