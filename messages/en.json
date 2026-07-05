@@ -186,7 +186,7 @@
     "linkLabel": "How to create a WhatsApp link"
   },
   "legal": {
-    "lastUpdated": "Last updated: July 3, 2026",
+    "lastUpdated": "Last updated: July 5, 2026",
     "privacy": {
       "title": "Privacy Policy",
       "metaDescription": "How WhatsUsernames.link handles data: what we don't collect, what our hosting and ad provider process, and your rights.",
@@ -210,7 +210,7 @@
         },
         {
           "heading": "Advertising",
-          "body": ["This site shows ads served by Adsterra, a third-party advertising network. Adsterra's ad content may use cookies or similar technologies in your browser to serve and measure ads. We don't control this data. If you prefer not to see ads or be measured by them, review Adsterra's own privacy practices or use an ad blocker / your browser's tracking protection."]
+          "body": ["This site shows ads served by Adsterra and Google AdSense, third-party advertising networks. Google, as a third-party vendor, uses cookies to serve ads on this site; Google's use of advertising cookies enables it and its partners to serve ads based on your visits to this site and/or other sites on the Internet. You may opt out of personalized advertising by visiting Google's Ads Settings (adssettings.google.com). Adsterra's ad content may use similar cookies or technologies to serve and measure ads. We don't control either network's data. If you prefer not to see ads or be measured by them, review each network's own privacy practices, use Google's opt-out, or use an ad blocker / your browser's tracking protection."]
         },
         {
           "heading": "Analytics",
