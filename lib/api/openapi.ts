@@ -1,15 +1,31 @@
 import { siteConfig } from "@/config/site";
 
-interface Operation {
-  get: {
-    summary: string;
-    parameters?: unknown[];
-    responses: Record<string, unknown>;
+interface OperationDetail {
+  summary: string;
+  parameters?: unknown[];
+  requestBody?: {
+    required: boolean;
+    content: Record<string, { schema: unknown; example?: unknown }>;
   };
+  responses: Record<string, unknown>;
+}
+
+interface Operation {
+  get?: OperationDetail;
+  post?: OperationDetail;
 }
 
 function queryParam(name: string, required: boolean, description: string, schema: object = { type: "string" }) {
   return { name, in: "query", required, description, schema };
+}
+
+function jsonBody(schema: object, example?: unknown) {
+  return {
+    required: true,
+    content: {
+      "application/json": { schema, ...(example !== undefined ? { example } : {}) },
+    },
+  };
 }
 
 const errorResponse = {
@@ -152,6 +168,89 @@ export const openApiDocument: { openapi: string; info: object; servers: object[]
         },
       },
     },
+    "/api/v1/business/bsuid/validate": {
+      post: {
+        summary: "Validate a WhatsApp Business-Scoped User ID (BSUID) format",
+        requestBody: jsonBody(
+          { $ref: "#/components/schemas/BsuidValidateInput" },
+          { bsuid: "US.13491208655302741918" },
+        ),
+        responses: {
+          "200": {
+            description: "Validation verdict",
+            content: { "application/json": { schema: { $ref: "#/components/schemas/BsuidValidation" } } },
+          },
+          "400": errorResponse,
+          ...rateLimitResponses,
+        },
+      },
+    },
+    "/api/v1/business/bsuid/parse": {
+      post: {
+        summary: "Parse a BSUID into its country code, id, and parent-account flag",
+        requestBody: jsonBody(
+          { $ref: "#/components/schemas/BsuidValidateInput" },
+          { bsuid: "US.ENT.11815799212886844830" },
+        ),
+        responses: {
+          "200": {
+            description: "Parsed BSUID",
+            content: { "application/json": { schema: { $ref: "#/components/schemas/BsuidParse" } } },
+          },
+          "400": errorResponse,
+          ...rateLimitResponses,
+        },
+      },
+    },
+    "/api/v1/business/username/validate": {
+      post: {
+        summary: "Validate a WhatsApp Business Platform username",
+        requestBody: jsonBody(
+          { $ref: "#/components/schemas/UsernameValidateInput" },
+          { username: "joao.silva" },
+        ),
+        responses: {
+          "200": {
+            description: "Validation verdict",
+            content: { "application/json": { schema: { $ref: "#/components/schemas/BusinessUsernameValidation" } } },
+          },
+          "400": errorResponse,
+          ...rateLimitResponses,
+        },
+      },
+    },
+    "/api/v1/business/contact/resolve": {
+      post: {
+        summary: "Resolve a contact from exactly one of bsuid, phone, or username",
+        requestBody: jsonBody(
+          { $ref: "#/components/schemas/ContactResolveInput" },
+          { username: "joao.silva" },
+        ),
+        responses: {
+          "200": {
+            description: "Unified contact shape",
+            content: { "application/json": { schema: { $ref: "#/components/schemas/ResolvedContact" } } },
+          },
+          "400": errorResponse,
+          ...rateLimitResponses,
+        },
+      },
+    },
+    "/api/v1/business/webhook/normalize": {
+      post: {
+        summary: "Normalize a raw WhatsApp Cloud API webhook payload",
+        requestBody: jsonBody({ type: "object" }),
+        responses: {
+          "200": {
+            description: "Normalized webhook events",
+            content: { "application/json": { schema: { $ref: "#/components/schemas/NormalizedWebhook" } } },
+          },
+          "400": errorResponse,
+          "422": errorResponse,
+          ...rateLimitResponses,
+        },
+      },
+    },
     "/api/v1/openapi.json": {
       get: {
         summary: "This document",
@@ -201,6 +300,82 @@ export const openApiDocument: { openapi: string; info: object; servers: object[]
         type: "object",
         properties: { phone: { type: "string" }, link: { type: "string" } },
         required: ["phone", "link"],
+      },
+      BsuidValidateInput: {
+        type: "object",
+        properties: { bsuid: { type: "string" } },
+        required: ["bsuid"],
+      },
+      BsuidValidation: {
+        type: "object",
+        properties: { valid: { type: "boolean" }, isParent: { type: "boolean" } },
+        required: ["valid", "isParent"],
+      },
+      BsuidParse: {
+        type: "object",
+        properties: {
+          countryCode: { type: "string" },
+          id: { type: "string" },
+          isParent: { type: "boolean" },
+        },
+        required: ["countryCode", "id", "isParent"],
+      },
+      UsernameValidateInput: {
+        type: "object",
+        properties: { username: { type: "string" } },
+        required: ["username"],
+      },
+      BusinessUsernameValidation: {
+        type: "object",
+        properties: {
+          valid: { type: "boolean" },
+          reasons: { type: "array", items: { type: "string" } },
+        },
+        required: ["valid", "reasons"],
+      },
+      ContactResolveInput: {
+        type: "object",
+        properties: {
+          bsuid: { type: "string" },
+          phone: { type: "string" },
+          username: { type: "string" },
+        },
+        description: "Provide exactly one of bsuid, phone, or username.",
+      },
+      ResolvedContact: {
+        type: "object",
+        properties: {
+          id: { type: "string" },
+          type: { type: "string", enum: ["bsuid", "phone", "username"] },
+          username: { type: ["string", "null"] },
+          phone: { type: ["string", "null"] },
+          bsuid: { type: ["string", "null"] },
+          displayName: { type: "null" },
+          phoneKnown: { type: "boolean" },
+          bsuidKnown: { type: "boolean" },
+        },
+        required: ["id", "type", "username", "phone", "bsuid", "displayName", "phoneKnown", "bsuidKnown"],
+      },
+      NormalizedWebhook: {
+        type: "object",
+        properties: {
+          provider: { type: "string", enum: ["meta_cloud_api"] },
+          events: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                kind: { type: "string", enum: ["message", "status"] },
+                bsuid: { type: ["string", "null"] },
+                phone: { type: ["string", "null"] },
+                username: { type: ["string", "null"] },
+                displayName: { type: ["string", "null"] },
+                raw: {},
+              },
+            },
+          },
+        },
+        required: ["provider", "events"],
       },
     },
   },
