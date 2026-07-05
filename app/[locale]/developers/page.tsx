@@ -36,6 +36,34 @@ const ENDPOINTS = [
   { path: "/api/v1/openapi.json", descKey: "openapi" },
 ] as const;
 
+const BUSINESS_ENDPOINTS = [
+  {
+    path: "/api/v1/business/bsuid/validate",
+    descKey: "businessBsuidValidate",
+    exampleBody: `{ "bsuid": "US.13491208655302741918" }`,
+  },
+  {
+    path: "/api/v1/business/bsuid/parse",
+    descKey: "businessBsuidParse",
+    exampleBody: `{ "bsuid": "US.ENT.11815799212886844830" }`,
+  },
+  {
+    path: "/api/v1/business/username/validate",
+    descKey: "businessUsernameValidate",
+    exampleBody: `{ "username": "joao.silva" }`,
+  },
+  {
+    path: "/api/v1/business/contact/resolve",
+    descKey: "businessContactResolve",
+    exampleBody: `{ "username": "joao.silva" }`,
+  },
+  {
+    path: "/api/v1/business/webhook/normalize",
+    descKey: "businessWebhookNormalize",
+    exampleBody: `{ "entry": [{ "changes": [{ "value": { "messages": [...], "contacts": [...] } }] }] }`,
+  },
+] as const;
+
 function CodeBlock({ children }: { children: string }) {
   return (
     <pre className="overflow-x-auto rounded-lg bg-muted px-4 py-3 font-mono text-sm">
@@ -58,6 +86,9 @@ export default async function DevelopersPage({
 );
 const data = await res.json();
 console.log(data.link); // https://wa.me/joao.silva`;
+  const curlBusinessExample = `curl -X POST "${siteConfig.url}/api/v1/business/bsuid/validate" \\
+  -H "Content-Type: application/json" \\
+  -d '{"bsuid": "US.13491208655302741918"}'`;
   const errorExample = `{
   "error": {
     "code": "username_length",
@@ -90,11 +121,34 @@ console.log(data.link); // https://wa.me/joao.silva`;
       </div>
 
       <div>
+        <h2 className="mb-2 text-xl font-semibold">{t("businessEndpointsHeading")}</h2>
+        <p className="mb-4 text-sm text-muted-foreground">
+          {t("businessEndpointsIntro", { baseUrl: siteConfig.url })}
+        </p>
+        <div className="flex flex-col gap-4">
+          {BUSINESS_ENDPOINTS.map((endpoint) => (
+            <div key={endpoint.descKey}>
+              <CodeBlock>{`POST ${endpoint.path}`}</CodeBlock>
+              <p className="mb-1 mt-2 text-xs font-medium text-muted-foreground">
+                {t("bodyLabel")}
+              </p>
+              <CodeBlock>{endpoint.exampleBody}</CodeBlock>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t(`endpointDescriptions.${endpoint.descKey}`)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
         <h2 className="mb-4 text-xl font-semibold">{t("examplesHeading")}</h2>
         <p className="mb-1 text-sm font-medium">{t("exampleCurlLabel")}</p>
         <CodeBlock>{curlExample}</CodeBlock>
         <p className="mb-1 mt-4 text-sm font-medium">{t("exampleJsLabel")}</p>
         <CodeBlock>{jsExample}</CodeBlock>
+        <p className="mb-1 mt-4 text-sm font-medium">{t("exampleCurlBusinessLabel")}</p>
+        <CodeBlock>{curlBusinessExample}</CodeBlock>
       </div>
 
       <div>
