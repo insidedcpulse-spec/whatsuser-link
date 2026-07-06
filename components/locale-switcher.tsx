@@ -17,6 +17,10 @@ export function LocaleSwitcher() {
           variant={loc === locale ? "secondary" : "ghost"}
           size="sm"
           onClick={() => {
+            // Persist the choice so next-intl's middleware stops re-detecting
+            // the locale from Accept-Language on every request (otherwise a
+            // browser set to pt/es always overrides the URL back to itself).
+            document.cookie = `NEXT_LOCALE=${loc};path=/;max-age=31536000`;
             // Full page navigation, not router.replace: the root layout lives
             // under [locale], so a client-side locale switch remounts the
             // html/head tree and can drop the stylesheet <link> (page renders
