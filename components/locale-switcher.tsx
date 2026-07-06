@@ -1,14 +1,13 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { usePathname, getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 
 export function LocaleSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
 
   return (
     <div className="flex items-center gap-1">
@@ -17,7 +16,14 @@ export function LocaleSwitcher() {
           key={loc}
           variant={loc === locale ? "secondary" : "ghost"}
           size="sm"
-          onClick={() => router.replace(pathname, { locale: loc })}
+          onClick={() => {
+            // Full page navigation, not router.replace: the root layout lives
+            // under [locale], so a client-side locale switch remounts the
+            // html/head tree and can drop the stylesheet <link> (page renders
+            // unstyled). A hard navigation always gets a fresh, fully-styled
+            // document.
+            window.location.href = getPathname({ href: pathname, locale: loc });
+          }}
         >
           {loc.toUpperCase()}
         </Button>
