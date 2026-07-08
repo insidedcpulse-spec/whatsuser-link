@@ -14,7 +14,7 @@ describe("blog content loader", () => {
     expect(getPost("en", "does-not-exist")).toBeNull();
   });
 
-  it("finds all 8 Portuguese articles", () => {
+  it("finds all 9 Portuguese articles", () => {
     expect(getPostSlugs("pt").sort()).toEqual(
       [
         "api-whatsapp-link-gratis",
@@ -25,6 +25,7 @@ describe("blog content loader", () => {
         "wa-me-username-alternativas",
         "link-whatsapp-qr-code-gratis",
         "usernames-vs-numero-telefone-privacidade",
+        "nova-burla-whatsapp-anexos-falsos-malware",
       ].sort()
     );
   });
@@ -43,10 +44,8 @@ describe("blog content loader", () => {
   it("sorts posts by date, most recent first", () => {
     const posts = getAllPosts("pt");
 
-    expect(posts).toHaveLength(8);
-    expect(posts.map((p) => p.frontmatter.slug).slice(0, 3).sort()).toEqual(
-      ["api-whatsapp-link-gratis", "api-whatsapp-business-bsuid", "whatsusernames-sdk-npm"].sort()
-    );
+    expect(posts).toHaveLength(9);
+    expect(posts[0].frontmatter.slug).toBe("nova-burla-whatsapp-anexos-falsos-malware");
     expect(posts[posts.length - 1].frontmatter.slug).toBe(
       "como-reservar-username-whatsapp-2026"
     );
