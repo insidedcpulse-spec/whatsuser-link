@@ -44,7 +44,13 @@ export default async function Home() {
         {tGuide("linkLabel")}
       </Link>
 
-      <div className="flex gap-4 text-xs text-muted-foreground">
+      <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
+        <Link href="/about" className="underline underline-offset-4">
+          {t("aboutLink")}
+        </Link>
+        <Link href="/contact" className="underline underline-offset-4">
+          {t("contactLink")}
+        </Link>
         <Link href="/developers" className="underline underline-offset-4">
           {t("apiLink")}
         </Link>

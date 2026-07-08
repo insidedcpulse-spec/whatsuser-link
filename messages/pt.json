@@ -52,7 +52,67 @@
     "privacyLink": "Política de Privacidade",
     "termsLink": "Termos de Serviço",
     "blogLink": "Blog",
-    "apiLink": "API"
+    "apiLink": "API",
+    "aboutLink": "Sobre nós",
+    "contactLink": "Contacte-nos"
+  },
+  "about": {
+    "title": "Sobre nós",
+    "metaDescription": "Quem está por trás do WhatsUsernames.link — uma ferramenta gratuita, independente e sem armazenamento de dados para transformar usernames e números de WhatsApp em links e códigos QR partilháveis.",
+    "intro": "WhatsUsernames.link é um projeto pequeno e independente, criado para resolver um problema específico: o WhatsApp está a lançar @usernames, mas não havia forma fácil de os transformar num link partilhável em que as pessoas possam tocar para começar a conversar.",
+    "sections": [
+      {
+        "heading": "O que construímos",
+        "body": ["O WhatsUsernames.link transforma o seu Username ou número de WhatsApp num link wa.me, num link mais curto whatsusernames.link, e num código QR descarregável — tudo diretamente no seu navegador. Além do gerador, o site oferece também uma API REST pública gratuita, um SDK em TypeScript, e ferramentas para os Business-Scoped User IDs (BSUID) da WhatsApp Business Platform, todos construídos da mesma forma: gratuitos, sem chave de API, sem armazenamento de dados."]
+      },
+      {
+        "heading": "Porque o construímos",
+        "body": ["À medida que o lançamento dos usernames do WhatsApp chegou a mais regiões em 2026, continuava sem existir forma oficial de partilhar um link clicável a partir de um username, nem documentação clara para programadores que quisessem construir sobre isso. Este site preenche essa lacuna com uma ferramenta simples e documentação aberta, mantendo-se atualizado à medida que o próprio lançamento do WhatsApp evolui."]
+      },
+      {
+        "heading": "Quem está por trás",
+        "body": ["O projeto é construído e mantido pelo Ruben, um programador independente. Não é uma empresa nem uma equipa — apenas uma pessoa a manter a ferramenta a funcionar, a escrever os guias e a responder a perguntas."]
+      },
+      {
+        "heading": "Como funciona",
+        "body": ["Não existe sistema de contas nem base de dados: tudo o que introduz corre no seu navegador e nunca é enviado ou guardado nos nossos servidores. Veja a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por publicidade (Adsterra e Google AdSense) em vez de subscrições."]
+      },
+      {
+        "heading": "Projeto independente",
+        "body": ["O WhatsUsernames.link não é afiliado, endossado ou associado à WhatsApp Inc. ou Meta Platforms, Inc. Todos os nomes de produtos e marcas pertencem aos respetivos proprietários."]
+      },
+      {
+        "heading": "Código aberto",
+        "body": ["O código que serve este site, incluindo a API e o SDK, é open source no GitHub em github.com/insidedcpulse-spec/whatsuser-link. Contribuições, reportes de bugs e sugestões são bem-vindos."]
+      },
+      {
+        "heading": "Fale connosco",
+        "body": ["Tem perguntas, feedback ou um bug a reportar? Visite a nossa página de Contacto."]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacte-nos",
+    "metaDescription": "Entre em contacto com o WhatsUsernames.link para perguntas, feedback ou reportar bugs.",
+    "intro": "Tem uma pergunta, encontrou um bug, ou quer sugerir uma funcionalidade? Aqui está como nos contactar.",
+    "sections": [
+      {
+        "heading": "Email",
+        "body": ["A forma mais rápida de nos contactar é por email: insidedcpulse@gmail.com. Lemos todas as mensagens e procuramos responder em poucos dias."]
+      },
+      {
+        "heading": "GitHub",
+        "body": ["Para reportar bugs ou pedir funcionalidades relacionadas com o código, API ou SDK, abra uma issue no nosso repositório GitHub em github.com/insidedcpulse-spec/whatsuser-link, onde o código do projeto é público."]
+      },
+      {
+        "heading": "Tempos de resposta",
+        "body": ["Este é um projeto independente mantido por uma só pessoa, por isso as respostas podem demorar alguns dias, especialmente para perguntas técnicas detalhadas."]
+      },
+      {
+        "heading": "Antes de escrever",
+        "body": ["Procura documentação da API? Consulte a página Developers. Perguntas sobre dados e privacidade são respondidas na nossa Política de Privacidade."]
+      }
+    ]
   },
   "developers": {
     "title": "API Gratuita de Links do WhatsApp para Programadores",

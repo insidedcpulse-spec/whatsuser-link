@@ -67,6 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entries("developers", 0.6),
     ...entries("blog", 0.6),
     ...blogPostEntries(),
+    ...entries("about", 0.5),
+    ...entries("contact", 0.5),
     ...entries("privacy-policy", 0.3),
     ...entries("terms-of-service", 0.3),
   ];

@@ -52,7 +52,67 @@
     "privacyLink": "Privacy Policy",
     "termsLink": "Terms of Service",
     "blogLink": "Blog",
-    "apiLink": "API"
+    "apiLink": "API",
+    "aboutLink": "About",
+    "contactLink": "Contact"
+  },
+  "about": {
+    "title": "About Us",
+    "metaDescription": "Who's behind WhatsUsernames.link — a free, independent, stateless tool for turning WhatsApp usernames and phone numbers into shareable links and QR codes.",
+    "intro": "WhatsUsernames.link is a small, independently-run project built to solve one specific problem: WhatsApp is rolling out @usernames, but there was no easy way to turn one into a shareable link people can tap to start chatting.",
+    "sections": [
+      {
+        "heading": "What we built",
+        "body": ["WhatsUsernames.link turns your WhatsApp Username or phone number into a wa.me link, a shorter whatsusernames.link link, and a downloadable QR code — entirely in your browser. Beyond the generator, the site also offers a free public REST API, a TypeScript SDK, and tools for the WhatsApp Business Platform's Business-Scoped User IDs (BSUID), all built the same way: free, keyless, and stateless."]
+      },
+      {
+        "heading": "Why we built it",
+        "body": ["As WhatsApp's username rollout reached more regions in 2026, there was still no official way to share a clickable link built from a username, and no clear documentation for developers who wanted to build on top of it. This site fills that gap with a straightforward tool and open documentation, and stays current as WhatsApp's own rollout evolves."]
+      },
+      {
+        "heading": "Who's behind it",
+        "body": ["The project is built and maintained by Ruben, an independent developer. It isn't a company or a team, just one person keeping the tool working, writing the guides, and answering questions."]
+      },
+      {
+        "heading": "How it's run",
+        "body": ["There's no account system and no database: everything you enter runs in your browser and is never sent to or stored on our servers. See our Privacy Policy for details. The site is free to use and funded by ads (Adsterra and Google AdSense) rather than subscriptions."]
+      },
+      {
+        "heading": "Independent project",
+        "body": ["WhatsUsernames.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta Platforms, Inc. All product names and trademarks belong to their respective owners."]
+      },
+      {
+        "heading": "Open source",
+        "body": ["The code that powers this site, including the API and SDK, is open source on GitHub at github.com/insidedcpulse-spec/whatsuser-link. Contributions, bug reports, and suggestions are welcome."]
+      },
+      {
+        "heading": "Get in touch",
+        "body": ["Questions, feedback, or a bug to report? Visit our Contact page."]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "metaDescription": "Get in touch with WhatsUsernames.link for questions, feedback, or bug reports.",
+    "intro": "Have a question, found a bug, or want to suggest a feature? Here's how to reach us.",
+    "sections": [
+      {
+        "heading": "Email",
+        "body": ["The fastest way to reach us is by email: insidedcpulse@gmail.com. We read every message and aim to reply within a few days."]
+      },
+      {
+        "heading": "GitHub",
+        "body": ["For bug reports or feature requests related to the code, API, or SDK, open an issue on our GitHub repository at github.com/insidedcpulse-spec/whatsuser-link, where the project's source is public."]
+      },
+      {
+        "heading": "Response times",
+        "body": ["This is an independently-run project maintained by one person, so replies may take a few days, especially for detailed technical questions."]
+      },
+      {
+        "heading": "Before you write",
+        "body": ["Looking for API documentation? Check the Developers page. Questions about data and privacy are answered in our Privacy Policy."]
+      }
+    ]
   },
   "developers": {
     "title": "Free WhatsApp Link API for Developers",
