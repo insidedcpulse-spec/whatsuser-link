@@ -3,6 +3,35 @@
     "title": "Create WhatsApp Username Link",
     "subtitle": "Create a shareable link and QR code for your WhatsApp Username in seconds. Simple, fast, and free."
   },
+  "explainer": {
+    "sectionTitle": "What this is and how it works",
+    "sections": [
+      {
+        "heading": "WhatsApp Usernames: what changed",
+        "body": [
+          "For years, the only way to start a WhatsApp conversation with someone was to have that person's phone number. That changed when WhatsApp rolled out @Usernames in 2026: you can now pick a unique handle — similar to an Instagram or Telegram username — and share that instead of your number. The catch is that having a username isn't the same as having a clickable link someone can tap to open a chat with you."
+        ]
+      },
+      {
+        "heading": "Why you need a link, not just a username",
+        "body": [
+          "A username on its own (say, \"john.smith\") is useless outside the WhatsApp app — whoever receives it has to know it's a WhatsApp username, open the app manually, and search for it. A link like wa.me/john.smith or a QR code solves that: tap or scan, and the chat opens (once the regional wa.me/username rollout reaches your area — we explain that in our guide). It's the difference between giving someone a written address and dropping a pin on a map."
+        ]
+      },
+      {
+        "heading": "How the generator works",
+        "body": [
+          "Type in your username (and your Username Key, if WhatsApp assigned you one), and WhatsUsernames.link instantly generates the matching wa.me link, a shorter whatsusernames.link version, and a downloadable QR code in PNG, JPEG, SVG, or PDF. Everything runs in your browser — we don't store your username, phone number, or any data elsewhere. No account, no install."
+        ]
+      },
+      {
+        "heading": "Where to use your link or QR code",
+        "body": [
+          "Once generated, your link and QR code work anywhere you can place text or an image: your Instagram or TikTok bio, a business card, an email signature, a physical shop window, a restaurant menu, an event poster, or your LinkedIn profile. Since you're not exposing your phone number directly, you also get an extra layer of privacy compared to sharing your contact the traditional way."
+        ]
+      }
+    ]
+  },
   "form": {
     "sectionTitle": "Generate by Username",
     "usernameLabel": "WhatsApp Username",
@@ -243,7 +272,22 @@
     "note": "wa.me/<username> is the link format WhatsApp has documented, but it's still in a phased regional rollout, so it doesn't open a chat for most users yet. Whoever receives your link or QR code may need to open WhatsApp and search for your username manually until the rollout reaches their region. If you need a link that works today, use the phone-number generator on the home page instead.",
     "ctaText": "Generate your WhatsApp Username link now.",
     "ctaButton": "Go to the generator",
-    "linkLabel": "How to create a WhatsApp link"
+    "linkLabel": "How to create a WhatsApp link",
+    "extraHeading": "More practical details",
+    "extraSections": [
+      {
+        "heading": "What to do if the link still doesn't open a chat",
+        "body": [
+          "If someone taps your wa.me/username link and nothing happens, the most likely reason is that WhatsApp's regional rollout hasn't reached their area yet — it's not an error with your link. In that case, you have two options: ask them to open WhatsApp and search for your username manually in contact search, or also share the phone-number link generated on this site's home page, which works today regardless of the rollout."
+        ]
+      },
+      {
+        "heading": "Examples of where this link is most useful",
+        "body": [
+          "A freelancer can put the link in their email signature to receive quote requests without publishing their personal number. A small shop can print the QR code at the counter for quick customer questions. Someone organizing an event can put the link on the poster instead of listing a number that changes every time. In every case, the link solves the same problem: giving people a way to reach you without having to dictate or type out a phone number manually."
+        ]
+      }
+    ]
   },
   "legal": {
     "lastUpdated": "Last updated: July 5, 2026",

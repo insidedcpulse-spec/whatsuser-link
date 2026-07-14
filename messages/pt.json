@@ -3,6 +3,35 @@
     "title": "Cria o Link do teu WhatsApp Username",
     "subtitle": "Cria um link e QR code partilhável para o teu WhatsApp Username em segundos. Simples, rápido e gratuito."
   },
+  "explainer": {
+    "sectionTitle": "O que é isto e como funciona",
+    "sections": [
+      {
+        "heading": "Usernames do WhatsApp: o que mudou",
+        "body": [
+          "Durante anos, a única forma de começar uma conversa no WhatsApp com alguém era ter o número de telefone dessa pessoa. Isso mudou com o lançamento dos @Usernames pelo WhatsApp em 2026: agora podes escolher um identificador único — como um nome de utilizador do Instagram ou Telegram — e partilhá-lo em vez do teu número. O problema é que ter um username não é o mesmo que ter um link clicável que outra pessoa possa tocar para abrir a conversa contigo."
+        ]
+      },
+      {
+        "heading": "Porque precisas de um link, não só de um username",
+        "body": [
+          "Um username sozinho (\"joao.silva\", por exemplo) não serve de nada fora da app do WhatsApp — quem o recebe tem de saber que é um username do WhatsApp, abrir a app manualmente e procurar por ele. Um link como wa.me/joao.silva ou um código QR resolve isso: basta tocar ou digitalizar, e a conversa abre (assim que o rollout regional wa.me/username chegar à tua zona — explicamos isso no nosso guia). É a diferença entre dar uma morada por extenso e dar um pin no mapa."
+        ]
+      },
+      {
+        "heading": "Como funciona o gerador",
+        "body": [
+          "Escreves o teu username (e a Username Key, se o WhatsApp te tiver atribuído uma), e o WhatsUsernames.link gera de imediato o link wa.me correspondente, uma versão mais curta whatsusernames.link, e um código QR descarregável em PNG, JPEG, SVG ou PDF. Todo o processamento acontece no teu navegador — não guardamos o teu username, número ou qualquer dado noutro lado. Não precisas de criar conta nem instalar nada."
+        ]
+      },
+      {
+        "heading": "Onde usar o teu link ou QR code",
+        "body": [
+          "Depois de gerado, o link e o QR code funcionam em qualquer sítio onde consigas colocar texto ou uma imagem: bio do Instagram ou TikTok, cartão de visita, assinatura de email, montra de loja física, menu de restaurante, cartaz de evento ou perfil profissional no LinkedIn. Como não expões o teu número de telefone diretamente, ganhas também uma camada extra de privacidade em relação ao método tradicional de partilhar contactos."
+        ]
+      }
+    ]
+  },
   "form": {
     "sectionTitle": "Gerar por Username",
     "usernameLabel": "WhatsApp Username",
@@ -243,7 +272,22 @@
     "note": "O wa.me/<username> é o formato de link que a WhatsApp já documentou, mas ainda está em rollout regional faseado, por isso não abre conversa para a maioria das pessoas. Quem receber o teu link ou QR code pode precisar de abrir o WhatsApp e procurar o teu username manualmente até o rollout chegar à região dele. Se precisares de um link que funcione já hoje, usa o gerador por número de telefone na página inicial.",
     "ctaText": "Gera já o teu link de Username do WhatsApp.",
     "ctaButton": "Ir para o gerador",
-    "linkLabel": "Como criar um link do WhatsApp"
+    "linkLabel": "Como criar um link do WhatsApp",
+    "extraHeading": "Mais detalhes práticos",
+    "extraSections": [
+      {
+        "heading": "O que fazer se o link ainda não abrir conversa",
+        "body": [
+          "Se quem recebeu o teu link wa.me/username tocar nele e nada acontecer, o motivo mais provável é que o rollout regional do WhatsApp ainda não chegou à zona dele — não é um erro do teu link. Nesse caso, tens duas opções: pedir à pessoa para abrir o WhatsApp e procurar o teu username manualmente na pesquisa de contactos, ou partilhar também o link gerado por número de telefone na página inicial deste site, que funciona hoje independentemente do rollout."
+        ]
+      },
+      {
+        "heading": "Exemplos de onde este link é mais útil",
+        "body": [
+          "Um freelancer pode colocar o link na assinatura de email para receber pedidos de orçamento sem publicar o número pessoal. Uma pequena loja pode imprimir o QR code no balcão para clientes tirarem dúvidas rápidas. Alguém a organizar um evento pode pôr o link no cartaz em vez de listar um número que muda a cada evento. Em todos os casos, o link resolve o mesmo problema: dar às pessoas uma forma de te contactar sem teres de ditar ou escrever o número manualmente."
+        ]
+      }
+    ]
   },
   "legal": {
     "lastUpdated": "Última atualização: 5 de julho de 2026",

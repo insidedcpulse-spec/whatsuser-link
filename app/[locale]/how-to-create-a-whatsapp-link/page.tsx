@@ -42,6 +42,7 @@ export default async function GuidePage({
   const t = await getTranslations({ locale, namespace: "guide" });
   const tBlog = await getTranslations({ locale, namespace: "blog" });
   const steps = t.raw("steps") as HowToStep[];
+  const extraSections = t.raw("extraSections") as { heading: string; body: string[] }[];
   const path =
     locale === routing.defaultLocale
       ? "/how-to-create-a-whatsapp-link"
@@ -71,6 +72,22 @@ export default async function GuidePage({
       <div className="rounded-lg border border-amber-500/50 bg-amber-500/10 p-4">
         <p className="font-medium">{t("noteHeading")}</p>
         <p className="mt-1 text-sm text-muted-foreground">{t("note")}</p>
+      </div>
+
+      <div>
+        <h2 className="mb-4 text-xl font-semibold">{t("extraHeading")}</h2>
+        <div className="flex flex-col gap-6">
+          {extraSections.map((section) => (
+            <div key={section.heading}>
+              <h3 className="mb-2 font-medium">{section.heading}</h3>
+              {section.body.map((paragraph, index) => (
+                <p key={index} className="text-sm text-muted-foreground">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="flex flex-col items-center gap-3 text-center">
