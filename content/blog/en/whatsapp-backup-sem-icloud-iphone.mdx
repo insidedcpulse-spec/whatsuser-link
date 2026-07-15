@@ -1,0 +1,67 @@
+---
+title: "WhatsApp Backups on iPhone Without iCloud: Everything We Know (2026)"
+description: "WABetaInfo found evidence in the WhatsApp iOS beta of a first-party backup system that doesn't rely on iCloud. It's not official yet — here's what's known so far."
+date: "2026-07-15"
+slug: "whatsapp-backup-sem-icloud-iphone"
+heroImage: "/blog/whatsapp-backup-sem-icloud-iphone/hero.svg"
+heroImageAlt: "Illustration comparing iCloud backup with WhatsApp's new first-party backup system"
+entity: "security"
+---
+
+**Important:** this information comes from evidence found in a WhatsApp beta for iOS (26.28.10.16, via TestFlight), reported by [WABetaInfo](https://wabetainfo.com/whatsapp-is-developing-its-backup-cloud-provider-for-ios/). The feature has **not been officially announced by Meta** and may change or never ship.
+
+## What's changing?
+
+Right now, WhatsApp on iPhone can only back up chats through iCloud — and those backups only get end-to-end encryption if the user manually enables Apple's Advanced Data Protection.
+
+Code found in the beta suggests Meta is building its own backup storage, selectable directly from WhatsApp's chat backup settings, as an alternative to iCloud.
+
+## How much storage might be available?
+
+According to WABetaInfo, the tiers spotted in the beta are:
+
+- **2 GB free** on WhatsApp's own servers.
+- **50 GB for around $0.99/month** — close to iCloud+'s entry-level plan.
+- A reference to a **1 TB** tier, still in development.
+
+None of this is confirmed and it could change before launch.
+
+## The security difference that matters
+
+This is the most relevant part of the feature: backups on WhatsApp's own storage come with **end-to-end encryption (E2EE) on by default, with no way to turn it off**.
+
+That's a real contrast with iCloud, where end-to-end encrypted backups only happen if the user manually turns on Advanced Data Protection — a step most people never take.
+
+Protection methods spotted in the beta include:
+
+- Passkey (recommended).
+- Custom password.
+- 64-digit encryption key.
+
+Only someone holding one of those can restore the backup — not even WhatsApp itself can access the content.
+
+## When will it launch?
+
+There's no official date. Since this was found in a beta and doesn't even work yet for testers, it could:
+
+- Launch in the coming months.
+- Change significantly before release (pricing, limits, naming).
+- Never make it to the final version.
+
+## Frequently Asked Questions
+
+**Will WhatsApp stop using iCloud?**
+Not necessarily. Everything points to an additional option — choosing where to store the backup — not removing iCloud as a choice.
+
+**Are backups on WhatsApp's own storage more secure than iCloud?**
+Based on what's known so far, yes on this specific point: they ship with E2EE on by default, while iCloud's end-to-end encryption requires manually enabling Advanced Data Protection.
+
+**Will I have to pay?**
+The beta points to 2 GB free, with paid tiers of 50 GB and possibly 1 TB — nothing officially confirmed.
+
+**Where can I follow reliable updates on this?**
+[WABetaInfo](https://wabetainfo.com/whatsapp-is-developing-its-backup-cloud-provider-for-ios/) is usually first to spot these clues in beta builds, ahead of any official Meta announcement.
+
+## Summary
+
+If this feature ships, it's one of the most relevant changes for iPhone WhatsApp users since encrypted backups launched: less reliance on iCloud, and end-to-end encryption on by default with no extra setup. We'll keep tracking this and update this article once Meta confirms anything officially.

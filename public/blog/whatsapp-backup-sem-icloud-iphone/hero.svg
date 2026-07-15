@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b3d2e"/>
+      <stop offset="100%" stop-color="#25D366"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="120" r="180" fill="#ffffff" opacity="0.06"/>
+  <circle cx="150" cy="540" r="220" fill="#ffffff" opacity="0.06"/>
+  <g transform="translate(240,110)">
+    <rect x="0" y="0" width="720" height="400" rx="20" fill="#0b141a"/>
+    <rect x="0" y="0" width="720" height="52" rx="20" fill="#1f2c34"/>
+    <rect x="0" y="26" width="720" height="26" fill="#1f2c34"/>
+    <circle cx="34" cy="26" r="8" fill="#ff5f57"/>
+    <circle cx="62" cy="26" r="8" fill="#febc2e"/>
+    <circle cx="90" cy="26" r="8" fill="#28c840"/>
+    <text x="360" y="34" font-family="sans-serif" font-size="15" fill="#8696a0" text-anchor="middle">Copia de seguranca</text>
+
+    <g transform="translate(60,90)">
+      <rect x="0" y="0" width="270" height="270" rx="12" fill="#1f2c34" stroke="#25D366" stroke-width="2"/>
+      <circle cx="135" cy="70" r="34" fill="none" stroke="#8696a0" stroke-width="4"/>
+      <path d="M118 70 h34 M135 53 v34" stroke="#8696a0" stroke-width="4" stroke-linecap="round"/>
+      <text x="135" y="130" font-family="sans-serif" font-size="17" fill="#8696a0" text-anchor="middle">iCloud</text>
+      <text x="135" y="155" font-family="sans-serif" font-size="13" fill="#5b6b74" text-anchor="middle">encriptacao manual</text>
+      <rect x="40" y="190" width="190" height="40" rx="8" fill="#2a3942"/>
+      <text x="135" y="215" font-family="sans-serif" font-size="14" fill="#8696a0" text-anchor="middle">obrigatorio espaco livre</text>
+    </g>
+
+    <g transform="translate(390,90)">
+      <rect x="0" y="0" width="270" height="270" rx="12" fill="#0f2b20" stroke="#25D366" stroke-width="3"/>
+      <circle cx="135" cy="70" r="34" fill="#25D366" opacity="0.15"/>
+      <path d="M110 78 h30 a20 20 0 0 0 4 -39.6 a26 26 0 0 0 -49 -7 a22 22 0 0 0 15 46.6" fill="none" stroke="#25D366" stroke-width="4"/>
+      <text x="135" y="130" font-family="sans-serif" font-size="17" fill="#25D366" font-weight="bold" text-anchor="middle">WhatsApp Cloud</text>
+      <text x="135" y="155" font-family="sans-serif" font-size="13" fill="#9fe6bd" text-anchor="middle">E2EE sempre ativa</text>
+      <rect x="40" y="190" width="190" height="40" rx="8" fill="#134a34"/>
+      <text x="135" y="215" font-family="sans-serif" font-size="14" fill="#9fe6bd" text-anchor="middle">2GB gratis · sem iCloud</text>
+    </g>
+  </g>
+</svg>
