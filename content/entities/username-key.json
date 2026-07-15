@@ -1,0 +1,12 @@
+{
+  "id": "username-key",
+  "name": "Username Key",
+  "parent": "usernames",
+  "definition": "Código curto atribuído pelo WhatsApp que acompanha um username e identifica a conta de forma inequívoca, mesmo que outra conta tenha escolhido o mesmo nome.",
+  "description": "Como um username não é garantidamente único a nível global, a Username Key funciona como confirmação extra de identidade. É opcional de mostrar, mas recomendada em contexto profissional, usernames com palavras comuns, ou QR codes impressos/permanentes.",
+  "related": ["username-link", "qr-code", "security"],
+  "articles": ["username-key-whatsapp"],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": "2026-06-08"
+}

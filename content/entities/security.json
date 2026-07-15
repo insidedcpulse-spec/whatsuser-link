@@ -1,0 +1,12 @@
+{
+  "id": "security",
+  "name": "Security",
+  "parent": "usernames",
+  "definition": "Ameaças e boas práticas de segurança associadas ao uso do WhatsApp (burlas, malware, contas falsas).",
+  "description": "Cobre alertas de campanhas ativas (ex: anexos falsos com malware via WhatsApp Desktop/Web) e o papel de mecanismos como a Username Key na prevenção de contas falsas a fazerem-se passar por outra pessoa.",
+  "related": ["username-key", "privacy"],
+  "articles": ["nova-burla-whatsapp-anexos-falsos-malware"],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": "2026-07-08"
+}

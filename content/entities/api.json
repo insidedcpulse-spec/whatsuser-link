@@ -1,0 +1,12 @@
+{
+  "id": "api",
+  "name": "API",
+  "parent": "usernames",
+  "definition": "API REST pública do WhatsUsernames.link para gerar links, validar usernames e criar QR codes programaticamente.",
+  "description": "API gratuita, sem chave nem registo, com CORS ativo. Inclui o whatsusernames-sdk, um cliente TypeScript/JavaScript sem dependências para os endpoints públicos (links, QR codes, BSUID, webhooks da Business Platform).",
+  "related": ["username-link", "qr-code", "business"],
+  "articles": ["api-whatsapp-link-gratis", "whatsusernames-sdk-npm"],
+  "guides": ["/developers"],
+  "faqs": [],
+  "lastUpdated": "2026-07-05"
+}

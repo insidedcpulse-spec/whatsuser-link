@@ -1,0 +1,12 @@
+{
+  "id": "usernames",
+  "name": "Usernames",
+  "parent": null,
+  "definition": "Identificador @username que o WhatsApp permite associar a uma conta, como alternativa a partilhar o número de telefone.",
+  "description": "Os usernames do WhatsApp estão a ser lançados por fases como forma de contactar alguém sem conhecer o seu número. Este é o nó central do site: agrupa tudo o que envolve criar, partilhar, proteger e validar um username — links, QR codes, Username Key, disponibilidade, privacidade, segurança, API e o caso de uso de negócio (BSUID).",
+  "related": ["phone-links", "business-platform"],
+  "articles": [],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": null
+}

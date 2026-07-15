@@ -8,6 +8,7 @@ import { Link } from "@/i18n/navigation";
 import { JsonLdScript } from "@/components/json-ld-script";
 import { buttonVariants } from "@/components/ui/button";
 import { blogMdxComponents } from "@/components/blog/mdx-components";
+import { RelatedEntities } from "@/components/blog/related-entities";
 import { getPost, getPostSlugs } from "@/lib/blog";
 import { getBlogPostingJsonLd, getBreadcrumbJsonLd } from "@/lib/json-ld";
 import { routing } from "@/i18n/routing";
@@ -114,6 +115,14 @@ export default async function BlogPostPage({
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
           />
         </div>
+
+        {post.frontmatter.entity && (
+          <RelatedEntities
+            entityId={post.frontmatter.entity}
+            locale={locale}
+            currentSlug={slug}
+          />
+        )}
 
         <div className="mt-12 flex flex-col items-center gap-3 rounded-xl border p-6 text-center">
           <p>{t("ctaText")}</p>

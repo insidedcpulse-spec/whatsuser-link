@@ -1,0 +1,12 @@
+{
+  "id": "phone-links",
+  "name": "Phone Links",
+  "parent": null,
+  "definition": "Link do WhatsApp gerado a partir de número de telefone (wa.me/<numero>), a alternativa mais antiga ao username link.",
+  "description": "Ainda sem conteúdo dedicado. Gap: falta artigo/guia comparando explicitamente phone links vs username links para quem procura qual usar.",
+  "related": ["username-link", "privacy"],
+  "articles": [],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": null
+}

@@ -1,0 +1,12 @@
+{
+  "id": "privacy",
+  "name": "Privacy",
+  "parent": "usernames",
+  "definition": "Diferença de exposição de dados entre partilhar um @username e partilhar o número de telefone no WhatsApp.",
+  "description": "Um username evita que quem recebe o contacto fique a saber o número de telefone real, reduzindo o rasto que fica associado a esse número (spam, listas de marketing, cruzamento de dados). Cobre quando compensa usar cada opção.",
+  "related": ["username-key", "security", "username-link"],
+  "articles": ["usernames-vs-numero-telefone-privacidade"],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": "2026-07-04"
+}

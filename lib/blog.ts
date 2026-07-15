@@ -9,6 +9,7 @@ export type BlogFrontmatter = {
   slug: string;
   heroImage: string;
   heroImageAlt: string;
+  entity?: string;
 };
 
 export type BlogPost = {

@@ -1,0 +1,12 @@
+{
+  "id": "business-platform",
+  "name": "Business Platform",
+  "parent": null,
+  "definition": "WhatsApp Business Platform (Cloud API) — a plataforma oficial de negócio sobre a qual os endpoints de BSUID e webhooks operam.",
+  "description": "Cobertura parcial: existe conteúdo sobre validação de BSUID e usernames de negócio (ver business, api), mas falta uma visão geral da Business Platform em si (webhooks, contas verificadas, mensagens automatizadas).",
+  "related": ["business", "api", "channels", "communities"],
+  "articles": [],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": null
+}

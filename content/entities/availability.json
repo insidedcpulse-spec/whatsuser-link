@@ -1,0 +1,12 @@
+{
+  "id": "availability",
+  "name": "Availability",
+  "parent": "usernames",
+  "definition": "Estado de um username: se está livre para reservar ou já está em uso por outra conta.",
+  "description": "Como o espaço de usernames fica mais concorrido à medida que o WhatsApp cresce, reservar cedo o username desejado evita perdê-lo para outra conta. Cobre o passo a passo de reserva e o que fazer enquanto funcionalidades associadas (como wa.me/username) ainda não estão totalmente disponíveis.",
+  "related": ["username-link", "username-key"],
+  "articles": ["como-reservar-username-whatsapp-2026"],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": "2026-06-01"
+}

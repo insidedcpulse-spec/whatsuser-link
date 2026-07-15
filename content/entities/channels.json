@@ -1,0 +1,12 @@
+{
+  "id": "channels",
+  "name": "Channels",
+  "parent": null,
+  "definition": "WhatsApp Channels — canais de difusão unidirecional para seguidores, separados de conversas 1:1.",
+  "description": "Ainda sem conteúdo. Gap: nenhum artigo cobre Channels; potencial ligação a username (link de canal) e a business-platform.",
+  "related": ["business-platform", "username-link"],
+  "articles": [],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": null
+}

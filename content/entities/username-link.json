@@ -1,0 +1,12 @@
+{
+  "id": "username-link",
+  "name": "Username Link",
+  "parent": "usernames",
+  "definition": "Link partilhável (ex: wa.me ou alternativa) que abre uma conversa de WhatsApp a partir de um @username.",
+  "description": "O link de username é a forma central de partilhar um contacto de WhatsApp sem expor o número de telefone. O formato oficial wa.me/username ainda não abre conversa automaticamente (fase de lançamento), pelo que este site gera uma alternativa funcional já hoje, com QR code incluído.",
+  "related": ["qr-code", "username-key", "availability", "api"],
+  "articles": ["wa-me-username-alternativas"],
+  "guides": ["/how-to-create-a-whatsapp-link"],
+  "faqs": [],
+  "lastUpdated": "2026-06-15"
+}

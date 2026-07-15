@@ -1,0 +1,12 @@
+{
+  "id": "qr-code",
+  "name": "QR Code",
+  "parent": "usernames",
+  "definition": "Código QR gerado a partir de um username link, para partilha visual (cartão de visita, montra, bio).",
+  "description": "O gerador do site cria QR codes em PNG, JPEG, SVG ou PDF a partir de um username (e opcionalmente da Username Key), sem custo.",
+  "related": ["username-link", "username-key"],
+  "articles": ["link-whatsapp-qr-code-gratis"],
+  "guides": ["/how-to-create-a-whatsapp-link"],
+  "faqs": [],
+  "lastUpdated": "2026-06-22"
+}

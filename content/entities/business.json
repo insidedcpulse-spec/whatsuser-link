@@ -1,0 +1,12 @@
+{
+  "id": "business",
+  "name": "Business",
+  "parent": "usernames",
+  "definition": "Uso de usernames por contas de negócio na WhatsApp Business Platform, incluindo validação por BSUID.",
+  "description": "Cobre os endpoints para validar BSUID, validar usernames de negócio, resolver contactos e normalizar webhooks da WhatsApp Cloud API — o caso de uso de username aplicado a lojas, suporte ao cliente e prestadores de serviço.",
+  "related": ["api", "business-platform", "username-key"],
+  "articles": ["api-whatsapp-business-bsuid"],
+  "guides": [],
+  "faqs": [],
+  "lastUpdated": "2026-07-05"
+}
