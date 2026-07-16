@@ -12,23 +12,21 @@ export async function RelatedEntities({
   locale: string;
   currentSlug: string;
 }) {
-  const related = getRelatedEntities(entityId);
+  const related = getRelatedEntities(entityId, locale);
 
-  const links = related
-    .map((entity) => {
-      const slug = entity.articles.find((s) => s !== currentSlug && getPost(locale, s) !== null);
+  const links = related.map((entity) => {
+    const slug = entity.articles.find((s) => s !== currentSlug && getPost(locale, s) !== null);
 
-      if (slug) {
-        return { label: entity.name, href: `/blog/${slug}` };
-      }
+    if (slug) {
+      return { label: entity.name, href: `/blog/${slug}` };
+    }
 
-      if (entity.guides.length > 0) {
-        return { label: entity.name, href: entity.guides[0] };
-      }
+    if (entity.guides.length > 0) {
+      return { label: entity.name, href: entity.guides[0] };
+    }
 
-      return null;
-    })
-    .filter((link): link is { label: string; href: string } => link !== null);
+    return { label: entity.name, href: `/glossary/${entity.id}` };
+  });
 
   if (links.length === 0) {
     return null;

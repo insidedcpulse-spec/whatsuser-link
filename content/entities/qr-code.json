@@ -1,12 +1,55 @@
 {
   "id": "qr-code",
-  "name": "QR Code",
   "parent": "usernames",
-  "definition": "Código QR gerado a partir de um username link, para partilha visual (cartão de visita, montra, bio).",
-  "description": "O gerador do site cria QR codes em PNG, JPEG, SVG ou PDF a partir de um username (e opcionalmente da Username Key), sem custo.",
   "related": ["username-link", "username-key"],
   "articles": ["link-whatsapp-qr-code-gratis"],
   "guides": ["/how-to-create-a-whatsapp-link"],
-  "faqs": [],
-  "lastUpdated": "2026-06-22"
+  "lastUpdated": "2026-06-22",
+  "translations": {
+    "pt": {
+      "name": "QR Code",
+      "definition": "Código QR gerado a partir de um username link, para partilha visual (cartão de visita, montra, bio).",
+      "description": "O gerador do site cria QR codes em PNG, JPEG, SVG ou PDF a partir de um username (e opcionalmente da Username Key), sem custo.",
+      "faqs": [
+        {
+          "q": "Que formato devo usar para imprimir?",
+          "a": "SVG ou PDF escalam para qualquer tamanho sem perder qualidade, por isso são a opção mais segura para impressão; PNG/JPEG servem bem para ecrã."
+        },
+        {
+          "q": "O QR code expira?",
+          "a": "Não — aponta sempre para o mesmo link de username, por isso continua a funcionar enquanto o username existir."
+        }
+      ]
+    },
+    "en": {
+      "name": "QR Code",
+      "definition": "A QR code generated from a username link, for visual sharing (business card, storefront, bio).",
+      "description": "The generator on this site creates QR codes in PNG, JPEG, SVG, or PDF from a username (and optionally the Username Key), at no cost.",
+      "faqs": [
+        {
+          "q": "Which file format should I use for printing?",
+          "a": "SVG or PDF scale to any size without quality loss, so they're the safer choice for print; PNG/JPEG are fine for screens."
+        },
+        {
+          "q": "Does the QR code expire?",
+          "a": "No — it always points to the same username link, so it keeps working as long as the username itself does."
+        }
+      ]
+    },
+    "es": {
+      "name": "Código QR",
+      "definition": "Un código QR generado a partir de un enlace de username, para compartir visualmente (tarjeta de presentación, escaparate, bio).",
+      "description": "El generador de este sitio crea códigos QR en PNG, JPEG, SVG o PDF a partir de un username (y opcionalmente de la Username Key), sin coste.",
+      "faqs": [
+        {
+          "q": "¿Qué formato debo usar para imprimir?",
+          "a": "SVG o PDF escalan a cualquier tamaño sin perder calidad, por lo que son la opción más segura para imprimir; PNG/JPEG funcionan bien en pantalla."
+        },
+        {
+          "q": "¿El código QR caduca?",
+          "a": "No — siempre apunta al mismo enlace de username, así que sigue funcionando mientras el username exista."
+        }
+      ]
+    }
+  }
 }

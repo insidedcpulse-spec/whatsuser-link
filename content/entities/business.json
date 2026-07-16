@@ -1,12 +1,55 @@
 {
   "id": "business",
-  "name": "Business",
   "parent": "usernames",
-  "definition": "Uso de usernames por contas de negócio na WhatsApp Business Platform, incluindo validação por BSUID.",
-  "description": "Cobre os endpoints para validar BSUID, validar usernames de negócio, resolver contactos e normalizar webhooks da WhatsApp Cloud API — o caso de uso de username aplicado a lojas, suporte ao cliente e prestadores de serviço.",
   "related": ["api", "business-platform", "username-key"],
   "articles": ["api-whatsapp-business-bsuid"],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": "2026-07-05"
+  "lastUpdated": "2026-07-05",
+  "translations": {
+    "pt": {
+      "name": "Negócio",
+      "definition": "Uso de usernames por contas de negócio na WhatsApp Business Platform, incluindo validação por BSUID.",
+      "description": "Cobre os endpoints para validar BSUID, validar usernames de negócio, resolver contactos e normalizar webhooks da WhatsApp Cloud API — o caso de uso de username aplicado a lojas, suporte ao cliente e prestadores de serviço.",
+      "faqs": [
+        {
+          "q": "O que é um BSUID?",
+          "a": "É o identificador de âmbito de negócio que a Cloud API do WhatsApp usa para validar e referenciar um username de negócio — vê a entrada API para o endpoint de validação."
+        },
+        {
+          "q": "Os usernames de negócio funcionam de forma diferente dos pessoais?",
+          "a": "A mecânica de link/QR é a mesma; a diferença é a camada extra de validação (BSUID) construída para os webhooks e integrações da Business Platform."
+        }
+      ]
+    },
+    "en": {
+      "name": "Business",
+      "definition": "Use of usernames by business accounts on the WhatsApp Business Platform, including BSUID validation.",
+      "description": "Covers the endpoints for validating a BSUID, validating business usernames, resolving contacts, and normalizing WhatsApp Cloud API webhooks — the username use case applied to shops, customer support, and service providers.",
+      "faqs": [
+        {
+          "q": "What is a BSUID?",
+          "a": "It's the business-scoped identifier WhatsApp's Cloud API uses to validate and reference a business username — see the API entry for the validation endpoint."
+        },
+        {
+          "q": "Do business usernames work differently from personal ones?",
+          "a": "The underlying link/QR mechanics are the same; the difference is the extra validation layer (BSUID) built for the Business Platform's webhooks and integrations."
+        }
+      ]
+    },
+    "es": {
+      "name": "Negocio",
+      "definition": "Uso de usernames por cuentas de negocio en la WhatsApp Business Platform, incluyendo validación por BSUID.",
+      "description": "Cubre los endpoints para validar BSUID, validar usernames de negocio, resolver contactos y normalizar webhooks de la WhatsApp Cloud API — el caso de uso de username aplicado a tiendas, soporte al cliente y proveedores de servicio.",
+      "faqs": [
+        {
+          "q": "¿Qué es un BSUID?",
+          "a": "Es el identificador de ámbito de negocio que usa la Cloud API de WhatsApp para validar y referenciar un username de negocio — consulta la entrada de API para el endpoint de validación."
+        },
+        {
+          "q": "¿Los usernames de negocio funcionan distinto a los personales?",
+          "a": "La mecánica de enlace/QR es la misma; la diferencia es la capa extra de validación (BSUID) construida para los webhooks e integraciones de la Business Platform."
+        }
+      ]
+    }
+  }
 }

@@ -1,12 +1,55 @@
 {
   "id": "username-link",
-  "name": "Username Link",
   "parent": "usernames",
-  "definition": "Link partilhável (ex: wa.me ou alternativa) que abre uma conversa de WhatsApp a partir de um @username.",
-  "description": "O link de username é a forma central de partilhar um contacto de WhatsApp sem expor o número de telefone. O formato oficial wa.me/username ainda não abre conversa automaticamente (fase de lançamento), pelo que este site gera uma alternativa funcional já hoje, com QR code incluído.",
   "related": ["qr-code", "username-key", "availability", "api"],
   "articles": ["wa-me-username-alternativas"],
   "guides": ["/how-to-create-a-whatsapp-link"],
-  "faqs": [],
-  "lastUpdated": "2026-06-15"
+  "lastUpdated": "2026-06-15",
+  "translations": {
+    "pt": {
+      "name": "Username Link",
+      "definition": "Link partilhável (ex: wa.me ou alternativa) que abre uma conversa de WhatsApp a partir de um @username.",
+      "description": "O link de username é a forma central de partilhar um contacto de WhatsApp sem expor o número de telefone. O formato oficial wa.me/username ainda não abre conversa automaticamente (fase de lançamento), pelo que este site gera uma alternativa funcional já hoje, com QR code incluído.",
+      "faqs": [
+        {
+          "q": "Porque é que o wa.me/username ainda não abre conversa?",
+          "a": "O WhatsApp está a lançar os links por username por fases; até estar disponível em todo o lado, usa o gerador deste site para um link que já funciona."
+        },
+        {
+          "q": "Posso usar um link de username e um link de telefone ao mesmo tempo?",
+          "a": "Sim — muita gente mantém os dois, partilhando o link de username publicamente e o de telefone só com contactos mais próximos."
+        }
+      ]
+    },
+    "en": {
+      "name": "Username Link",
+      "definition": "A shareable link (e.g. wa.me or an alternative) that opens a WhatsApp conversation from an @username.",
+      "description": "The username link is the central way to share a WhatsApp contact without exposing a phone number. The official wa.me/username format doesn't open a conversation automatically yet (still rolling out), so this site generates a working alternative today, QR code included.",
+      "faqs": [
+        {
+          "q": "Why doesn't wa.me/username open a chat yet?",
+          "a": "WhatsApp is rolling out username-based links in phases; until it's live everywhere, use the generator on this site for a link that works now."
+        },
+        {
+          "q": "Can I use a username link and a phone link at the same time?",
+          "a": "Yes — many people keep both, sharing the username link publicly and the phone link only with closer contacts."
+        }
+      ]
+    },
+    "es": {
+      "name": "Username Link",
+      "definition": "Un enlace compartible (por ejemplo wa.me o una alternativa) que abre una conversación de WhatsApp a partir de un @username.",
+      "description": "El enlace de username es la forma central de compartir un contacto de WhatsApp sin exponer el número de teléfono. El formato oficial wa.me/username todavía no abre conversación automáticamente (fase de lanzamiento), por lo que este sitio genera una alternativa funcional ya hoy, con código QR incluido.",
+      "faqs": [
+        {
+          "q": "¿Por qué wa.me/username todavía no abre un chat?",
+          "a": "WhatsApp está lanzando los enlaces por username en fases; hasta que esté disponible en todas partes, usa el generador de este sitio para un enlace que funciona ya."
+        },
+        {
+          "q": "¿Puedo usar un enlace de username y un enlace de teléfono a la vez?",
+          "a": "Sí — mucha gente mantiene ambos, compartiendo el enlace de username públicamente y el de teléfono solo con contactos cercanos."
+        }
+      ]
+    }
+  }
 }

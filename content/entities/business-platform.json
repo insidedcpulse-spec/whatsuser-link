@@ -1,12 +1,43 @@
 {
   "id": "business-platform",
-  "name": "Business Platform",
   "parent": null,
-  "definition": "WhatsApp Business Platform (Cloud API) — a plataforma oficial de negócio sobre a qual os endpoints de BSUID e webhooks operam.",
-  "description": "Cobertura parcial: existe conteúdo sobre validação de BSUID e usernames de negócio (ver business, api), mas falta uma visão geral da Business Platform em si (webhooks, contas verificadas, mensagens automatizadas).",
   "related": ["business", "api", "channels", "communities"],
   "articles": [],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": null
+  "lastUpdated": null,
+  "translations": {
+    "pt": {
+      "name": "Business Platform",
+      "definition": "WhatsApp Business Platform (Cloud API) — a plataforma oficial de negócio sobre a qual os endpoints de BSUID e webhooks operam.",
+      "description": "A Business Platform é a API para desenvolvedores por trás de contas de negócio no WhatsApp, usada para automatizar mensagens, validar usernames (BSUID) e processar webhooks. É diferente da app WhatsApp Business, que serve para pequenos negócios gerirem conversas manualmente.",
+      "faqs": [
+        {
+          "q": "A Business Platform é o mesmo que a app WhatsApp Business?",
+          "a": "Não — a app (WhatsApp Business) é para pequenos negócios que gerem conversas manualmente; a Business Platform (Cloud API) é a API orientada a programadores para automação em escala."
+        }
+      ]
+    },
+    "en": {
+      "name": "Business Platform",
+      "definition": "The WhatsApp Business Platform (Cloud API) — the official business platform that BSUID and webhook endpoints operate on.",
+      "description": "The Business Platform is the developer-facing API behind WhatsApp business accounts, used to automate messaging, validate usernames (BSUID), and process webhooks. It's different from the WhatsApp Business app, which small businesses use to manage chats manually.",
+      "faqs": [
+        {
+          "q": "Is the Business Platform the same as WhatsApp Business the app?",
+          "a": "No — the app (WhatsApp Business) is for small businesses managing chats manually; the Business Platform (Cloud API) is the developer-facing API for automation at scale."
+        }
+      ]
+    },
+    "es": {
+      "name": "Business Platform",
+      "definition": "La WhatsApp Business Platform (Cloud API) — la plataforma oficial de negocio sobre la que operan los endpoints de BSUID y webhooks.",
+      "description": "La Business Platform es la API orientada a desarrolladores detrás de las cuentas de negocio de WhatsApp, usada para automatizar mensajes, validar usernames (BSUID) y procesar webhooks. Es distinta de la app WhatsApp Business, que usan los pequeños negocios para gestionar chats manualmente.",
+      "faqs": [
+        {
+          "q": "¿La Business Platform es lo mismo que la app WhatsApp Business?",
+          "a": "No — la app (WhatsApp Business) es para pequeños negocios que gestionan chats manualmente; la Business Platform (Cloud API) es la API orientada a desarrolladores para automatización a escala."
+        }
+      ]
+    }
+  }
 }

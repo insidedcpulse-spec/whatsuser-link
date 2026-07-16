@@ -1,12 +1,55 @@
 {
   "id": "privacy",
-  "name": "Privacy",
   "parent": "usernames",
-  "definition": "Diferença de exposição de dados entre partilhar um @username e partilhar o número de telefone no WhatsApp.",
-  "description": "Um username evita que quem recebe o contacto fique a saber o número de telefone real, reduzindo o rasto que fica associado a esse número (spam, listas de marketing, cruzamento de dados). Cobre quando compensa usar cada opção.",
   "related": ["username-key", "security", "username-link"],
   "articles": ["usernames-vs-numero-telefone-privacidade"],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": "2026-07-04"
+  "lastUpdated": "2026-07-04",
+  "translations": {
+    "pt": {
+      "name": "Privacidade",
+      "definition": "Diferença de exposição de dados entre partilhar um @username e partilhar o número de telefone no WhatsApp.",
+      "description": "Um username evita que quem recebe o contacto fique a saber o número de telefone real, reduzindo o rasto que fica associado a esse número (spam, listas de marketing, cruzamento de dados). Cobre quando compensa usar cada opção.",
+      "faqs": [
+        {
+          "q": "Alguém consegue descobrir o meu número a partir do meu username?",
+          "a": "Não — um link de username não revela o número de telefone subjacente a quem o abre."
+        },
+        {
+          "q": "É seguro colocar um link de username num perfil público?",
+          "a": "Sim, essa é a principal vantagem — foi pensado para ser partilhado publicamente sem expor o teu número."
+        }
+      ]
+    },
+    "en": {
+      "name": "Privacy",
+      "definition": "The difference in data exposure between sharing a @username and sharing a phone number on WhatsApp.",
+      "description": "A username keeps whoever receives the contact from learning the real phone number, reducing the trail tied to that number (spam, marketing lists, data cross-referencing). Covers when each option is worth using.",
+      "faqs": [
+        {
+          "q": "Can someone find my phone number from my username?",
+          "a": "No — a username link doesn't reveal the underlying phone number to the person who opens it."
+        },
+        {
+          "q": "Is it safe to put a username link on a public profile?",
+          "a": "Yes, that's the main advantage — it's designed to be shared publicly without exposing your number."
+        }
+      ]
+    },
+    "es": {
+      "name": "Privacidad",
+      "definition": "La diferencia de exposición de datos entre compartir un @username y compartir el número de teléfono en WhatsApp.",
+      "description": "Un username evita que quien recibe el contacto conozca el número de teléfono real, reduciendo el rastro asociado a ese número (spam, listas de marketing, cruce de datos). Cubre cuándo conviene usar cada opción.",
+      "faqs": [
+        {
+          "q": "¿Alguien puede averiguar mi número de teléfono a partir de mi username?",
+          "a": "No — un enlace de username no revela el número de teléfono subyacente a quien lo abre."
+        },
+        {
+          "q": "¿Es seguro poner un enlace de username en un perfil público?",
+          "a": "Sí, esa es la ventaja principal — está pensado para compartirse públicamente sin exponer tu número."
+        }
+      ]
+    }
+  }
 }

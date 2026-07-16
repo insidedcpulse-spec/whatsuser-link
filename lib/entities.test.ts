@@ -9,24 +9,32 @@ import {
 
 describe("entity knowledge graph loader", () => {
   it("loads all 13 entities", () => {
-    expect(getAllEntities()).toHaveLength(13);
+    expect(getAllEntities("pt")).toHaveLength(13);
   });
 
   it("returns null for an unknown entity id", () => {
-    expect(getEntity("does-not-exist")).toBeNull();
+    expect(getEntity("does-not-exist", "pt")).toBeNull();
   });
 
-  it("reads a known entity's fields", () => {
-    const entity = getEntity("username-key");
+  it("reads a known entity's fields in the requested locale", () => {
+    const entity = getEntity("username-key", "pt");
 
     expect(entity).not.toBeNull();
     expect(entity?.name).toBe("Username Key");
     expect(entity?.parent).toBe("usernames");
     expect(entity?.articles).toContain("username-key-whatsapp");
+    expect(entity?.faqs.length).toBeGreaterThan(0);
+  });
+
+  it("resolves the same entity's translated fields for another locale", () => {
+    const entity = getEntity("privacy", "en");
+
+    expect(entity?.name).toBe("Privacy");
+    expect(entity?.definition).toContain("phone number");
   });
 
   it("resolves related entities to full entity objects", () => {
-    const related = getRelatedEntities("username-link");
+    const related = getRelatedEntities("username-link", "pt");
 
     expect(related.map((e) => e.id).sort()).toEqual(
       ["api", "availability", "qr-code", "username-key"].sort()
@@ -34,11 +42,11 @@ describe("entity knowledge graph loader", () => {
   });
 
   it("drops unknown ids when resolving related entities", () => {
-    expect(getRelatedEntities("does-not-exist")).toEqual([]);
+    expect(getRelatedEntities("does-not-exist", "pt")).toEqual([]);
   });
 
   it("finds children of a parent entity", () => {
-    const children = getChildren("usernames");
+    const children = getChildren("usernames", "pt");
 
     expect(children.map((e) => e.id).sort()).toEqual(
       [
@@ -55,7 +63,7 @@ describe("entity knowledge graph loader", () => {
   });
 
   it("finds gap entities with no articles and no guides", () => {
-    const gaps = getGapEntities().map((e) => e.id);
+    const gaps = getGapEntities("pt").map((e) => e.id);
 
     expect(gaps.sort()).toEqual(["business-platform", "channels", "communities", "phone-links"].sort());
   });

@@ -1,12 +1,55 @@
 {
   "id": "usernames",
-  "name": "Usernames",
   "parent": null,
-  "definition": "Identificador @username que o WhatsApp permite associar a uma conta, como alternativa a partilhar o número de telefone.",
-  "description": "Os usernames do WhatsApp estão a ser lançados por fases como forma de contactar alguém sem conhecer o seu número. Este é o nó central do site: agrupa tudo o que envolve criar, partilhar, proteger e validar um username — links, QR codes, Username Key, disponibilidade, privacidade, segurança, API e o caso de uso de negócio (BSUID).",
   "related": ["phone-links", "business-platform"],
   "articles": [],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": null
+  "lastUpdated": null,
+  "translations": {
+    "pt": {
+      "name": "Usernames",
+      "definition": "Identificador @username que o WhatsApp permite associar a uma conta, como alternativa a partilhar o número de telefone.",
+      "description": "Os usernames do WhatsApp estão a ser lançados por fases como forma de contactar alguém sem conhecer o seu número. Este é o nó central do site: agrupa tudo o que envolve criar, partilhar, proteger e validar um username — links, QR codes, Username Key, disponibilidade, privacidade, segurança, API e o caso de uso de negócio (BSUID).",
+      "faqs": [
+        {
+          "q": "Os usernames do WhatsApp já estão disponíveis para todos?",
+          "a": "O lançamento acontece por fases, consoante região e versão da app, por isso a disponibilidade varia — consulta a página de disponibilidade para saberes o que esperar entretanto."
+        },
+        {
+          "q": "Preciso de um username se já partilho o meu número de telefone?",
+          "a": "Não, é opcional. Um username só permite ser contactado sem expor o número, o que importa para privacidade e para contas de negócio."
+        }
+      ]
+    },
+    "en": {
+      "name": "Usernames",
+      "definition": "The @username identifier WhatsApp lets you attach to an account, as an alternative to sharing your phone number.",
+      "description": "WhatsApp usernames are rolling out in phases as a way to reach someone without knowing their number. This is the hub of the site: it ties together everything involved in creating, sharing, protecting, and validating a username — links, QR codes, the Username Key, availability, privacy, security, the API, and the business use case (BSUID).",
+      "faqs": [
+        {
+          "q": "Are WhatsApp usernames available to everyone yet?",
+          "a": "Rollout is happening in phases by region and app version, so availability varies — check the availability page for what to expect while you wait."
+        },
+        {
+          "q": "Do I need a username if I already share my phone number?",
+          "a": "No, it's optional. A username just lets you be reached without exposing your number, which matters for privacy and for business accounts."
+        }
+      ]
+    },
+    "es": {
+      "name": "Usernames",
+      "definition": "El identificador @username que WhatsApp permite asociar a una cuenta, como alternativa a compartir el número de teléfono.",
+      "description": "Los usernames de WhatsApp se están lanzando por fases como forma de contactar a alguien sin conocer su número. Este es el nodo central del sitio: agrupa todo lo relacionado con crear, compartir, proteger y validar un username — enlaces, códigos QR, Username Key, disponibilidad, privacidad, seguridad, API y el caso de uso empresarial (BSUID).",
+      "faqs": [
+        {
+          "q": "¿Los usernames de WhatsApp ya están disponibles para todos?",
+          "a": "El lanzamiento se hace por fases según región y versión de la app, así que la disponibilidad varía — consulta la página de disponibilidad para saber qué esperar mientras tanto."
+        },
+        {
+          "q": "¿Necesito un username si ya comparto mi número de teléfono?",
+          "a": "No, es opcional. Un username solo permite que te contacten sin exponer tu número, algo importante para la privacidad y para cuentas de negocio."
+        }
+      ]
+    }
+  }
 }

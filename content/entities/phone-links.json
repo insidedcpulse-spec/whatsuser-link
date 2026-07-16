@@ -1,12 +1,55 @@
 {
   "id": "phone-links",
-  "name": "Phone Links",
   "parent": null,
-  "definition": "Link do WhatsApp gerado a partir de número de telefone (wa.me/<numero>), a alternativa mais antiga ao username link.",
-  "description": "Ainda sem conteúdo dedicado. Gap: falta artigo/guia comparando explicitamente phone links vs username links para quem procura qual usar.",
   "related": ["username-link", "privacy"],
   "articles": [],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": null
+  "lastUpdated": null,
+  "translations": {
+    "pt": {
+      "name": "Phone Links",
+      "definition": "Link do WhatsApp gerado a partir de número de telefone (wa.me/<numero>), a alternativa mais antiga ao username link.",
+      "description": "O phone link (wa.me/<número>) é o formato original para abrir conversa no WhatsApp sem gravar o contacto, usado há anos por negócios e sites. Ao contrário do username link, expõe o número de telefone a quem clica — por isso é preferível trocar para username link quando a privacidade do número importa, mantendo o phone link como opção quando o número já é público (ex: linha de suporte).",
+      "faqs": [
+        {
+          "q": "O phone link deixa de funcionar quando eu tiver username?",
+          "a": "Não, continuam ambos ativos; podes manter o phone link (ex: em anúncios antigos) e adicionar o username link em canais novos."
+        },
+        {
+          "q": "Preciso do código do país no número?",
+          "a": "Sim, o wa.me/<número> exige o número completo com indicativo do país, sem espaços, zeros à esquerda ou símbolos."
+        }
+      ]
+    },
+    "en": {
+      "name": "Phone Links",
+      "definition": "A WhatsApp link generated from a phone number (wa.me/<number>), the older alternative to the username link.",
+      "description": "The phone link (wa.me/<number>) is the original format for opening a WhatsApp chat without saving the contact, used for years by businesses and websites. Unlike the username link, it exposes the phone number to whoever clicks it — so it's worth switching to a username link when number privacy matters, keeping the phone link for cases where the number is already public (e.g. a support line).",
+      "faqs": [
+        {
+          "q": "Does the phone link stop working once I have a username?",
+          "a": "No, both keep working; you can leave the phone link on older ads and add the username link to new channels."
+        },
+        {
+          "q": "Do I need the country code in the number?",
+          "a": "Yes, wa.me/<number> requires the full number with country code, no spaces, leading zeros, or symbols."
+        }
+      ]
+    },
+    "es": {
+      "name": "Phone Links",
+      "definition": "Un enlace de WhatsApp generado a partir del número de teléfono (wa.me/<numero>), la alternativa más antigua al enlace de username.",
+      "description": "El phone link (wa.me/<número>) es el formato original para abrir un chat de WhatsApp sin guardar el contacto, usado desde hace años por negocios y sitios web. A diferencia del enlace de username, expone el número de teléfono a quien hace clic — por eso conviene pasar a un enlace de username cuando importa la privacidad del número, dejando el phone link para cuando el número ya es público (por ejemplo, una línea de soporte).",
+      "faqs": [
+        {
+          "q": "¿El phone link deja de funcionar cuando tenga username?",
+          "a": "No, ambos siguen activos; puedes mantener el phone link en anuncios antiguos y añadir el enlace de username en canales nuevos."
+        },
+        {
+          "q": "¿Necesito el código de país en el número?",
+          "a": "Sí, wa.me/<número> exige el número completo con indicativo de país, sin espacios, ceros a la izquierda ni símbolos."
+        }
+      ]
+    }
+  }
 }

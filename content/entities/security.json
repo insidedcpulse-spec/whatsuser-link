@@ -1,12 +1,55 @@
 {
   "id": "security",
-  "name": "Security",
   "parent": "usernames",
-  "definition": "Ameaças e boas práticas de segurança associadas ao uso do WhatsApp (burlas, malware, contas falsas).",
-  "description": "Cobre alertas de campanhas ativas (ex: anexos falsos com malware via WhatsApp Desktop/Web) e o papel de mecanismos como a Username Key na prevenção de contas falsas a fazerem-se passar por outra pessoa.",
   "related": ["username-key", "privacy"],
   "articles": ["nova-burla-whatsapp-anexos-falsos-malware", "whatsapp-backup-sem-icloud-iphone"],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": "2026-07-15"
+  "lastUpdated": "2026-07-15",
+  "translations": {
+    "pt": {
+      "name": "Segurança",
+      "definition": "Ameaças e boas práticas de segurança associadas ao uso do WhatsApp (burlas, malware, contas falsas).",
+      "description": "Cobre alertas de campanhas ativas (ex: anexos falsos com malware via WhatsApp Desktop/Web) e o papel de mecanismos como a Username Key na prevenção de contas falsas a fazerem-se passar por outra pessoa.",
+      "faqs": [
+        {
+          "q": "Como reconheço uma burla de anexo falso?",
+          "a": "Desconfia de ficheiros inesperados de contactos desconhecidos, sobretudo os que pedem para ativar permissões ou correr um instalador — um contacto legítimo raramente envia executáveis sem aviso."
+        },
+        {
+          "q": "A Username Key impede que alguém se faça passar por mim?",
+          "a": "Não impede que escolham um nome parecido, mas dá aos teus contactos uma forma de confirmar que estão mesmo a falar com a tua conta."
+        }
+      ]
+    },
+    "en": {
+      "name": "Security",
+      "definition": "Threats and good security practices around using WhatsApp (scams, malware, fake accounts).",
+      "description": "Covers alerts on active campaigns (e.g. fake attachments carrying malware via WhatsApp Desktop/Web) and the role mechanisms like the Username Key play in preventing fake accounts from impersonating someone.",
+      "faqs": [
+        {
+          "q": "How do I recognize a fake attachment scam?",
+          "a": "Be wary of unexpected files from unknown contacts, especially ones prompting you to enable permissions or run an installer — legitimate contacts rarely send unsolicited executables."
+        },
+        {
+          "q": "Can the Username Key stop someone from impersonating me?",
+          "a": "It doesn't stop them from picking a similar name, but it gives your contacts a way to confirm they're really reaching your account."
+        }
+      ]
+    },
+    "es": {
+      "name": "Seguridad",
+      "definition": "Amenazas y buenas prácticas de seguridad relacionadas con el uso de WhatsApp (estafas, malware, cuentas falsas).",
+      "description": "Cubre alertas de campañas activas (por ejemplo, adjuntos falsos con malware vía WhatsApp Desktop/Web) y el papel de mecanismos como la Username Key en prevenir que cuentas falsas se hagan pasar por otra persona.",
+      "faqs": [
+        {
+          "q": "¿Cómo reconozco una estafa de adjunto falso?",
+          "a": "Desconfía de archivos inesperados de contactos desconocidos, sobre todo los que piden activar permisos o ejecutar un instalador — un contacto legítimo rara vez envía ejecutables sin avisar."
+        },
+        {
+          "q": "¿La Username Key puede evitar que alguien me suplante?",
+          "a": "No evita que elijan un nombre parecido, pero da a tus contactos una forma de confirmar que realmente están hablando con tu cuenta."
+        }
+      ]
+    }
+  }
 }

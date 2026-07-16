@@ -1,12 +1,55 @@
 {
   "id": "api",
-  "name": "API",
   "parent": "usernames",
-  "definition": "API REST pública do WhatsUsernames.link para gerar links, validar usernames e criar QR codes programaticamente.",
-  "description": "API gratuita, sem chave nem registo, com CORS ativo. Inclui o whatsusernames-sdk, um cliente TypeScript/JavaScript sem dependências para os endpoints públicos (links, QR codes, BSUID, webhooks da Business Platform).",
   "related": ["username-link", "qr-code", "business"],
   "articles": ["api-whatsapp-link-gratis", "whatsusernames-sdk-npm"],
   "guides": ["/developers"],
-  "faqs": [],
-  "lastUpdated": "2026-07-05"
+  "lastUpdated": "2026-07-05",
+  "translations": {
+    "pt": {
+      "name": "API",
+      "definition": "API REST pública do WhatsUsernames.link para gerar links, validar usernames e criar QR codes programaticamente.",
+      "description": "API gratuita, sem chave nem registo, com CORS ativo. Inclui o whatsusernames-sdk, um cliente TypeScript/JavaScript sem dependências para os endpoints públicos (links, QR codes, BSUID, webhooks da Business Platform).",
+      "faqs": [
+        {
+          "q": "Preciso de uma chave de API?",
+          "a": "Não — a API é aberta e gratuita, sem chave nem registo necessário."
+        },
+        {
+          "q": "Existe limite de pedidos?",
+          "a": "Sim, aplica-se um limite razoável para manter a API gratuita utilizável por todos — vê a página developers para os limites atuais."
+        }
+      ]
+    },
+    "en": {
+      "name": "API",
+      "definition": "WhatsUsernames.link's public REST API for generating links, validating usernames, and creating QR codes programmatically.",
+      "description": "A free API, no key or signup required, with CORS enabled. Includes the whatsusernames-sdk, a dependency-free TypeScript/JavaScript client for the public endpoints (links, QR codes, BSUID, Business Platform webhooks).",
+      "faqs": [
+        {
+          "q": "Do I need an API key?",
+          "a": "No — the API is open and free, with no key or registration required."
+        },
+        {
+          "q": "Is there a rate limit?",
+          "a": "Yes, a reasonable rate limit applies to keep the free API usable for everyone — see the developers page for current limits."
+        }
+      ]
+    },
+    "es": {
+      "name": "API",
+      "definition": "API REST pública de WhatsUsernames.link para generar enlaces, validar usernames y crear códigos QR de forma programática.",
+      "description": "API gratuita, sin clave ni registro, con CORS activo. Incluye whatsusernames-sdk, un cliente TypeScript/JavaScript sin dependencias para los endpoints públicos (enlaces, códigos QR, BSUID, webhooks de la Business Platform).",
+      "faqs": [
+        {
+          "q": "¿Necesito una clave de API?",
+          "a": "No — la API es abierta y gratuita, sin clave ni registro necesario."
+        },
+        {
+          "q": "¿Hay límite de peticiones?",
+          "a": "Sí, se aplica un límite razonable para mantener la API gratuita usable para todos — consulta la página de developers para los límites actuales."
+        }
+      ]
+    }
+  }
 }

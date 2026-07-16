@@ -1,12 +1,55 @@
 {
   "id": "communities",
-  "name": "Communities",
   "parent": null,
-  "definition": "WhatsApp Communities — agrupamento de vários grupos sob uma estrutura comum.",
-  "description": "Ainda sem conteúdo. Gap: nenhum artigo cobre Communities.",
   "related": ["business-platform"],
   "articles": [],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": null
+  "lastUpdated": null,
+  "translations": {
+    "pt": {
+      "name": "Communities",
+      "definition": "WhatsApp Communities — agrupamento de vários grupos sob uma estrutura comum.",
+      "description": "Uma Community junta vários grupos relacionados (por exemplo, uma turma e os seus subgrupos de trabalho) debaixo de um espaço comum, com anúncios que chegam a todos os grupos ligados. Cada grupo dentro da community mantém a sua própria conversa; a community em si não substitui o username link — serve para organizar grupos, não para contacto direto 1:1.",
+      "faqs": [
+        {
+          "q": "Uma Community é o mesmo que um grupo grande?",
+          "a": "Não — é um contentor que liga vários grupos distintos, cada um com a sua própria lista de membros e conversa."
+        },
+        {
+          "q": "Posso partilhar um link de Community como partilho um username?",
+          "a": "São links diferentes: o link de convite de community entra num conjunto de grupos, o link de username abre uma conversa individual com uma pessoa."
+        }
+      ]
+    },
+    "en": {
+      "name": "Communities",
+      "definition": "WhatsApp Communities — a grouping of several groups under one shared structure.",
+      "description": "A Community bundles several related groups (say, a class plus its project subgroups) under one shared space, with announcements that reach every linked group. Each group inside the community keeps its own conversation; the community itself doesn't replace the username link — it's for organizing groups, not for direct 1:1 contact.",
+      "faqs": [
+        {
+          "q": "Is a Community the same as one big group?",
+          "a": "No — it's a container linking several distinct groups, each with its own member list and conversation."
+        },
+        {
+          "q": "Can I share a Community link the way I share a username?",
+          "a": "They're different links: a community invite link joins a set of groups, while a username link opens a one-to-one conversation with a person."
+        }
+      ]
+    },
+    "es": {
+      "name": "Communities",
+      "definition": "WhatsApp Communities — agrupación de varios grupos bajo una estructura común.",
+      "description": "Una Community junta varios grupos relacionados (por ejemplo, una clase más sus subgrupos de trabajo) bajo un espacio común, con anuncios que llegan a todos los grupos vinculados. Cada grupo dentro de la community mantiene su propia conversación; la community en sí no sustituye al enlace de username — sirve para organizar grupos, no para contacto directo 1:1.",
+      "faqs": [
+        {
+          "q": "¿Una Community es lo mismo que un grupo grande?",
+          "a": "No — es un contenedor que enlaza varios grupos distintos, cada uno con su propia lista de miembros y conversación."
+        },
+        {
+          "q": "¿Puedo compartir un enlace de Community como comparto un username?",
+          "a": "Son enlaces distintos: el enlace de invitación de community entra a un conjunto de grupos, el enlace de username abre una conversación individual con una persona."
+        }
+      ]
+    }
+  }
 }

@@ -1,12 +1,55 @@
 {
   "id": "channels",
-  "name": "Channels",
   "parent": null,
-  "definition": "WhatsApp Channels — canais de difusão unidirecional para seguidores, separados de conversas 1:1.",
-  "description": "Ainda sem conteúdo. Gap: nenhum artigo cobre Channels; potencial ligação a username (link de canal) e a business-platform.",
   "related": ["business-platform", "username-link"],
   "articles": [],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": null
+  "lastUpdated": null,
+  "translations": {
+    "pt": {
+      "name": "Channels",
+      "definition": "WhatsApp Channels — canais de difusão unidirecional para seguidores, separados de conversas 1:1.",
+      "description": "Um Channel é usado para enviar atualizações a muitos seguidores de uma vez, sem criar um grupo nem expor números de telefone entre participantes. Só o dono do canal publica; os seguidores reagem e votam em sondagens, mas não respondem em conversa aberta. É distinto de um username link (que abre uma conversa privada) — o link de canal serve para subscrever, não para falar diretamente com a conta.",
+      "faqs": [
+        {
+          "q": "Um Channel substitui um grupo de WhatsApp?",
+          "a": "Não — um grupo permite conversa entre todos os membros; um Channel é só difusão do dono para os seguidores."
+        },
+        {
+          "q": "Preciso do meu username para criar um Channel?",
+          "a": "Não são a mesma coisa: o Channel tem o seu próprio link de subscrição, independente do username pessoal da conta."
+        }
+      ]
+    },
+    "en": {
+      "name": "Channels",
+      "definition": "WhatsApp Channels — one-way broadcast channels for followers, separate from 1:1 conversations.",
+      "description": "A Channel is used to push updates to many followers at once, without creating a group or exposing phone numbers between participants. Only the channel owner posts; followers react and vote in polls but don't reply in an open conversation. Distinct from a username link (which opens a private chat) — a channel link is for subscribing, not for talking directly to the account.",
+      "faqs": [
+        {
+          "q": "Does a Channel replace a WhatsApp group?",
+          "a": "No — a group lets every member talk to each other; a Channel is one-way broadcast from the owner to followers only."
+        },
+        {
+          "q": "Do I need my username to create a Channel?",
+          "a": "They're not the same thing: a Channel has its own subscription link, separate from the account's personal username."
+        }
+      ]
+    },
+    "es": {
+      "name": "Channels",
+      "definition": "WhatsApp Channels — canales de difusión unidireccional para seguidores, separados de las conversaciones 1:1.",
+      "description": "Un Channel se usa para enviar actualizaciones a muchos seguidores a la vez, sin crear un grupo ni exponer números de teléfono entre participantes. Solo el dueño del canal publica; los seguidores reaccionan y votan en encuestas, pero no responden en conversación abierta. Es distinto de un enlace de username (que abre un chat privado) — el enlace de canal sirve para suscribirse, no para hablar directamente con la cuenta.",
+      "faqs": [
+        {
+          "q": "¿Un Channel sustituye a un grupo de WhatsApp?",
+          "a": "No — un grupo permite que todos los miembros hablen entre sí; un Channel es solo difusión unidireccional del dueño a los seguidores."
+        },
+        {
+          "q": "¿Necesito mi username para crear un Channel?",
+          "a": "No son lo mismo: el Channel tiene su propio enlace de suscripción, independiente del username personal de la cuenta."
+        }
+      ]
+    }
+  }
 }

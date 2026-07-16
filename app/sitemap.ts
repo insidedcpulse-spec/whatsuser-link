@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 import { getAllPosts } from "@/lib/blog";
+import { getAllEntities } from "@/lib/entities";
 
 function localeUrl(locale: string, slug?: string) {
   const base = locale === routing.defaultLocale ? siteConfig.url : `${siteConfig.url}/${locale}`;
@@ -60,6 +61,29 @@ function blogPostEntries(): MetadataRoute.Sitemap {
   return results;
 }
 
+function glossaryTermEntries(): MetadataRoute.Sitemap {
+  const results: MetadataRoute.Sitemap = [];
+
+  for (const entity of getAllEntities(routing.defaultLocale)) {
+    const languages = Object.fromEntries([
+      ...routing.locales.map((locale) => [locale, localeUrl(locale, `glossary/${entity.id}`)]),
+      ["x-default", localeUrl(routing.defaultLocale, `glossary/${entity.id}`)],
+    ]);
+
+    for (const locale of routing.locales) {
+      results.push({
+        url: localeUrl(locale, `glossary/${entity.id}`),
+        lastModified: entity.lastUpdated ? new Date(entity.lastUpdated) : undefined,
+        changeFrequency: "monthly" as const,
+        priority: locale === routing.defaultLocale ? 0.6 : 0.4,
+        alternates: { languages },
+      });
+    }
+  }
+
+  return results;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...entries(undefined, 1),
@@ -67,6 +91,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...entries("developers", 0.6),
     ...entries("blog", 0.6),
     ...blogPostEntries(),
+    ...entries("glossary", 0.6),
+    ...glossaryTermEntries(),
     ...entries("about", 0.5),
     ...entries("contact", 0.5),
     ...entries("privacy-policy", 0.3),

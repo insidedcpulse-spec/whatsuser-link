@@ -60,6 +60,9 @@ export default async function Home() {
         <Link href="/blog" className="underline underline-offset-4">
           {t("blogLink")}
         </Link>
+        <Link href="/glossary" className="underline underline-offset-4">
+          {t("glossaryLink")}
+        </Link>
         <Link href="/privacy-policy" className="underline underline-offset-4">
           {t("privacyLink")}
         </Link>

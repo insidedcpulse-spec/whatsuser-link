@@ -1,12 +1,55 @@
 {
   "id": "username-key",
-  "name": "Username Key",
   "parent": "usernames",
-  "definition": "Código curto atribuído pelo WhatsApp que acompanha um username e identifica a conta de forma inequívoca, mesmo que outra conta tenha escolhido o mesmo nome.",
-  "description": "Como um username não é garantidamente único a nível global, a Username Key funciona como confirmação extra de identidade. É opcional de mostrar, mas recomendada em contexto profissional, usernames com palavras comuns, ou QR codes impressos/permanentes.",
   "related": ["username-link", "qr-code", "security"],
   "articles": ["username-key-whatsapp"],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": "2026-06-08"
+  "lastUpdated": "2026-06-08",
+  "translations": {
+    "pt": {
+      "name": "Username Key",
+      "definition": "Código curto atribuído pelo WhatsApp que acompanha um username e identifica a conta de forma inequívoca, mesmo que outra conta tenha escolhido o mesmo nome.",
+      "description": "Como um username não é garantidamente único a nível global, a Username Key funciona como confirmação extra de identidade. É opcional de mostrar, mas recomendada em contexto profissional, usernames com palavras comuns, ou QR codes impressos/permanentes.",
+      "faqs": [
+        {
+          "q": "A Username Key é o mesmo que um PIN ou palavra-passe?",
+          "a": "Não — não dá acesso a nada. É apenas um código público de confirmação que ajuda outros a verificar que chegaram à conta certa."
+        },
+        {
+          "q": "Tenho de mostrar a minha Username Key?",
+          "a": "Não, é opcional. É mais útil quando o username sozinho podia ser confundido com o de outra pessoa."
+        }
+      ]
+    },
+    "en": {
+      "name": "Username Key",
+      "definition": "A short code assigned by WhatsApp that travels with a username and identifies the account unambiguously, even if another account picked the same name.",
+      "description": "Since a username isn't guaranteed to be globally unique, the Username Key acts as extra identity confirmation. Showing it is optional, but recommended for professional contexts, usernames using common words, or printed/permanent QR codes.",
+      "faqs": [
+        {
+          "q": "Is the Username Key the same as a PIN or password?",
+          "a": "No — it doesn't grant access to anything. It's just a public confirmation code that helps others verify they've reached the right account."
+        },
+        {
+          "q": "Do I have to show my Username Key?",
+          "a": "No, it's optional. It's most useful when the username alone could be confused with someone else's."
+        }
+      ]
+    },
+    "es": {
+      "name": "Username Key",
+      "definition": "Un código corto asignado por WhatsApp que acompaña a un username e identifica la cuenta sin ambigüedad, incluso si otra cuenta eligió el mismo nombre.",
+      "description": "Como un username no está garantizado a nivel global, la Username Key funciona como confirmación extra de identidad. Mostrarla es opcional, pero se recomienda en contexto profesional, usernames con palabras comunes, o códigos QR impresos/permanentes.",
+      "faqs": [
+        {
+          "q": "¿La Username Key es lo mismo que un PIN o contraseña?",
+          "a": "No — no da acceso a nada. Es solo un código público de confirmación que ayuda a otros a verificar que llegaron a la cuenta correcta."
+        },
+        {
+          "q": "¿Tengo que mostrar mi Username Key?",
+          "a": "No, es opcional. Es más útil cuando el username por sí solo podría confundirse con el de otra persona."
+        }
+      ]
+    }
+  }
 }

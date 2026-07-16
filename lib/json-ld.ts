@@ -117,6 +117,27 @@ export function getBlogPostingJsonLd({
   };
 }
 
+export function getDefinedTermJsonLd({
+  name,
+  description,
+  url,
+  inDefinedTermSet,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  inDefinedTermSet: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name,
+    description,
+    url,
+    inDefinedTermSet,
+  };
+}
+
 export type BreadcrumbItem = {
   name: string;
   url: string;

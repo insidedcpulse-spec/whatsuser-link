@@ -81,6 +81,7 @@
     "privacyLink": "Privacy Policy",
     "termsLink": "Terms of Service",
     "blogLink": "Blog",
+    "glossaryLink": "Glossary",
     "apiLink": "API",
     "aboutLink": "About",
     "contactLink": "Contact"
@@ -407,5 +408,21 @@
     "ctaButton": "Create my link",
     "breadcrumbHome": "Home",
     "breadcrumbBlog": "Blog"
+  },
+  "glossary": {
+    "metaTitle": "WhatsApp Glossary — WhatsUsernames.link",
+    "metaDescription": "Key WhatsApp terms explained: username link, QR code, Username Key, Business Platform, and more.",
+    "heading": "WhatsApp Glossary",
+    "intro": "Key terms around WhatsApp usernames, links, and the Business Platform, explained simply.",
+    "hubHeading": "Usernames",
+    "otherHeading": "Other terms",
+    "faqHeading": "Frequently asked questions",
+    "relatedHeading": "Related terms",
+    "readArticle": "Read article",
+    "openGuide": "View guide",
+    "backToGlossary": "Back to glossary",
+    "lastUpdated": "Last updated",
+    "breadcrumbHome": "Home",
+    "breadcrumbGlossary": "Glossary"
   }
 }

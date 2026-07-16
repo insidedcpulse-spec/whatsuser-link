@@ -1,12 +1,55 @@
 {
   "id": "availability",
-  "name": "Availability",
   "parent": "usernames",
-  "definition": "Estado de um username: se está livre para reservar ou já está em uso por outra conta.",
-  "description": "Como o espaço de usernames fica mais concorrido à medida que o WhatsApp cresce, reservar cedo o username desejado evita perdê-lo para outra conta. Cobre o passo a passo de reserva e o que fazer enquanto funcionalidades associadas (como wa.me/username) ainda não estão totalmente disponíveis.",
   "related": ["username-link", "username-key"],
   "articles": ["como-reservar-username-whatsapp-2026"],
   "guides": [],
-  "faqs": [],
-  "lastUpdated": "2026-06-01"
+  "lastUpdated": "2026-06-01",
+  "translations": {
+    "pt": {
+      "name": "Disponibilidade",
+      "definition": "Estado de um username: se está livre para reservar ou já está em uso por outra conta.",
+      "description": "Como o espaço de usernames fica mais concorrido à medida que o WhatsApp cresce, reservar cedo o username desejado evita perdê-lo para outra conta. Cobre o passo a passo de reserva e o que fazer enquanto funcionalidades associadas (como wa.me/username) ainda não estão totalmente disponíveis.",
+      "faqs": [
+        {
+          "q": "O que acontece se o username que quero já estiver ocupado?",
+          "a": "Vais ter de escolher uma variação — o WhatsApp não oferece lista de espera nem reserva para usernames já ocupados."
+        },
+        {
+          "q": "Posso verificar disponibilidade antes de criar conta?",
+          "a": "A disponibilidade é verificada dentro da app do WhatsApp ao tentar definir o username, não através de uma ferramenta de consulta separada."
+        }
+      ]
+    },
+    "en": {
+      "name": "Availability",
+      "definition": "The state of a username: whether it's free to claim or already taken by another account.",
+      "description": "As the username space gets more crowded while WhatsApp grows, claiming the one you want early avoids losing it to someone else. Covers the claim process step by step and what to do while related features (like wa.me/username) aren't fully live yet.",
+      "faqs": [
+        {
+          "q": "What happens if my desired username is taken?",
+          "a": "You'll need to pick a variation — WhatsApp doesn't offer a waitlist or reservation queue for taken usernames."
+        },
+        {
+          "q": "Can I check availability before creating an account?",
+          "a": "Availability is checked inside the WhatsApp app when you try to set the username, not through a separate lookup tool."
+        }
+      ]
+    },
+    "es": {
+      "name": "Disponibilidad",
+      "definition": "El estado de un username: si está libre para reservar o ya está en uso por otra cuenta.",
+      "description": "A medida que el espacio de usernames se satura con el crecimiento de WhatsApp, reservar pronto el que quieres evita perderlo frente a otra cuenta. Cubre el paso a paso de la reserva y qué hacer mientras funciones asociadas (como wa.me/username) todavía no están totalmente disponibles.",
+      "faqs": [
+        {
+          "q": "¿Qué pasa si el username que quiero ya está en uso?",
+          "a": "Tendrás que elegir una variación — WhatsApp no ofrece lista de espera ni reserva para usernames ya tomados."
+        },
+        {
+          "q": "¿Puedo comprobar la disponibilidad antes de crear una cuenta?",
+          "a": "La disponibilidad se comprueba dentro de la app de WhatsApp al intentar fijar el username, no mediante una herramienta de consulta aparte."
+        }
+      ]
+    }
+  }
 }
