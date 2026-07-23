@@ -314,8 +314,8 @@
           "body": ["No configuramos cookies de seguimiento propias. Tu preferencia de tema claro/oscuro se guarda solo en el almacenamiento local de tu navegador y nunca sale de tu dispositivo."]
         },
         {
-          "heading": "Publicidad",
-          "body": ["Este sitio muestra anuncios servidos por Adsterra y Google AdSense, redes publicitarias de terceros. Google, como proveedor externo, usa cookies para mostrar anuncios en este sitio; el uso de cookies publicitarias por parte de Google le permite a ella y a sus socios mostrar anuncios basados en tus visitas a este sitio y/u otros sitios de Internet. Puedes desactivar la publicidad personalizada visitando la Configuración de anuncios de Google (adssettings.google.com). El contenido publicitario de Adsterra puede usar cookies o tecnologías similares para mostrar y medir anuncios. No controlamos los datos de ninguna de las dos redes. Si prefieres no ver anuncios ni ser medido por ellos, revisa las prácticas de privacidad de cada red, usa la opción de exclusión de Google, o usa un bloqueador de anuncios / la protección contra seguimiento de tu navegador."]
+          "heading": "Publicidad y Cookies",
+          "body": ["Este sitio utiliza Google AdSense, un servicio de publicidad de terceros proporcionado por Google LLC. Proveedores terceros, incluido Google, utilizan cookies para mostrar anuncios basados en las visitas anteriores de los usuarios a este sitio web o a otros sitios web. El uso de cookies de publicidad por parte de Google permite a este y a sus socios mostrar anuncios a los usuarios según su visita a WhatsUsernames.link y/u otros sitios de Internet. Los usuarios pueden desactivar la publicidad personalizada visitando la Configuración de Anuncios de Google (https://adssettings.google.com) o a través de www.aboutads.info."]
         },
         {
           "heading": "Analítica",
@@ -374,7 +374,7 @@
         },
         {
           "heading": "Enlaces y anuncios de terceros",
-          "body": ["El Servicio enlaza y muestra contenido de terceros que no controlamos ni de los que somos responsables, incluida la publicidad servida por Adsterra y el propio WhatsApp."]
+          "body": ["El Servicio enlaza y muestra contenido de terceros que no controlamos ni de los que somos responsables, incluida la publicidad servida por Google AdSense y enlaces al propio WhatsApp."]
         },
         {
           "heading": "Sin afiliación",

@@ -4,9 +4,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { LocaleSwitcher } from "@/components/locale-switcher";
 import { JsonLdScript } from "@/components/json-ld-script";
+import { Navbar } from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
@@ -87,17 +86,16 @@ export default async function LocaleLayout({
             '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5219655673819952" crossorigin="anonymous"></script>',
         }}
       />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <JsonLdScript data={getSoftwareApplicationJsonLd(t("description"))} />
         <JsonLdScript data={getOrganizationJsonLd()} />
         <JsonLdScript data={getWebSiteJsonLd()} />
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="light">
-            <div className="fixed right-4 top-4 flex items-center gap-2">
-              <LocaleSwitcher />
-              <ThemeToggle />
+            <Navbar />
+            <div className="flex-1">
+              {children}
             </div>
-            {children}
             <Toaster />
           </ThemeProvider>
         </NextIntlClientProvider>

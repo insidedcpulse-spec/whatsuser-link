@@ -1,77 +1,61 @@
 import { getTranslations } from "next-intl/server";
-import { AdBanner } from "@/components/ad-banner";
 import { Explainer } from "@/components/explainer";
 import { Faq } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { PhoneGenerator } from "@/components/whatsapp/phone-generator";
 import { UsernameGenerator } from "@/components/whatsapp/username-generator";
+import { FeatureGrid } from "@/components/feature-grid";
+import { FeaturedArticles } from "@/components/featured-articles";
+import { SiteFooter } from "@/components/site-footer";
 import { Link } from "@/i18n/navigation";
 
 export default async function Home() {
-  const t = await getTranslations("footer");
   const tPhone = await getTranslations("phone");
   const tForm = await getTranslations("form");
   const tGuide = await getTranslations("guide");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-12 px-4 py-24">
-      <Hero />
+    <div className="flex min-h-screen flex-col justify-between">
+      <main className="flex w-full flex-col items-center justify-center gap-12 px-4 py-10 md:py-16">
+        <Hero />
 
-      {/*
-        TEMPORÁRIO: confirmámos em 2026-07-03 (servidor + telemóvel real)
-        que wa.me/<username> ainda não abre conversa. Este bloco dá aos
-        visitantes um link que funciona hoje. Remover quando o link de
-        username for confirmado a funcionar — o gerador abaixo volta a
-        ser o único/principal.
-      */}
-      <div className="w-full max-w-md">
-        <h2 className="mb-4 text-center text-lg font-semibold">{tPhone("sectionTitle")}</h2>
-        <PhoneGenerator />
-      </div>
+        {/* Generator forms side-by-side on desktop */}
+        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div className="w-full rounded-2xl border bg-card p-6 shadow-sm">
+            <h2 className="mb-4 text-center text-base font-semibold text-foreground">{tPhone("sectionTitle")}</h2>
+            <PhoneGenerator />
+          </div>
 
-      <div className="w-full max-w-md">
-        <h2 className="mb-4 text-center text-lg font-semibold">{tForm("sectionTitle")}</h2>
-        <UsernameGenerator />
-      </div>
+          <div className="w-full rounded-2xl border bg-card p-6 shadow-sm">
+            <h2 className="mb-4 text-center text-base font-semibold text-foreground">{tForm("sectionTitle")}</h2>
+            <UsernameGenerator />
+          </div>
+        </div>
 
-      <Explainer />
+        {/* Value Propositions & Privacy Features */}
+        <FeatureGrid />
 
-      <AdBanner />
+        {/* Explainer / Technical Background */}
+        <Explainer />
 
-      <Faq />
+        {/* Featured Blog Posts & Guides */}
+        <FeaturedArticles />
 
-      <Link
-        href="/how-to-create-a-whatsapp-link"
-        className="text-sm text-muted-foreground underline underline-offset-4"
-      >
-        {tGuide("linkLabel")}
-      </Link>
+        {/* Frequently Asked Questions */}
+        <Faq />
 
-      <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
-        <Link href="/about" className="underline underline-offset-4">
-          {t("aboutLink")}
-        </Link>
-        <Link href="/contact" className="underline underline-offset-4">
-          {t("contactLink")}
-        </Link>
-        <Link href="/developers" className="underline underline-offset-4">
-          {t("apiLink")}
-        </Link>
-        <Link href="/blog" className="underline underline-offset-4">
-          {t("blogLink")}
-        </Link>
-        <Link href="/glossary" className="underline underline-offset-4">
-          {t("glossaryLink")}
-        </Link>
-        <Link href="/privacy-policy" className="underline underline-offset-4">
-          {t("privacyLink")}
-        </Link>
-        <Link href="/terms-of-service" className="underline underline-offset-4">
-          {t("termsLink")}
-        </Link>
-      </div>
+        {/* Direct link to step-by-step guide */}
+        <div className="my-2 text-center">
+          <Link
+            href="/how-to-create-a-whatsapp-link"
+            className="inline-flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 px-5 py-2.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 transition-colors shadow-xs"
+          >
+            📖 {tGuide("linkLabel")} →
+          </Link>
+        </div>
+      </main>
 
-      <p className="max-w-md text-center text-xs text-muted-foreground">{t("disclaimer")}</p>
-    </main>
+      <SiteFooter />
+    </div>
   );
 }

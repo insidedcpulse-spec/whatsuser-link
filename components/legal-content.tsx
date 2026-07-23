@@ -1,3 +1,5 @@
+import { SiteFooter } from "@/components/site-footer";
+
 type LegalSection = {
   heading: string;
   body: string[];
@@ -15,25 +17,29 @@ export function LegalContent({
   sections: LegalSection[];
 }) {
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-8 px-4 py-24">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
-        {lastUpdated ? <p className="mt-2 text-sm text-muted-foreground">{lastUpdated}</p> : null}
-        <p className="mt-4 text-muted-foreground">{intro}</p>
-      </div>
+    <div className="flex min-h-screen flex-col justify-between">
+      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-12 md:py-16">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h1>
+          {lastUpdated ? <p className="mt-2 text-sm text-muted-foreground">{lastUpdated}</p> : null}
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">{intro}</p>
+        </div>
 
-      <div className="flex flex-col gap-6">
-        {sections.map((section) => (
-          <div key={section.heading}>
-            <h2 className="mb-2 text-lg font-semibold">{section.heading}</h2>
-            {section.body.map((paragraph, index) => (
-              <p key={index} className="text-sm text-muted-foreground">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        ))}
-      </div>
-    </main>
+        <div className="flex flex-col gap-8 border-t pt-8">
+          {sections.map((section) => (
+            <div key={section.heading} className="space-y-2">
+              <h2 className="text-lg font-semibold text-foreground">{section.heading}</h2>
+              {section.body.map((paragraph, index) => (
+                <p key={index} className="text-sm text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }

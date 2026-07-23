@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
+import { SiteFooter } from "@/components/site-footer";
 
 export async function generateMetadata({
   params,
@@ -97,82 +98,86 @@ console.log(data.link); // https://wa.me/joao.silva`;
 }`;
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-8 px-4 py-24">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{t("title")}</h1>
-        <p className="mt-4 text-muted-foreground">{t("intro")}</p>
-      </div>
-
-      <div>
-        <h2 className="mb-2 text-xl font-semibold">{t("endpointsHeading")}</h2>
-        <p className="mb-4 text-sm text-muted-foreground">
-          {t("endpointsIntro", { baseUrl: siteConfig.url })}
-        </p>
-        <div className="flex flex-col gap-4">
-          {ENDPOINTS.map((endpoint) => (
-            <div key={endpoint.descKey}>
-              <CodeBlock>{`GET ${endpoint.path}`}</CodeBlock>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t(`endpointDescriptions.${endpoint.descKey}`)}
-              </p>
-            </div>
-          ))}
+    <div className="flex min-h-screen flex-col justify-between">
+      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-12 md:py-16">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{t("title")}</h1>
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">{t("intro")}</p>
         </div>
-      </div>
 
-      <div>
-        <h2 className="mb-2 text-xl font-semibold">{t("businessEndpointsHeading")}</h2>
-        <p className="mb-4 text-sm text-muted-foreground">
-          {t("businessEndpointsIntro", { baseUrl: siteConfig.url })}
-        </p>
-        <div className="flex flex-col gap-4">
-          {BUSINESS_ENDPOINTS.map((endpoint) => (
-            <div key={endpoint.descKey}>
-              <CodeBlock>{`POST ${endpoint.path}`}</CodeBlock>
-              <p className="mb-1 mt-2 text-xs font-medium text-muted-foreground">
-                {t("bodyLabel")}
-              </p>
-              <CodeBlock>{endpoint.exampleBody}</CodeBlock>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t(`endpointDescriptions.${endpoint.descKey}`)}
-              </p>
-            </div>
-          ))}
+        <div>
+          <h2 className="mb-2 text-xl font-semibold">{t("endpointsHeading")}</h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            {t("endpointsIntro", { baseUrl: siteConfig.url })}
+          </p>
+          <div className="flex flex-col gap-4">
+            {ENDPOINTS.map((endpoint) => (
+              <div key={endpoint.descKey}>
+                <CodeBlock>{`GET ${endpoint.path}`}</CodeBlock>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t(`endpointDescriptions.${endpoint.descKey}`)}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div>
-        <h2 className="mb-4 text-xl font-semibold">{t("examplesHeading")}</h2>
-        <p className="mb-1 text-sm font-medium">{t("exampleCurlLabel")}</p>
-        <CodeBlock>{curlExample}</CodeBlock>
-        <p className="mb-1 mt-4 text-sm font-medium">{t("exampleJsLabel")}</p>
-        <CodeBlock>{jsExample}</CodeBlock>
-        <p className="mb-1 mt-4 text-sm font-medium">{t("exampleCurlBusinessLabel")}</p>
-        <CodeBlock>{curlBusinessExample}</CodeBlock>
-      </div>
+        <div>
+          <h2 className="mb-2 text-xl font-semibold">{t("businessEndpointsHeading")}</h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            {t("businessEndpointsIntro", { baseUrl: siteConfig.url })}
+          </p>
+          <div className="flex flex-col gap-4">
+            {BUSINESS_ENDPOINTS.map((endpoint) => (
+              <div key={endpoint.descKey}>
+                <CodeBlock>{`POST ${endpoint.path}`}</CodeBlock>
+                <p className="mb-1 mt-2 text-xs font-medium text-muted-foreground">
+                  {t("bodyLabel")}
+                </p>
+                <CodeBlock>{endpoint.exampleBody}</CodeBlock>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t(`endpointDescriptions.${endpoint.descKey}`)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
-      <div>
-        <h2 className="mb-2 text-xl font-semibold">{t("rateLimitHeading")}</h2>
-        <p className="text-sm text-muted-foreground">{t("rateLimitBody")}</p>
-      </div>
+        <div>
+          <h2 className="mb-4 text-xl font-semibold">{t("examplesHeading")}</h2>
+          <p className="mb-1 text-sm font-medium">{t("exampleCurlLabel")}</p>
+          <CodeBlock>{curlExample}</CodeBlock>
+          <p className="mb-1 mt-4 text-sm font-medium">{t("exampleJsLabel")}</p>
+          <CodeBlock>{jsExample}</CodeBlock>
+          <p className="mb-1 mt-4 text-sm font-medium">{t("exampleCurlBusinessLabel")}</p>
+          <CodeBlock>{curlBusinessExample}</CodeBlock>
+        </div>
 
-      <div>
-        <h2 className="mb-2 text-xl font-semibold">{t("errorsHeading")}</h2>
-        <p className="mb-4 text-sm text-muted-foreground">{t("errorsBody")}</p>
-        <CodeBlock>{errorExample}</CodeBlock>
-      </div>
+        <div>
+          <h2 className="mb-2 text-xl font-semibold">{t("rateLimitHeading")}</h2>
+          <p className="text-sm text-muted-foreground">{t("rateLimitBody")}</p>
+        </div>
 
-      <div>
-        <h2 className="mb-2 text-xl font-semibold">{t("noticeHeading")}</h2>
-        <p className="text-sm text-muted-foreground">{t("noticeBody")}</p>
-      </div>
+        <div>
+          <h2 className="mb-2 text-xl font-semibold">{t("errorsHeading")}</h2>
+          <p className="mb-4 text-sm text-muted-foreground">{t("errorsBody")}</p>
+          <CodeBlock>{errorExample}</CodeBlock>
+        </div>
 
-      <a
-        href="/api/v1/openapi.json"
-        className="text-sm text-muted-foreground underline underline-offset-4"
-      >
-        {t("openapiLinkLabel")}
-      </a>
-    </main>
+        <div>
+          <h2 className="mb-2 text-xl font-semibold">{t("noticeHeading")}</h2>
+          <p className="text-sm text-muted-foreground">{t("noticeBody")}</p>
+        </div>
+
+        <a
+          href="/api/v1/openapi.json"
+          className="text-sm text-muted-foreground underline underline-offset-4"
+        >
+          {t("openapiLinkLabel")}
+        </a>
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }

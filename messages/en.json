@@ -314,8 +314,8 @@
           "body": ["We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device."]
         },
         {
-          "heading": "Advertising",
-          "body": ["This site shows ads served by Adsterra and Google AdSense, third-party advertising networks. Google, as a third-party vendor, uses cookies to serve ads on this site; Google's use of advertising cookies enables it and its partners to serve ads based on your visits to this site and/or other sites on the Internet. You may opt out of personalized advertising by visiting Google's Ads Settings (adssettings.google.com). Adsterra's ad content may use similar cookies or technologies to serve and measure ads. We don't control either network's data. If you prefer not to see ads or be measured by them, review each network's own privacy practices, use Google's opt-out, or use an ad blocker / your browser's tracking protection."]
+          "heading": "Advertising & Cookies",
+          "body": ["This site uses Google AdSense, a third-party advertising service provided by Google LLC. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to WhatsUsernames.link and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com) or via www.aboutads.info."]
         },
         {
           "heading": "Analytics",
@@ -374,7 +374,7 @@
         },
         {
           "heading": "Third-party links and ads",
-          "body": ["The Service links to and displays content from third parties we don't control and aren't responsible for, including advertising served by Adsterra and WhatsApp itself."]
+          "body": ["The Service links to and displays content from third parties we don't control and aren't responsible for, including advertising served by Google AdSense and links to WhatsApp itself."]
         },
         {
           "heading": "No affiliation",

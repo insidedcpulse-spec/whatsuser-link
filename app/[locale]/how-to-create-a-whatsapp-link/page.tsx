@@ -33,6 +33,8 @@ export async function generateMetadata({
   };
 }
 
+import { SiteFooter } from "@/components/site-footer";
+
 export default async function GuidePage({
   params,
 }: {
@@ -49,61 +51,65 @@ export default async function GuidePage({
       : `/${locale}/how-to-create-a-whatsapp-link`;
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-8 px-4 py-24">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{t("title")}</h1>
-        <p className="mt-4 text-muted-foreground">{t("intro")}</p>
-      </div>
-
-      <div>
-        <h2 className="mb-4 text-xl font-semibold">{t("stepsHeading")}</h2>
-        <ol className="flex flex-col gap-4">
-          {steps.map((step, index) => (
-            <li key={step.title} className="rounded-lg border p-4">
-              <p className="font-medium">
-                {index + 1}. {step.title}
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <div className="rounded-lg border border-amber-500/50 bg-amber-500/10 p-4">
-        <p className="font-medium">{t("noteHeading")}</p>
-        <p className="mt-1 text-sm text-muted-foreground">{t("note")}</p>
-      </div>
-
-      <div>
-        <h2 className="mb-4 text-xl font-semibold">{t("extraHeading")}</h2>
-        <div className="flex flex-col gap-6">
-          {extraSections.map((section) => (
-            <div key={section.heading}>
-              <h3 className="mb-2 font-medium">{section.heading}</h3>
-              {section.body.map((paragraph, index) => (
-                <p key={index} className="text-sm text-muted-foreground">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          ))}
+    <div className="flex min-h-screen flex-col justify-between">
+      <main className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-4 py-12 md:py-16">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{t("title")}</h1>
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">{t("intro")}</p>
         </div>
-      </div>
 
-      <div className="flex flex-col items-center gap-3 text-center">
-        <p>{t("ctaText")}</p>
-        <Link href="/" className={buttonVariants({ variant: "default" })}>
-          {t("ctaButton")}
-        </Link>
-      </div>
+        <div>
+          <h2 className="mb-4 text-xl font-semibold">{t("stepsHeading")}</h2>
+          <ol className="flex flex-col gap-4">
+            {steps.map((step, index) => (
+              <li key={step.title} className="rounded-xl border p-4 bg-card shadow-xs">
+                <p className="font-semibold text-foreground">
+                  {index + 1}. {step.title}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
 
-      <JsonLdScript data={getHowToJsonLd(t("title"), steps)} />
-      <JsonLdScript
-        data={getBreadcrumbJsonLd([
-          { name: tBlog("breadcrumbHome"), url: siteConfig.url },
-          { name: t("title"), url: `${siteConfig.url}${path}` },
-        ])}
-      />
-    </main>
+        <div className="rounded-xl border border-amber-500/50 bg-amber-500/10 p-5">
+          <p className="font-semibold text-amber-950 dark:text-amber-200">{t("noteHeading")}</p>
+          <p className="mt-1.5 text-sm text-amber-900/80 dark:text-amber-300/80 leading-relaxed">{t("note")}</p>
+        </div>
+
+        <div>
+          <h2 className="mb-4 text-xl font-semibold">{t("extraHeading")}</h2>
+          <div className="flex flex-col gap-6">
+            {extraSections.map((section) => (
+              <div key={section.heading} className="space-y-1.5">
+                <h3 className="font-semibold text-foreground text-base">{section.heading}</h3>
+                {section.body.map((paragraph, index) => (
+                  <p key={index} className="text-sm text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-3 text-center my-4">
+          <p className="text-sm font-medium">{t("ctaText")}</p>
+          <Link href="/" className={buttonVariants({ variant: "default", size: "lg" })}>
+            {t("ctaButton")}
+          </Link>
+        </div>
+
+        <JsonLdScript data={getHowToJsonLd(t("title"), steps)} />
+        <JsonLdScript
+          data={getBreadcrumbJsonLd([
+            { name: tBlog("breadcrumbHome"), url: siteConfig.url },
+            { name: t("title"), url: `${siteConfig.url}${path}` },
+          ])}
+        />
+      </main>
+
+      <SiteFooter />
+    </div>
   );
 }
