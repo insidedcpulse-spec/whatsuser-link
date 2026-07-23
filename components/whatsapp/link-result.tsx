@@ -40,8 +40,8 @@ export function LinkResult({ link, onReset }: LinkResultProps) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-6 rounded-2xl border border-border bg-card p-8 text-center">
-      <div className="flex w-full items-center justify-between gap-3 rounded-lg bg-muted px-4 py-3">
+    <div className="flex flex-col items-center gap-5 rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-8 text-center w-full max-w-full overflow-hidden shadow-sm">
+      <div className="flex w-full items-center justify-between gap-3 rounded-xl bg-muted p-3.5 sm:px-4 sm:py-3">
         <div className="flex flex-col gap-1 text-left">
           <p className="text-lg font-bold break-all">@{link.username}</p>
           {link.usernameKey && (

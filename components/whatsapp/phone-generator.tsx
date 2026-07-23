@@ -72,15 +72,19 @@ export function PhoneGenerator() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 rounded-2xl border border-border bg-card p-8"
+      className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-8 shadow-sm w-full max-w-full overflow-hidden"
     >
-      <div className="flex flex-col gap-2">
+      <h2 className="text-center text-base sm:text-lg font-semibold text-foreground border-b pb-3 mb-1">
+        {t("sectionTitle")}
+      </h2>
+
+      <div className="flex flex-col gap-2 w-full min-w-0">
         <Label htmlFor="country">{t("countryLabel")}</Label>
         <Select
           value={countryCode}
           onValueChange={(value) => value && setCountryCode(value)}
         >
-          <SelectTrigger id="country" className="h-9 w-full">
+          <SelectTrigger id="country" className="h-10 w-full text-base sm:text-sm">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -93,14 +97,17 @@ export function PhoneGenerator() {
         </Select>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-full min-w-0">
         <Label htmlFor="phone">{t("phoneLabel")}</Label>
         <Input
           id="phone"
+          type="tel"
+          inputMode="numeric"
           value={phone}
           onChange={handlePhoneChange}
           placeholder={t("phonePlaceholder")}
           maxLength={maxPhoneLength}
+          className="h-10 text-base sm:text-sm w-full"
         />
         {errors.length > 0 && (
           <ul className="flex flex-col gap-1 text-sm text-destructive">
@@ -111,17 +118,18 @@ export function PhoneGenerator() {
         )}
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-full min-w-0">
         <Label htmlFor="phone-message">{tForm("messageLabel")}</Label>
         <Input
           id="phone-message"
           value={message}
           onChange={(event) => setMessage(event.target.value)}
           placeholder={tForm("messagePlaceholder")}
+          className="h-10 text-base sm:text-sm w-full"
         />
       </div>
 
-      <Button type="submit" size="lg">
+      <Button type="submit" size="lg" className="w-full h-11 text-sm font-semibold mt-1">
         {t("submit")}
       </Button>
     </form>

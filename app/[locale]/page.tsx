@@ -10,26 +10,17 @@ import { SiteFooter } from "@/components/site-footer";
 import { Link } from "@/i18n/navigation";
 
 export default async function Home() {
-  const tPhone = await getTranslations("phone");
-  const tForm = await getTranslations("form");
   const tGuide = await getTranslations("guide");
 
   return (
     <div className="flex min-h-screen flex-col justify-between">
-      <main className="flex w-full flex-col items-center justify-center gap-12 px-4 py-10 md:py-16">
+      <main className="flex w-full flex-col items-center justify-center gap-10 sm:gap-12 px-3 sm:px-6 py-8 md:py-16">
         <Hero />
 
-        {/* Generator forms side-by-side on desktop */}
+        {/* Generator forms side-by-side on desktop, single column on mobile */}
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          <div className="w-full rounded-2xl border bg-card p-6 shadow-sm">
-            <h2 className="mb-4 text-center text-base font-semibold text-foreground">{tPhone("sectionTitle")}</h2>
-            <PhoneGenerator />
-          </div>
-
-          <div className="w-full rounded-2xl border bg-card p-6 shadow-sm">
-            <h2 className="mb-4 text-center text-base font-semibold text-foreground">{tForm("sectionTitle")}</h2>
-            <UsernameGenerator />
-          </div>
+          <PhoneGenerator />
+          <UsernameGenerator />
         </div>
 
         {/* Value Propositions & Privacy Features */}

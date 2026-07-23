@@ -26,8 +26,8 @@ export function PhoneLinkResult({ link, onReset }: PhoneLinkResultProps) {
   }
 
   return (
-    <div className="flex flex-col items-center gap-6 rounded-2xl border border-border bg-card p-8 text-center">
-      <p className="break-all rounded-lg bg-muted px-4 py-3 font-mono text-sm">{link.url}</p>
+    <div className="flex flex-col items-center gap-5 rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-8 text-center w-full max-w-full overflow-hidden shadow-sm">
+      <p className="break-all rounded-xl bg-muted px-4 py-3 font-mono text-sm w-full">{link.url}</p>
 
       <div className="flex flex-wrap justify-center gap-3">
         <Button onClick={() => handleCopy(link.url)}>{t("copyButton")}</Button>
