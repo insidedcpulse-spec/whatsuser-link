@@ -1,0 +1,28 @@
+# WhatsUsernames.link
+
+> WhatsUsernames.link is a free, independent, stateless web utility that generates shareable `wa.me` click-to-chat links and customizable QR codes from WhatsApp Usernames, Username Keys, and phone numbers.
+
+## Core Features
+
+- **WhatsApp Username Link Generator**: Converts WhatsApp `@username` handles into official `wa.me/<username>` click-to-chat links and `whatsusernames.link/<username>` short links.
+- **WhatsApp Phone Number Link Generator**: Converts international phone numbers into instant `wa.me/<phone>` links that work everywhere today.
+- **Customizable QR Codes**: Instant client-side QR code generation in PNG, JPEG, SVG, and PDF formats with custom brand colors and logo support.
+- **Stateless & Privacy-First**: 100% browser-side execution with no user accounts, no database, and no server-side storage of phone numbers or usernames.
+- **Free Public REST API & SDK**: Keyless REST API endpoints for developers (`/api/v1/username-link`, `/api/v1/phone-link`, `/api/v1/qr`, `/api/v1/validate/*`) and an open-source TypeScript SDK (`whatsusernames-sdk`).
+
+## Key Pages & Documentation
+
+- [Home Page](https://whatsusernames.link): Primary WhatsApp link and QR code generator.
+- [How to Create a WhatsApp Link](https://whatsusernames.link/how-to-create-a-whatsapp-link): Step-by-step guide explaining WhatsApp's @Username rollout, link formats, and fallback options.
+- [Developer API Documentation](https://whatsusernames.link/developers): Public REST API reference, CORS policy, rate limits, OpenAPI 3.1 spec, and Business Platform integration endpoints.
+- [WhatsApp Glossary](https://whatsusernames.link/glossary): Key terms explained, including wa.me links, Username Keys, BSUID, and Business-Scoped User IDs.
+- [About Us](https://whatsusernames.link/about): Mission, stateless architecture, and independent open-source maintenance.
+- [Privacy Policy](https://whatsusernames.link/privacy): Detailed breakdown of client-side processing, Vercel infrastructure logs, and third-party advertising policies.
+- [Terms of Service](https://whatsusernames.link/terms): Acceptable use, disclaimer of affiliation, and service terms.
+
+## Technical Specifications
+
+- **Link Formats**: `wa.me/<username>`, `whatsusernames.link/<username>`, `wa.me/<phone>`
+- **Supported QR Export Formats**: PNG, JPEG, SVG, PDF
+- **API Base URL**: `https://whatsusernames.link/api/v1`
+- **Supported Languages**: English (`/`), Portuguese (`/pt`), Spanish (`/es`)
