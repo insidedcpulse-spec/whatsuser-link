@@ -1,6 +1,7 @@
 import { resolveContact } from "@/lib/business/contact/resolve";
 import { checkRateLimit } from "@/lib/api/rate-limit";
 import { apiJson, apiError, apiOptions, apiRateLimited } from "@/lib/api/responses";
+import { recordApiCall } from "@/lib/stats";
 
 function stringOrUndefined(value: unknown): string | undefined {
   return typeof value === "string" && value !== "" ? value : undefined;
@@ -31,6 +32,8 @@ export async function POST(request: Request): Promise<Response> {
   if (!result) {
     return apiError(400, "missing_identifier", "Provide exactly one of bsuid, phone, or username.", rate.headers);
   }
+
+  await recordApiCall("/api/v1/business/contact/resolve", request);
 
   return apiJson(result, rate.headers);
 }

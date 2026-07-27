@@ -1,6 +1,7 @@
 import { validateBsuid } from "@/lib/business/bsuid/validate";
 import { checkRateLimit } from "@/lib/api/rate-limit";
 import { apiJson, apiError, apiOptions, apiRateLimited } from "@/lib/api/responses";
+import { recordApiCall } from "@/lib/stats";
 
 export async function POST(request: Request): Promise<Response> {
   const rate = await checkRateLimit(request, "json");
@@ -17,6 +18,8 @@ export async function POST(request: Request): Promise<Response> {
   if (typeof bsuid !== "string" || bsuid === "") {
     return apiError(400, "missing_bsuid", '"bsuid" field is required.', rate.headers);
   }
+
+  await recordApiCall("/api/v1/business/bsuid/validate", request);
 
   return apiJson(validateBsuid(bsuid), rate.headers);
 }

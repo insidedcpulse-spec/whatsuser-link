@@ -1,6 +1,7 @@
 import { validateBusinessUsername } from "@/lib/business/username/validate";
 import { checkRateLimit } from "@/lib/api/rate-limit";
 import { apiJson, apiError, apiOptions, apiRateLimited } from "@/lib/api/responses";
+import { recordApiCall } from "@/lib/stats";
 
 export async function POST(request: Request): Promise<Response> {
   const rate = await checkRateLimit(request, "json");
@@ -17,6 +18,8 @@ export async function POST(request: Request): Promise<Response> {
   if (typeof username !== "string" || username === "") {
     return apiError(400, "missing_username", '"username" field is required.', rate.headers);
   }
+
+  await recordApiCall("/api/v1/business/username/validate", request);
 
   return apiJson(validateBusinessUsername(username), rate.headers);
 }

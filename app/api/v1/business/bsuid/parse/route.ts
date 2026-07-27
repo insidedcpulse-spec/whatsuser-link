@@ -1,6 +1,7 @@
 import { parseBsuid } from "@/lib/business/bsuid/parse";
 import { checkRateLimit } from "@/lib/api/rate-limit";
 import { apiJson, apiError, apiOptions, apiRateLimited } from "@/lib/api/responses";
+import { recordApiCall } from "@/lib/stats";
 
 export async function POST(request: Request): Promise<Response> {
   const rate = await checkRateLimit(request, "json");
@@ -22,6 +23,8 @@ export async function POST(request: Request): Promise<Response> {
   if (!parsed) {
     return apiError(400, "invalid_bsuid", "Malformed BSUID.", rate.headers);
   }
+
+  await recordApiCall("/api/v1/business/bsuid/parse", request);
 
   return apiJson(parsed, rate.headers);
 }

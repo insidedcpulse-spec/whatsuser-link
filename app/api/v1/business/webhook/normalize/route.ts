@@ -1,6 +1,7 @@
 import { normalizeWebhook } from "@/lib/business/webhook/normalize";
 import { checkRateLimit } from "@/lib/api/rate-limit";
 import { apiJson, apiError, apiOptions, apiRateLimited } from "@/lib/api/responses";
+import { recordApiCall } from "@/lib/stats";
 
 export async function POST(request: Request): Promise<Response> {
   const rate = await checkRateLimit(request, "json");
@@ -22,6 +23,8 @@ export async function POST(request: Request): Promise<Response> {
       rate.headers,
     );
   }
+
+  await recordApiCall("/api/v1/business/webhook/normalize", request);
 
   return apiJson(result, rate.headers);
 }

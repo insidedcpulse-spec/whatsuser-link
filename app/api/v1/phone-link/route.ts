@@ -29,7 +29,7 @@ export async function GET(request: Request): Promise<Response> {
 
     await Promise.all([
       recordLinkGenerated("api", "phone-link"),
-      recordApiCall("phone-link"),
+      recordApiCall("phone-link", request),
     ]);
 
     return apiJson({ phone: result.link.phone, link: result.link.url }, rate.headers);

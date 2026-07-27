@@ -81,7 +81,7 @@ export async function GET(request: Request): Promise<Response> {
 
     await Promise.all([
       recordLinkGenerated("api", "qr"),
-      recordApiCall("qr"),
+      recordApiCall("qr", request),
     ]);
 
     return new Response(qr.body, {
