@@ -12,8 +12,13 @@ import {
   BarChart3,
   Globe,
   Layers,
+  Lock,
+  LogOut,
+  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import type { DashboardStats } from "@/lib/stats";
 
 export function DashboardView() {
@@ -21,14 +26,26 @@ export function DashboardView() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [unauthorized, setUnauthorized] = useState(false);
+
+  // Login Form States
+  const [password, setPassword] = useState("");
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [submittingLogin, setSubmittingLogin] = useState(false);
 
   const fetchStats = useCallback(async (isManualRefresh = false) => {
     if (isManualRefresh) setRefreshing(true);
     try {
       const res = await fetch("/api/stats");
+      if (res.status === 401) {
+        setUnauthorized(true);
+        setStats(null);
+        return;
+      }
       if (res.ok) {
         const data = await res.json();
         setStats(data);
+        setUnauthorized(false);
       }
     } catch (err) {
       console.error("Failed to fetch dashboard stats", err);
@@ -40,10 +57,94 @@ export function DashboardView() {
 
   useEffect(() => {
     fetchStats();
-    // Auto-refresh every 30 seconds
-    const interval = setInterval(() => fetchStats(), 30000);
+    const interval = setInterval(() => {
+      if (!unauthorized) fetchStats();
+    }, 30000);
     return () => clearInterval(interval);
-  }, [fetchStats]);
+  }, [fetchStats, unauthorized]);
+
+  async function handleLogin(e: React.FormEvent) {
+    e.preventDefault();
+    if (!password.trim()) return;
+
+    setSubmittingLogin(true);
+    setLoginError(null);
+
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+
+      if (res.ok) {
+        setPassword("");
+        setUnauthorized(false);
+        fetchStats();
+      } else {
+        setLoginError("Palavra-passe incorreta. Tenta novamente.");
+      }
+    } catch {
+      setLoginError("Erro de ligação. Tenta novamente.");
+    } finally {
+      setSubmittingLogin(false);
+    }
+  }
+
+  async function handleLogout() {
+    await fetch("/api/admin/logout", { method: "POST" });
+    setUnauthorized(true);
+    setStats(null);
+  }
+
+  // Render Login Card if Unauthorized
+  if (unauthorized) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 py-12">
+        <div className="w-full max-w-md rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-md">
+          <div className="flex flex-col items-center text-center mb-6">
+            <div className="p-3.5 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-3 border border-emerald-500/20">
+              <Lock className="w-6 h-6" />
+            </div>
+            <h1 className="text-xl font-bold text-foreground">
+              Painel de Administração
+            </h1>
+            <p className="text-xs text-muted-foreground mt-1">
+              Introduz a palavra-passe para aceder às métricas do WhatsUsernames.link
+            </p>
+          </div>
+
+          <form onSubmit={handleLogin} className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="admin-password">Palavra-passe</Label>
+              <Input
+                id="admin-password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••••••"
+                required
+                autoFocus
+                className="h-10 text-base sm:text-sm"
+              />
+              {loginError && (
+                <p className="text-xs text-destructive mt-1 font-medium">{loginError}</p>
+              )}
+            </div>
+
+            <Button
+              type="submit"
+              size="lg"
+              disabled={submittingLogin}
+              className="w-full h-11 text-sm font-semibold mt-2"
+            >
+              {submittingLogin ? "A verificar..." : "Entrar no Dashboard"}
+            </Button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   const totalLinks = stats?.totalLinks ?? 0;
   const webLinks = stats?.webLinks ?? 0;
@@ -58,6 +159,10 @@ export function DashboardView() {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              Sessão Autenticada
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
               <CheckCircle2 className="w-3.5 h-3.5" />
               {t("operational")}
             </span>
@@ -70,7 +175,7 @@ export function DashboardView() {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <Button
             variant="outline"
             size="sm"
@@ -80,6 +185,16 @@ export function DashboardView() {
           >
             <RefreshCw className={`w-3.5 h-3.5 ${refreshing ? "animate-spin" : ""}`} />
             {t("refresh")}
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleLogout}
+            className="flex items-center gap-1.5 text-xs h-9 text-muted-foreground hover:text-destructive"
+          >
+            <LogOut className="w-3.5 h-3.5" />
+            Sair
           </Button>
         </div>
       </div>
