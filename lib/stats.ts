@@ -80,7 +80,7 @@ export async function recordApiCall(endpoint: string, request?: Request): Promis
         pipeline.sadd(`stats:daily:${today}:new_clients`, clientId);
       }
 
-      pipeline.hset(`stats:client:${clientId}`, "last_seen", nowIso);
+      pipeline.hset(`stats:client:${clientId}`, { last_seen: nowIso });
       pipeline.hincrby(`stats:client:${clientId}`, "total_requests", 1);
       pipeline.sadd("stats:clients:all", clientId);
       pipeline.sadd(`stats:daily:${today}:active_clients`, clientId);

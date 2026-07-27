@@ -55,7 +55,7 @@ describe("lib/stats", () => {
       pipeline: vi.fn(() => mockPipeline),
     };
 
-    vi.mocked(getRedisClient).mockReturnValue(mockRedis as any);
+    vi.mocked(getRedisClient).mockReturnValue(mockRedis as unknown as ReturnType<typeof getRedisClient>);
 
     const req = new Request("https://whatsusernames.link/api/v1/phone-link", {
       headers: { "x-forwarded-for": "203.0.113.195", "user-agent": "TestAgent/1.0" },
@@ -109,7 +109,7 @@ describe("lib/stats", () => {
       pipeline: vi.fn(() => mockPipeline),
     };
 
-    vi.mocked(getRedisClient).mockReturnValue(mockRedis as any);
+    vi.mocked(getRedisClient).mockReturnValue(mockRedis as unknown as ReturnType<typeof getRedisClient>);
 
     const stats = await getDashboardStats();
 

@@ -15,6 +15,9 @@ import {
   Lock,
   LogOut,
   ShieldCheck,
+  UserPlus,
+  UserCheck,
+  Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -278,6 +281,63 @@ export function DashboardView() {
         </div>
       </div>
 
+      {/* API Clients Metrics Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {/* Card 5: New API Clients Today */}
+        <div className="rounded-2xl border border-border bg-card p-5 shadow-xs flex flex-col justify-between">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-muted-foreground">{t("newClients")}</span>
+            <div className="p-2 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              <UserPlus className="w-4 h-4" />
+            </div>
+          </div>
+          <div className="mt-3">
+            <div className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              {loading ? "..." : (stats?.todayNewClients ?? 0).toLocaleString()}
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Novos clientes de API hoje
+            </p>
+          </div>
+        </div>
+
+        {/* Card 6: Returning API Clients Today */}
+        <div className="rounded-2xl border border-border bg-card p-5 shadow-xs flex flex-col justify-between">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-muted-foreground">{t("returningClients")}</span>
+            <div className="p-2 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400">
+              <UserCheck className="w-4 h-4" />
+            </div>
+          </div>
+          <div className="mt-3">
+            <div className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              {loading ? "..." : (stats?.todayReturningClients ?? 0).toLocaleString()}
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Clientes recorrentes de API hoje
+            </p>
+          </div>
+        </div>
+
+        {/* Card 7: Total Unique API Clients */}
+        <div className="rounded-2xl border border-border bg-card p-5 shadow-xs flex flex-col justify-between">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-muted-foreground">{t("totalUniqueClients")}</span>
+            <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+              <Users className="w-4 h-4" />
+            </div>
+          </div>
+          <div className="mt-3">
+            <div className="text-2xl sm:text-3xl font-extrabold text-foreground">
+              {loading ? "..." : (stats?.totalUniqueClients ?? 0).toLocaleString()}
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Total acumulado de clientes únicos
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Secondary Section: Link Generation Channel Share */}
       <div className="rounded-2xl border border-border bg-card p-6 shadow-xs">
         <div className="flex items-center justify-between mb-4">
@@ -383,6 +443,8 @@ export function DashboardView() {
                     <th className="pb-2">Data</th>
                     <th className="pb-2 text-right">Links Gerados</th>
                     <th className="pb-2 text-right">Chamadas API</th>
+                    <th className="pb-2 text-right">{t("newClientsHeader")}</th>
+                    <th className="pb-2 text-right">{t("returningClientsHeader")}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -394,6 +456,12 @@ export function DashboardView() {
                       </td>
                       <td className="py-2.5 text-right font-semibold text-blue-600 dark:text-blue-400">
                         {item.apiCalls.toLocaleString()}
+                      </td>
+                      <td className="py-2.5 text-right font-semibold text-teal-600 dark:text-teal-400">
+                        {(item.newClients ?? 0).toLocaleString()}
+                      </td>
+                      <td className="py-2.5 text-right font-semibold text-sky-600 dark:text-sky-400">
+                        {(item.returningClients ?? 0).toLocaleString()}
                       </td>
                     </tr>
                   ))}
