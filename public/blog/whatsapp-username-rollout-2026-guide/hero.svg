@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b141a"/>
+      <stop offset="100%" stop-color="#121b22"/>
+    </linearGradient>
+    <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00a884"/>
+      <stop offset="100%" stop-color="#25d366"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="120" r="220" fill="#25d366" opacity="0.08"/>
+  <circle cx="150" cy="540" r="260" fill="#00a884" opacity="0.08"/>
+  <g transform="translate(180,120)">
+    <rect x="0" y="0" width="840" height="390" rx="24" fill="#1f2c34" stroke="#2a3942" stroke-width="2"/>
+    <rect x="0" y="0" width="840" height="64" rx="24" fill="#111b21"/>
+    <rect x="0" y="32" width="840" height="32" fill="#111b21"/>
+    <circle cx="40" cy="32" r="9" fill="#ff5f57"/>
+    <circle cx="72" cy="32" r="9" fill="#febc2e"/>
+    <circle cx="104" cy="32" r="9" fill="#28c840"/>
+    <text x="420" y="39" fill="#8696a0" font-family="sans-serif" font-size="18" text-anchor="middle">WhatsApp @Username Rollout 2026</text>
+    
+    <g transform="translate(60, 110)">
+      <rect x="0" y="0" width="720" height="70" rx="14" fill="#111b21" stroke="#00a884" stroke-width="2"/>
+      <text x="30" y="44" fill="#25d366" font-family="sans-serif" font-size="28" font-weight="bold">@username</text>
+      <text x="210" y="44" fill="#e9edef" font-family="sans-serif" font-size="22">whatsapp.com/user/john.doe</text>
+      <rect x="560" y="15" width="130" height="40" rx="10" fill="url(#emerald)"/>
+      <text x="625" y="41" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">VERIFIED</text>
+    </g>
+
+    <g transform="translate(60, 210)" font-family="sans-serif" font-size="20">
+      <rect x="0" y="0" width="340" height="130" rx="14" fill="#111b21"/>
+      <text x="30" y="45" fill="#8696a0" font-size="16">TREND SURGE</text>
+      <text x="30" y="90" fill="#25d366" font-size="36" font-weight="bold">+2,800%</text>
+      <text x="200" y="90" fill="#e9edef" font-size="16">Global Searches</text>
+
+      <rect x="380" y="0" width="340" height="130" rx="14" fill="#111b21"/>
+      <text x="410" y="45" fill="#8696a0" font-size="16">SECURITY FEATURE</text>
+      <text x="410" y="90" fill="#e9edef" font-size="24" font-weight="bold">Username Key PIN</text>
+    </g>
+  </g>
+</svg>
