@@ -446,5 +446,17 @@
     "linkDistribution": "Link Generation Channels",
     "webShare": "Web Generator Share",
     "apiShare": "Developer API Share"
+  },
+  "ideaGenerator": {
+    "title": "AI WhatsApp Username Generator & Ideas",
+    "nameLabel": "Your Name, Brand or Keyword",
+    "namePlaceholder": "e.g. Alex, Photo Studio, Tech",
+    "styleLabel": "Username Style / Vibe",
+    "styleAesthetic": "Aesthetic & Stylish",
+    "styleBusiness": "Professional & Business",
+    "styleMinimal": "Short & Minimalist",
+    "styleCreative": "Creative & Studio",
+    "generateBtn": "Generate Username Ideas",
+    "resultsTitle": "Available Username Format Ideas"
   }
 }

@@ -446,5 +446,17 @@
     "linkDistribution": "Canais de Geração de Links",
     "webShare": "Quota do Gerador Web",
     "apiShare": "Quota da API de Developers"
+  },
+  "ideaGenerator": {
+    "title": "Gerador de Ideias de Usernames para WhatsApp",
+    "nameLabel": "O teu Nome, Marca ou Palavra-chave",
+    "namePlaceholder": "ex: Alex, Fotografia, Tech",
+    "styleLabel": "Estilo / Vibe do Username",
+    "styleAesthetic": "Estético e Moderno",
+    "styleBusiness": "Profissional e Negócio",
+    "styleMinimal": "Curto e Minimalista",
+    "styleCreative": "Criativo e Studio",
+    "generateBtn": "Gerar Ideias de Usernames",
+    "resultsTitle": "Ideias de Usernames Válidos"
   }
 }

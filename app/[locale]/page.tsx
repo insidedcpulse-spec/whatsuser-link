@@ -9,6 +9,8 @@ import { FeaturedArticles } from "@/components/featured-articles";
 import { SiteFooter } from "@/components/site-footer";
 import { Link } from "@/i18n/navigation";
 
+import { UsernameIdeaGenerator } from "@/components/whatsapp/username-idea-generator";
+
 export default async function Home() {
   const tGuide = await getTranslations("guide");
 
@@ -21,6 +23,11 @@ export default async function Home() {
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <PhoneGenerator />
           <UsernameGenerator />
+        </div>
+
+        {/* AI Username Idea Generator */}
+        <div className="w-full max-w-4xl">
+          <UsernameIdeaGenerator />
         </div>
 
         {/* Value Propositions & Privacy Features */}

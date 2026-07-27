@@ -14,7 +14,7 @@ describe("blog content loader", () => {
     expect(getPost("en", "does-not-exist")).toBeNull();
   });
 
-  it("finds all 10 Portuguese articles", () => {
+  it("finds all 11 Portuguese articles", () => {
     expect(getPostSlugs("pt").sort()).toEqual(
       [
         "api-whatsapp-link-gratis",
@@ -27,6 +27,7 @@ describe("blog content loader", () => {
         "usernames-vs-numero-telefone-privacidade",
         "nova-burla-whatsapp-anexos-falsos-malware",
         "whatsapp-backup-sem-icloud-iphone",
+        "whatsapp-username-rollout-2026-guide",
       ].sort()
     );
   });
@@ -45,8 +46,8 @@ describe("blog content loader", () => {
   it("sorts posts by date, most recent first", () => {
     const posts = getAllPosts("pt");
 
-    expect(posts).toHaveLength(10);
-    expect(posts[0].frontmatter.slug).toBe("whatsapp-backup-sem-icloud-iphone");
+    expect(posts).toHaveLength(11);
+    expect(posts[0].frontmatter.slug).toBe("whatsapp-username-rollout-2026-guide");
     expect(posts[posts.length - 1].frontmatter.slug).toBe(
       "como-reservar-username-whatsapp-2026"
     );
