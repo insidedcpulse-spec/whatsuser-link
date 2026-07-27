@@ -3,6 +3,7 @@ import { sanitizePhoneInput } from "@/utils/validate-phone";
 import { mapValidationError } from "@/lib/api/error-codes";
 import { checkRateLimit } from "@/lib/api/rate-limit";
 import { apiJson, apiError, apiOptions, apiRateLimited } from "@/lib/api/responses";
+import { recordLinkGenerated, recordApiCall } from "@/lib/stats";
 
 export async function GET(request: Request): Promise<Response> {
   const rate = await checkRateLimit(request, "json");
@@ -25,6 +26,9 @@ export async function GET(request: Request): Promise<Response> {
       const { code, message } = mapValidationError(result.errors[0]);
       return apiError(400, code, message, rate.headers);
     }
+
+    recordLinkGenerated("api", "phone-link");
+    recordApiCall("phone-link");
 
     return apiJson({ phone: result.link.phone, link: result.link.url }, rate.headers);
   } catch (error) {

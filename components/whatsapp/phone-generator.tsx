@@ -56,6 +56,12 @@ export function PhoneGenerator() {
 
     setErrors([]);
     setLink(result.link);
+
+    fetch("/api/track/link", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "phone" }),
+    }).catch(() => {});
   }
 
   function handleReset() {

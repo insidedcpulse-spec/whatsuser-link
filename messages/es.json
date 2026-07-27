@@ -424,5 +424,27 @@
     "lastUpdated": "Actualizado el",
     "breadcrumbHome": "Inicio",
     "breadcrumbGlossary": "Glosario"
+  },
+  "dashboard": {
+    "metaTitle": "Panel de Métricas — WhatsUsernames.link",
+    "metaDescription": "Panel de estadísticas en tiempo real sobre enlaces generados y consumo de API en WhatsUsernames.link.",
+    "title": "Panel de Métricas y Uso",
+    "subtitle": "Estadísticas en tiempo real sobre personas que generaron enlaces y uso de la API.",
+    "totalLinks": "Total de Enlaces Generados",
+    "webLinks": "Generados vía Web UI",
+    "apiLinks": "Generados vía API",
+    "totalApiCalls": "Total de Solicitudes API",
+    "todayLinks": "Enlaces Generados Hoy",
+    "todayApiCalls": "Llamadas API Hoy",
+    "endpointDistribution": "Distribución por Endpoint de la API",
+    "recentActivity": "Actividad de los Últimos 7 Días",
+    "refresh": "Actualizar Datos",
+    "lastUpdated": "Última actualización",
+    "status": "Estado del Sistema",
+    "operational": "Operativo (Upstash Redis)",
+    "noData": "Sin datos acumulados aún.",
+    "linkDistribution": "Canales de Generación de Enlaces",
+    "webShare": "Cuota del Generador Web",
+    "apiShare": "Cuota de la API para Desarrolladores"
   }
 }

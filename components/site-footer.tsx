@@ -49,6 +49,11 @@ export async function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/dashboard" className="hover:text-foreground transition-colors">
+                  Live Analytics & Metrics Dashboard
+                </Link>
+              </li>
+              <li>
                 <Link href="/developers" className="hover:text-foreground transition-colors">
                   WhatsApp Business BSUID Tools
                 </Link>

@@ -4,9 +4,23 @@ import { routing } from "@/i18n/routing";
 import { validateUsername } from "@/utils/validate-username";
 import { generateWhatsAppLink } from "@/lib/whatsapp/generateLink";
 
-// Conventional site paths that don't have a dedicated page yet -- reserved so they
-// 404 instead of being misread as a WhatsApp username and redirected to wa.me.
-const RESERVED_SITE_PATHS = ["about", "privacy", "faq", "contact", "legal", "terms"];
+// Conventional site paths that have dedicated pages or reserved names -- reserved so they
+// don't get misread as a WhatsApp username and redirected to wa.me.
+const RESERVED_SITE_PATHS = [
+  "about",
+  "privacy",
+  "faq",
+  "contact",
+  "legal",
+  "terms",
+  "dashboard",
+  "developers",
+  "blog",
+  "glossary",
+  "how-to-create-a-whatsapp-link",
+  "privacy-policy",
+  "terms-of-service",
+];
 
 export async function GET(
   _request: Request,

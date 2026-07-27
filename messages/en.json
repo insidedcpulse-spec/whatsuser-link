@@ -424,5 +424,27 @@
     "lastUpdated": "Last updated",
     "breadcrumbHome": "Home",
     "breadcrumbGlossary": "Glossary"
+  },
+  "dashboard": {
+    "metaTitle": "Analytics & Metrics Dashboard — WhatsUsernames.link",
+    "metaDescription": "Real-time metrics dashboard for link generations and API usage on WhatsUsernames.link.",
+    "title": "Metrics & Usage Dashboard",
+    "subtitle": "Real-time statistics on links generated and API usage.",
+    "totalLinks": "Total Links Generated",
+    "webLinks": "Generated via Web UI",
+    "apiLinks": "Generated via API",
+    "totalApiCalls": "Total API Requests",
+    "todayLinks": "Links Today",
+    "todayApiCalls": "API Calls Today",
+    "endpointDistribution": "API Endpoint Distribution",
+    "recentActivity": "Last 7 Days Activity",
+    "refresh": "Refresh Data",
+    "lastUpdated": "Last updated",
+    "status": "System Status",
+    "operational": "Operational (Upstash Redis)",
+    "noData": "No metric data accumulated yet.",
+    "linkDistribution": "Link Generation Channels",
+    "webShare": "Web Generator Share",
+    "apiShare": "Developer API Share"
   }
 }

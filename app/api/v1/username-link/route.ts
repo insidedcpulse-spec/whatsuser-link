@@ -10,6 +10,7 @@ import {
   USERNAME_LINK_NOTICE,
 } from "@/lib/api/responses";
 import { buildShortLink } from "@/lib/short-link";
+import { recordLinkGenerated, recordApiCall } from "@/lib/stats";
 
 export async function GET(request: Request): Promise<Response> {
   const rate = await checkRateLimit(request, "json");
@@ -33,6 +34,9 @@ export async function GET(request: Request): Promise<Response> {
       const { code, message } = mapValidationError(result.errors[0]);
       return apiError(400, code, message, rate.headers);
     }
+
+    recordLinkGenerated("api", "username-link");
+    recordApiCall("username-link");
 
     return apiJson(
       {

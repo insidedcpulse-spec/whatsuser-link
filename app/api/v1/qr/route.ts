@@ -12,6 +12,7 @@ import {
   API_SUCCESS_CACHE_CONTROL,
 } from "@/lib/api/responses";
 import { generateQr } from "@/lib/qr/generate-qr";
+import { recordLinkGenerated, recordApiCall } from "@/lib/stats";
 
 const HEX_COLOR_REGEX = /^[0-9a-fA-F]{6}$/;
 const MIN_SIZE = 128;
@@ -77,6 +78,9 @@ export async function GET(request: Request): Promise<Response> {
       color: `#${color}`,
       background: bg === "transparent" ? "#ffffff00" : `#${bg}`,
     });
+
+    recordLinkGenerated("api", "qr");
+    recordApiCall("qr");
 
     return new Response(qr.body, {
       headers: {
