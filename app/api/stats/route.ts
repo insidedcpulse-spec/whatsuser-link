@@ -13,5 +13,8 @@ export async function GET(request: Request): Promise<Response> {
   }
 
   const stats = await getDashboardStats();
-  return apiJson(stats, rate.headers);
+  return apiJson(stats, {
+    ...rate.headers,
+    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+  });
 }

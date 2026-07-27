@@ -11,7 +11,7 @@ export async function POST(request: Request): Promise<Response> {
     const linkType = typeof body?.type === "string" ? body.type : "general";
 
     // Record web generated link in background without awaiting to keep UI sub-millisecond fast
-    recordLinkGenerated("web", linkType);
+    await recordLinkGenerated("web", linkType);
 
     return apiJson({ success: true }, rate.headers);
   } catch {

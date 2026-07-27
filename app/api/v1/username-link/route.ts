@@ -35,8 +35,10 @@ export async function GET(request: Request): Promise<Response> {
       return apiError(400, code, message, rate.headers);
     }
 
-    recordLinkGenerated("api", "username-link");
-    recordApiCall("username-link");
+    await Promise.all([
+      recordLinkGenerated("api", "username-link"),
+      recordApiCall("username-link"),
+    ]);
 
     return apiJson(
       {

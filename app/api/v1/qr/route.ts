@@ -79,8 +79,10 @@ export async function GET(request: Request): Promise<Response> {
       background: bg === "transparent" ? "#ffffff00" : `#${bg}`,
     });
 
-    recordLinkGenerated("api", "qr");
-    recordApiCall("qr");
+    await Promise.all([
+      recordLinkGenerated("api", "qr"),
+      recordApiCall("qr"),
+    ]);
 
     return new Response(qr.body, {
       headers: {
