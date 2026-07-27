@@ -65,6 +65,6 @@ describe("entity knowledge graph loader", () => {
   it("finds gap entities with no articles and no guides", () => {
     const gaps = getGapEntities("pt").map((e) => e.id);
 
-    expect(gaps.sort()).toEqual(["business-platform", "channels", "communities", "phone-links"].sort());
+    expect(gaps.sort()).toEqual(["channels", "communities", "phone-links"].sort());
   });
 });

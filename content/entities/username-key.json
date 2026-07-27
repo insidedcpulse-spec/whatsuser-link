@@ -2,9 +2,9 @@
   "id": "username-key",
   "parent": "usernames",
   "related": ["username-link", "qr-code", "security"],
-  "articles": ["username-key-whatsapp"],
+  "articles": ["username-key-whatsapp", "como-reservar-username-whatsapp-2026", "usernames-vs-numero-telefone-privacidade"],
   "guides": [],
-  "lastUpdated": "2026-06-08",
+  "lastUpdated": "2026-07-27",
   "translations": {
     "pt": {
       "name": "Username Key",
@@ -18,6 +18,10 @@
         {
           "q": "Tenho de mostrar a minha Username Key?",
           "a": "Não, é opcional. É mais útil quando o username sozinho podia ser confundido com o de outra pessoa."
+        },
+        {
+          "q": "Como posso reservar e proteger o meu identificador oficial no WhatsApp?",
+          "a": "Descobre o guia completo com o passo a passo de [como reservar o teu username no WhatsApp](/blog/como-reservar-username-whatsapp-2026) para ficares com o teu nome de perfil antes que fique indisponível."
         }
       ]
     },
@@ -33,6 +37,10 @@
         {
           "q": "Do I have to show my Username Key?",
           "a": "No, it's optional. It's most useful when the username alone could be confused with someone else's."
+        },
+        {
+          "q": "How can I reserve and protect my official WhatsApp handle?",
+          "a": "Check out our step-by-step guide on [how to reserve your WhatsApp username](/blog/como-reservar-username-whatsapp-2026) to claim your profile handle."
         }
       ]
     },
@@ -48,6 +56,10 @@
         {
           "q": "¿Tengo que mostrar mi Username Key?",
           "a": "No, es opcional. Es más útil cuando el username por sí solo podría confundirse con el de otra persona."
+        },
+        {
+          "q": "¿Cómo puedo reservar y proteger mi identificador oficial en WhatsApp?",
+          "a": "Consulta la guía paso a paso sobre [cómo reservar tu username en WhatsApp](/blog/como-reservar-username-whatsapp-2026) para asegurar tu nombre antes de que se agote."
         }
       ]
     }

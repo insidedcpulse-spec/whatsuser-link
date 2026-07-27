@@ -2,9 +2,9 @@
   "id": "api",
   "parent": "usernames",
   "related": ["username-link", "qr-code", "business"],
-  "articles": ["api-whatsapp-link-gratis", "whatsusernames-sdk-npm"],
+  "articles": ["api-whatsapp-link-gratis", "whatsusernames-sdk-npm", "link-whatsapp-qr-code-gratis", "wa-me-username-alternativas"],
   "guides": ["/developers"],
-  "lastUpdated": "2026-07-05",
+  "lastUpdated": "2026-07-27",
   "translations": {
     "pt": {
       "name": "API",
@@ -18,6 +18,10 @@
         {
           "q": "Existe limite de pedidos?",
           "a": "Sim, aplica-se um limite razoável para manter a API gratuita utilizável por todos — vê a página developers para os limites atuais."
+        },
+        {
+          "q": "Como posso gerar um link ou QR code visual sem escrever código?",
+          "a": "Se preferes uma solução visual imediata em vez de integrar a API, podes utilizar o nosso gerador no guia completo sobre [link e QR code grátis no WhatsApp](/blog/link-whatsapp-qr-code-gratis)."
         }
       ]
     },
@@ -33,6 +37,10 @@
         {
           "q": "Is there a rate limit?",
           "a": "Yes, a reasonable rate limit applies to keep the free API usable for everyone — see the developers page for current limits."
+        },
+        {
+          "q": "How can I generate a link or QR code visually without writing code?",
+          "a": "If you prefer an immediate visual tool instead of API integration, use our step-by-step tool in the [free WhatsApp link & QR code guide](/blog/link-whatsapp-qr-code-gratis)."
         }
       ]
     },
@@ -48,6 +56,10 @@
         {
           "q": "¿Hay límite de peticiones?",
           "a": "Sí, se aplica un límite razonable para mantener la API gratuita usable para todos — consulta la página de developers para los límites actuales."
+        },
+        {
+          "q": "¿Cómo puedo generar un enlace o código QR visual sin programar?",
+          "a": "Si prefieres una herramienta visual sin integrar la API, utiliza nuestra guía completa para [crear enlaces y códigos QR gratis en WhatsApp](/blog/link-whatsapp-qr-code-gratis)."
         }
       ]
     }

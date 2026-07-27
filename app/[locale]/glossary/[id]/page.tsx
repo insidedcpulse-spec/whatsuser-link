@@ -58,6 +58,31 @@ export async function generateMetadata({
   };
 }
 
+function renderFormattedText(text: string) {
+  const parts = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    const label = match[1];
+    const href = match[2];
+    parts.push(
+      <Link key={match.index} href={href} className="text-emerald-600 font-medium underline hover:text-emerald-700">
+        {label}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
+
 export default async function GlossaryTermPage({
   params,
 }: {
@@ -120,7 +145,7 @@ export default async function GlossaryTermPage({
               {entity.faqs.map((faq) => (
                 <details key={faq.q} className="rounded-xl border bg-card p-4">
                   <summary className="cursor-pointer font-medium text-foreground text-sm">{faq.q}</summary>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{renderFormattedText(faq.a)}</p>
                 </details>
               ))}
             </dl>

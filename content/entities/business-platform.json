@@ -2,9 +2,9 @@
   "id": "business-platform",
   "parent": null,
   "related": ["business", "api", "channels", "communities"],
-  "articles": [],
+  "articles": ["usernames-vs-numero-telefone-privacidade", "api-whatsapp-business-bsuid"],
   "guides": [],
-  "lastUpdated": null,
+  "lastUpdated": "2026-07-27",
   "translations": {
     "pt": {
       "name": "Business Platform",
@@ -14,6 +14,10 @@
         {
           "q": "A Business Platform é o mesmo que a app WhatsApp Business?",
           "a": "Não — a app (WhatsApp Business) é para pequenos negócios que gerem conversas manualmente; a Business Platform (Cloud API) é a API orientada a programadores para automação em escala."
+        },
+        {
+          "q": "Como a privacidade por username beneficia a minha empresa?",
+          "a": "Descobre as diferenças de privacidade e proteção de dados de contacto no nosso artigo detalhado sobre [usernames vs número de telefone no WhatsApp](/blog/usernames-vs-numero-telefone-privacidade)."
         }
       ]
     },
@@ -25,6 +29,10 @@
         {
           "q": "Is the Business Platform the same as WhatsApp Business the app?",
           "a": "No — the app (WhatsApp Business) is for small businesses managing chats manually; the Business Platform (Cloud API) is the developer-facing API for automation at scale."
+        },
+        {
+          "q": "How does username privacy benefit my business?",
+          "a": "Learn about privacy differences and contact protection in our detailed article on [usernames vs phone numbers on WhatsApp](/blog/usernames-vs-numero-telefone-privacidade)."
         }
       ]
     },
@@ -36,6 +44,10 @@
         {
           "q": "¿La Business Platform es lo mismo que la app WhatsApp Business?",
           "a": "No — la app (WhatsApp Business) es para pequeños negocios que gestionan chats manualmente; la Business Platform (Cloud API) es la API orientada a desarrolladores para automatización a escala."
+        },
+        {
+          "q": "¿Cómo beneficia la privacidad por username a mi empresa?",
+          "a": "Conoce las diferencias de privacidad y protección de datos en nuestro artículo detallado sobre [usernames vs número de teléfono en WhatsApp](/blog/usernames-vs-numero-telefone-privacidade)."
         }
       ]
     }
