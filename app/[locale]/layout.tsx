@@ -82,7 +82,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="alternate" type="application/rss+xml" title="WhatsUsernames.link RSS Feed" href="/rss.xml" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5219655673819952" crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5219655673819952" crossOrigin="anonymous"></script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <JsonLdScript data={getSoftwareApplicationJsonLd(t("description"))} />
