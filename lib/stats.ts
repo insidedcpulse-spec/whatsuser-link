@@ -1,4 +1,5 @@
 import { getRedisClient } from "@/lib/redis";
+import { getClientId } from "./client-id";
 
 export interface DashboardStats {
   totalLinks: number;
@@ -7,11 +8,16 @@ export interface DashboardStats {
   totalApiCalls: number;
   todayLinks: number;
   todayApiCalls: number;
+  totalUniqueClients: number;
+  todayNewClients: number;
+  todayReturningClients: number;
   endpointBreakdown: Record<string, number>;
   dailyHistory: Array<{
     date: string;
     links: number;
     apiCalls: number;
+    newClients: number;
+    returningClients: number;
   }>;
   lastUpdated: string;
 }
@@ -50,7 +56,7 @@ export async function recordLinkGenerated(source: "web" | "api", linkType: strin
   }
 }
 
-export async function recordApiCall(endpoint: string): Promise<void> {
+export async function recordApiCall(endpoint: string, request?: Request): Promise<void> {
   try {
     const redis = getRedisClient();
     if (!redis) return;
@@ -63,6 +69,22 @@ export async function recordApiCall(endpoint: string): Promise<void> {
     pipeline.incr("stats:api:total");
     pipeline.incr(`stats:daily:${today}:api`);
     pipeline.hincrby("stats:api:by_endpoint", cleanEndpoint, 1);
+
+    if (request) {
+      const clientId = getClientId(request);
+      const nowIso = new Date().toISOString();
+      const hasFirstSeen = await redis.hexists(`stats:client:${clientId}`, "first_seen");
+
+      if (!hasFirstSeen) {
+        pipeline.hsetnx(`stats:client:${clientId}`, "first_seen", nowIso);
+        pipeline.sadd(`stats:daily:${today}:new_clients`, clientId);
+      }
+
+      pipeline.hset(`stats:client:${clientId}`, "last_seen", nowIso);
+      pipeline.hincrby(`stats:client:${clientId}`, "total_requests", 1);
+      pipeline.sadd("stats:clients:all", clientId);
+      pipeline.sadd(`stats:daily:${today}:active_clients`, clientId);
+    }
 
     await pipeline.exec();
   } catch (error) {
@@ -84,8 +106,17 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       totalApiCalls: 0,
       todayLinks: 0,
       todayApiCalls: 0,
+      totalUniqueClients: 0,
+      todayNewClients: 0,
+      todayReturningClients: 0,
       endpointBreakdown: { "phone-link": 0, "username-link": 0, "qr": 0 },
-      dailyHistory: pastDates.map((date) => ({ date, links: 0, apiCalls: 0 })),
+      dailyHistory: pastDates.map((date) => ({
+        date,
+        links: 0,
+        apiCalls: 0,
+        newClients: 0,
+        returningClients: 0,
+      })),
       lastUpdated: new Date().toISOString(),
     };
   }
@@ -100,11 +131,16 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     pipeline.get<number>(`stats:daily:${today}:links`);
     pipeline.get<number>(`stats:daily:${today}:api`);
     pipeline.hgetall<Record<string, number>>("stats:api:by_endpoint");
+    pipeline.scard("stats:clients:all");
+    pipeline.scard(`stats:daily:${today}:new_clients`);
+    pipeline.scard(`stats:daily:${today}:active_clients`);
 
     // Add daily history queries
     for (const date of pastDates) {
       pipeline.get<number>(`stats:daily:${date}:links`);
       pipeline.get<number>(`stats:daily:${date}:api`);
+      pipeline.scard(`stats:daily:${date}:new_clients`);
+      pipeline.scard(`stats:daily:${date}:active_clients`);
     }
 
     const results = await pipeline.exec();
@@ -116,6 +152,10 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     const todayLinks = Number(results[4] ?? 0);
     const todayApiCalls = Number(results[5] ?? 0);
     const endpointBreakdownRaw = (results[6] as Record<string, number>) || {};
+    const totalUniqueClients = Number(results[7] ?? 0);
+    const todayNewClients = Number(results[8] ?? 0);
+    const todayActiveClients = Number(results[9] ?? 0);
+    const todayReturningClients = Math.max(0, todayActiveClients - todayNewClients);
 
     // Standardize endpoint keys
     const endpointBreakdown: Record<string, number> = {};
@@ -124,12 +164,15 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     }
 
     const dailyHistory: DashboardStats["dailyHistory"] = [];
-    let historyIdx = 7;
+    let historyIdx = 10;
     for (const date of pastDates) {
       const links = Number(results[historyIdx] ?? 0);
       const apiCalls = Number(results[historyIdx + 1] ?? 0);
-      dailyHistory.push({ date, links, apiCalls });
-      historyIdx += 2;
+      const newClients = Number(results[historyIdx + 2] ?? 0);
+      const activeClients = Number(results[historyIdx + 3] ?? 0);
+      const returningClients = Math.max(0, activeClients - newClients);
+      dailyHistory.push({ date, links, apiCalls, newClients, returningClients });
+      historyIdx += 4;
     }
 
     return {
@@ -139,6 +182,9 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       totalApiCalls,
       todayLinks,
       todayApiCalls,
+      totalUniqueClients,
+      todayNewClients,
+      todayReturningClients,
       endpointBreakdown,
       dailyHistory,
       lastUpdated: new Date().toISOString(),
@@ -152,9 +198,19 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       totalApiCalls: 0,
       todayLinks: 0,
       todayApiCalls: 0,
+      totalUniqueClients: 0,
+      todayNewClients: 0,
+      todayReturningClients: 0,
       endpointBreakdown: {},
-      dailyHistory: pastDates.map((date) => ({ date, links: 0, apiCalls: 0 })),
+      dailyHistory: pastDates.map((date) => ({
+        date,
+        links: 0,
+        apiCalls: 0,
+        newClients: 0,
+        returningClients: 0,
+      })),
       lastUpdated: new Date().toISOString(),
     };
   }
 }
+
