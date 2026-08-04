@@ -14,7 +14,7 @@ describe("blog content loader", () => {
     expect(getPost("en", "does-not-exist")).toBeNull();
   });
 
-  it("finds all 12 Portuguese articles", () => {
+  it("finds all 13 Portuguese articles", () => {
     expect(getPostSlugs("pt").sort()).toEqual(
       [
         "api-whatsapp-link-gratis",
@@ -29,6 +29,7 @@ describe("blog content loader", () => {
         "whatsapp-backup-sem-icloud-iphone",
         "whatsapp-username-rollout-2026-guide",
         "whatsapp-link-instagram-bio-2026",
+        "melhores-geradores-link-whatsapp-2026",
       ].sort()
     );
   });
@@ -47,8 +48,8 @@ describe("blog content loader", () => {
   it("sorts posts by date, most recent first", () => {
     const posts = getAllPosts("pt");
 
-    expect(posts).toHaveLength(12);
-    expect(posts[0].frontmatter.slug).toBe("whatsapp-username-rollout-2026-guide");
+    expect(posts).toHaveLength(13);
+    expect(posts[0].frontmatter.slug).toBe("melhores-geradores-link-whatsapp-2026");
     expect(posts[posts.length - 1].frontmatter.slug).toBe(
       "como-reservar-username-whatsapp-2026"
     );

@@ -2,9 +2,9 @@
   "id": "username-link",
   "parent": "usernames",
   "related": ["qr-code", "username-key", "availability", "api"],
-  "articles": ["wa-me-username-alternativas"],
+  "articles": ["wa-me-username-alternativas", "melhores-geradores-link-whatsapp-2026"],
   "guides": ["/how-to-create-a-whatsapp-link"],
-  "lastUpdated": "2026-06-15",
+  "lastUpdated": "2026-08-04",
   "translations": {
     "pt": {
       "name": "Username Link",
