@@ -17,8 +17,9 @@ interface JsonRpcBody {
 }
 
 function rateLimitKindFor(body: unknown): LimiterKind {
-  const parsed = body as JsonRpcBody | undefined;
-  if (parsed?.method === "tools/call" && parsed.params?.name === "qr_code") {
+  if (body === null || typeof body !== "object") return "json";
+  const parsed = body as JsonRpcBody;
+  if (parsed.method === "tools/call" && parsed.params?.name === "qr_code") {
     return "qr";
   }
   return "json";
@@ -123,6 +124,9 @@ function createMcpServer(rate: RateLimitResult): McpServer {
 
 export async function POST(request: Request): Promise<Response> {
   const body = await request.json().catch(() => undefined);
+  if (Array.isArray(body)) {
+    return batchNotSupported();
+  }
   const rate = await checkRateLimit(request, rateLimitKindFor(body));
 
   const server = createMcpServer(rate);
@@ -144,6 +148,13 @@ function methodNotAllowed(): Response {
   return Response.json(
     { jsonrpc: "2.0", error: { code: -32000, message: "Method not allowed." }, id: null },
     { status: 405 },
+  );
+}
+
+function batchNotSupported(): Response {
+  return Response.json(
+    { jsonrpc: "2.0", error: { code: -32600, message: "Batch requests are not supported." }, id: null },
+    { status: 400 },
   );
 }
 

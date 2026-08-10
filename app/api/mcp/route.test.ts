@@ -72,6 +72,34 @@ describe("POST /api/mcp", () => {
   });
 });
 
+describe("POST /api/mcp batch requests", () => {
+  it("rejects a JSON array body with 400 instead of dispatching batched tool calls", async () => {
+    const res = await POST(
+      rpc([
+        {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "tools/call",
+          params: { name: "validate_username", arguments: { username: "joao.silva" } },
+        },
+        {
+          jsonrpc: "2.0",
+          id: 2,
+          method: "tools/call",
+          params: { name: "validate_username", arguments: { username: "joao.silva" } },
+        },
+      ]),
+    );
+    expect(res.status).toBe(400);
+    const body = await res.json();
+    expect(body).toEqual({
+      jsonrpc: "2.0",
+      error: { code: -32600, message: "Batch requests are not supported." },
+      id: null,
+    });
+  });
+});
+
 describe("GET/DELETE /api/mcp", () => {
   it("rejects GET with 405", async () => {
     const { GET } = await import("./route");
