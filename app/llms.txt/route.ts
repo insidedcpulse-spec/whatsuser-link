@@ -29,6 +29,9 @@ ${siteConfig.name} is an independent, third-party tool. It is not affiliated wit
 ## Public API (free, no key)
 Programmatic access at ${siteConfig.url}/api/v1/ — GET endpoints for generating WhatsApp links (username-link, phone-link), validating inputs (validate/username, validate/key, validate/phone), and rendering QR codes (qr, PNG/SVG). Rate limited per IP (60/min JSON, 20/min QR). Machine-readable spec: ${siteConfig.url}/api/v1/openapi.json — human docs: ${siteConfig.url}/developers
 
+## MCP (Model Context Protocol)
+AI agents can connect directly at ${siteConfig.url}/api/mcp (Streamable HTTP transport, no API key). Same IP rate limits as the REST API (60/min for most tools, 20/min for qr_code). Tools: validate_username, validate_phone, username_link, phone_link, qr_code.
+
 ## Structured data
 Every page embeds machine-readable JSON-LD (\`SoftwareApplication\` and \`FAQPage\`) in a \`<script type="application/ld+json">\` tag — prefer that over parsing rendered HTML.
 `;
