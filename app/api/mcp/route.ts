@@ -16,13 +16,12 @@ interface JsonRpcBody {
   params?: { name?: string };
 }
 
-function rateLimitKindFor(body: unknown): LimiterKind {
-  if (body === null || typeof body !== "object") return "json";
-  const parsed = body as JsonRpcBody;
-  if (parsed.method === "tools/call" && parsed.params?.name === "qr_code") {
-    return "qr";
-  }
-  return "json";
+function isToolCall(body: unknown): body is JsonRpcBody {
+  return typeof body === "object" && body !== null && (body as JsonRpcBody).method === "tools/call";
+}
+
+function rateLimitKindFor(body: JsonRpcBody): LimiterKind {
+  return body.params?.name === "qr_code" ? "qr" : "json";
 }
 
 async function runTool(
@@ -123,11 +122,18 @@ function createMcpServer(rate: RateLimitResult): McpServer {
 }
 
 export async function POST(request: Request): Promise<Response> {
-  const body = await request.json().catch(() => undefined);
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return parseError();
+  }
   if (Array.isArray(body)) {
     return batchNotSupported();
   }
-  const rate = await checkRateLimit(request, rateLimitKindFor(body));
+  const rate = isToolCall(body)
+    ? await checkRateLimit(request, rateLimitKindFor(body))
+    : { allowed: true, headers: {} };
 
   const server = createMcpServer(rate);
   const transport = new WebStandardStreamableHTTPServerTransport({
@@ -137,11 +143,22 @@ export async function POST(request: Request): Promise<Response> {
   await server.connect(transport);
 
   try {
-    return await transport.handleRequest(request, { parsedBody: body });
+    const response = await transport.handleRequest(request, { parsedBody: body });
+    for (const [key, value] of Object.entries(rate.headers)) {
+      response.headers.set(key, value);
+    }
+    return response;
   } finally {
     await transport.close();
     await server.close();
   }
+}
+
+function parseError(): Response {
+  return Response.json(
+    { jsonrpc: "2.0", error: { code: -32700, message: "Parse error: Invalid JSON" }, id: null },
+    { status: 400 },
+  );
 }
 
 function methodNotAllowed(): Response {
