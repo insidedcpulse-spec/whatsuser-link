@@ -26,6 +26,14 @@ ${siteConfig.name} is an independent, third-party tool. It is not affiliated wit
 - ${siteConfig.url}/pt — Portuguese
 - ${siteConfig.url}/es — Spanish
 
+## Key Pages & Documentation
+- ${siteConfig.url}/how-to-create-a-whatsapp-link — Step-by-step guide: WhatsApp's @Username rollout, link formats, fallback options.
+- ${siteConfig.url}/developers — Public REST API reference, CORS policy, rate limits, OpenAPI 3.1 spec.
+- ${siteConfig.url}/glossary — Key terms: wa.me links, Username Keys, BSUID, Business-Scoped User IDs.
+- ${siteConfig.url}/about — Mission, stateless architecture, independent open-source maintenance.
+- ${siteConfig.url}/privacy-policy — Client-side processing, infrastructure logs, third-party advertising policy.
+- ${siteConfig.url}/terms-of-service — Acceptable use, disclaimer of affiliation, service terms.
+
 ## Public API (free, no key)
 Programmatic access at ${siteConfig.url}/api/v1/ — GET endpoints for generating WhatsApp links (username-link, phone-link), validating inputs (validate/username, validate/key, validate/phone), and rendering QR codes (qr, PNG/SVG). Rate limited per IP (60/min JSON, 20/min QR). Machine-readable spec: ${siteConfig.url}/api/v1/openapi.json — human docs: ${siteConfig.url}/developers
 

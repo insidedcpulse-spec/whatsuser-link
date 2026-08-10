@@ -12,6 +12,7 @@ Live site: **[whatsusernames.link](https://whatsusernames.link)** (English, Port
 - **Link + QR generator** — turn a WhatsApp username or phone number into a shareable `wa.me` link and a customizable QR code (PNG/SVG, color, logo, transparency). No login, no database.
 - **Public REST API v1** (`/api/v1/*`) — generate links, validate usernames/keys/phone numbers, render QR codes. Free, keyless, CORS-enabled, rate-limited by IP. Full docs at [`/developers`](https://whatsusernames.link/developers), machine-readable spec at [`/api/v1/openapi.json`](https://whatsusernames.link/api/v1/openapi.json) (OpenAPI 3.1).
 - **Business Platform API** (`/api/v1/business/*`) — validate and parse BSUIDs, validate business usernames, resolve a contact from bsuid/phone/username, and normalize raw WhatsApp Cloud API webhook payloads into a consistent shape.
+- **MCP server** (`/api/mcp`) — Streamable HTTP endpoint, no API key, for AI agents. Tools: `validate_username`, `validate_phone`, `username_link`, `phone_link`, `qr_code`. Same IP rate limits as the REST API.
 - **Blog** — trilingual (EN/PT/ES) articles on WhatsApp usernames, BSUID, and the Cloud API, at [`/blog`](https://whatsusernames.link/blog).
 
 ## Why it's stateless
