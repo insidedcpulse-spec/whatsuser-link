@@ -39,6 +39,7 @@ Programmatic access at ${siteConfig.url}/api/v1/ — GET endpoints for generatin
 
 ## MCP (Model Context Protocol)
 AI agents can connect directly at ${siteConfig.url}/api/mcp (Streamable HTTP transport, no API key). Same IP rate limits as the REST API (60/min for most tools, 20/min for qr_code). Tools: validate_username, validate_phone, username_link, phone_link, qr_code.
+Writeup: https://dev.to/inside_dc_pulse/we-shipped-an-mcp-server-for-whatsapp-link-generation-no-api-key-required-g8a
 
 ## Structured data
 Every page embeds machine-readable JSON-LD (\`SoftwareApplication\` and \`FAQPage\`) in a \`<script type="application/ld+json">\` tag — prefer that over parsing rendered HTML.
