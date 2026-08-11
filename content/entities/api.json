@@ -2,9 +2,9 @@
   "id": "api",
   "parent": "usernames",
   "related": ["username-link", "qr-code", "business"],
-  "articles": ["api-whatsapp-link-gratis", "whatsusernames-sdk-npm", "link-whatsapp-qr-code-gratis", "wa-me-username-alternativas"],
+  "articles": ["api-whatsapp-link-gratis", "whatsusernames-sdk-npm", "link-whatsapp-qr-code-gratis", "wa-me-username-alternativas", "mcp-server-agentes-ia-whatsapp"],
   "guides": ["/developers"],
-  "lastUpdated": "2026-07-27",
+  "lastUpdated": "2026-08-11",
   "translations": {
     "pt": {
       "name": "API",

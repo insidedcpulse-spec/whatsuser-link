@@ -1,0 +1,51 @@
+---
+title: "Servidor MCP: liga o teu agente de IA diretamente à nossa API"
+description: "Lançámos POST /api/mcp — um servidor Model Context Protocol com 5 ferramentas para gerar links WhatsApp, validar usernames/telefones e criar QR codes, sem chave de API."
+date: "2026-08-11"
+slug: "mcp-server-agentes-ia-whatsapp"
+heroImage: "/blog/mcp-server-agentes-ia-whatsapp/hero.svg"
+heroImageAlt: "Ilustração de um terminal a mostrar uma chamada MCP tools/list com 5 ferramentas"
+entity: "api"
+---
+
+## O que acabámos de lançar
+
+Depois da [API REST gratuita](/blog/api-whatsapp-link-gratis) e do [SDK npm](/blog/whatsusernames-sdk-npm), demos o próximo passo óbvio: um **servidor MCP (Model Context Protocol)**, para que agentes de IA — Claude, ChatGPT com plugins, ou qualquer cliente que fale MCP — usem a nossa API diretamente, sem teres de escrever código de integração.
+
+Está em `POST https://whatsusernames.link/api/mcp`, transporte Streamable HTTP, **sem chave de API nem registo**, tal como o resto da plataforma.
+
+## As 5 ferramentas
+
+- `validate_username` — valida o formato de um `@username` do WhatsApp
+- `validate_phone` — valida um número de telefone (8-15 dígitos, formato internacional)
+- `username_link` — gera o link `wa.me` e o short link a partir de um username
+- `phone_link` — gera o link `wa.me` a partir de um número de telefone
+- `qr_code` — gera um QR code (PNG ou SVG) para qualquer link WhatsApp
+
+Cada ferramenta usa exatamente a mesma lógica de validação e serviços da API REST v1 — os resultados são idênticos, só muda o transporte.
+
+## Como ligar
+
+Qualquer cliente MCP com suporte a Streamable HTTP consegue ligar-se diretamente pela URL, sem passos extra de autenticação. Exemplo de configuração:
+
+```json
+{
+  "mcpServers": {
+    "whatsusernames": {
+      "url": "https://whatsusernames.link/api/mcp"
+    }
+  }
+}
+```
+
+A partir daí, o agente vê as 5 ferramentas listadas e pode chamá-las como qualquer outra tool nativa — por exemplo, pedir "gera-me um link WhatsApp e QR code para o username joao.silva" resolve-se numa única chamada `username_link` seguida de `qr_code`, sem o agente ter de saber nada sobre o formato interno da nossa API.
+
+## Limites e sem chave
+
+Os mesmos limites de taxa por IP da API REST aplicam-se aqui: 60 pedidos/minuto para a maioria das ferramentas, 20/minuto para `qr_code` (mais pesado a gerar). Só as chamadas de ferramenta contam para o limite — pedidos `tools/list` ou erros de protocolo não gastam quota. Os limites vêm nos headers da resposta, para o próprio agente conseguir reagir a um 429 sem intervenção manual.
+
+## Porque isto importa
+
+Nenhum dos geradores de link WhatsApp concorrentes tem hoje uma forma nativa de ser usado por agentes de IA — só formulários web pensados para humanos. Com o servidor MCP, o WhatsUsernames.link passa a ser a única ferramenta do nicho que um agente consegue descobrir e operar sozinho, sem scraping nem integração à medida.
+
+O servidor descreve-se a si próprio — qualquer cliente MCP obtém os schemas completos das 5 ferramentas via `tools/list`, sem precisares de consultar documentação à parte. Resumo rápido também disponível no [`llms.txt`](https://whatsusernames.link/llms.txt), junto com o resto da API em [whatsusernames.link/developers](https://whatsusernames.link/developers).
