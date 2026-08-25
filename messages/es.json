@@ -77,6 +77,18 @@
     "invalidFormat": "Debe tener entre 4 y 8 letras o números."
   },
   "footer": {
+    "tagline": "Generador gratuito, independiente y sin almacenamiento de datos para @Usernames, enlaces wa.me y códigos QR de WhatsApp.",
+    "statelessBadge": "100% Privado y Sin Registro",
+    "toolsColumn": "Herramientas & API",
+    "guidesColumn": "Guías & Contenidos",
+    "legalColumn": "Transparencia & Legal",
+    "generatorUsername": "Generador de Enlace por Username de WhatsApp",
+    "generatorPhone": "Generador de Enlace por Número de Teléfono",
+    "developerApi": "API REST Gratuita para Desarrolladores",
+    "analyticsDashboard": "Panel de Métricas en Tiempo Real",
+    "bsuidTools": "Herramientas BSUID WhatsApp Business",
+    "blogSuffix": "Artículos de WhatsApp",
+    "glossarySuffix": "Términos de WhatsApp",
     "disclaimer": "WhatsUsernames.link no está afiliado, respaldado ni asociado con WhatsApp Inc. o Meta.",
     "privacyLink": "Política de Privacidad",
     "termsLink": "Términos de Servicio",
@@ -86,6 +98,23 @@
     "apiLink": "API",
     "aboutLink": "Sobre nosotros",
     "contactLink": "Contacto"
+  },
+  "featuredArticles": {
+    "title": "Guías & Artículos de WhatsApp",
+    "viewAll": "Ver todos los artículos",
+    "readArticle": "Leer artículo"
+  },
+  "features": {
+    "title": "¿Por qué Usar WhatsUsernames.link?",
+    "subtitle": "Diseñado para máxima privacidad, rapidez y fiabilidad. Convierte cualquier username o número en un enlace compartible en milisegundos.",
+    "statelessTitle": "100% Privado y Sin Registro",
+    "statelessDesc": "Todo se procesa en tu navegador. Sin base de datos, sin cookies de rastreo y cero almacenamiento de datos en servidores.",
+    "qrTitle": "Códigos QR Personalizados Instantáneos",
+    "qrDesc": "Genera códigos QR de alta resolución en PNG, JPEG, SVG o PDF vectorial listos para tarjetas de visita, escaparates y redes sociales.",
+    "formatTitle": "Formato de Enlace Oficial wa.me",
+    "formatDesc": "Construido estrictamente según los estándares wa.me documentados por WhatsApp para máxima compatibilidad.",
+    "apiTitle": "API REST Gratuita para Desarrolladores",
+    "apiDesc": "Integra la generación de enlaces y códigos QR de WhatsApp en tus aplicaciones web o móviles sin necesidad de claves API."
   },
   "about": {
     "title": "Sobre nosotros",

@@ -18,11 +18,11 @@ export async function SiteFooter() {
               <span>WhatsUsernames.link</span>
             </div>
             <p className="text-xs leading-relaxed text-muted-foreground">
-              Free, independent, and stateless generator for WhatsApp @Usernames, wa.me links, and downloadable QR codes.
+              {t("tagline")}
             </p>
             <div className="flex items-center gap-1.5 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
               <Lock className="h-3.5 w-3.5" />
-              <span>100% Stateless & Private</span>
+              <span>{t("statelessBadge")}</span>
             </div>
           </div>
 
@@ -30,32 +30,32 @@ export async function SiteFooter() {
           <div className="flex flex-col gap-2">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground flex items-center gap-1.5">
               <Code2 className="h-3.5 w-3.5 text-emerald-600" />
-              Tools & API
+              {t("toolsColumn")}
             </h3>
             <ul className="space-y-1.5 text-xs">
               <li>
                 <Link href="/" className="hover:text-foreground transition-colors">
-                  WhatsApp Username Link Generator
+                  {t("generatorUsername")}
                 </Link>
               </li>
               <li>
                 <Link href="/" className="hover:text-foreground transition-colors">
-                  Phone Click-to-Chat Link Generator
+                  {t("generatorPhone")}
                 </Link>
               </li>
               <li>
                 <Link href="/developers" className="hover:text-foreground transition-colors">
-                  Free REST API for Developers
+                  {t("developerApi")}
                 </Link>
               </li>
               <li>
                 <Link href="/dashboard" className="hover:text-foreground transition-colors">
-                  Live Analytics & Metrics Dashboard
+                  {t("analyticsDashboard")}
                 </Link>
               </li>
               <li>
                 <Link href="/developers" className="hover:text-foreground transition-colors">
-                  WhatsApp Business BSUID Tools
+                  {t("bsuidTools")}
                 </Link>
               </li>
             </ul>
@@ -65,22 +65,22 @@ export async function SiteFooter() {
           <div className="flex flex-col gap-2">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground flex items-center gap-1.5">
               <BookOpen className="h-3.5 w-3.5 text-emerald-600" />
-              Guides & Content
+              {t("guidesColumn")}
             </h3>
             <ul className="space-y-1.5 text-xs">
               <li>
                 <Link href="/how-to-create-a-whatsapp-link" className="hover:text-foreground transition-colors">
-                  {t("guideLink") || "How to Create a WhatsApp Link"}
+                  {t("guideLink")}
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="hover:text-foreground transition-colors">
-                  {t("blogLink")} — WhatsApp Articles
+                  {t("blogLink")} — {t("blogSuffix")}
                 </Link>
               </li>
               <li>
                 <Link href="/glossary" className="hover:text-foreground transition-colors">
-                  {t("glossaryLink")} — WhatsApp Terms
+                  {t("glossaryLink")} — {t("glossarySuffix")}
                 </Link>
               </li>
             </ul>
@@ -90,7 +90,7 @@ export async function SiteFooter() {
           <div className="flex flex-col gap-2">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
-              Transparency & Legal
+              {t("legalColumn")}
             </h3>
             <ul className="space-y-1.5 text-xs">
               <li>

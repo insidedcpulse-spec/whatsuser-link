@@ -1,35 +1,38 @@
+import { useTranslations } from "next-intl";
 import { ShieldCheck, Zap, Code, QrCode } from "lucide-react";
 
 export function FeatureGrid() {
+  const t = useTranslations("features");
+
   const features = [
     {
       icon: ShieldCheck,
-      title: "100% Stateless & Private",
-      description: "Everything runs in your browser. No database, no tracking cookies, and zero server storage of phone numbers or usernames.",
+      title: t("statelessTitle"),
+      description: t("statelessDesc"),
     },
     {
       icon: QrCode,
-      title: "Instant Custom QR Codes",
-      description: "Generate high-resolution PNG, JPEG, SVG, or vector PDF QR codes ready for business cards, storefronts, and social media.",
+      title: t("qrTitle"),
+      description: t("qrDesc"),
     },
     {
       icon: Zap,
-      title: "Official wa.me Link Format",
-      description: "Built strictly according to WhatsApp's documented wa.me standard for maximum compatibility across devices.",
+      title: t("formatTitle"),
+      description: t("formatDesc"),
     },
     {
       icon: Code,
-      title: "Free Developer REST API",
-      description: "Integrate WhatsApp link generation and QR rendering into your own web or mobile applications with zero API keys required.",
+      title: t("apiTitle"),
+      description: t("apiDesc"),
     },
   ];
 
   return (
     <section className="w-full max-w-4xl py-6">
       <div className="text-center mb-8">
-        <h2 className="text-xl font-bold tracking-tight text-foreground">Why Use WhatsUsernames.link?</h2>
+        <h2 className="text-xl font-bold tracking-tight text-foreground">{t("title")}</h2>
         <p className="text-xs text-muted-foreground mt-1 max-w-lg mx-auto">
-          Built for privacy, speed, and reliability. Turn any WhatsApp handle or phone number into a shareable link in milliseconds.
+          {t("subtitle")}
         </p>
       </div>
 

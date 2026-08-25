@@ -1,4 +1,4 @@
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getAllPosts } from "@/lib/blog";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -6,6 +6,7 @@ import { BookOpen, ArrowRight, Calendar } from "lucide-react";
 
 export async function FeaturedArticles() {
   const locale = await getLocale();
+  const t = await getTranslations("featuredArticles");
   const posts = getAllPosts(locale).slice(0, 4);
 
   if (posts.length === 0) return null;
@@ -15,13 +16,13 @@ export async function FeaturedArticles() {
       <div className="flex items-center justify-between border-b pb-3">
         <div className="flex items-center gap-2">
           <BookOpen className="h-5 w-5 text-emerald-600" />
-          <h2 className="text-xl font-bold tracking-tight">WhatsApp Guides & Articles</h2>
+          <h2 className="text-xl font-bold tracking-tight">{t("title")}</h2>
         </div>
         <Link
           href="/blog"
           className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1 transition-colors"
         >
-          View all articles
+          {t("viewAll")}
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -48,7 +49,7 @@ export async function FeaturedArticles() {
                 href={`/blog/${post.frontmatter.slug}`}
                 className="text-xs font-medium text-emerald-600 hover:underline inline-flex items-center gap-1"
               >
-                Read article <ArrowRight className="h-3 w-3" />
+                {t("readArticle")} <ArrowRight className="h-3 w-3" />
               </Link>
             </CardContent>
           </Card>

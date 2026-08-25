@@ -77,6 +77,18 @@
     "invalidFormat": "Must be 4 to 8 letters or numbers."
   },
   "footer": {
+    "tagline": "Free, independent, and stateless generator for WhatsApp @Usernames, wa.me links, and downloadable QR codes.",
+    "statelessBadge": "100% Stateless & Private",
+    "toolsColumn": "Tools & API",
+    "guidesColumn": "Guides & Content",
+    "legalColumn": "Transparency & Legal",
+    "generatorUsername": "WhatsApp Username Link Generator",
+    "generatorPhone": "Phone Click-to-Chat Link Generator",
+    "developerApi": "Free REST API for Developers",
+    "analyticsDashboard": "Live Analytics & Metrics Dashboard",
+    "bsuidTools": "WhatsApp Business BSUID Tools",
+    "blogSuffix": "WhatsApp Articles",
+    "glossarySuffix": "WhatsApp Terms",
     "disclaimer": "WhatsUsernames.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta.",
     "privacyLink": "Privacy Policy",
     "termsLink": "Terms of Service",
@@ -86,6 +98,23 @@
     "apiLink": "API",
     "aboutLink": "About",
     "contactLink": "Contact"
+  },
+  "featuredArticles": {
+    "title": "WhatsApp Guides & Articles",
+    "viewAll": "View all articles",
+    "readArticle": "Read article"
+  },
+  "features": {
+    "title": "Why Use WhatsUsernames.link?",
+    "subtitle": "Built for privacy, speed, and reliability. Turn any WhatsApp handle or phone number into a shareable link in milliseconds.",
+    "statelessTitle": "100% Stateless & Private",
+    "statelessDesc": "Everything runs in your browser. No database, no tracking cookies, and zero server storage of phone numbers or usernames.",
+    "qrTitle": "Instant Custom QR Codes",
+    "qrDesc": "Generate high-resolution PNG, JPEG, SVG, or vector PDF QR codes ready for business cards, storefronts, and social media.",
+    "formatTitle": "Official wa.me Link Format",
+    "formatDesc": "Built strictly according to WhatsApp's documented wa.me standard for maximum compatibility across devices.",
+    "apiTitle": "Free Developer REST API",
+    "apiDesc": "Integrate WhatsApp link generation and QR rendering into your own web or mobile applications with zero API keys required."
   },
   "about": {
     "title": "About Us",
