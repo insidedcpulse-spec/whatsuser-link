@@ -123,31 +123,45 @@
     "sections": [
       {
         "heading": "O que construímos",
-        "body": ["O WhatsUsernames.link transforma o seu Username ou número de WhatsApp num link wa.me, num link mais curto whatsusernames.link, e num código QR descarregável — tudo diretamente no seu navegador. Além do gerador, o site oferece também uma API REST pública gratuita, um SDK em TypeScript, e ferramentas para os Business-Scoped User IDs (BSUID) da WhatsApp Business Platform, todos construídos da mesma forma: gratuitos, sem chave de API, sem armazenamento de dados."]
+        "body": [
+          "O WhatsUsernames.link transforma o seu Username ou número de WhatsApp num link wa.me, num link mais curto whatsusernames.link, e num código QR descarregável — tudo diretamente no seu navegador. Além do gerador, o site oferece também uma API REST pública gratuita, um SDK em TypeScript, e ferramentas para os Business-Scoped User IDs (BSUID) da WhatsApp Business Platform, todos construídos da mesma forma: gratuitos, sem chave de API, sem armazenamento de dados."
+        ]
       },
       {
         "heading": "Porque o construímos",
-        "body": ["À medida que o lançamento dos usernames do WhatsApp chegou a mais regiões em 2026, continuava sem existir forma oficial de partilhar um link clicável a partir de um username, nem documentação clara para programadores que quisessem construir sobre isso. Este site preenche essa lacuna com uma ferramenta simples e documentação aberta, mantendo-se atualizado à medida que o próprio lançamento do WhatsApp evolui."]
+        "body": [
+          "À medida que o lançamento dos usernames do WhatsApp chegou a mais regiões em 2026, continuava sem existir forma oficial de partilhar um link clicável a partir de um username, nem documentação clara para programadores que quisessem construir sobre isso. Este site preenche essa lacuna com uma ferramenta simples e documentação aberta, mantendo-se atualizado à medida que o próprio lançamento do WhatsApp evolui."
+        ]
       },
       {
         "heading": "Quem está por trás",
-        "body": ["O projeto é construído e mantido pelo Ruben, um programador independente. Não é uma empresa nem uma equipa — apenas uma pessoa a manter a ferramenta a funcionar, a escrever os guias e a responder a perguntas."]
+        "body": [
+          "O projeto é construído e mantido pelo Ruben, um programador independente. Não é uma empresa nem uma equipa — apenas uma pessoa a manter a ferramenta a funcionar, a escrever os guias e a responder a perguntas."
+        ]
       },
       {
         "heading": "Como funciona",
-        "body": ["Não existe sistema de contas nem base de dados: tudo o que introduz corre no seu navegador e nunca é enviado ou guardado nos nossos servidores. Veja a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por publicidade (Adsterra e Google AdSense) em vez de subscrições."]
+        "body": [
+          "Não existe sistema de contas nem base de dados: tudo o que introduz corre no seu navegador e nunca é enviado ou guardado nos nossos servidores. Veja a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por publicidade (Adsterra e Google AdSense) em vez de subscrições."
+        ]
       },
       {
         "heading": "Projeto independente",
-        "body": ["O WhatsUsernames.link não é afiliado, endossado ou associado à WhatsApp Inc. ou Meta Platforms, Inc. Todos os nomes de produtos e marcas pertencem aos respetivos proprietários."]
+        "body": [
+          "O WhatsUsernames.link não é afiliado, endossado ou associado à WhatsApp Inc. ou Meta Platforms, Inc. Todos os nomes de produtos e marcas pertencem aos respetivos proprietários."
+        ]
       },
       {
         "heading": "Código aberto",
-        "body": ["O código que serve este site, incluindo a API e o SDK, é open source no GitHub em github.com/insidedcpulse-spec/whatsuser-link. Contribuições, reportes de bugs e sugestões são bem-vindos."]
+        "body": [
+          "O código que serve este site, incluindo a API e o SDK, é open source no GitHub em github.com/insidedcpulse-spec/whatsuser-link. Contribuições, reportes de bugs e sugestões são bem-vindos."
+        ]
       },
       {
         "heading": "Fale connosco",
-        "body": ["Tem perguntas, feedback ou um bug a reportar? Visite a nossa página de Contacto."]
+        "body": [
+          "Tem perguntas, feedback ou um bug a reportar? Visite a nossa página de Contacto."
+        ]
       }
     ]
   },
@@ -158,19 +172,27 @@
     "sections": [
       {
         "heading": "Email",
-        "body": ["A forma mais rápida de nos contactar é por email: insidedcpulse@gmail.com. Lemos todas as mensagens e procuramos responder em poucos dias."]
+        "body": [
+          "A forma mais rápida de nos contactar é por email: insidedcpulse@gmail.com. Lemos todas as mensagens e procuramos responder em poucos dias."
+        ]
       },
       {
         "heading": "GitHub",
-        "body": ["Para reportar bugs ou pedir funcionalidades relacionadas com o código, API ou SDK, abra uma issue no nosso repositório GitHub em github.com/insidedcpulse-spec/whatsuser-link, onde o código do projeto é público."]
+        "body": [
+          "Para reportar bugs ou pedir funcionalidades relacionadas com o código, API ou SDK, abra uma issue no nosso repositório GitHub em github.com/insidedcpulse-spec/whatsuser-link, onde o código do projeto é público."
+        ]
       },
       {
         "heading": "Tempos de resposta",
-        "body": ["Este é um projeto independente mantido por uma só pessoa, por isso as respostas podem demorar alguns dias, especialmente para perguntas técnicas detalhadas."]
+        "body": [
+          "Este é um projeto independente mantido por uma só pessoa, por isso as respostas podem demorar alguns dias, especialmente para perguntas técnicas detalhadas."
+        ]
       },
       {
         "heading": "Antes de escrever",
-        "body": ["Procura documentação da API? Consulte a página Developers. Perguntas sobre dados e privacidade são respondidas na nossa Política de Privacidade."]
+        "body": [
+          "Procura documentação da API? Consulte a página Developers. Perguntas sobre dados e privacidade são respondidas na nossa Política de Privacidade."
+        ]
       }
     ]
   },
@@ -217,8 +239,8 @@
     "transparentLabel": "Fundo transparente"
   },
   "metadata": {
-    "title": "Gerador de Link do WhatsApp por Username + Código QR (Grátis) | WhatsUsernames.link",
-    "description": "Cria um link partilhável e código QR grátis para o teu Username ou número do WhatsApp. Sem registo e sem conta. Gera o teu link wa.me instantaneamente!"
+    "title": "Gerador de Link WhatsApp: Criar URL wa.me & QR Code Grátis | WhatsUsernames.link",
+    "description": "Cria links diretos wa.me e códigos QR instantâneos para o teu @Username ou número de telefone do WhatsApp. Rápido, gratuito e focado na privacidade."
   },
   "common": {
     "themeToggleLabel": "Alternar tema"
@@ -318,6 +340,32 @@
           "Um freelancer pode colocar o link na assinatura de email para receber pedidos de orçamento sem publicar o número pessoal. Uma pequena loja pode imprimir o QR code no balcão para clientes tirarem dúvidas rápidas. Alguém a organizar um evento pode pôr o link no cartaz em vez de listar um número que muda a cada evento. Em todos os casos, o link resolve o mesmo problema: dar às pessoas uma forma de te contactar sem teres de ditar ou escrever o número manualmente."
         ]
       }
+    ],
+    "quickAnswerHeading": "Resumo Rápido em 3 Passos",
+    "quickAnswerSub": "Precisa do seu link do WhatsApp agora? Siga estes 3 passos simples:",
+    "quickAnswerItems": [
+      "Defina o seu @Username nas Definições do WhatsApp (Definições → Perfil).",
+      "Insira o seu @username (ou número) no gerador no topo desta página.",
+      "Copie o seu link wa.me direto ou descarregue o código QR em alta resolução."
+    ],
+    "faqHeading": "Perguntas Frequentes sobre Links do WhatsApp",
+    "faqItems": [
+      {
+        "question": "Posso criar um link do WhatsApp sem divulgar o meu número de telefone?",
+        "answer": "Sim! Com os Usernames do WhatsApp, pode gerar um link wa.me com o seu @username que permite iniciar conversas mantendo o seu número de telefone 100% confidencial."
+      },
+      {
+        "question": "Este gerador de link funciona no iPhone, Android e Computador?",
+        "answer": "Sim. Os links wa.me e códigos QR gerados funcionam universalmente no WhatsApp para iOS, Android, WhatsApp Web e Desktop."
+      },
+      {
+        "question": "Como colocar o link do WhatsApp na bio do Instagram ou TikTok?",
+        "answer": "Copie o link wa.me gerado no WhatsUsernames.link, abra o Instagram, toque em \"Editar Perfil\" → \"Links\" → \"Adicionar Link Externo\" e cole o seu URL."
+      },
+      {
+        "question": "O WhatsUsernames.link é gratuito e seguro?",
+        "answer": "Sim, é 100% gratuito e sem registo. Toda a geração de links e códigos QR ocorre localmente no seu navegador, sem armazenamento de dados pessoais."
+      }
     ]
   },
   "legal": {
@@ -329,43 +377,63 @@
       "sections": [
         {
           "heading": "Esta ferramenta é stateless",
-          "body": ["O WhatsUsernames.link cria o teu link e QR code do WhatsApp inteiramente no teu navegador. O Username, a Username Key, o número de telefone e a mensagem que introduzes nunca são enviados nem guardados nos nossos servidores. Fechar ou atualizar a página apaga-os."]
+          "body": [
+            "O WhatsUsernames.link cria o teu link e QR code do WhatsApp inteiramente no teu navegador. O Username, a Username Key, o número de telefone e a mensagem que introduzes nunca são enviados nem guardados nos nossos servidores. Fechar ou atualizar a página apaga-os."
+          ]
         },
         {
           "heading": "Sem contas, sem registo",
-          "body": ["Não existe registo, login ou conta de utilizador. Não temos base de dados de utilizadores nem de usernames."]
+          "body": [
+            "Não existe registo, login ou conta de utilizador. Não temos base de dados de utilizadores nem de usernames."
+          ]
         },
         {
           "heading": "Registos do servidor",
-          "body": ["Como qualquer site, o nosso fornecedor de alojamento (Vercel) processa registos técnicos padrão para servir as páginas — endereço IP, tipo de navegador e hora do pedido. Estes são usados apenas para segurança, prevenção de abuso e fiabilidade, e não os associamos a nenhum perfil pessoal."]
+          "body": [
+            "Como qualquer site, o nosso fornecedor de alojamento (Vercel) processa registos técnicos padrão para servir as páginas — endereço IP, tipo de navegador e hora do pedido. Estes são usados apenas para segurança, prevenção de abuso e fiabilidade, e não os associamos a nenhum perfil pessoal."
+          ]
         },
         {
           "heading": "Cookies e armazenamento local",
-          "body": ["Não definimos cookies de rastreio. A tua preferência de tema claro/escuro é guardada apenas no armazenamento local do teu navegador e nunca sai do teu dispositivo."]
+          "body": [
+            "Não definimos cookies de rastreio. A tua preferência de tema claro/escuro é guardada apenas no armazenamento local do teu navegador e nunca sai do teu dispositivo."
+          ]
         },
         {
           "heading": "Publicidade e Cookies",
-          "body": ["Este site utiliza o Google AdSense, um serviço de publicidade de terceiros fornecido pela Google LLC. Fornecedores terceiros, incluindo a Google, utilizam cookies para exibir anúncios com base em visitas anteriores dos utilizadores a este website ou a outros websites. A utilização de cookies de publicidade pela Google permite que esta e os seus parceiros exibam anúncios aos utilizadores com base na sua visita ao WhatsUsernames.link e/ou a outros sites na Internet. Os utilizadores podem desativar a publicidade personalizada visitando as Definições de Anúncios da Google (https://adssettings.google.com) ou através de www.aboutads.info."]
+          "body": [
+            "Este site utiliza o Google AdSense, um serviço de publicidade de terceiros fornecido pela Google LLC. Fornecedores terceiros, incluindo a Google, utilizam cookies para exibir anúncios com base em visitas anteriores dos utilizadores a este website ou a outros websites. A utilização de cookies de publicidade pela Google permite que esta e os seus parceiros exibam anúncios aos utilizadores com base na sua visita ao WhatsUsernames.link e/ou a outros sites na Internet. Os utilizadores podem desativar a publicidade personalizada visitando as Definições de Anúncios da Google (https://adssettings.google.com) ou através de www.aboutads.info."
+          ]
         },
         {
           "heading": "Análise (Analytics)",
-          "body": ["Atualmente não corremos nenhum script de analytics ou rastreio próprio. Se isto mudar, esta política será atualizada primeiro."]
+          "body": [
+            "Atualmente não corremos nenhum script de analytics ou rastreio próprio. Se isto mudar, esta política será atualizada primeiro."
+          ]
         },
         {
           "heading": "Os teus direitos",
-          "body": ["Como não recolhemos nem guardamos dados pessoais nos nossos servidores, geralmente não há nada para acedermos, corrigirmos ou apagarmos. Se acreditares que temos dados sobre ti, contacta-nos através dos detalhes abaixo e vamos verificar."]
+          "body": [
+            "Como não recolhemos nem guardamos dados pessoais nos nossos servidores, geralmente não há nada para acedermos, corrigirmos ou apagarmos. Se acreditares que temos dados sobre ti, contacta-nos através dos detalhes abaixo e vamos verificar."
+          ]
         },
         {
           "heading": "Privacidade de crianças",
-          "body": ["Esta ferramenta não é dirigida a crianças e não recolhemos conscientemente informação de crianças."]
+          "body": [
+            "Esta ferramenta não é dirigida a crianças e não recolhemos conscientemente informação de crianças."
+          ]
         },
         {
           "heading": "Alterações a esta política",
-          "body": ["Podemos atualizar esta página à medida que a ferramenta evolui. A data acima reflete a última revisão."]
+          "body": [
+            "Podemos atualizar esta página à medida que a ferramenta evolui. A data acima reflete a última revisão."
+          ]
         },
         {
           "heading": "Contacto",
-          "body": ["Dúvidas sobre esta política? Envia email para insidedcpulse@gmail.com."]
+          "body": [
+            "Dúvidas sobre esta política? Envia email para insidedcpulse@gmail.com."
+          ]
         }
       ]
     },
@@ -376,51 +444,75 @@
       "sections": [
         {
           "heading": "O que este Serviço faz",
-          "body": ["O WhatsUsernames.link é uma ferramenta gratuita que gera um link e QR code partilhável do WhatsApp a partir de um Username, Username Key ou número de telefone que introduzires, inteiramente no teu navegador."]
+          "body": [
+            "O WhatsUsernames.link é uma ferramenta gratuita que gera um link e QR code partilhável do WhatsApp a partir de um Username, Username Key ou número de telefone que introduzires, inteiramente no teu navegador."
+          ]
         },
         {
           "heading": "Sem conta, gratuito",
-          "body": ["O Serviço é 100% gratuito, sem registo nem pagamento necessário para as suas funcionalidades atuais."]
+          "body": [
+            "O Serviço é 100% gratuito, sem registo nem pagamento necessário para as suas funcionalidades atuais."
+          ]
         },
         {
           "heading": "A precisão é da tua responsabilidade",
-          "body": ["És responsável por introduzir o teu próprio username, número de telefone e mensagem corretos. Não verificamos a identidade nem a titularidade de nenhum username ou número introduzido no gerador."]
+          "body": [
+            "És responsável por introduzir o teu próprio username, número de telefone e mensagem corretos. Não verificamos a identidade nem a titularidade de nenhum username ou número introduzido no gerador."
+          ]
         },
         {
           "heading": "Utilização aceitável",
-          "body": ["Não uses o Serviço para gerar links de números ou usernames que não tenhas o direito de partilhar, nem para spam, assédio, fraude ou personificação."]
+          "body": [
+            "Não uses o Serviço para gerar links de números ou usernames que não tenhas o direito de partilhar, nem para spam, assédio, fraude ou personificação."
+          ]
         },
         {
           "heading": "Limitação do wa.me/username",
-          "body": ["À data destes termos, os links wa.me/username podem não abrir uma conversa do WhatsApp de forma fiável para todos, porque o rollout de usernames da WhatsApp é regional e faseado. Não garantimos que este ou qualquer link gerado se comporte como esperado, e disponibilizamos um gerador por número de telefone como alternativa atualmente funcional."]
+          "body": [
+            "À data destes termos, os links wa.me/username podem não abrir uma conversa do WhatsApp de forma fiável para todos, porque o rollout de usernames da WhatsApp é regional e faseado. Não garantimos que este ou qualquer link gerado se comporte como esperado, e disponibilizamos um gerador por número de telefone como alternativa atualmente funcional."
+          ]
         },
         {
           "heading": "Sem garantia",
-          "body": ["O Serviço é fornecido \"tal como está\", sem garantia de qualquer tipo, incluindo disponibilidade, exatidão ou adequação a um fim específico."]
+          "body": [
+            "O Serviço é fornecido \"tal como está\", sem garantia de qualquer tipo, incluindo disponibilidade, exatidão ou adequação a um fim específico."
+          ]
         },
         {
           "heading": "Limitação de responsabilidade",
-          "body": ["Na medida permitida por lei, não somos responsáveis por danos indiretos, incidentais ou consequenciais resultantes do uso do Serviço."]
+          "body": [
+            "Na medida permitida por lei, não somos responsáveis por danos indiretos, incidentais ou consequenciais resultantes do uso do Serviço."
+          ]
         },
         {
           "heading": "Links e anúncios de terceiros",
-          "body": ["O Serviço liga e mostra conteúdo de terceiros que não controlamos nem pelos quais somos responsáveis, incluindo publicidade servida pela Google AdSense e ligações para o próprio WhatsApp."]
+          "body": [
+            "O Serviço liga e mostra conteúdo de terceiros que não controlamos nem pelos quais somos responsáveis, incluindo publicidade servida pela Google AdSense e ligações para o próprio WhatsApp."
+          ]
         },
         {
           "heading": "Sem afiliação",
-          "body": ["O WhatsUsernames.link é uma ferramenta independente, não afiliada, endossada ou associada à WhatsApp Inc. ou Meta Platforms, Inc."]
+          "body": [
+            "O WhatsUsernames.link é uma ferramenta independente, não afiliada, endossada ou associada à WhatsApp Inc. ou Meta Platforms, Inc."
+          ]
         },
         {
           "heading": "Alterações",
-          "body": ["Podemos atualizar estes termos à medida que o Serviço evolui. Continuar a usar após alterações significa que aceitas a versão atual."]
+          "body": [
+            "Podemos atualizar estes termos à medida que o Serviço evolui. Continuar a usar após alterações significa que aceitas a versão atual."
+          ]
         },
         {
           "heading": "Lei aplicável",
-          "body": ["Estes termos são regidos pelas leis de Portugal, sem prejuízo de qualquer lei de proteção do consumidor de aplicação obrigatória no teu país de residência."]
+          "body": [
+            "Estes termos são regidos pelas leis de Portugal, sem prejuízo de qualquer lei de proteção do consumidor de aplicação obrigatória no teu país de residência."
+          ]
         },
         {
           "heading": "Contacto",
-          "body": ["Dúvidas sobre estes termos? Envia email para insidedcpulse@gmail.com."]
+          "body": [
+            "Dúvidas sobre estes termos? Envia email para insidedcpulse@gmail.com."
+          ]
         }
       ]
     }

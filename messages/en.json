@@ -123,31 +123,45 @@
     "sections": [
       {
         "heading": "What we built",
-        "body": ["WhatsUsernames.link turns your WhatsApp Username or phone number into a wa.me link, a shorter whatsusernames.link link, and a downloadable QR code — entirely in your browser. Beyond the generator, the site also offers a free public REST API, a TypeScript SDK, and tools for the WhatsApp Business Platform's Business-Scoped User IDs (BSUID), all built the same way: free, keyless, and stateless."]
+        "body": [
+          "WhatsUsernames.link turns your WhatsApp Username or phone number into a wa.me link, a shorter whatsusernames.link link, and a downloadable QR code — entirely in your browser. Beyond the generator, the site also offers a free public REST API, a TypeScript SDK, and tools for the WhatsApp Business Platform's Business-Scoped User IDs (BSUID), all built the same way: free, keyless, and stateless."
+        ]
       },
       {
         "heading": "Why we built it",
-        "body": ["As WhatsApp's username rollout reached more regions in 2026, there was still no official way to share a clickable link built from a username, and no clear documentation for developers who wanted to build on top of it. This site fills that gap with a straightforward tool and open documentation, and stays current as WhatsApp's own rollout evolves."]
+        "body": [
+          "As WhatsApp's username rollout reached more regions in 2026, there was still no official way to share a clickable link built from a username, and no clear documentation for developers who wanted to build on top of it. This site fills that gap with a straightforward tool and open documentation, and stays current as WhatsApp's own rollout evolves."
+        ]
       },
       {
         "heading": "Who's behind it",
-        "body": ["The project is built and maintained by Ruben, an independent developer. It isn't a company or a team, just one person keeping the tool working, writing the guides, and answering questions."]
+        "body": [
+          "The project is built and maintained by Ruben, an independent developer. It isn't a company or a team, just one person keeping the tool working, writing the guides, and answering questions."
+        ]
       },
       {
         "heading": "How it's run",
-        "body": ["There's no account system and no database: everything you enter runs in your browser and is never sent to or stored on our servers. See our Privacy Policy for details. The site is free to use and funded by ads (Adsterra and Google AdSense) rather than subscriptions."]
+        "body": [
+          "There's no account system and no database: everything you enter runs in your browser and is never sent to or stored on our servers. See our Privacy Policy for details. The site is free to use and funded by ads (Adsterra and Google AdSense) rather than subscriptions."
+        ]
       },
       {
         "heading": "Independent project",
-        "body": ["WhatsUsernames.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta Platforms, Inc. All product names and trademarks belong to their respective owners."]
+        "body": [
+          "WhatsUsernames.link is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta Platforms, Inc. All product names and trademarks belong to their respective owners."
+        ]
       },
       {
         "heading": "Open source",
-        "body": ["The code that powers this site, including the API and SDK, is open source on GitHub at github.com/insidedcpulse-spec/whatsuser-link. Contributions, bug reports, and suggestions are welcome."]
+        "body": [
+          "The code that powers this site, including the API and SDK, is open source on GitHub at github.com/insidedcpulse-spec/whatsuser-link. Contributions, bug reports, and suggestions are welcome."
+        ]
       },
       {
         "heading": "Get in touch",
-        "body": ["Questions, feedback, or a bug to report? Visit our Contact page."]
+        "body": [
+          "Questions, feedback, or a bug to report? Visit our Contact page."
+        ]
       }
     ]
   },
@@ -158,19 +172,27 @@
     "sections": [
       {
         "heading": "Email",
-        "body": ["The fastest way to reach us is by email: insidedcpulse@gmail.com. We read every message and aim to reply within a few days."]
+        "body": [
+          "The fastest way to reach us is by email: insidedcpulse@gmail.com. We read every message and aim to reply within a few days."
+        ]
       },
       {
         "heading": "GitHub",
-        "body": ["For bug reports or feature requests related to the code, API, or SDK, open an issue on our GitHub repository at github.com/insidedcpulse-spec/whatsuser-link, where the project's source is public."]
+        "body": [
+          "For bug reports or feature requests related to the code, API, or SDK, open an issue on our GitHub repository at github.com/insidedcpulse-spec/whatsuser-link, where the project's source is public."
+        ]
       },
       {
         "heading": "Response times",
-        "body": ["This is an independently-run project maintained by one person, so replies may take a few days, especially for detailed technical questions."]
+        "body": [
+          "This is an independently-run project maintained by one person, so replies may take a few days, especially for detailed technical questions."
+        ]
       },
       {
         "heading": "Before you write",
-        "body": ["Looking for API documentation? Check the Developers page. Questions about data and privacy are answered in our Privacy Policy."]
+        "body": [
+          "Looking for API documentation? Check the Developers page. Questions about data and privacy are answered in our Privacy Policy."
+        ]
       }
     ]
   },
@@ -217,8 +239,8 @@
     "transparentLabel": "Transparent background"
   },
   "metadata": {
-    "title": "WhatsApp Username Link Generator + QR Code (Free) | WhatsUsernames.link",
-    "description": "Create a free shareable link and instant QR code for your WhatsApp Username or phone number. No signup, no account required. Generate your wa.me link now!"
+    "title": "WhatsApp Link Generator: Create wa.me URL & QR Code (Free Alternative) | WhatsUsernames.link",
+    "description": "Generate instant wa.me URL links and custom QR codes for WhatsApp Usernames or phone numbers. The fast, free, and privacy-focused wa.me generator alternative."
   },
   "common": {
     "themeToggleLabel": "Toggle theme"
@@ -318,6 +340,32 @@
           "A freelancer can put the link in their email signature to receive quote requests without publishing their personal number. A small shop can print the QR code at the counter for quick customer questions. Someone organizing an event can put the link on the poster instead of listing a number that changes every time. In every case, the link solves the same problem: giving people a way to reach you without having to dictate or type out a phone number manually."
         ]
       }
+    ],
+    "quickAnswerHeading": "Quick 3-Step Summary",
+    "quickAnswerSub": "Need your WhatsApp link right now? Follow these 3 quick steps:",
+    "quickAnswerItems": [
+      "Set your @Username inside WhatsApp (Settings → Profile).",
+      "Paste your @username (or phone number) into the generator on this page.",
+      "Copy your instant wa.me URL or download your high-resolution QR code."
+    ],
+    "faqHeading": "Frequently Asked Questions About WhatsApp Links",
+    "faqItems": [
+      {
+        "question": "Can I create a WhatsApp link without exposing my phone number?",
+        "answer": "Yes! With WhatsApp Usernames, you can generate a wa.me/@username link that lets people start a chat with you while keeping your phone number completely private."
+      },
+      {
+        "question": "Does this WhatsApp link generator work on iPhone, Android, and Desktop?",
+        "answer": "Yes. The generated wa.me URLs and QR codes are 100% universal and open directly in the WhatsApp mobile app, WhatsApp Web, or WhatsApp Desktop."
+      },
+      {
+        "question": "How do I add my WhatsApp link to Instagram bio or TikTok?",
+        "answer": "Copy the wa.me link generated by WhatsUsernames.link, go to your Instagram profile, tap \"Edit Profile\" → \"Links\" → \"Add External Link\", and paste your URL."
+      },
+      {
+        "question": "Is WhatsUsernames.link free and safe to use?",
+        "answer": "Yes, it is 100% free and stateless. All link formatting and QR code rendering happens directly in your browser. We never store your phone numbers or private messages."
+      }
     ]
   },
   "legal": {
@@ -329,43 +377,63 @@
       "sections": [
         {
           "heading": "This tool is stateless",
-          "body": ["WhatsUsernames.link builds your WhatsApp link and QR code entirely in your browser. The WhatsApp Username, Username Key, phone number, and message you enter are never sent to or stored on our servers. Closing or refreshing the page erases them."]
+          "body": [
+            "WhatsUsernames.link builds your WhatsApp link and QR code entirely in your browser. The WhatsApp Username, Username Key, phone number, and message you enter are never sent to or stored on our servers. Closing or refreshing the page erases them."
+          ]
         },
         {
           "heading": "No accounts, no sign-up",
-          "body": ["There is no registration, login, or user account. We have no database of users or usernames."]
+          "body": [
+            "There is no registration, login, or user account. We have no database of users or usernames."
+          ]
         },
         {
           "heading": "Server logs",
-          "body": ["Like any website, our hosting provider (Vercel) processes standard technical logs to serve pages — IP address, browser type, and request timestamps. These are used only for security, abuse prevention, and reliability, and we don't link them to any personal profile."]
+          "body": [
+            "Like any website, our hosting provider (Vercel) processes standard technical logs to serve pages — IP address, browser type, and request timestamps. These are used only for security, abuse prevention, and reliability, and we don't link them to any personal profile."
+          ]
         },
         {
           "heading": "Cookies and local storage",
-          "body": ["We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device."]
+          "body": [
+            "We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device."
+          ]
         },
         {
           "heading": "Advertising & Cookies",
-          "body": ["This site uses Google AdSense, a third-party advertising service provided by Google LLC. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to WhatsUsernames.link and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com) or via www.aboutads.info."]
+          "body": [
+            "This site uses Google AdSense, a third-party advertising service provided by Google LLC. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to WhatsUsernames.link and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com) or via www.aboutads.info."
+          ]
         },
         {
           "heading": "Analytics",
-          "body": ["We don't currently run any first-party analytics or tracking script. If this changes, this policy will be updated first."]
+          "body": [
+            "We don't currently run any first-party analytics or tracking script. If this changes, this policy will be updated first."
+          ]
         },
         {
           "heading": "Your rights",
-          "body": ["Because we don't collect or store personal data on our servers, there is generally nothing for us to access, correct, or delete. If you believe we hold data about you, contact us using the details below and we'll look into it."]
+          "body": [
+            "Because we don't collect or store personal data on our servers, there is generally nothing for us to access, correct, or delete. If you believe we hold data about you, contact us using the details below and we'll look into it."
+          ]
         },
         {
           "heading": "Children's privacy",
-          "body": ["This tool isn't directed at children, and we don't knowingly collect information from children."]
+          "body": [
+            "This tool isn't directed at children, and we don't knowingly collect information from children."
+          ]
         },
         {
           "heading": "Changes to this policy",
-          "body": ["We may update this page as the tool evolves. The date above reflects the latest revision."]
+          "body": [
+            "We may update this page as the tool evolves. The date above reflects the latest revision."
+          ]
         },
         {
           "heading": "Contact",
-          "body": ["Questions about this policy? Email insidedcpulse@gmail.com."]
+          "body": [
+            "Questions about this policy? Email insidedcpulse@gmail.com."
+          ]
         }
       ]
     },
@@ -376,51 +444,75 @@
       "sections": [
         {
           "heading": "What this Service does",
-          "body": ["WhatsUsernames.link is a free tool that generates a shareable WhatsApp link and QR code from a WhatsApp Username, Username Key, or phone number you provide, entirely in your browser."]
+          "body": [
+            "WhatsUsernames.link is a free tool that generates a shareable WhatsApp link and QR code from a WhatsApp Username, Username Key, or phone number you provide, entirely in your browser."
+          ]
         },
         {
           "heading": "No account, free to use",
-          "body": ["The Service is 100% free, with no signup and no payment required for its current features."]
+          "body": [
+            "The Service is 100% free, with no signup and no payment required for its current features."
+          ]
         },
         {
           "heading": "Accuracy is your responsibility",
-          "body": ["You're responsible for entering your own correct username, phone number, and message. We don't verify identity or ownership of any username or phone number entered into the generator."]
+          "body": [
+            "You're responsible for entering your own correct username, phone number, and message. We don't verify identity or ownership of any username or phone number entered into the generator."
+          ]
         },
         {
           "heading": "Acceptable use",
-          "body": ["Don't use the Service to generate links for numbers or usernames you don't have the right to share, or for spam, harassment, fraud, or impersonation."]
+          "body": [
+            "Don't use the Service to generate links for numbers or usernames you don't have the right to share, or for spam, harassment, fraud, or impersonation."
+          ]
         },
         {
           "heading": "wa.me/username limitation",
-          "body": ["As of the date of these terms, wa.me/username links may not reliably open a WhatsApp chat for everyone, because WhatsApp's username rollout is regional and phased. We make no guarantee that this or any generated link will behave as expected, and we provide a phone-number generator as a currently working alternative."]
+          "body": [
+            "As of the date of these terms, wa.me/username links may not reliably open a WhatsApp chat for everyone, because WhatsApp's username rollout is regional and phased. We make no guarantee that this or any generated link will behave as expected, and we provide a phone-number generator as a currently working alternative."
+          ]
         },
         {
           "heading": "No warranty",
-          "body": ["The Service is provided \"as is,\" without warranty of any kind, including uptime, accuracy, or fitness for a particular purpose."]
+          "body": [
+            "The Service is provided \"as is,\" without warranty of any kind, including uptime, accuracy, or fitness for a particular purpose."
+          ]
         },
         {
           "heading": "Limitation of liability",
-          "body": ["To the extent permitted by law, we aren't liable for indirect, incidental, or consequential damages arising from use of the Service."]
+          "body": [
+            "To the extent permitted by law, we aren't liable for indirect, incidental, or consequential damages arising from use of the Service."
+          ]
         },
         {
           "heading": "Third-party links and ads",
-          "body": ["The Service links to and displays content from third parties we don't control and aren't responsible for, including advertising served by Google AdSense and links to WhatsApp itself."]
+          "body": [
+            "The Service links to and displays content from third parties we don't control and aren't responsible for, including advertising served by Google AdSense and links to WhatsApp itself."
+          ]
         },
         {
           "heading": "No affiliation",
-          "body": ["WhatsUsernames.link is an independent tool, not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta Platforms, Inc."]
+          "body": [
+            "WhatsUsernames.link is an independent tool, not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta Platforms, Inc."
+          ]
         },
         {
           "heading": "Changes",
-          "body": ["We may update these terms as the Service evolves. Continued use after changes means you accept the current version."]
+          "body": [
+            "We may update these terms as the Service evolves. Continued use after changes means you accept the current version."
+          ]
         },
         {
           "heading": "Governing law",
-          "body": ["These terms are governed by the laws of Portugal, without prejudice to any mandatory consumer-protection law of your country of residence."]
+          "body": [
+            "These terms are governed by the laws of Portugal, without prejudice to any mandatory consumer-protection law of your country of residence."
+          ]
         },
         {
           "heading": "Contact",
-          "body": ["Questions about these terms? Email insidedcpulse@gmail.com."]
+          "body": [
+            "Questions about these terms? Email insidedcpulse@gmail.com."
+          ]
         }
       ]
     }
