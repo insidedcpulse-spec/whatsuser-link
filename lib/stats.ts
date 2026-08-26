@@ -1,5 +1,6 @@
 import { getRedisClient } from "@/lib/redis";
 import { getClientId } from "./client-id";
+import { checkAndTriggerBurstAlert } from "./telegram-alert";
 
 export interface DashboardStats {
   totalLinks: number;
@@ -84,9 +85,14 @@ export async function recordApiCall(endpoint: string, request?: Request): Promis
       pipeline.hincrby(`stats:client:${clientId}`, "total_requests", 1);
       pipeline.sadd("stats:clients:all", clientId);
       pipeline.sadd(`stats:daily:${today}:active_clients`, clientId);
-    }
 
-    await pipeline.exec();
+      await pipeline.exec();
+
+      // Check hourly spike threshold and trigger non-blocking Telegram alert if exceeded
+      void checkAndTriggerBurstAlert(redis, clientId, cleanEndpoint);
+    } else {
+      await pipeline.exec();
+    }
   } catch (error) {
     console.warn("[stats] failed to record api call:", error);
   }
