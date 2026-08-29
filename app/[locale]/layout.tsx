@@ -14,6 +14,7 @@ import {
   getSoftwareApplicationJsonLd,
   getWebSiteJsonLd,
 } from "@/lib/json-ld";
+import { WebMcpProvider } from "@/components/webmcp-provider";
 import "../globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -88,6 +89,7 @@ export default async function LocaleLayout({
         <JsonLdScript data={getSoftwareApplicationJsonLd(t("description"))} />
         <JsonLdScript data={getOrganizationJsonLd()} />
         <JsonLdScript data={getWebSiteJsonLd()} />
+        <WebMcpProvider />
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="light">
             <Navbar />

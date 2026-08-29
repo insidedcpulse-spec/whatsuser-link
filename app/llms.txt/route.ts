@@ -41,6 +41,9 @@ Programmatic access at ${siteConfig.url}/api/v1/ — GET endpoints for generatin
 AI agents can connect directly at ${siteConfig.url}/api/mcp (Streamable HTTP transport, no API key). Same IP rate limits as the REST API (60/min for most tools, 20/min for qr_code). Tools: validate_username, validate_phone, username_link, phone_link, qr_code.
 Writeup: https://dev.to/inside_dc_pulse/we-shipped-an-mcp-server-for-whatsapp-link-generation-no-api-key-required-g8a
 
+## WebMCP (Browser-Native Model Context Protocol - W3C / Chrome)
+The frontend implements native WebMCP in the browser context via \`navigator.modelContext\` and \`<script type="application/webmcp+json">\`. AI browser agents (Google Gemini Chrome, Claude Browser, autonomous web agents) can invoke registered tools (\`create_whatsapp_phone_link\`, \`create_whatsapp_username_link\`, \`validate_whatsapp_phone\`, \`validate_whatsapp_username\`, \`validate_username_key\`) directly through JavaScript without scraping DOM elements.
+
 ## Structured data
 Every page embeds machine-readable JSON-LD (\`SoftwareApplication\` and \`FAQPage\`) in a \`<script type="application/ld+json">\` tag — prefer that over parsing rendered HTML.
 `;
