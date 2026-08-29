@@ -69,6 +69,20 @@ def generate_single(topic_identifier: str):
     # Valida testes
     tests_ok = run_tests()
     if tests_ok:
+        print("🚀 A fazer commit, push e deploy em produção na Vercel...")
+        try:
+            subprocess.run(["git", "add", "."], cwd=str(BASE_DIR), check=True)
+            subprocess.run(
+                ["git", "commit", "-m", f"feat(blog): publish {matched['slug']} cluster"],
+                cwd=str(BASE_DIR),
+                check=False
+            )
+            subprocess.run(["git", "push", "origin", "master"], cwd=str(BASE_DIR), check=False)
+            subprocess.run(["vercel", "deploy", "--prod", "--yes"], cwd=str(BASE_DIR), check=True)
+            print("  ✅ Deploy em produção concluído com sucesso!")
+        except Exception as e:
+            print(f"  ⚠️ Aviso no deploy: {e}")
+
         send_telegram_publication_alert(matched, stats)
         print("\n🎉 Publicação concluída e notificação enviada no Telegram!")
     else:
