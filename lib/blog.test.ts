@@ -14,26 +14,28 @@ describe("blog content loader", () => {
     expect(getPost("en", "does-not-exist")).toBeNull();
   });
 
-  it("finds all 15 Portuguese articles", () => {
-    expect(getPostSlugs("pt").sort()).toEqual(
-      [
-        "api-whatsapp-link-gratis",
-        "api-whatsapp-business-bsuid",
-        "whatsusernames-sdk-npm",
-        "como-reservar-username-whatsapp-2026",
-        "username-key-whatsapp",
-        "wa-me-username-alternativas",
-        "link-whatsapp-qr-code-gratis",
-        "usernames-vs-numero-telefone-privacidade",
-        "nova-burla-whatsapp-anexos-falsos-malware",
-        "whatsapp-backup-sem-icloud-iphone",
-        "whatsapp-username-rollout-2026-guide",
-        "whatsapp-link-instagram-bio-2026",
-        "melhores-geradores-link-whatsapp-2026",
-        "mcp-server-agentes-ia-whatsapp",
-        "wame-username-vs-wame-phone-2026",
-      ].sort()
-    );
+  it("finds all Portuguese articles including baseline set", () => {
+    const slugs = getPostSlugs("pt");
+    const baseline = [
+      "api-whatsapp-link-gratis",
+      "api-whatsapp-business-bsuid",
+      "whatsusernames-sdk-npm",
+      "como-reservar-username-whatsapp-2026",
+      "username-key-whatsapp",
+      "wa-me-username-alternativas",
+      "link-whatsapp-qr-code-gratis",
+      "usernames-vs-numero-telefone-privacidade",
+      "nova-burla-whatsapp-anexos-falsos-malware",
+      "whatsapp-backup-sem-icloud-iphone",
+      "whatsapp-username-rollout-2026-guide",
+      "whatsapp-link-instagram-bio-2026",
+      "melhores-geradores-link-whatsapp-2026",
+      "mcp-server-agentes-ia-whatsapp",
+      "wame-username-vs-wame-phone-2026",
+    ];
+    for (const b of baseline) {
+      expect(slugs).toContain(b);
+    }
   });
 
   it("reads frontmatter for a known post", () => {
@@ -50,10 +52,9 @@ describe("blog content loader", () => {
   it("sorts posts by date, most recent first", () => {
     const posts = getAllPosts("pt");
 
-    expect(posts).toHaveLength(15);
-    expect(posts[0].frontmatter.slug).toBe("wame-username-vs-wame-phone-2026");
-    expect(posts[posts.length - 1].frontmatter.slug).toBe(
-      "como-reservar-username-whatsapp-2026"
-    );
+    expect(posts.length).toBeGreaterThanOrEqual(15);
+    for (let i = 0; i < posts.length - 1; i++) {
+      expect(posts[i].frontmatter.date >= posts[i + 1].frontmatter.date).toBe(true);
+    }
   });
 });

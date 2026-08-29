@@ -1,0 +1,140 @@
+---
+title: "How to Create a WhatsApp Link with Pre-Filled Custom Message in 2026"
+description: "Learn how to create a WhatsApp link with pre-filled custom message in 2026. Step-by-step guide, URL syntax, and conversion tips for wa.me."
+date: "2026-08-29"
+slug: "link-whatsapp-mensagem-personalizada-guia-2026"
+heroImage: "/blog/link-whatsapp-mensagem-personalizada-guia-2026/hero.svg"
+heroImageAlt: "Illustration showing a smartphone with a WhatsApp chat window and a URL link with a pre-filled text message being generated"
+entity: "api"
+---
+
+# How to Create a WhatsApp Link with Pre-Filled Custom Message in 2026
+
+You've built the perfect landing page. Your ads are converting. But when a potential customer clicks "Contact Us," they land on a generic form that adds friction to the buying process. The result? Lost leads and abandoned carts.
+
+The solution is simpler than you think: a **WhatsApp link with a pre-filled custom message**. This eliminates typing friction, guides the conversation, and dramatically increases your response rates. In this guide, I'll show you exactly how to build these links in 2026, optimize them for conversion, and avoid the common pitfalls that kill engagement.
+
+## Why Pre-Filled Messages Are the Secret Weapon for Conversion
+
+A standard `wa.me` link opens a chat with an empty text box. The user has to think about what to write, how to phrase it, and whether to include their name. That's cognitive load, and it costs you conversions.
+
+By pre-filling the message, you do the thinking for them. You're providing a script that removes hesitation. This is particularly powerful for:
+
+- **E-commerce support:** "Hi, I need help with order #12345."
+- **Lead generation:** "I'm interested in your [Product Name] quote."
+- **Appointment booking:** "I'd like to book a consultation for [Date]."
+- **Post-ad follow-up:** "I saw your ad for [Service] and want more info."
+
+The data backs this up. In our analysis of [usernames vs. phone numbers for privacy](/blog/usernames-vs-numero-telefone-privacidade), we found that direct, contextual outreach via messaging apps outperforms cold forms by a significant margin. The pre-filled message is the catalyst for that performance.
+
+## The Technical Foundation: Understanding the `wa.me` URL Structure
+
+Before we dive into the "how," let's break down the anatomy of a WhatsApp link. It's deceptively simple but has a few critical components.
+
+The base URL is always `https://wa.me/`. To this, you append:
+
+1.  **The Phone Number:** In full international format, without any "+" sign, spaces, or dashes. For example, a Portuguese number would be `351912345678`.
+2.  **The Query Parameter:** The `?text=` parameter is where your pre-filled message goes.
+3.  **The Encoded Text:** The message itself must be URL-encoded. Spaces become `%20`, new lines become `%0A`, and special characters like `?` and `&` have their own codes.
+
+Here's the classic example:
+
+`https://wa.me/351912345678?text=Ola%20gostaria%20de%20saber%20mais`
+
+This link will open a chat with the number `+351 912 345 678` and the message "Ola gostaria de saber mais" already typed in the input field.
+
+### The Critical Encoding Cheat Sheet
+
+Getting the encoding right is the most common source of errors. Here are the codes you'll use 99% of the time:
+
+| Character | Encoded Value | Purpose |
+| :--- | :--- | :--- |
+| Space | `%20` | Separates words |
+| New Line | `%0A` | Creates a line break for multi-line messages |
+| `?` | `%3F` | Prevents the URL from breaking |
+| `&` | `%26` | Prevents the URL from breaking |
+| `=` | `%3D` | Prevents the URL from breaking |
+| `#` | `%23` | Prevents the URL from breaking |
+
+**Pro Tip:** Always encode `?`, `&`, and `#`. If you don't, the browser will interpret them as URL parameters, and your message will be cut off.
+
+## Step-by-Step: How to Generate a WhatsApp Link with a Pre-Filled Message
+
+You have two primary methods: manual creation and using a generator tool. Let's walk through both.
+
+### Method 1: The Manual URL Builder (Quick & Dirty)
+
+This is perfect for a one-off link or a quick test.
+
+1.  **Get the Full Number:** Ensure you have the recipient's number in full international format (e.g., `15551234567` for a US number, `447911123456` for a UK number).
+2.  **Write Your Message:** Draft the exact text you want to appear.
+3.  **Encode the Message:** Manually replace spaces with `%20` and other special characters with their codes. For a simple message, this is easy. For complex ones, it's tedious.
+4.  **Assemble the URL:** Combine the parts: `https://wa.me/[number]?text=[encoded_message]`.
+
+**Example:**
+Message: `Hi, I'm interested in your SEO audit service. Please send pricing.`
+Encoded: `Hi,%20I%27m%20interested%20in%20your%20SEO%20audit%20service.%20Please%20send%20pricing.`
+Final URL: `https://wa.me/15551234567?text=Hi,%20I%27m%20interested%20in%20your%20SEO%20audit%20service.%20Please%20send%20pricing.`
+
+This works, but it's error-prone. For anything beyond a simple test, use a generator.
+
+### Method 2: Using a Professional Link Generator (Recommended)
+
+For marketing campaigns, you need speed, accuracy, and the ability to scale. A dedicated generator tool handles the encoding for you and often provides additional features.
+
+1.  **Access the Tool:** Navigate to a reliable WhatsApp link generator, like the one on our homepage.
+2.  **Input the Number:** Enter the phone number in the international format field.
+3.  **Craft Your Message:** Write your pre-filled message in the text area. The tool will automatically handle the URL encoding.
+4.  **Generate & Copy:** Click the generate button. The tool will instantly produce the final `wa.me` URL.
+5.  **Test It:** Always open the link in an incognito window to ensure it works correctly and the message appears as intended.
+
+**Why use a generator?** It eliminates the risk of a broken link due to a missed `%` sign. It also allows you to quickly create multiple variations for A/B testing without manual labor.
+
+## Advanced Tactics: Dynamic Links for Personalized Campaigns
+
+Static links are great, but the real power comes from dynamic personalization. You can use URL parameters to inject user-specific data into the pre-filled message.
+
+For example, if you're running a Facebook ad, you can use the `{{fbclid}}` or other click ID parameters. More effectively, you can use JavaScript to capture the user's name or the product they viewed and append it to the WhatsApp link.
+
+**Example Scenario:**
+A user is on your product page for "Premium Headphones." You can have a button that generates this link:
+
+`https://wa.me/15551234567?text=Hi%2C%20I%20have%20a%20question%20about%20the%20Premium%20Headphones%20(Product%20ID%3A%20HP-2026).`
+
+This tells your sales team exactly what the customer is interested in before they even say a word. It's a powerful way to streamline your sales process and provide a better customer experience.
+
+### The `text` Parameter and Your [Business Platform](/en/glossary/business-platform)
+
+If you're using the WhatsApp Business API through a [Business Platform](/en/glossary/business-platform), the `text` parameter works slightly differently. You'll often use it in conjunction with message templates. However, for the standard `wa.me` link, the `text` parameter is your primary tool for pre-filling. The simplicity of `wa.me` makes it ideal for small businesses and direct customer interactions.
+
+## Common Mistakes and How to Avoid Them
+
+Even experienced marketers make these errors. Here's what to watch out for:
+
+- **Forgetting the Country Code:** The number must include the country code, but *without* the leading `+`. `15551234567` is correct; `+15551234567` is not.
+- **Using Spaces in the URL:** Never put raw spaces in the URL. They must be `%20`. This is the most common cause of broken links.
+- **Not Encoding Special Characters:** As mentioned, `?`, `&`, and `#` will break your link if not encoded.
+- **Testing on a Desktop Only:** Always test the link on a mobile device. The behavior can differ slightly between the mobile app and the web client.
+- **Ignoring the Web Client:** If the user doesn't have WhatsApp installed, the link will open the WhatsApp Web interface. Ensure your message looks good there too.
+
+## Frequently Asked Questions (FAQ)
+
+### Can I use a pre-filled WhatsApp link without saving the number?
+
+Yes, absolutely. That's the primary benefit of the `wa.me` link. It bypasses the need to save a contact, which removes a major friction point in the user journey. The chat opens directly with the number, even if it's not in your address book.
+
+### How do I add a line break in a pre-filled WhatsApp message?
+
+You need to use the URL-encoded value for a new line, which is `%0A`. For example, to create a two-line message, you would write: `?text=Hello%0AThis%20is%20the%20second%20line`. This is useful for creating structured messages with a greeting and a call to action.
+
+### What is the maximum length for a pre-filled WhatsApp message?
+
+The technical limit for a URL is quite long, but for the `text` parameter, it's best to keep it concise. A message of around 200-300 characters is recommended for optimal readability and to avoid any potential issues with the app. Long, rambling messages are less effective anyway.
+
+### Can I track clicks on my pre-filled WhatsApp links?
+
+Standard `wa.me` links don't have built-in analytics. To track clicks, you need to use a URL shortener with analytics (like Bitly) or use UTM parameters. However, be aware that UTM parameters can sometimes interfere with the `text` parameter if not encoded correctly. A dedicated tracking solution is more reliable.
+
+---
+
+> 💡 **Pronto para criar o seu link?** Utilize o nosso [gerador de link WhatsApp gratuito](/) para criar URLs `wa.me` e códigos QR personalizados, ou consulte o nosso [guia de como criar um link do WhatsApp](/how-to-create-a-whatsapp-link).
