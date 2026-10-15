@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Explainer } from "@/components/explainer";
 import { Faq } from "@/components/faq";
-import { CrmBanner } from "@/components/crm/crm-banner";
 import { Hero } from "@/components/hero";
 import { PhoneGenerator } from "@/components/whatsapp/phone-generator";
 import { UsernameGenerator } from "@/components/whatsapp/username-generator";
@@ -25,9 +24,6 @@ export default async function Home() {
           <PhoneGenerator />
           <UsernameGenerator />
         </div>
-
-        {/* WhatsApp AI + CRM promo (below the generators) */}
-        <CrmBanner />
 
         {/* AI Username Idea Generator */}
         <div className="w-full max-w-4xl">
