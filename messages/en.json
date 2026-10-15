@@ -614,7 +614,7 @@
     "metaTitle": "Bulk WhatsApp Link & QR Code Generator (CSV)",
     "metaDescription": "Generate up to 500 WhatsApp links and QR codes from a CSV in seconds. One-time $4.99, no account needed.",
     "inputLabel": "Paste or upload your CSV (phone or username, optional message — up to {max} rows)",
-    "placeholder": "351912345678,Hello!\njoao.silva\n+55 11 91234-5678,Hi, I want the offer",
+    "placeholder": "351912345678,Hello!\njohn.smith\n+55 11 91234-5678,Hi, I want the offer",
     "upload": "Upload CSV file",
     "summary": "{valid} valid, {invalid} invalid",
     "buy": "Buy & generate — $4.99",
@@ -686,7 +686,7 @@
     "homeCtaButton": "🚀 Create my batch in seconds →",
     "exampleLink": "See an example CSV",
     "exampleDownload": "Download example CSV",
-    "exampleCsv": "phone,message\n351912345678,Hello! I'd like to book a table\n5511912345678,\"Hi, I saw your flyer\"\n34612345678\njoao.silva",
+    "exampleCsv": "phone,message\n351912345678,Hello! I'd like to book a table\n5511912345678,\"Hi, I saw your flyer\"\n34612345678\njohn.smith",
     "resultUpsell": "Need dozens or hundreds of links or QR codes for a business, event or menu?",
     "resultUpsellCta": "Try the bulk generator for just $4.99 →"
   },

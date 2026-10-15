@@ -614,7 +614,7 @@
     "metaTitle": "Generador Masivo de Enlaces y Códigos QR de WhatsApp (CSV)",
     "metaDescription": "Genera hasta 500 enlaces y códigos QR de WhatsApp desde un CSV en segundos. $4.99 pago único, sin cuenta.",
     "inputLabel": "Pega o sube tu CSV (número o username, mensaje opcional — hasta {max} filas)",
-    "placeholder": "351912345678,¡Hola!\njoao.silva\n+55 11 91234-5678,Hola, quiero la oferta",
+    "placeholder": "351912345678,¡Hola!\njohn.smith\n+55 11 91234-5678,Hola, quiero la oferta",
     "upload": "Subir archivo CSV",
     "summary": "{valid} válidas, {invalid} inválidas",
     "buy": "Comprar y generar — $4.99",
@@ -686,7 +686,7 @@
     "homeCtaButton": "🚀 Crear mi lote en segundos →",
     "exampleLink": "Ver ejemplo de CSV",
     "exampleDownload": "Descargar CSV de ejemplo",
-    "exampleCsv": "phone,message\n351912345678,¡Hola! Quisiera reservar una mesa\n5511912345678,\"Hola, vi vuestro flyer\"\n34612345678\njoao.silva",
+    "exampleCsv": "phone,message\n351912345678,¡Hola! Quisiera reservar una mesa\n5511912345678,\"Hola, vi vuestro flyer\"\n34612345678\njohn.smith",
     "resultUpsell": "¿Necesitas generar decenas o cientos de enlaces o códigos QR para una empresa, evento o menú?",
     "resultUpsellCta": "Prueba el generador en lote por solo $4.99 →"
   },

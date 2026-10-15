@@ -614,7 +614,7 @@
     "metaTitle": "Gerador em Massa de Links e QR Codes de WhatsApp (CSV)",
     "metaDescription": "Gera até 500 links e QR Codes de WhatsApp a partir de um CSV em segundos. $4.99 pagamento único, sem conta.",
     "inputLabel": "Cola ou carrega o teu CSV (número ou username, mensagem opcional — até {max} linhas)",
-    "placeholder": "351912345678,Olá!\njoao.silva\n+55 11 91234-5678,Olá, quero a oferta",
+    "placeholder": "351912345678,Olá!\njohn.smith\n+55 11 91234-5678,Olá, quero a oferta",
     "upload": "Carregar ficheiro CSV",
     "summary": "{valid} válidas, {invalid} inválidas",
     "buy": "Comprar e gerar — $4.99",
@@ -686,7 +686,7 @@
     "homeCtaButton": "🚀 Criar o meu lote em segundos →",
     "exampleLink": "Ver exemplo de CSV",
     "exampleDownload": "Descarregar CSV de exemplo",
-    "exampleCsv": "phone,message\n351912345678,Olá! Queria reservar uma mesa\n5511912345678,\"Olá, vi o vosso flyer\"\n34612345678\njoao.silva",
+    "exampleCsv": "phone,message\n351912345678,Olá! Queria reservar uma mesa\n5511912345678,\"Olá, vi o vosso flyer\"\n34612345678\njohn.smith",
     "resultUpsell": "Tens de gerar dezenas ou centenas de links ou QR Codes para uma empresa, evento ou menu?",
     "resultUpsellCta": "Experimenta o gerador em lote por apenas $4.99 →"
   },
