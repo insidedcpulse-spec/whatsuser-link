@@ -1,0 +1,67 @@
+---
+title: "Formato del número de WhatsApp para enlaces wa.me: formato internacional y prefijos de país"
+description: "Cómo escribir un número de teléfono para un enlace de WhatsApp: el formato internacional, tabla de prefijos (Portugal, Brasil, España, México, EE. UU., Reino Unido y más), la regla del cero inicial y una lista de comprobación."
+date: "2026-10-16"
+slug: "numero-whatsapp-formato-internacional-codigos-pais"
+heroImage: "/blog/numero-whatsapp-formato-internacional-codigos-pais/hero.svg"
+heroImageAlt: "Un número de teléfono convirtiéndose a formato internacional con prefijo de país"
+entity: "phone-links"
+---
+
+**Respuesta corta:** en un enlace de WhatsApp, escribe el número en formato internacional completo y **solo con dígitos**: prefijo del país y después el número nacional sin el cero inicial. Sin `+`, sin `00`, sin espacios, guiones ni paréntesis. Un móvil español `612 34 56 78` pasa a `34612345678`, y el enlace es `https://wa.me/34612345678`.
+
+## La regla en cuatro pasos
+
+1. Parte del número tal como se marca localmente, por ejemplo `07911 123456` (Reino Unido).
+2. **Quita** espacios, guiones, paréntesis, un `+` inicial y un `00` inicial.
+3. **Quita el cero nacional** al principio del número local (el `0` de `07911…`).
+4. **Añade el prefijo** delante: `44` + `7911123456` = `447911123456`.
+
+El resultado va directo al enlace: `https://wa.me/447911123456`. Nuestro [generador gratuito](/) hace los cuatro pasos automáticamente.
+
+## Tabla de prefijos de país
+
+| País | Prefijo | Ejemplo local | Formato WhatsApp |
+| --- | --- | --- | --- |
+| Portugal | 351 | 912 345 678 | 351912345678 |
+| Brasil | 55 | (11) 91234-5678 | 5511912345678 |
+| España | 34 | 612 34 56 78 | 34612345678 |
+| México | 52 | 55 1234 5678 | 525512345678 |
+| Argentina | 54 | los móviles llevan un 9 tras el 54 | 549… |
+| Estados Unidos / Canadá | 1 | (415) 555-0132 | 14155550132 |
+| Reino Unido | 44 | 07911 123456 | 447911123456 |
+| Alemania | 49 | 0151 23456789 | 4915123456789 |
+| Francia | 33 | 06 12 34 56 78 | 33612345678 |
+| Italia | 39 | 312 345 6789 | 393123456789 |
+| Angola | 244 | 923 456 789 | 244923456789 |
+| Mozambique | 258 | 84 123 4567 | 258841234567 |
+| Cabo Verde | 238 | 991 23 45 | 2389912345 |
+
+Confirma siempre el plan de numeración del país al que enlazas; la tabla muestra el patrón habitual de los móviles.
+
+## Errores comunes
+
+- **Pegar `+34 612 34 56 78` tal cual.** El signo más y los espacios deben salir.
+- **Mantener el cero nacional:** `4407911123456` es incorrecto; usa `447911123456`.
+- **Olvidar el prefijo:** `612345678` solo no identifica país, así que el chat no se abre.
+- **Usar un número fijo:** el número debe estar registrado en WhatsApp.
+
+## Mensaje prellenado en el mismo enlace
+
+Añade `?text=` seguido del mensaje codificado en la URL: `https://wa.me/34612345678?text=%C2%A1Hola%21`. Consulta la [guía de mensajes personalizados](/blog/link-whatsapp-mensagem-personalizada-guia-2026).
+
+## Muchos números de una vez
+
+Convertir cientos de números a mano es lento. Pégalos o súbelos al [generador masivo](/bulk), que limpia cada número, crea el enlace wa.me y un código QR, y marca las filas inválidas. Si un enlace no abre, consulta [¿El enlace de WhatsApp no funciona? 9 causas y soluciones](/blog/link-whatsapp-nao-funciona-causas-solucoes).
+
+## Preguntas frecuentes
+
+**¿wa.me acepta el signo más?** El formato documentado usa solo dígitos; deja fuera el `+`.
+
+**¿Y los usernames de WhatsApp?** Son una función aparte y por fases; consulta [wa.me/username vs wa.me/teléfono](/blog/wame-username-vs-wame-phone-2026).
+
+**¿Puedo usar el mismo enlace en cualquier país?** Sí. El prefijo dentro del número lo encamina, así que un único formato funciona en todo el mundo.
+
+---
+
+> 🌍 **Convierte un número ahora:** prueba el [generador gratuito de enlaces de WhatsApp](/).

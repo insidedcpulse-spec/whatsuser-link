@@ -1,0 +1,75 @@
+---
+title: "¿El enlace de WhatsApp no funciona? 9 causas y soluciones para enlaces wa.me"
+description: "¿Tu enlace wa.me no abre el chat? Revisa estas 9 causas comunes: formato de número incorrecto, texto sin codificar, navegadores dentro de apps, números sin WhatsApp, despliegue de usernames y más, con soluciones."
+date: "2026-10-16"
+slug: "link-whatsapp-nao-funciona-causas-solucoes"
+heroImage: "/blog/link-whatsapp-nao-funciona-causas-solucoes/hero.svg"
+heroImageAlt: "Un eslabón de cadena roto junto a un globo de chat de WhatsApp"
+entity: "phone-links"
+---
+
+**Respuesta corta:** un enlace wa.me suele fallar por una de tres razones: el número no está en formato internacional completo (solo dígitos, con prefijo), el mensaje prellenado no está codificado en la URL, o el número no tiene WhatsApp. Compara tu enlace con la lista de abajo; cada causa tiene una solución rápida.
+
+## Diagnóstico rápido
+
+| Síntoma | Causa más probable | Solución |
+| --- | --- | --- |
+| "El número de teléfono compartido por URL no es válido" | Formato de número incorrecto | Usa solo dígitos, con prefijo, sin `+`, `00` ni espacios |
+| El chat se abre pero el mensaje está cortado o vacío | Texto sin codificar en la URL | Codifica espacios y símbolos (`%20`, `%26`) |
+| "El número no está en WhatsApp" | El número no tiene cuenta de WhatsApp | Confirma que el número está registrado |
+| El enlace no hace nada dentro de Instagram/Facebook | Límites del navegador interno | Ábrelo en el navegador del sistema |
+| `wa.me/username` no abre chat | El despliegue de usernames aún no llegó a tu región | Usa el enlace por número de teléfono |
+
+## 1. Formato de número incorrecto
+
+El formato documentado es `https://wa.me/<número>`: prefijo del país más número, **sin** signo más, ceros a la izquierda, paréntesis, guiones ni espacios. Un móvil español `612 345 678` pasa a `34612345678`. Es el error más común, tratado en nuestra guía de [formatos internacionales de número](/blog/numero-whatsapp-formato-internacional-codigos-pais).
+
+## 2. Un cero a la izquierda tras el prefijo
+
+Muchos países escriben el número nacional con un `0` inicial (por ejemplo `07911 123456` en Reino Unido). En la forma internacional ese cero desaparece: `447911123456`, no `4407911123456`.
+
+## 3. El mensaje no está codificado en la URL
+
+En `?text=`, los espacios deben ser `%20`, los saltos de línea `%0A`, el `&` pasa a `%26` y el `#` a `%23`. Un `&` suelto corta el texto. Crea el enlace con un generador en vez de a mano; consulta la [guía de mensajes personalizados](/blog/link-whatsapp-mensagem-personalizada-guia-2026).
+
+## 4. El número no tiene WhatsApp
+
+Si la persona no tiene cuenta de WhatsApp en ese número, el chat no se abre y WhatsApp indica que el número no está en WhatsApp. Compruébalo guardando el número y buscando el icono de WhatsApp.
+
+## 5. Navegadores dentro de apps (Instagram, Facebook, TikTok)
+
+Los enlaces abiertos en el navegador integrado de otra app a veces no pasan a WhatsApp. Pide a los visitantes que elijan "Abrir en el navegador", o enlaza a una página de tu web con el botón wa.me.
+
+## 6. Ordenador sin WhatsApp
+
+En ordenador el enlace abre WhatsApp Web o la aplicación de escritorio. Si ninguno está disponible, el visitante ve una página con un botón para continuar a WhatsApp Web, que es el comportamiento esperado.
+
+## 7. Usar `wa.me/<username>` antes de que el despliegue llegue a ti
+
+Los enlaces por username solo abren chat donde ya ha llegado el despliegue por fases de usernames de WhatsApp. Para todo lo que la gente deba poder usar hoy, utiliza un enlace por número de teléfono. Detalles en [wa.me/username vs wa.me/teléfono](/blog/wame-username-vs-wame-phone-2026) y en la [guía del despliegue](/blog/whatsapp-username-rollout-2026-guide).
+
+## 8. Un enlace muy largo o roto
+
+Los enlaces pegados en mensajeros o códigos QR pueden alterarse por saltos de línea o comillas "inteligentes". Pega primero el enlace en un editor de texto plano y mantén corto el mensaje prellenado.
+
+## 9. El código QR es pequeño o tiene poco contraste
+
+Un fallo de lectura parece un "enlace muerto". Imprime en un tamaño legible, con tinta oscura sobre fondo claro y margen en blanco. Consulta la [guía de códigos QR](/blog/link-whatsapp-qr-code-gratis).
+
+## Cómo probar un enlace en 30 segundos
+
+1. Ábrelo en un navegador de ordenador: debes ver la página de WhatsApp con tu número o username.
+2. Ábrelo en un móvil: WhatsApp debe abrir el chat con tu texto listo.
+3. Pruébalo desde la app donde lo vas a compartir (bio de Instagram, email, PDF).
+
+## Preguntas frecuentes
+
+**¿Puedo usar un número fijo?** Solo si ese número está registrado en WhatsApp (algunas cuentas Business usan números fijos).
+
+**¿Los enlaces wa.me caducan?** No. Siguen funcionando mientras el número esté registrado en WhatsApp.
+
+**¿Por qué el chat se abre con mi propio número?** Estás abriendo el enlace de tu número; prueba desde otro dispositivo.
+
+---
+
+> ✅ **Crea un enlace que funcione:** el [generador gratuito de enlaces de WhatsApp](/) formatea el número y codifica el mensaje por ti.

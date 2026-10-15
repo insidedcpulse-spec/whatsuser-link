@@ -1,0 +1,113 @@
+---
+title: "Cómo añadir un botón de WhatsApp a tu web (HTML, WordPress y botón flotante)"
+description: "Añade un botón de WhatsApp a cualquier web con un enlace wa.me: HTML y CSS listos para copiar, botón flotante, pasos para WordPress y Shopify, mensajes prellenados y errores que evitar."
+date: "2026-10-16"
+slug: "botao-whatsapp-site-link-wa-me-guia"
+heroImage: "/blog/botao-whatsapp-site-link-wa-me-guia/hero.svg"
+heroImageAlt: "Maqueta de una web con un botón verde de chat de WhatsApp en la esquina"
+entity: "phone-links"
+---
+
+**Respuesta corta:** para añadir un botón de WhatsApp a tu web, crea un enlace click-to-chat con el formato `https://wa.me/<número>` (número internacional completo, solo dígitos) y úsalo como `href` de un enlace o botón normal. No necesitas plugin, script ni clave de API. Genera el enlace en segundos con el [generador gratuito de enlaces de WhatsApp](/) y pégalo en tu página.
+
+## Paso 1: crea el enlace
+
+El formato oficialmente documentado es:
+
+```
+https://wa.me/351912345678?text=Hola%2C%20tengo%20una%20duda%20sobre%20su%20servicio
+```
+
+- `351912345678` es el número en formato internacional: prefijo del país más número, **sin** `+`, espacios, guiones ni ceros a la izquierda. Consulta nuestra guía de [formatos internacionales de número](/blog/numero-whatsapp-formato-internacional-codigos-pais).
+- `?text=` es opcional y contiene el mensaje prellenado, codificado en la URL. Más en nuestra [guía de mensajes personalizados](/blog/link-whatsapp-mensagem-personalizada-guia-2026).
+
+## Paso 2: el botón más simple (HTML)
+
+```html
+<a href="https://wa.me/351912345678?text=%C2%A1Hola!%20Os%20encontr%C3%A9%20en%20la%20web"
+   target="_blank" rel="noopener noreferrer"
+   class="whatsapp-button">
+  Hablar por WhatsApp
+</a>
+```
+
+```css
+.whatsapp-button {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+```
+
+`rel="noopener noreferrer"` es buena práctica siempre que uses `target="_blank"`.
+
+## Paso 3: botón flotante de WhatsApp
+
+Un botón flotante permanece visible mientras el visitante hace scroll:
+
+```html
+<a href="https://wa.me/351912345678" target="_blank" rel="noopener noreferrer"
+   aria-label="Hablar por WhatsApp" class="wa-float">💬</a>
+```
+
+```css
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25d366; color: #fff; font-size: 28px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25); z-index: 1000;
+}
+```
+
+Mantén siempre el `aria-label`, para que los lectores de pantalla anuncien lo que hace el botón.
+
+## WordPress, Shopify, Wix y Squarespace
+
+| Plataforma | Cómo añadir el botón |
+| --- | --- |
+| WordPress | Añade un bloque **Botón** (o "HTML personalizado") y pega el enlace wa.me como URL. Para el botón flotante, usa el HTML y CSS en un widget de HTML personalizado. |
+| Shopify | En el editor del tema, añade una sección **Botón** o **Liquid personalizado** y pega el enlace. |
+| Wix | Añade un **Botón**, elige **Enlace → Dirección web** y pega el enlace wa.me. |
+| Squarespace | Añade un **bloque Botón** y pega el enlace como URL, o usa un bloque de Código para la versión flotante. |
+
+## ¿Qué mensaje debe enviar el botón?
+
+Un mensaje prellenado reduce la fricción porque el visitante solo tiene que pulsar enviar. Los buenos indican de dónde viene el contacto:
+
+- "¡Hola! Me interesa el plan Premium (visto en la página de precios)."
+- "Hola, quiero reservar una cita (visto en la página de contacto)."
+
+Usar un mensaje distinto en cada página te dice cuál genera conversaciones, sin script de analítica.
+
+## Errores que rompen el botón
+
+1. **Escribir el número con `+`, espacios o `00`.** Usa solo dígitos, empezando por el prefijo del país.
+2. **No codificar el mensaje en la URL.** Los espacios pasan a `%20`; caracteres como `&` y `#` deben codificarse o el texto se corta.
+3. **Enlazar a un número sin WhatsApp.** El chat no se abre.
+4. **Ocultar el botón en móvil.** La mayoría de los chats de WhatsApp empiezan en el teléfono.
+5. **No indicar qué pasa en ordenador.** En escritorio el enlace abre WhatsApp Web o la aplicación, lo cual es normal; escribe "Hablar por WhatsApp" para que sepan qué esperar.
+
+## Privacidad y consentimiento
+
+Un enlace wa.me no envía datos a WhatsApp hasta que el visitante hace clic. No uses el botón para escribir a personas que no te contactaron primero; el click-to-chat es para conversaciones que inicia el cliente.
+
+## ¿Necesitas muchos botones?
+
+Si gestionas varias tiendas, agentes o productos, crea todos los enlaces y códigos QR de una vez con el [generador masivo de enlaces y QR de WhatsApp](/bulk).
+
+## Preguntas frecuentes
+
+**¿Necesito la API de WhatsApp Business para un botón en la web?** No. Un enlace wa.me funciona con un número de WhatsApp normal o Business.
+
+**¿El botón puede mostrar un contador de mensajes o una ventana de chat?** No con un enlace simple. Los widgets que incrustan una ventana de chat usan scripts de terceros y no son necesarios.
+
+**¿Funciona con usernames de WhatsApp?** `wa.me/<username>` solo abre chat donde ya ha llegado el despliegue de usernames; usa el número de teléfono para un botón que todos puedan usar. Consulta [wa.me/username vs wa.me/teléfono](/blog/wame-username-vs-wame-phone-2026).
+
+---
+
+> 🔧 **Crea tu enlace ahora:** usa el [generador gratuito de enlaces de WhatsApp](/) y pega el resultado en tu botón.

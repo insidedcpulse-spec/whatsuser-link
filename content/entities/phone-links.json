@@ -2,9 +2,9 @@
   "id": "phone-links",
   "parent": null,
   "related": ["username-link", "privacy"],
-  "articles": [],
-  "guides": [],
-  "lastUpdated": null,
+  "articles": ["botao-whatsapp-site-link-wa-me-guia", "link-whatsapp-nao-funciona-causas-solucoes", "numero-whatsapp-formato-internacional-codigos-pais", "whatsapp-click-to-chat-vendas-pequenas-empresas"],
+  "guides": ["/how-to-create-a-whatsapp-link", "/bulk"],
+  "lastUpdated": "2026-10-16",
   "translations": {
     "pt": {
       "name": "Phone Links",

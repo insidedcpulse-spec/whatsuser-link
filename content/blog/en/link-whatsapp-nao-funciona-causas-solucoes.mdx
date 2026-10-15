@@ -1,0 +1,75 @@
+---
+title: "WhatsApp Link Not Working? 9 Causes and Fixes for wa.me Links"
+description: "Your wa.me link won't open a chat? Check these 9 common causes: wrong number format, unencoded text, in-app browsers, numbers not on WhatsApp, username rollout and more, with fixes."
+date: "2026-10-16"
+slug: "link-whatsapp-nao-funciona-causas-solucoes"
+heroImage: "/blog/link-whatsapp-nao-funciona-causas-solucoes/hero.svg"
+heroImageAlt: "A broken chain link next to a WhatsApp chat bubble"
+entity: "phone-links"
+---
+
+**Short answer:** a wa.me link usually fails because of one of three things: the number is not in full international format (digits only, with country code), the pre-filled message is not URL-encoded, or the number is not registered on WhatsApp. Check the link against the list below; each cause has a quick fix.
+
+## Quick diagnosis
+
+| Symptom | Most likely cause | Fix |
+| --- | --- | --- |
+| "Phone number shared via URL is invalid" | Wrong number format | Use digits only, with country code, no `+`, `00` or spaces |
+| Chat opens but the message is cut or empty | Text not URL-encoded | Encode spaces and symbols (`%20`, `%26`) |
+| "Number isn't on WhatsApp" | Number has no WhatsApp account | Confirm the number is registered |
+| Link does nothing inside Instagram/Facebook | In-app browser limits | Open in the system browser |
+| `wa.me/username` doesn't open a chat | Username rollout not in your region yet | Use the phone-number link |
+
+## 1. Wrong number format
+
+The documented format is `https://wa.me/<number>`: country code plus number, with **no** plus sign, leading zeros, brackets, dashes or spaces. A Portuguese mobile `912 345 678` becomes `351912345678`. This is the most common error, covered in our guide to [international number formats](/blog/numero-whatsapp-formato-internacional-codigos-pais).
+
+## 2. A leading zero after the country code
+
+Many countries write the national number with a leading `0` (for example `07911 123456` in the UK). In the international form that zero is dropped: `447911123456`, not `4407911123456`.
+
+## 3. The message is not URL-encoded
+
+In `?text=`, spaces must be `%20`, line breaks `%0A`, `&` becomes `%26` and `#` becomes `%23`. A bare `&` ends the text early. Build the link with a generator instead of by hand; see the [custom message guide](/blog/link-whatsapp-mensagem-personalizada-guia-2026).
+
+## 4. The number is not on WhatsApp
+
+If the person has no WhatsApp account on that number, the chat cannot open and WhatsApp says the number isn't on WhatsApp. Check by saving the number and looking for the WhatsApp icon.
+
+## 5. In-app browsers (Instagram, Facebook, TikTok)
+
+Links opened inside another app's built-in browser sometimes fail to hand off to WhatsApp. Ask visitors to "Open in browser", or link to a page on your own site that contains the wa.me button.
+
+## 6. Desktop without WhatsApp
+
+On a computer the link opens WhatsApp Web or the desktop app. If neither is available, the visitor sees a page with a button to continue to WhatsApp Web, which is expected behavior.
+
+## 7. Using `wa.me/<username>` before the rollout reaches you
+
+Username links only open a chat where WhatsApp's phased username rollout has already arrived. For anything people must rely on today, use a phone-number link. Details in [wa.me/username vs wa.me/phone](/blog/wame-username-vs-wame-phone-2026) and the [rollout guide](/blog/whatsapp-username-rollout-2026-guide).
+
+## 8. A very long or broken link
+
+Links pasted into messengers or QR codes can be altered by line breaks or "smart" quotes. Paste the link into a plain-text editor first, and keep the pre-filled message short.
+
+## 9. The QR code is too small or low contrast
+
+A scan failure looks like a "dead link". Print at a readable size, with dark ink on a light background and a blank margin. See the [QR code guide](/blog/link-whatsapp-qr-code-gratis).
+
+## How to test a link in 30 seconds
+
+1. Open the link in a desktop browser: you should see the WhatsApp page with your number or username.
+2. Open it on a phone: WhatsApp should open the chat with your text ready.
+3. Test it from the app where you will share it (Instagram bio, email, PDF).
+
+## FAQ
+
+**Can I use a landline number?** Only if that number is registered on WhatsApp (some Business accounts use landlines).
+
+**Do wa.me links expire?** No. They keep working as long as the number is registered on WhatsApp.
+
+**Why does the chat open with my own number?** You are opening your own number's link; test from another device.
+
+---
+
+> ✅ **Create a link that works:** the [free WhatsApp link generator](/) formats the number and encodes the message for you.
