@@ -14,11 +14,18 @@ export function getSoftwareApplicationJsonLd(description: string) {
     description,
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Any",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
+    inLanguage: ["en", "pt", "es"],
+    featureList: [
+      "Free WhatsApp wa.me link generator from phone number or username",
+      "QR code download as PNG, JPEG, SVG or PDF",
+      "Free public REST API with OpenAPI 3.1 specification",
+      "MCP server for AI agents",
+      "Bulk generator: CSV to ZIP of up to 500 wa.me links and QR codes",
+    ],
+    offers: [
+      { "@type": "Offer", name: "Free generators and API", price: "0", priceCurrency: "USD" },
+      { "@type": "Offer", name: "Bulk Link & QR Pack", price: "4.99", priceCurrency: "USD", url: `${siteConfig.url}/bulk` },
+    ],
   };
 }
 
@@ -29,6 +36,10 @@ export function getOrganizationJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/icon.svg`,
+    foundingDate: "2026-07",
+    areaServed: "Worldwide",
+    knowsAbout: ["WhatsApp click-to-chat links", "wa.me links", "WhatsApp QR codes", "WhatsApp usernames"],
+    sameAs: ["https://www.npmjs.com/package/whatsusernames-sdk"],
   };
 }
 

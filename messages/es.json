@@ -703,5 +703,22 @@
     "adsTitle": "Publicidad",
     "adsDesc": "Anuncios de Google AdSense, que pueden usar cookies y tecnologías similares.",
     "settingsLink": "Ajustes de cookies"
+  },
+  "facts": {
+    "title": "WhatsUsernames.link en cifras",
+    "homeTitle": "WhatsUsernames.link en cifras",
+    "metaTitle": "Datos y cifras de WhatsUsernames.link: generador gratuito de enlaces, QR y lotes de WhatsApp",
+    "metaDescription": "Datos verificables sobre WhatsUsernames.link: idiomas, endpoints de la API, herramientas MCP, límites y precio del generador en lote y cifras reales de uso.",
+    "intro": "Datos verificados sobre WhatsUsernames.link, una herramienta independiente que crea enlaces wa.me y códigos QR de WhatsApp. Los contadores con fecha son cifras reales de nuestros sistemas en esa fecha.",
+    "more": "Ver todos los datos",
+    "launched": "WhatsUsernames.link se lanzó en julio de 2026 y lo opera de forma independiente desde Portugal. No está afiliado, respaldado ni asociado con WhatsApp Inc. ni Meta Platforms, Inc.",
+    "usage": "A {date}, la herramienta ha generado {links, number} enlaces de WhatsApp y atendido {api, number} solicitudes a la API pública de {clients, number} clientes de API distintos.",
+    "content": "El sitio está disponible en {languages} idiomas (inglés, portugués y español), con {articles} guías por idioma ({total} en total), {terms} términos de glosario y {countries} prefijos de país en el generador por teléfono.",
+    "qr": "Los códigos QR gratuitos se pueden descargar en PNG, JPEG, SVG o PDF, con color personalizado, fondo transparente e icono de chat opcional.",
+    "api": "La API REST pública gratuita tiene {endpoints} endpoints y una especificación OpenAPI 3.1. No necesita clave de API y está limitada a {json} solicitudes por minuto para JSON y {qr} por minuto para códigos QR, por dirección IP.",
+    "mcp": "El servidor MCP en /api/mcp expone {tools} herramientas ({names}) por Streamable HTTP, sin clave de API.",
+    "sdk": "El SDK de TypeScript whatsusernames-sdk está publicado en npm y envuelve la API pública.",
+    "bulk": "El Pack de Enlaces y QR en Masa convierte un CSV de hasta {rows} filas en un ZIP con un enlace wa.me y un código QR PNG de {px} píxeles por fila. Cuesta ${price} USD en un pago único, permite hasta {downloads} descargas en {hours} horas, y el CSV se procesa en memoria y no se almacena.",
+    "privacy": "Los generadores gratuitos se ejecutan en tu navegador: sin cuenta, sin base de datos de números o usernames y sin cookies de analítica."
   }
 }

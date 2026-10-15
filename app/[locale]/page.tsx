@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Explainer } from "@/components/explainer";
 import { Faq } from "@/components/faq";
+import { KeyFacts } from "@/components/key-facts";
 import { Hero } from "@/components/hero";
 import { PhoneGenerator } from "@/components/whatsapp/phone-generator";
 import { UsernameGenerator } from "@/components/whatsapp/username-generator";
@@ -11,7 +12,10 @@ import { Link } from "@/i18n/navigation";
 
 import { UsernameIdeaGenerator } from "@/components/whatsapp/username-idea-generator";
 
-export default async function Home() {
+export const revalidate = 3600;
+
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const tGuide = await getTranslations("guide");
   const tBulk = await getTranslations("bulk");
 
@@ -53,6 +57,9 @@ export default async function Home() {
 
         {/* Featured Blog Posts & Guides */}
         <FeaturedArticles />
+
+        {/* Verifiable facts for readers and AI answer engines */}
+        <KeyFacts locale={locale} linkToAll />
 
         {/* Frequently Asked Questions */}
         <Faq />

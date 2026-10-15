@@ -14,7 +14,7 @@ export interface RateLimitResult {
 }
 
 const WINDOW = "60 s" as const;
-const REQUESTS: Record<LimiterKind, number> = { json: 60, qr: 20 };
+export const REQUESTS: Record<LimiterKind, number> = { json: 60, qr: 20 };
 const TIMEOUT_MS = 250;
 
 let limiters: Record<LimiterKind, Ratelimit> | null | undefined;

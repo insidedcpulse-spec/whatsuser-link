@@ -1,8 +1,10 @@
+import { getFactLines } from "@/components/key-facts";
 import { siteConfig } from "@/config/site";
 
-export const dynamic = "force-static";
+export const revalidate = 3600;
 
-export function GET() {
+export async function GET() {
+  const facts = (await getFactLines("en")).map((l) => `- ${l}`).join("\n");
   const content = `# ${siteConfig.name}
 
 > Free tool to create a shareable WhatsApp link and QR code from a WhatsApp Username or phone number. No signup, no data stored.
@@ -17,6 +19,12 @@ As of 2026-07-04, \`wa.me/<username>\` (no \`/u/\` prefix) is the format documen
 
 ## Username Key
 WhatsApp lets a user optionally set a "Username Key," a short code to disambiguate people who share the same username. ${siteConfig.name} lets users attach and share this key alongside their link.
+
+## Verifiable facts
+${facts}
+
+## Full index
+A complete machine-readable index of every guide in English, Portuguese and Spanish is at ${siteConfig.url}/llms-full.txt and a human-readable fact page is at ${siteConfig.url}/facts.
 
 ## Not affiliated
 ${siteConfig.name} is an independent, third-party tool. It is not affiliated with, endorsed by, or associated with WhatsApp Inc. or Meta.

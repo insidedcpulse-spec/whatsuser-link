@@ -703,5 +703,22 @@
     "adsTitle": "Advertising",
     "adsDesc": "Google AdSense ads, which may use cookies and similar technologies.",
     "settingsLink": "Cookie settings"
+  },
+  "facts": {
+    "title": "WhatsUsernames.link in numbers",
+    "homeTitle": "WhatsUsernames.link in numbers",
+    "metaTitle": "WhatsUsernames.link facts and numbers: free WhatsApp link, QR and bulk generator",
+    "metaDescription": "Verifiable facts about WhatsUsernames.link: languages, API endpoints, MCP tools, bulk generator limits and price, and real usage figures.",
+    "intro": "Verified facts about WhatsUsernames.link, an independent tool that creates WhatsApp wa.me links and QR codes. Counters marked with a date are real figures from our own systems on that date.",
+    "more": "See all facts",
+    "launched": "WhatsUsernames.link launched in July 2026 and is operated independently from Portugal. It is not affiliated with, endorsed by or associated with WhatsApp Inc. or Meta Platforms, Inc.",
+    "usage": "As of {date}, the tool has generated {links, number} WhatsApp links and served {api, number} public API requests from {clients, number} distinct API clients.",
+    "content": "The site is available in {languages} languages (English, Portuguese and Spanish), with {articles} guides per language ({total} in total), {terms} glossary terms and {countries} country dial codes in the phone generator.",
+    "qr": "Free QR codes can be downloaded as PNG, JPEG, SVG or PDF, with a custom color, transparent background and an optional chat icon.",
+    "api": "The free public REST API has {endpoints} endpoints and an OpenAPI 3.1 specification. It needs no API key and is limited to {json} requests per minute for JSON and {qr} per minute for QR codes, per IP address.",
+    "mcp": "The MCP server at /api/mcp exposes {tools} tools ({names}) over Streamable HTTP, with no API key.",
+    "sdk": "The TypeScript SDK whatsusernames-sdk is published on npm and wraps the public API.",
+    "bulk": "The Bulk Link & QR Pack turns a CSV of up to {rows} rows into one ZIP with a wa.me link and a {px}-pixel PNG QR code per row. It costs a one-time ${price} USD, allows up to {downloads} downloads within {hours} hours, and the CSV is processed in memory and not stored.",
+    "privacy": "The free generators run in your browser: no account, no database of phone numbers or usernames, and no analytics cookies."
   }
 }
