@@ -88,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...entries(undefined, 1),
     ...entries("how-to-create-a-whatsapp-link", 0.6),
+    ...entries("crm", 0.7),
     ...entries("developers", 0.6),
     ...entries("blog", 0.6),
     ...blogPostEntries(),

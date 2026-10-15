@@ -585,5 +585,103 @@
     "styleCreative": "Criativo e Studio",
     "generateBtn": "Gerar Ideias de Usernames",
     "resultsTitle": "Ideias de Usernames Válidos"
+  },
+  "crm": {
+    "badge": "NOVO • WhatsApp AI + CRM",
+    "bannerTitle": "Já tens o teu link de WhatsApp. Agora coloca Inteligência Artificial a atender e vender por ti 24/7.",
+    "bannerSubtitle": "Transforma o teu WhatsApp num Sistema Operacional de Vendas: Agentes de IA, CRM em Kanban, Agendamentos e Multiatendimento. 100% Self-Service.",
+    "perMonth": "/mês",
+    "priceNote": "Cobrado em moeda local · cancela quando quiseres",
+    "howItWorksBtn": "Ver Como Funciona",
+    "startNow": "Começar Agora",
+    "redirecting": "A abrir checkout…",
+    "checkoutError": "Não foi possível abrir o checkout. Tenta novamente.",
+    "metaTitle": "WhatsApp AI + CRM — Agentes de IA, Kanban e Multiatendimento",
+    "metaDescription": "Coloca IA a atender e vender no teu WhatsApp 24/7. CRM em Kanban, agendamentos e multiatendimento. 100% self-service, a partir de $5.99/mês.",
+    "heroTitle": "IA a atender e vender no teu WhatsApp, 24 horas por dia",
+    "heroSubtitle": "Inbox, agentes de IA, CRM em Kanban e equipa num único painel. Assina, liga o WhatsApp e começa a vender.",
+    "stepsTitle": "Como funciona em 3 passos",
+    "stepsSubtitle": "100% self-service, sem reuniões nem espera.",
+    "steps": [
+      {
+        "t": "Assina o Plano",
+        "d": "Acesso libertado automaticamente após o pagamento."
+      },
+      {
+        "t": "Conecta o teu WhatsApp",
+        "d": "Lê o QR Code no painel em segundos."
+      },
+      {
+        "t": "Ativa a tua IA e Vende",
+        "d": "Configura o teu agente de IA, agenda, funis e equipa de forma 100% autónoma."
+      }
+    ],
+    "featuresTitle": "Tudo o que precisas para vender por conversa",
+    "features": [
+      {
+        "t": "Inbox Omnichannel",
+        "d": "Conversas com áudio, fotos e documentos num só lugar."
+      },
+      {
+        "t": "Agentes de IA",
+        "d": "Ligados à Agenda e com abertura de casos para humanos quando necessário."
+      },
+      {
+        "t": "Funis de Vendas em Kanban",
+        "d": "Linha do tempo automática de cada negócio."
+      },
+      {
+        "t": "Gestão de Equipa",
+        "d": "Perfis de Admin, Gerente e Atendente."
+      },
+      {
+        "t": "Módulos Opcionais",
+        "d": "Propostas, Comandas, Honorários e Follow-up."
+      }
+    ],
+    "pricingTitle": "Preço transparente",
+    "planName": "WhatsUsernames AI CRM - Pro",
+    "planFeatures": [
+      "Inbox omnichannel (áudio, fotos, documentos)",
+      "Agentes de IA com Agenda e escalonamento humano",
+      "Funis Kanban com linha do tempo automática",
+      "Equipa: Admin, Gerente, Atendente",
+      "Módulos: Propostas, Comandas, Honorários, Follow-up"
+    ],
+    "selfService": "Plataforma 100% Self-Service: assina, acede ao painel e configura ao teu ritmo. Cancela quando quiseres.",
+    "faqTitle": "Perguntas frequentes",
+    "faq": [
+      {
+        "q": "Quando fica ativo o meu acesso?",
+        "a": "Imediatamente após o pagamento. Entras no painel e crias a tua organização."
+      },
+      {
+        "q": "Preciso de ajuda para configurar?",
+        "a": "Não. A plataforma é 100% self-service: ligas o WhatsApp por QR Code e configuras IA, funis e equipa ao teu ritmo."
+      },
+      {
+        "q": "Posso cancelar quando quiser?",
+        "a": "Sim. Cancelas a qualquer momento e não és cobrado no ciclo seguinte."
+      },
+      {
+        "q": "Em que moeda pago?",
+        "a": "O preço base é $5.99 USD/mês. No checkout vês e pagas na moeda local (€, £, R$…), convertida automaticamente."
+      }
+    ],
+    "mockInbox": "Inbox",
+    "mockAi": "IA a responder",
+    "mockKanban": "Funil",
+    "mockMsgIn": "Olá! Têm vaga para amanhã às 15h?",
+    "mockMsgAi": "Olá! Sim, tenho 15h livre. Confirmo o teu agendamento?",
+    "mockCols": [
+      "Novo",
+      "Em conversa",
+      "Fechado"
+    ],
+    "successTitle": "Pagamento confirmado!",
+    "successText": "A tua subscrição está ativa. Acede ao painel para criar a tua organização e ligar o WhatsApp.",
+    "successCta": "Aceder ao sistema",
+    "successPending": "Não foi possível confirmar o pagamento. Se foste cobrado, o acesso é libertado em instantes.",
+    "successHome": "Voltar ao início"
   }
 }
