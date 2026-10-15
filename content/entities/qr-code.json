@@ -2,8 +2,8 @@
   "id": "qr-code",
   "parent": "usernames",
   "related": ["username-link", "username-key"],
-  "articles": ["link-whatsapp-qr-code-gratis"],
-  "guides": ["/how-to-create-a-whatsapp-link"],
+  "articles": ["link-whatsapp-qr-code-gratis", "gerar-links-qr-codes-whatsapp-em-massa-csv"],
+  "guides": ["/how-to-create-a-whatsapp-link", "/bulk"],
   "lastUpdated": "2026-06-22",
   "translations": {
     "pt": {

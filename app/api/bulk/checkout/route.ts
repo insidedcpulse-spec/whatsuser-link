@@ -7,7 +7,10 @@ export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
     const stripe = getStripe();
-    const body = (await request.json().catch(() => ({}))) as { locale?: string };
+    const body = (await request.json().catch(() => ({}))) as { locale?: string; consent?: boolean };
+    if (body.consent !== true) {
+      return NextResponse.json({ error: "Consent required" }, { status: 400 });
+    }
     const locale = routing.locales.includes(body.locale as never) ? (body.locale as string) : "en";
     const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
     const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
@@ -20,7 +23,7 @@ export async function POST(request: Request) {
       line_items: [{ price: price.id, quantity: 1 }],
       adaptive_pricing: { enabled: true },
       locale: locale as "en" | "pt" | "es",
-      metadata: { app: BULK_APP_TAG },
+      metadata: { app: BULK_APP_TAG, consent_immediate_delivery: new Date().toISOString() },
       success_url: `${origin}${prefix}/bulk?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}${prefix}/bulk`,
     });

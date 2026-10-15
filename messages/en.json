@@ -108,7 +108,7 @@
     "title": "Why Use WhatsUsernames.link?",
     "subtitle": "Built for privacy, speed, and reliability. Turn any WhatsApp handle or phone number into a shareable link in milliseconds.",
     "statelessTitle": "100% Stateless & Private",
-    "statelessDesc": "Everything runs in your browser. No database, no tracking cookies, and zero server storage of phone numbers or usernames.",
+    "statelessDesc": "The free generators run in your browser. No database, no tracking cookies, and zero server storage of phone numbers or usernames.",
     "qrTitle": "Instant Custom QR Codes",
     "qrDesc": "Generate high-resolution PNG, JPEG, SVG, or vector PDF QR codes ready for business cards, storefronts, and social media.",
     "formatTitle": "Official wa.me Link Format",
@@ -142,7 +142,7 @@
       {
         "heading": "How it's run",
         "body": [
-          "There's no account system and no database: everything you enter runs in your browser and is never sent to or stored on our servers. See our Privacy Policy for details. The site is free to use and funded by ads (Adsterra and Google AdSense) rather than subscriptions."
+          "There's no account system. The free generators run in your browser and what you enter is never sent to or stored on our servers; the optional paid Bulk Pack sends your CSV to our server only to build your ZIP and does not store it. See our Privacy Policy for details. The site is free to use and funded by ads (Adsterra and Google AdSense) and by the optional paid Bulk Pack."
         ]
       },
       {
@@ -282,7 +282,7 @@
       },
       {
         "question": "Is my phone number or username stored anywhere?",
-        "answer": "No. WhatsUsernames.link is deliberately stateless: there is no database, no user accounts, and no server-side storage of anything you type. Your phone number, username, Username Key, and any pre-filled message stay in your browser the entire time — the link and QR code are built client-side using WhatsApp's own documented wa.me format, not sent to us for processing or saved anywhere. Closing the tab or refreshing the page erases everything instantly, since there was never a copy kept elsewhere. This also means we can't recover a link for you later if you lose it — you'd simply regenerate it by entering the same username or number again. See our Privacy Policy for the full breakdown of what little data (like anonymous analytics) our hosting and ad provider process."
+        "answer": "No. WhatsUsernames.link is deliberately stateless: there is no database, no user accounts, and no server-side storage of anything you type. Your phone number, username, Username Key, and any pre-filled message stay in your browser the entire time — the link and QR code are built client-side using WhatsApp's own documented wa.me format, not sent to us for processing or saved anywhere. Closing the tab or refreshing the page erases everything instantly, since there was never a copy kept elsewhere. This also means we can't recover a link for you later if you lose it — you'd simply regenerate it by entering the same username or number again. See our Privacy Policy for the full breakdown of what little data (like anonymous analytics) our hosting and ad provider process. The optional paid Bulk Pack is the only exception: it processes your CSV on our server to build the ZIP and does not store it."
       },
       {
         "question": "Can I use this for a WhatsApp Business account?",
@@ -369,7 +369,7 @@
     ]
   },
   "legal": {
-    "lastUpdated": "Last updated: July 5, 2026",
+    "lastUpdated": "Last updated: October 15, 2026",
     "privacy": {
       "title": "Privacy Policy",
       "metaDescription": "How WhatsUsernames.link handles data: what we don't collect, what our hosting and ad provider process, and your rights.",
@@ -378,13 +378,21 @@
         {
           "heading": "This tool is stateless",
           "body": [
-            "WhatsUsernames.link builds your WhatsApp link and QR code entirely in your browser. The WhatsApp Username, Username Key, phone number, and message you enter are never sent to or stored on our servers. Closing or refreshing the page erases them."
+            "WhatsUsernames.link builds your WhatsApp link and QR code entirely in your browser. The WhatsApp Username, Username Key, phone number, and message you enter are never sent to or stored on our servers. Closing or refreshing the page erases them.",
+            "Exception: the optional paid Bulk Link & QR Pack. When you click download, the CSV you typed or uploaded is sent to our server, processed in memory to build your ZIP and returned to you. It is not stored and not written to logs."
           ]
         },
         {
           "heading": "No accounts, no sign-up",
           "body": [
             "There is no registration, login, or user account. We have no database of users or usernames."
+          ]
+        },
+        {
+          "heading": "Payments (Bulk Pack)",
+          "body": [
+            "The paid Bulk Pack is processed by Stripe Payments Europe, Ltd., which collects your payment details and email for the receipt. We never see or store your card data. We receive only the Stripe Checkout Session identifier, which we use to confirm payment and to count downloads (up to 5 within 48 hours). That identifier and its counter are kept in Redis (Upstash) and expire automatically after 48 hours.",
+            "Legal basis: performance of the contract you enter into when you buy (GDPR Art. 6(1)(b)). Stripe acts as an independent controller for payment, fraud-prevention and tax records; see stripe.com/privacy."
           ]
         },
         {
@@ -396,7 +404,8 @@
         {
           "heading": "Cookies and local storage",
           "body": [
-            "We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device."
+            "We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device.",
+            "On the Bulk Pack page, a draft copy of your CSV is kept in your browser's local storage (key \"bulk-csv\") so it survives the redirect to Stripe. It never leaves your device except when you click download, and you can erase it by clearing your site data. Stripe may set its own cookies on its checkout page, under its own policy."
           ]
         },
         {
@@ -414,7 +423,7 @@
         {
           "heading": "Your rights",
           "body": [
-            "Because we don't collect or store personal data on our servers, there is generally nothing for us to access, correct, or delete. If you believe we hold data about you, contact us using the details below and we'll look into it."
+            "For the free generators we hold nothing to access, correct or delete. For Bulk Pack purchases, payment and tax records are held by Stripe; the only data we hold is a temporary Checkout Session identifier that expires in 48 hours. To exercise your GDPR rights or ask a question, email us."
           ]
         },
         {
@@ -445,13 +454,27 @@
         {
           "heading": "What this Service does",
           "body": [
-            "WhatsUsernames.link is a free tool that generates a shareable WhatsApp link and QR code from a WhatsApp Username, Username Key, or phone number you provide, entirely in your browser."
+            "WhatsUsernames.link is a free tool that generates a shareable WhatsApp link and QR code from a WhatsApp Username, Username Key, or phone number you provide, entirely in your browser. The paid Bulk Link & QR Pack builds up to 500 links and QR codes from a CSV you provide, on our server, and delivers them as a ZIP."
           ]
         },
         {
           "heading": "No account, free to use",
           "body": [
-            "The Service is 100% free, with no signup and no payment required for its current features."
+            "The generators on the home page are 100% free, with no signup. The Bulk Link & QR Pack is an optional paid product (see below). The Service is also supported by advertising."
+          ]
+        },
+        {
+          "heading": "Bulk Link & QR Pack (paid)",
+          "body": [
+            "The Bulk Pack costs a one-time $4.99 USD, charged by Stripe. At checkout Stripe may show and charge the equivalent in your local currency (Stripe Adaptive Pricing), including its exchange rate. Taxes may apply depending on your country. There is no subscription and no automatic renewal.",
+            "After payment you may download the ZIP up to 5 times within 48 hours. Access is tied to your payment session; if you lose it, contact us. You are responsible for the contents of your CSV."
+          ]
+        },
+        {
+          "heading": "Digital delivery, withdrawal and refunds",
+          "body": [
+            "The Bulk Pack is digital content delivered immediately. Before paying, you expressly request immediate delivery and acknowledge that once the download begins you lose your 14-day right of withdrawal under EU consumer law (Directive 2011/83/EU, Art. 16(m)).",
+            "If the ZIP cannot be generated, is materially defective, or you were charged by mistake or twice, email insidedcpulse@gmail.com and we will fix it or refund you."
           ]
         },
         {
@@ -463,7 +486,7 @@
         {
           "heading": "Acceptable use",
           "body": [
-            "Don't use the Service to generate links for numbers or usernames you don't have the right to share, or for spam, harassment, fraud, or impersonation."
+            "Don't use the Service to generate links for numbers or usernames you don't have the right to share, or for spam, harassment, fraud, or impersonation. Don't use the Bulk Pack to send unsolicited messages or build lists of contacts without their permission, and comply with WhatsApp's terms and applicable anti-spam and data-protection laws."
           ]
         },
         {
@@ -606,6 +629,59 @@
       "Paste or upload your CSV. The preview is free.",
       "Pay once, $4.99, securely with Stripe.",
       "Download a ZIP with one PNG QR per link plus links.csv."
+    ],
+    "homeCtaText": "Upload a CSV and get up to 500 wa.me links and QR codes in one ZIP — for events, menus, business cards and campaigns. $4.99 one-time.",
+    "consent": "I request immediate delivery of this digital product and understand that once the download starts I lose my 14-day right of withdrawal. I accept the Terms of Service.",
+    "useCasesTitle": "What people use bulk WhatsApp QR codes for",
+    "useCases": [
+      "Restaurant and café tables: one WhatsApp QR code per table to order or call the waiter.",
+      "Events and trade shows: personalized wa.me links for every speaker, exhibitor or attendee.",
+      "Business cards and flyers: a click-to-chat link and QR code for each team member or store.",
+      "Real estate and retail: one WhatsApp link per listing or product, pre-filled with the item name.",
+      "Marketing campaigns: a different pre-filled message per channel to track which one converts."
+    ],
+    "faqTitle": "Bulk WhatsApp link and QR code generator — FAQ",
+    "faq": [
+      {
+        "question": "What is a bulk WhatsApp link and QR code generator?",
+        "answer": "It is a tool that turns a list of phone numbers or WhatsApp usernames into many click-to-chat wa.me links and QR codes at once. You upload a CSV, and instead of creating each link by hand you get all of them in one ZIP: a PNG QR code per link plus a links.csv index."
+      },
+      {
+        "question": "How do I generate many WhatsApp links from a CSV?",
+        "answer": "Put one contact per line (phone number with country code, or a WhatsApp username), optionally followed by a pre-filled message, then paste or upload the file. Review the free preview, pay once, and download the ZIP. A header row is detected and skipped, and both commas and semicolons work as separators."
+      },
+      {
+        "question": "How many WhatsApp QR codes can I create in one batch?",
+        "answer": "Up to 500 links and QR codes per CSV. Invalid rows (for example numbers that are too short) are flagged in the preview and marked invalid in links.csv, so you can fix them and run the file again."
+      },
+      {
+        "question": "What does the ZIP contain?",
+        "answer": "A qr/ folder with one 400-pixel PNG QR code per valid row (0001.png, 0002.png and so on) and a links.csv that maps each input to its wa.me URL and QR file. The QR codes encode the standard https://wa.me/<number> click-to-chat format, with your message URL-encoded when you include one."
+      },
+      {
+        "question": "How much does it cost and is it a subscription?",
+        "answer": "A single payment of $4.99 USD, no subscription and no account. Stripe shows the price in your local currency at checkout. After paying you can download your ZIP up to 5 times within 48 hours."
+      },
+      {
+        "question": "Are my phone numbers stored?",
+        "answer": "No. Your CSV is only sent to our server when you download, it is processed in memory to build the ZIP and is not stored or logged. A draft copy stays in your own browser's local storage so it survives the payment redirect, and you can clear it any time. Payment data is handled by Stripe, never by us."
+      },
+      {
+        "question": "Can I include a pre-filled message for each contact?",
+        "answer": "Yes. Add the message as the second column. It is URL-encoded into the wa.me link so the chat opens with the text ready to send. Wrap messages that contain commas in double quotes."
+      },
+      {
+        "question": "Do the links work with WhatsApp usernames?",
+        "answer": "Phone-number links use the officially documented wa.me/<number> format and work for everyone. Username links (wa.me/<username>) only open a chat where WhatsApp's phased username rollout has reached, so for guaranteed results use phone numbers until your region is live."
+      },
+      {
+        "question": "Is this affiliated with WhatsApp or Meta?",
+        "answer": "No. WhatsUsernames.link is an independent tool and is not affiliated with, endorsed by or associated with WhatsApp Inc. or Meta Platforms, Inc."
+      },
+      {
+        "question": "Can I get a refund?",
+        "answer": "If the ZIP fails to generate or your payment is charged by mistake, contact us and we will refund you. Because the product is delivered digitally and immediately, the 14-day right of withdrawal does not apply once the download starts, as stated at purchase."
+      }
     ]
   }
 }

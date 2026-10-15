@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { JsonLdScript } from "@/components/json-ld-script";
 import { BulkTool } from "@/components/bulk/bulk-tool";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
+import { getBulkToolJsonLd, getFaqJsonLd, getHowToJsonLd, type FaqItem } from "@/lib/json-ld";
 
 export async function generateMetadata({
   params,
@@ -31,6 +33,9 @@ export default async function BulkPage({
   const { session_id } = await searchParams;
   const t = await getTranslations({ locale, namespace: "bulk" });
   const steps = t.raw("steps") as string[];
+  const faq = t.raw("faq") as FaqItem[];
+  const useCases = t.raw("useCases") as string[];
+  const path = locale === routing.defaultLocale ? "/bulk" : `/${locale}/bulk`;
 
   return (
     <main className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 sm:px-6 py-10 md:py-16">
@@ -49,6 +54,31 @@ export default async function BulkPage({
           <li key={s}>{s}</li>
         ))}
       </ol>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-2xl font-bold tracking-tight">{t("useCasesTitle")}</h2>
+        <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          {useCases.map((u) => (
+            <li key={u}>{u}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-2xl font-bold tracking-tight">{t("faqTitle")}</h2>
+        <div className="flex flex-col gap-2">
+          {faq.map((item) => (
+            <details key={item.question} className="rounded-lg border p-4">
+              <summary className="cursor-pointer font-medium">{item.question}</summary>
+              <p className="mt-2 text-sm text-muted-foreground">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <JsonLdScript data={getFaqJsonLd(faq)} />
+      <JsonLdScript data={getHowToJsonLd(t("title"), steps.map((d, i) => ({ title: `${i + 1}`, description: d })))} />
+      <JsonLdScript data={getBulkToolJsonLd({ name: t("title"), description: t("metaDescription"), url: `${siteConfig.url}${path}` })} />
     </main>
   );
 }

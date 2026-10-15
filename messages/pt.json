@@ -108,7 +108,7 @@
     "title": "Porquê Usar o WhatsUsernames.link?",
     "subtitle": "Criado para máxima privacidade, rapidez e fiabilidade. Transforme qualquer username ou número num link partilhável em milissegundos.",
     "statelessTitle": "100% Privado e Sem Registo",
-    "statelessDesc": "Tudo é processado no seu navegador. Sem base de dados, sem cookies de rastreio e zero armazenamento de dados nos nossos servidores.",
+    "statelessDesc": "Os geradores gratuitos correm no teu navegador. Sem base de dados, sem cookies de rastreio e zero armazenamento de números ou usernames nos nossos servidores.",
     "qrTitle": "Códigos QR Personalizados Instantâneos",
     "qrDesc": "Gere códigos QR de alta resolução em PNG, JPEG, SVG ou PDF vetorial prontos para cartões de visita, montras e redes sociais.",
     "formatTitle": "Formato de Link Oficial wa.me",
@@ -142,7 +142,7 @@
       {
         "heading": "Como funciona",
         "body": [
-          "Não existe sistema de contas nem base de dados: tudo o que introduz corre no seu navegador e nunca é enviado ou guardado nos nossos servidores. Veja a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por publicidade (Adsterra e Google AdSense) em vez de subscrições."
+          "Não existe sistema de contas. Os geradores gratuitos correm no teu navegador e o que introduzes nunca é enviado nem guardado nos nossos servidores; o Pack em Massa pago, opcional, envia o teu CSV ao nosso servidor apenas para criar o ZIP e não o guarda. Vê a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por publicidade (Adsterra e Google AdSense) e pelo Pack em Massa pago opcional."
         ]
       },
       {
@@ -282,7 +282,7 @@
       },
       {
         "question": "O meu número ou username fica guardado nalgum lado?",
-        "answer": "Não. O WhatsUsernames.link é stateless — o teu link e QR code são criados inteiramente no teu navegador e nada é guardado nos nossos servidores."
+        "answer": "Não. O WhatsUsernames.link é stateless — o teu link e QR code são criados inteiramente no teu navegador e nada é guardado nos nossos servidores. O Pack em Massa pago, opcional, é a única exceção: processa o teu CSV no nosso servidor para criar o ZIP e não o guarda."
       },
       {
         "question": "Posso usar isto para uma conta WhatsApp Business?",
@@ -369,7 +369,7 @@
     ]
   },
   "legal": {
-    "lastUpdated": "Última atualização: 5 de julho de 2026",
+    "lastUpdated": "Última atualização: 15 de outubro de 2026",
     "privacy": {
       "title": "Política de Privacidade",
       "metaDescription": "Como o WhatsUsernames.link lida com dados: o que não recolhemos, o que o alojamento e o fornecedor de anúncios processam, e os teus direitos.",
@@ -378,13 +378,21 @@
         {
           "heading": "Esta ferramenta é stateless",
           "body": [
-            "O WhatsUsernames.link cria o teu link e QR code do WhatsApp inteiramente no teu navegador. O Username, a Username Key, o número de telefone e a mensagem que introduzes nunca são enviados nem guardados nos nossos servidores. Fechar ou atualizar a página apaga-os."
+            "O WhatsUsernames.link cria o teu link e QR code do WhatsApp inteiramente no teu navegador. O Username, a Username Key, o número de telefone e a mensagem que introduzes nunca são enviados nem guardados nos nossos servidores. Fechar ou atualizar a página apaga-os.",
+            "Exceção: o Pack opcional pago de Links e QR em Massa. Quando clicas em descarregar, o CSV que escreveste ou carregaste é enviado ao nosso servidor, processado em memória para criar o teu ZIP e devolvido a ti. Não é guardado nem escrito em registos."
           ]
         },
         {
           "heading": "Sem contas, sem registo",
           "body": [
             "Não existe registo, login ou conta de utilizador. Não temos base de dados de utilizadores nem de usernames."
+          ]
+        },
+        {
+          "heading": "Pagamentos (Pack em Massa)",
+          "body": [
+            "O Pack em Massa pago é processado pela Stripe Payments Europe, Ltd., que recolhe os teus dados de pagamento e email para o recibo. Nunca vemos nem guardamos os dados do teu cartão. Recebemos apenas o identificador da Sessão de Checkout do Stripe, que usamos para confirmar o pagamento e contar os downloads (até 5 em 48 horas). Esse identificador e o seu contador ficam no Redis (Upstash) e expiram automaticamente ao fim de 48 horas.",
+            "Base legal: execução do contrato que celebras ao comprar (RGPD, art. 6.º, n.º 1, alínea b). O Stripe atua como responsável independente pelos registos de pagamento, prevenção de fraude e fiscais; vê stripe.com/privacy."
           ]
         },
         {
@@ -396,7 +404,8 @@
         {
           "heading": "Cookies e armazenamento local",
           "body": [
-            "Não definimos cookies de rastreio. A tua preferência de tema claro/escuro é guardada apenas no armazenamento local do teu navegador e nunca sai do teu dispositivo."
+            "Não definimos cookies de rastreio. A tua preferência de tema claro/escuro é guardada apenas no armazenamento local do teu navegador e nunca sai do teu dispositivo.",
+            "Na página do Pack em Massa, uma cópia de rascunho do teu CSV fica no armazenamento local do teu navegador (chave \"bulk-csv\") para sobreviver ao redirecionamento para o Stripe. Nunca sai do teu dispositivo, exceto quando clicas em descarregar, e podes apagá-la limpando os dados do site. O Stripe pode definir os seus próprios cookies na página de checkout, segundo a sua política."
           ]
         },
         {
@@ -414,7 +423,7 @@
         {
           "heading": "Os teus direitos",
           "body": [
-            "Como não recolhemos nem guardamos dados pessoais nos nossos servidores, geralmente não há nada para acedermos, corrigirmos ou apagarmos. Se acreditares que temos dados sobre ti, contacta-nos através dos detalhes abaixo e vamos verificar."
+            "Nos geradores gratuitos não guardamos nada que possamos aceder, corrigir ou apagar. Nas compras do Pack em Massa, os registos de pagamento e fiscais ficam no Stripe; os únicos dados que guardamos são um identificador temporário da Sessão de Checkout que expira em 48 horas. Para exercer os teus direitos RGPD ou colocar uma questão, envia-nos um email."
           ]
         },
         {
@@ -445,13 +454,27 @@
         {
           "heading": "O que este Serviço faz",
           "body": [
-            "O WhatsUsernames.link é uma ferramenta gratuita que gera um link e QR code partilhável do WhatsApp a partir de um Username, Username Key ou número de telefone que introduzires, inteiramente no teu navegador."
+            "O WhatsUsernames.link é uma ferramenta gratuita que gera um link e QR code partilhável do WhatsApp a partir de um Username, Username Key ou número de telefone que introduzires, inteiramente no teu navegador. O Pack pago de Links e QR em Massa cria até 500 links e QR Codes a partir de um CSV que forneces, no nosso servidor, e entrega-os num ZIP."
           ]
         },
         {
           "heading": "Sem conta, gratuito",
           "body": [
-            "O Serviço é 100% gratuito, sem registo nem pagamento necessário para as suas funcionalidades atuais."
+            "Os geradores da página inicial são 100% gratuitos, sem registo. O Pack de Links e QR em Massa é um produto pago opcional (ver abaixo). O Serviço é também suportado por publicidade."
+          ]
+        },
+        {
+          "heading": "Pack de Links e QR em Massa (pago)",
+          "body": [
+            "O Pack em Massa custa $4.99 USD num pagamento único, cobrado pelo Stripe. No checkout o Stripe pode mostrar e cobrar o equivalente na tua moeda local (Stripe Adaptive Pricing), incluindo a respetiva taxa de câmbio. Podem aplicar-se impostos consoante o teu país. Não há subscrição nem renovação automática.",
+            "Após o pagamento podes descarregar o ZIP até 5 vezes em 48 horas. O acesso está ligado à tua sessão de pagamento; se a perderes, contacta-nos. És responsável pelo conteúdo do teu CSV."
+          ]
+        },
+        {
+          "heading": "Entrega digital, livre resolução e reembolsos",
+          "body": [
+            "O Pack em Massa é conteúdo digital entregue de imediato. Antes de pagares, pedes expressamente a entrega imediata e reconheces que, depois de iniciado o download, perdes o direito de livre resolução de 14 dias previsto na lei de consumo da UE (Diretiva 2011/83/UE, art. 16.º, alínea m).",
+            "Se o ZIP não puder ser gerado, tiver um defeito relevante, ou tiveres sido cobrado por engano ou em duplicado, escreve para insidedcpulse@gmail.com e corrigimos ou reembolsamos."
           ]
         },
         {
@@ -463,7 +486,7 @@
         {
           "heading": "Utilização aceitável",
           "body": [
-            "Não uses o Serviço para gerar links de números ou usernames que não tenhas o direito de partilhar, nem para spam, assédio, fraude ou personificação."
+            "Não uses o Serviço para gerar links de números ou usernames que não tens direito a partilhar, nem para spam, assédio, fraude ou personificação. Não uses o Pack em Massa para enviar mensagens não solicitadas ou criar listas de contactos sem a sua autorização, e cumpre os termos do WhatsApp e a legislação aplicável de anti-spam e proteção de dados."
           ]
         },
         {
@@ -606,6 +629,59 @@
       "Cola ou carrega o teu CSV. A pré-visualização é grátis.",
       "Paga uma vez, $4.99, em segurança com Stripe.",
       "Descarrega um ZIP com um QR PNG por link mais o links.csv."
+    ],
+    "homeCtaText": "Carrega um CSV e recebe até 500 links wa.me e QR Codes num ZIP — para eventos, menus, cartões de visita e campanhas. $4.99 pagamento único.",
+    "consent": "Peço a entrega imediata deste produto digital e compreendo que, depois de iniciar o download, perco o meu direito de livre resolução de 14 dias. Aceito os Termos de Serviço.",
+    "useCasesTitle": "Para que servem os QR Codes de WhatsApp em massa",
+    "useCases": [
+      "Mesas de restaurantes e cafés: um QR Code de WhatsApp por mesa para pedir ou chamar o empregado.",
+      "Eventos e feiras: links wa.me personalizados para cada orador, expositor ou participante.",
+      "Cartões de visita e flyers: um link click-to-chat e QR Code para cada colaborador ou loja.",
+      "Imobiliário e retalho: um link de WhatsApp por imóvel ou produto, com o nome do artigo já preenchido.",
+      "Campanhas de marketing: uma mensagem pré-preenchida diferente por canal, para medir qual converte."
+    ],
+    "faqTitle": "Gerador de links e QR Codes de WhatsApp em massa — Perguntas frequentes",
+    "faq": [
+      {
+        "question": "O que é um gerador de links e QR Codes de WhatsApp em massa?",
+        "answer": "É uma ferramenta que transforma uma lista de números de telefone ou usernames de WhatsApp em muitos links click-to-chat wa.me e QR Codes de uma só vez. Carregas um CSV e, em vez de criares cada link à mão, recebes tudo num ZIP: um QR Code PNG por link mais um índice links.csv."
+      },
+      {
+        "question": "Como gerar vários links de WhatsApp a partir de um CSV?",
+        "answer": "Coloca um contacto por linha (número com indicativo do país, ou username de WhatsApp), opcionalmente seguido de uma mensagem pré-preenchida, e cola ou carrega o ficheiro. Vê a pré-visualização grátis, paga uma vez e descarrega o ZIP. A linha de cabeçalho é detetada e ignorada, e tanto vírgulas como pontos e vírgulas funcionam como separador."
+      },
+      {
+        "question": "Quantos QR Codes de WhatsApp posso criar de uma vez?",
+        "answer": "Até 500 links e QR Codes por CSV. As linhas inválidas (por exemplo, números demasiado curtos) são assinaladas na pré-visualização e marcadas como inválidas no links.csv, para as corrigires e voltares a correr o ficheiro."
+      },
+      {
+        "question": "O que contém o ZIP?",
+        "answer": "Uma pasta qr/ com um QR Code PNG de 400 píxeis por linha válida (0001.png, 0002.png, etc.) e um links.csv que liga cada entrada ao seu URL wa.me e ao ficheiro QR. Os QR Codes usam o formato padrão https://wa.me/<número>, com a tua mensagem codificada no URL quando a incluis."
+      },
+      {
+        "question": "Quanto custa e é uma subscrição?",
+        "answer": "Um único pagamento de $4.99 USD, sem subscrição e sem conta. O Stripe mostra o preço na tua moeda local no checkout. Depois de pagares podes descarregar o ZIP até 5 vezes em 48 horas."
+      },
+      {
+        "question": "Os meus números de telefone ficam guardados?",
+        "answer": "Não. O teu CSV só é enviado ao nosso servidor quando fazes o download, é processado em memória para criar o ZIP e não é guardado nem registado. Uma cópia de rascunho fica no armazenamento local do teu navegador para sobreviver ao redirecionamento do pagamento, e podes limpá-la quando quiseres. Os dados de pagamento são tratados pelo Stripe, nunca por nós."
+      },
+      {
+        "question": "Posso incluir uma mensagem pré-preenchida para cada contacto?",
+        "answer": "Sim. Acrescenta a mensagem como segunda coluna. É codificada no link wa.me para que a conversa abra com o texto pronto a enviar. Coloca entre aspas duplas as mensagens que contenham vírgulas."
+      },
+      {
+        "question": "Os links funcionam com usernames de WhatsApp?",
+        "answer": "Os links por número de telefone usam o formato oficialmente documentado wa.me/<número> e funcionam para todos. Os links por username (wa.me/<username>) só abrem conversa onde o lançamento faseado de usernames do WhatsApp já chegou; para resultados garantidos usa números de telefone até a tua região estar ativa."
+      },
+      {
+        "question": "Isto é afiliado ao WhatsApp ou à Meta?",
+        "answer": "Não. O WhatsUsernames.link é uma ferramenta independente, sem afiliação, aprovação ou associação com a WhatsApp Inc. ou a Meta Platforms, Inc."
+      },
+      {
+        "question": "Posso pedir reembolso?",
+        "answer": "Se o ZIP não for gerado ou o pagamento for cobrado por engano, contacta-nos e reembolsamos. Como o produto é digital e entregue de imediato, o direito de livre resolução de 14 dias não se aplica depois de iniciado o download, conforme indicado na compra."
+      }
     ]
   }
 }

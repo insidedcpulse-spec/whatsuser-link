@@ -155,3 +155,21 @@ export function getBreadcrumbJsonLd(items: BreadcrumbItem[]) {
     })),
   };
 }
+
+export function getBulkToolJsonLd({ name, description, url }: { name: string; description: string; url: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    url,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "4.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+  };
+}

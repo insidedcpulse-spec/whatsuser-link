@@ -1,0 +1,92 @@
+---
+title: "Cómo generar enlaces y códigos QR de WhatsApp en masa desde un CSV (guía 2026)"
+description: "Crea cientos de enlaces click-to-chat wa.me y códigos QR de WhatsApp de una sola vez desde un archivo CSV. Guía paso a paso con formato del CSV, mensajes prellenados, casos de uso y buenas prácticas."
+date: "2026-10-15"
+slug: "gerar-links-qr-codes-whatsapp-em-massa-csv"
+heroImage: "/blog/gerar-links-qr-codes-whatsapp-em-massa-csv/hero.svg"
+heroImageAlt: "Un archivo CSV de números de teléfono convirtiéndose en una cuadrícula de códigos QR de WhatsApp"
+entity: "qr-code"
+---
+
+**Respuesta corta:** para generar enlaces y códigos QR de WhatsApp en masa, pon un número por línea en un CSV (con prefijo del país y, opcionalmente, un mensaje prellenado en la segunda columna), súbelo a un generador masivo y descarga un ZIP con un enlace `wa.me` y una imagen de código QR por fila. Con el [Pack de Enlaces y QR en Masa](/bulk) tarda menos de un minuto para hasta 500 contactos, por un pago único de $4.99.
+
+## ¿Por qué generar enlaces de WhatsApp en masa?
+
+Crear un [enlace click-to-chat de WhatsApp](/how-to-create-a-whatsapp-link) a mano sirve para un número. Deja de servir cuando necesitas 40 códigos QR para las mesas de un restaurante, un enlace personalizado para cada ponente de una conferencia o un QR de WhatsApp por inmueble. Un generador masivo de enlaces de WhatsApp convierte una hoja de cálculo en todos los enlaces y códigos QR que necesitas en un solo paso.
+
+Casos de uso habituales:
+
+- **Restaurantes y cafeterías:** un QR de WhatsApp por mesa para pedir, pedir la cuenta o llamar al camarero.
+- **Eventos y ferias:** un enlace `wa.me` para cada ponente, expositor o comercial, listo para acreditaciones y programas impresos.
+- **Tarjetas de visita y flyers:** un código QR click-to-chat por miembro del equipo o tienda.
+- **Inmobiliaria y retail:** un enlace de WhatsApp por inmueble o producto, con el nombre del artículo ya en el mensaje.
+- **Campañas de marketing:** un mensaje prellenado distinto por canal (flyer, Instagram, valla) para ver cuál genera chats.
+
+## El formato del CSV
+
+Un contacto por línea. La primera columna es un número de teléfono con prefijo o un username de WhatsApp; la segunda columna, opcional, es el mensaje prellenado.
+
+```
+phone,message
+351912345678,¡Hola! Quiero reservar una mesa
+5511912345678,Hola, vi vuestro flyer
+joao.silva
+```
+
+Reglas que evitan problemas:
+
+| Regla | Por qué importa |
+| --- | --- |
+| Incluye el prefijo del país | `wa.me` necesita el número internacional completo, sin `+`, espacios ni ceros a la izquierda. El generador lo limpia por ti. |
+| Pon entre comillas dobles los mensajes con comas | `"Hola, quiero la oferta"` queda en una sola columna. |
+| Funcionan comas y punto y coma | Útil para hojas exportadas en distintas regiones. |
+| La fila de encabezado es opcional | Filas como `phone,message` se detectan y se omiten. |
+| Hasta 500 filas por archivo | Divide listas mayores en varios archivos. |
+
+## Paso a paso
+
+1. **Prepara tu CSV** en Google Sheets o Excel y expórtalo como `.csv`.
+2. **Abre el [generador masivo de enlaces y códigos QR de WhatsApp](/bulk)** y pega o sube el archivo. La vista previa es gratis: ves cuántas filas son válidas y los primeros enlaces.
+3. **Corrige las filas inválidas** (números cortos, caracteres no admitidos) y confirma los recuentos.
+4. **Paga una vez ($4.99)** de forma segura con Stripe. No hay cuenta ni suscripción; Stripe muestra el precio en tu moneda local.
+5. **Descarga el ZIP**: una carpeta `qr/` con un PNG por enlace (`0001.png`, `0002.png`…) y un `links.csv` que relaciona cada entrada con su URL `wa.me` y su archivo QR.
+
+## Cómo quedan los enlaces
+
+Cada fila usa el formato click-to-chat oficialmente documentado:
+
+```
+https://wa.me/351912345678?text=%C2%A1Hola%21%20Quiero%20reservar%20una%20mesa
+```
+
+El mensaje se codifica en la URL, así que el chat se abre con el texto listo para enviar. Para profundizar en el formato de mensajes, lee nuestra [guía de mensajes personalizados en enlaces de WhatsApp](/blog/link-whatsapp-mensagem-personalizada-guia-2026).
+
+## Números de teléfono vs usernames
+
+Los enlaces por número (`wa.me/<número>`) funcionan para todos. Los enlaces por username (`wa.me/<username>`) solo abren chat donde ya ha llegado el despliegue por fases de usernames de WhatsApp, así que en material impreso prefiere números hasta que tu región esté activa. Explicamos la situación actual en [wa.me/username vs wa.me/teléfono](/blog/wame-username-vs-wame-phone-2026).
+
+## Buenas prácticas para códigos QR de WhatsApp impresos
+
+- **Prueba antes de imprimir:** escanea un código de cada lote con un móvil antiguo y uno reciente.
+- **Mantén contraste y margen:** código oscuro sobre fondo claro, con margen en blanco alrededor. Más consejos en nuestra [guía de QR de WhatsApp](/blog/link-whatsapp-qr-code-gratis).
+- **Indica qué hace el código:** "Escanea para chatear por WhatsApp" consigue más escaneos que un código sin leyenda.
+- **Usa un mensaje distinto por ubicación** para saber qué flyer o mesa generó el chat.
+- **Respeta el consentimiento:** escribe solo a quien te contacta o aceptó ser contactado. Los enlaces click-to-chat son para conversaciones iniciadas por el cliente, no para listas no solicitadas.
+
+## Privacidad: qué pasa con tus números
+
+Los generadores gratuitos de WhatsUsernames.link se ejecutan en tu navegador. El Pack en Masa de pago es la única excepción: al descargar, tu CSV se envía a nuestro servidor, se procesa en memoria para crear el ZIP y no se almacena. El pago lo gestiona Stripe. Los detalles están en la [política de privacidad](/privacy-policy).
+
+## Preguntas frecuentes
+
+**¿Cuántos códigos QR de WhatsApp puedo crear de una vez?** Hasta 500 por CSV.
+
+**¿Es una suscripción?** No. Un pago de $4.99 USD, hasta 5 descargas en 48 horas.
+
+**¿Puedo poner un mensaje distinto en cada enlace?** Sí, en la segunda columna del CSV.
+
+**¿Está afiliado a WhatsApp o Meta?** No, es una herramienta independiente.
+
+---
+
+> 📦 **¿Listo para crearlos?** Prueba el [generador masivo de enlaces y códigos QR de WhatsApp](/bulk) o usa el [generador gratuito](/) para un solo número.

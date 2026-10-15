@@ -1,0 +1,92 @@
+---
+title: "Como gerar links e QR Codes de WhatsApp em massa a partir de um CSV (guia 2026)"
+description: "Cria centenas de links click-to-chat wa.me e QR Codes de WhatsApp de uma só vez a partir de um ficheiro CSV. Guia passo a passo com formato do CSV, mensagens pré-preenchidas, casos de uso e boas práticas."
+date: "2026-10-15"
+slug: "gerar-links-qr-codes-whatsapp-em-massa-csv"
+heroImage: "/blog/gerar-links-qr-codes-whatsapp-em-massa-csv/hero.svg"
+heroImageAlt: "Um ficheiro CSV de números de telefone a transformar-se numa grelha de QR Codes de WhatsApp"
+entity: "qr-code"
+---
+
+**Resposta curta:** para gerar links e QR Codes de WhatsApp em massa, lista um número por linha num CSV (com indicativo do país e, opcionalmente, uma mensagem pré-preenchida na segunda coluna), carrega-o num gerador em massa e descarrega um ZIP com um link `wa.me` e uma imagem de QR Code por linha. Com o [Pack de Links e QR em Massa](/bulk) demora menos de um minuto para até 500 contactos, por um pagamento único de $4.99.
+
+## Porquê gerar links de WhatsApp em massa?
+
+Criar um [link click-to-chat de WhatsApp](/how-to-create-a-whatsapp-link) à mão serve para um número. Deixa de servir quando precisas de 40 QR Codes para as mesas de um restaurante, um link personalizado para cada orador de uma conferência ou um QR Code de WhatsApp por imóvel. Um gerador de links de WhatsApp em massa transforma uma folha de cálculo em todos os links e QR Codes de que precisas num só passo.
+
+Casos de uso comuns:
+
+- **Restaurantes e cafés:** um QR Code de WhatsApp por mesa para pedir, pedir a conta ou chamar o empregado.
+- **Eventos e feiras:** um link `wa.me` para cada orador, expositor ou comercial, pronto para crachás e programas impressos.
+- **Cartões de visita e flyers:** um QR Code click-to-chat por colaborador ou loja.
+- **Imobiliário e retalho:** um link de WhatsApp por imóvel ou produto, com o nome do artigo já na mensagem.
+- **Campanhas de marketing:** uma mensagem pré-preenchida diferente por canal (flyer, Instagram, outdoor) para ver qual gera conversas.
+
+## O formato do CSV
+
+Um contacto por linha. A primeira coluna é um número de telefone com indicativo ou um username de WhatsApp; a segunda coluna, opcional, é a mensagem pré-preenchida.
+
+```
+phone,message
+351912345678,Olá! Quero reservar uma mesa
+5511912345678,Olá, vi o vosso flyer
+joao.silva
+```
+
+Regras que evitam problemas:
+
+| Regra | Porque importa |
+| --- | --- |
+| Inclui o indicativo do país | O `wa.me` precisa do número internacional completo, sem `+`, espaços ou zeros à esquerda. O gerador limpa isso por ti. |
+| Põe entre aspas duplas as mensagens com vírgulas | `"Olá, quero a oferta"` fica numa só coluna. |
+| Vírgulas e pontos e vírgulas funcionam | Útil para folhas exportadas em regiões diferentes. |
+| A linha de cabeçalho é opcional | Linhas como `phone,message` são detetadas e ignoradas. |
+| Até 500 linhas por ficheiro | Divide listas maiores em vários ficheiros. |
+
+## Passo a passo
+
+1. **Prepara o teu CSV** no Google Sheets ou Excel e exporta como `.csv`.
+2. **Abre o [gerador de links e QR Codes de WhatsApp em massa](/bulk)** e cola ou carrega o ficheiro. A pré-visualização é grátis: vês quantas linhas são válidas e os primeiros links.
+3. **Corrige as linhas inválidas** (números curtos, caracteres não suportados) e confirma as contagens.
+4. **Paga uma vez ($4.99)** em segurança com o Stripe. Não há conta nem subscrição; o Stripe mostra o preço na tua moeda local.
+5. **Descarrega o ZIP**: uma pasta `qr/` com um PNG por link (`0001.png`, `0002.png`…) e um `links.csv` que liga cada entrada ao URL `wa.me` e ao ficheiro QR.
+
+## Como ficam os links
+
+Cada linha passa a usar o formato click-to-chat oficialmente documentado:
+
+```
+https://wa.me/351912345678?text=Ol%C3%A1%21%20Quero%20reservar%20uma%20mesa
+```
+
+A mensagem é codificada no URL, por isso a conversa abre com o texto pronto a enviar. Para ver mais sobre formatação de mensagens, lê o nosso [guia de mensagens personalizadas em links de WhatsApp](/blog/link-whatsapp-mensagem-personalizada-guia-2026).
+
+## Números de telefone vs usernames
+
+Os links por número (`wa.me/<número>`) funcionam para todos. Os links por username (`wa.me/<username>`) só abrem conversa onde o lançamento faseado de usernames do WhatsApp já chegou, por isso, em material impresso, prefere números até a tua região estar ativa. Explicamos o ponto de situação em [wa.me/username vs wa.me/telefone](/blog/wame-username-vs-wame-phone-2026).
+
+## Boas práticas para QR Codes de WhatsApp impressos
+
+- **Testa antes de imprimir:** lê um código de cada lote com um telemóvel antigo e um recente.
+- **Mantém contraste e margem:** código escuro em fundo claro, com margem em branco à volta. Mais dicas no nosso [guia de QR Code de WhatsApp](/blog/link-whatsapp-qr-code-gratis).
+- **Indica o que o código faz:** "Lê para falar no WhatsApp" gera mais leituras do que um código sem legenda.
+- **Usa uma mensagem diferente por local** para perceberes que flyer ou mesa gerou a conversa.
+- **Respeita o consentimento:** só contactes quem te contacta ou aceitou ser contactado. Os links click-to-chat servem conversas iniciadas pelo cliente, não listas não solicitadas.
+
+## Privacidade: o que acontece aos teus números
+
+Os geradores gratuitos do WhatsUsernames.link correm no teu navegador. O Pack em Massa pago é a única exceção: quando descarregas, o teu CSV é enviado ao nosso servidor, processado em memória para criar o ZIP e não é guardado. O pagamento é tratado pelo Stripe. Os detalhes estão na [política de privacidade](/privacy-policy).
+
+## Perguntas frequentes
+
+**Quantos QR Codes de WhatsApp posso criar de uma vez?** Até 500 por CSV.
+
+**É uma subscrição?** Não. Um pagamento de $4.99 USD, até 5 downloads em 48 horas.
+
+**Posso pôr uma mensagem diferente em cada link?** Sim, na segunda coluna do CSV.
+
+**É afiliado ao WhatsApp ou à Meta?** Não, é uma ferramenta independente.
+
+---
+
+> 📦 **Pronto para os criar?** Experimenta o [gerador de links e QR Codes de WhatsApp em massa](/bulk) ou usa o [gerador gratuito](/) para um só número.

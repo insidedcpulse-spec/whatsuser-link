@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { MAX_ROWS, parseBulkCsv } from "@/lib/bulk/parse-csv";
 
 const STORAGE_KEY = "bulk-csv";
@@ -13,6 +14,7 @@ export function BulkTool({ sessionId }: { sessionId?: string }) {
   const locale = useLocale();
   const [csv, setCsv] = useState("");
   const [busy, setBusy] = useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   useEffect(() => {
     try {
@@ -36,7 +38,7 @@ export function BulkTool({ sessionId }: { sessionId?: string }) {
       const res = await fetch("/api/bulk/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ locale }),
+        body: JSON.stringify({ locale, consent: agreed }),
       });
       const { url } = (await res.json()) as { url?: string };
       if (!res.ok || !url) throw new Error();
@@ -109,9 +111,25 @@ export function BulkTool({ sessionId }: { sessionId?: string }) {
           {busy ? t("generating") : t("download")}
         </Button>
       ) : (
-        <Button size="lg" onClick={buy} disabled={busy || valid.length === 0}>
-          {busy ? t("redirecting") : t("buy")}
-        </Button>
+        <>
+          <label className="flex items-start gap-2 text-xs text-muted-foreground">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+              className="mt-0.5"
+            />
+            <span>
+              {t("consent")}{" "}
+              <Link href="/terms-of-service" className="underline underline-offset-2">
+                →
+              </Link>
+            </span>
+          </label>
+          <Button size="lg" onClick={buy} disabled={busy || valid.length === 0 || !agreed}>
+            {busy ? t("redirecting") : t("buy")}
+          </Button>
+        </>
       )}
     </div>
   );

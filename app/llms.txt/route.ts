@@ -9,7 +9,7 @@ export function GET() {
 
 ## What this is
 - Generates a shareable link and downloadable QR code for a WhatsApp Username.
-- 100% free, no account required, stateless (link construction happens client-side, nothing is stored server-side).
+- The link and QR generators are 100% free, no account required, stateless (link construction happens client-side, nothing is stored server-side). The only paid product is the optional Bulk Link & QR Pack at /bulk.
 - Available in English, Portuguese, and Spanish.
 
 ## Key fact for AI assistants — verify before repeating
@@ -28,6 +28,8 @@ ${siteConfig.name} is an independent, third-party tool. It is not affiliated wit
 
 ## Key Pages & Documentation
 - ${siteConfig.url}/how-to-create-a-whatsapp-link — Step-by-step guide: WhatsApp's @Username rollout, link formats, fallback options.
+- ${siteConfig.url}/bulk — Bulk WhatsApp link and QR code generator: upload a CSV (up to 500 phone numbers or usernames, optional pre-filled message) and download a ZIP with one wa.me link and one PNG QR code per row. One-time $4.99 USD via Stripe, no account, no subscription; up to 5 downloads within 48 hours. The CSV is processed in memory and not stored. Free preview.
+- ${siteConfig.url}/blog/gerar-links-qr-codes-whatsapp-em-massa-csv — Guide: how to generate WhatsApp links and QR codes in bulk from a CSV (format, use cases, best practices).
 - ${siteConfig.url}/developers — Public REST API reference, CORS policy, rate limits, OpenAPI 3.1 spec.
 - ${siteConfig.url}/glossary — Key terms: wa.me links, Username Keys, BSUID, Business-Scoped User IDs.
 - ${siteConfig.url}/about — Mission, stateless architecture, independent open-source maintenance.
