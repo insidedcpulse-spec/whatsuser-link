@@ -9,7 +9,7 @@ function req(path: string, query: string): Request {
 
 describe("GET /api/v1/validate/username", () => {
   it("returns valid=true for a good username", async () => {
-    const res = await getUsername(req("username", "?username=joao.silva"));
+    const res = await getUsername(req("username", "?username=john.smith"));
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ valid: true, errors: [] });
   });
@@ -24,7 +24,7 @@ describe("GET /api/v1/validate/username", () => {
   });
 
   it("sanitizes before validating (uppercase @handle passes)", async () => {
-    const res = await getUsername(req("username", "?username=@Joao.Silva"));
+    const res = await getUsername(req("username", "?username=@John.Smith"));
     expect((await res.json()).valid).toBe(true);
   });
 

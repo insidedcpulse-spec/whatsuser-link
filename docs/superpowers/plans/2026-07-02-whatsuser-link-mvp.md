@@ -205,19 +205,19 @@ import { sanitizeUsernameInput, validateUsername } from "@/utils/validate-userna
 
 describe("sanitizeUsernameInput", () => {
   it("removes leading @", () => {
-    expect(sanitizeUsernameInput("@joao.silva")).toBe("joao.silva");
+    expect(sanitizeUsernameInput("@john.smith")).toBe("john.smith");
   });
 
   it("removes spaces", () => {
-    expect(sanitizeUsernameInput("joao silva")).toBe("joaosilva");
+    expect(sanitizeUsernameInput("john smith")).toBe("johnsmith");
   });
 
   it("lowercases input", () => {
-    expect(sanitizeUsernameInput("JoaoSilva")).toBe("joaosilva");
+    expect(sanitizeUsernameInput("JohnSmith")).toBe("johnsmith");
   });
 
   it("strips invalid characters", () => {
-    expect(sanitizeUsernameInput("joao!silva#123")).toBe("joaosilva123");
+    expect(sanitizeUsernameInput("john!smith#123")).toBe("johnsmith123");
   });
 });
 
@@ -239,11 +239,11 @@ describe("validateUsername", () => {
   });
 
   it("rejects a username starting with www.", () => {
-    expect(validateUsername("www.joao").valid).toBe(false);
+    expect(validateUsername("www.john").valid).toBe(false);
   });
 
   it("rejects a username ending in a domain suffix", () => {
-    expect(validateUsername("joaosilva.com").valid).toBe(false);
+    expect(validateUsername("johnsmith.com").valid).toBe(false);
   });
 
   it("rejects a username with only digits", () => {
@@ -255,7 +255,7 @@ describe("validateUsername", () => {
   });
 
   it("accepts a valid alphanumeric username with dot and underscore", () => {
-    expect(validateUsername("joao.silva_99").valid).toBe(true);
+    expect(validateUsername("john.smith_99").valid).toBe(true);
   });
 });
 ```
@@ -347,22 +347,22 @@ import { generateWhatsAppLink } from "@/lib/whatsapp/generateLink";
 
 describe("generateWhatsAppLink", () => {
   it("builds a link without a message", () => {
-    expect(generateWhatsAppLink("joao.silva")).toBe("https://wa.me/u/joao.silva");
+    expect(generateWhatsAppLink("john.smith")).toBe("https://wa.me/u/john.smith");
   });
 
   it("builds a link with an encoded message", () => {
-    const result = generateWhatsAppLink("joao.silva", "Olá! Gostava de falar contigo.");
+    const result = generateWhatsAppLink("john.smith", "Olá! Gostava de falar contigo.");
     expect(result).toBe(
-      "https://wa.me/u/joao.silva?text=Ol%C3%A1!%20Gostava%20de%20falar%20contigo."
+      "https://wa.me/u/john.smith?text=Ol%C3%A1!%20Gostava%20de%20falar%20contigo."
     );
   });
 
   it("ignores an empty message", () => {
-    expect(generateWhatsAppLink("joao.silva", "")).toBe("https://wa.me/u/joao.silva");
+    expect(generateWhatsAppLink("john.smith", "")).toBe("https://wa.me/u/john.smith");
   });
 
   it("ignores a whitespace-only message", () => {
-    expect(generateWhatsAppLink("joao.silva", "   ")).toBe("https://wa.me/u/joao.silva");
+    expect(generateWhatsAppLink("john.smith", "   ")).toBe("https://wa.me/u/john.smith");
   });
 });
 ```
@@ -433,10 +433,10 @@ import { createWhatsAppLink } from "@/services/link-service";
 
 describe("createWhatsAppLink", () => {
   it("returns a generated link for a valid username", () => {
-    const result = createWhatsAppLink("joao.silva", "Olá!");
+    const result = createWhatsAppLink("john.smith", "Olá!");
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.link.url).toBe("https://wa.me/u/joao.silva?text=Ol%C3%A1!");
+      expect(result.link.url).toBe("https://wa.me/u/john.smith?text=Ol%C3%A1!");
     }
   });
 
@@ -1029,9 +1029,9 @@ pnpm dev
 
 Open `http://localhost:3000` and verify manually:
 - Hero renders, form renders.
-- Typing `@Joao Silva!` in the username field sanitizes live to `joaosilva`.
+- Typing `@John Smith!` in the username field sanitizes live to `johnsmith`.
 - Submitting `ab` shows inline validation errors, no link generated.
-- Submitting `joao.silva` with message `Olá! Gostava de falar contigo.` shows the result panel with the correct link, no page reload.
+- Submitting `john.smith` with message `Olá! Gostava de falar contigo.` shows the result panel with the correct link, no page reload.
 - "Copiar" copies the link and shows a toast.
 - "Abrir" opens the link in a new tab.
 - QR code renders and "Download QR Code (PNG)" downloads a PNG file.

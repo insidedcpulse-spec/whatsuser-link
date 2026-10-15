@@ -7,13 +7,13 @@ function text(result: ReturnType<typeof validateUsernameTool>) {
 
 describe("validateUsernameTool", () => {
   it("returns valid:true for a valid username", () => {
-    const result = validateUsernameTool({ username: "joao.silva" });
+    const result = validateUsernameTool({ username: "john.smith" });
     expect(result.isError).toBeUndefined();
     expect(text(result)).toEqual({ valid: true, errors: [] });
   });
 
   it("sanitizes input like the REST route (@ prefix, uppercase)", () => {
-    const result = validateUsernameTool({ username: "@Joao.Silva" });
+    const result = validateUsernameTool({ username: "@John.Smith" });
     expect(text(result).valid).toBe(true);
   });
 

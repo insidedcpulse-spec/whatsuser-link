@@ -4,8 +4,8 @@ import { siteConfig } from "@/config/site";
 
 describe("buildShortLink", () => {
   it("appends the username to the site URL", () => {
-    expect(buildShortLink("joao.silva")).toBe(
-      `${siteConfig.url}/joao.silva`
+    expect(buildShortLink("john.smith")).toBe(
+      `${siteConfig.url}/john.smith`
     );
   });
 

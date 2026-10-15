@@ -7,25 +7,25 @@ function text(result: Awaited<ReturnType<typeof usernameLinkTool>>) {
 
 describe("usernameLinkTool", () => {
   it("generates link, shortLink, and notice for a valid username", () => {
-    const result = usernameLinkTool({ username: "joao.silva" });
+    const result = usernameLinkTool({ username: "john.smith" });
     const body = text(result);
-    expect(body.username).toBe("joao.silva");
-    expect(body.link).toBe("https://wa.me/joao.silva");
-    expect(body.shortLink).toContain("/joao.silva");
+    expect(body.username).toBe("john.smith");
+    expect(body.link).toBe("https://wa.me/john.smith");
+    expect(body.shortLink).toContain("/john.smith");
     expect(body.notice).toContain("wa.me");
     expect(body.key).toBeUndefined();
   });
 
   it("echoes key and encodes text", () => {
-    const result = usernameLinkTool({ username: "joao.silva", key: "AB12", text: "hello world" });
+    const result = usernameLinkTool({ username: "john.smith", key: "AB12", text: "hello world" });
     const body = text(result);
     expect(body.key).toBe("AB12");
-    expect(body.link).toBe("https://wa.me/joao.silva?text=hello%20world");
+    expect(body.link).toBe("https://wa.me/john.smith?text=hello%20world");
   });
 
   it("sanitizes input like the UI does (@ prefix, uppercase)", () => {
-    const result = usernameLinkTool({ username: "@Joao.Silva" });
-    expect(text(result).username).toBe("joao.silva");
+    const result = usernameLinkTool({ username: "@John.Smith" });
+    expect(text(result).username).toBe("john.smith");
   });
 
   it("errors with missing_username when username is empty", () => {
@@ -41,7 +41,7 @@ describe("usernameLinkTool", () => {
   });
 
   it("returns a mapped error code for an invalid key", () => {
-    const result = usernameLinkTool({ username: "joao.silva", key: "x" });
+    const result = usernameLinkTool({ username: "john.smith", key: "x" });
     expect(result.isError).toBe(true);
     expect(text(result).code).toBe("key_invalid_format");
   });

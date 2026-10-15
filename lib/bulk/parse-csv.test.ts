@@ -3,11 +3,11 @@ import { MAX_ROWS, parseBulkCsv } from "./parse-csv";
 
 describe("parseBulkCsv", () => {
   it("detects phones and usernames and builds links", () => {
-    const rows = parseBulkCsv("+351 912 345 678,Olá\njoao.silva");
+    const rows = parseBulkCsv("+351 912 345 678,Olá\njohn.smith");
     expect(rows).toHaveLength(2);
     expect(rows[0]).toMatchObject({ kind: "phone", ok: true });
     expect(rows[0].url).toBe("https://wa.me/351912345678?text=Ol%C3%A1");
-    expect(rows[1]).toMatchObject({ kind: "username", ok: true, url: "https://wa.me/joao.silva" });
+    expect(rows[1]).toMatchObject({ kind: "username", ok: true, url: "https://wa.me/john.smith" });
   });
 
   it("skips a header row and blank lines", () => {

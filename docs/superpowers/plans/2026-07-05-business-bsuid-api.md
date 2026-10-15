@@ -679,10 +679,10 @@ describe("resolveContact", () => {
   });
 
   it("resolves a username input", () => {
-    expect(resolveContact({ username: "joao.silva" })).toEqual({
-      id: "joao.silva",
+    expect(resolveContact({ username: "john.smith" })).toEqual({
+      id: "john.smith",
       type: "username",
-      username: "joao.silva",
+      username: "john.smith",
       phone: null,
       bsuid: null,
       displayName: null,
@@ -696,7 +696,7 @@ describe("resolveContact", () => {
   });
 
   it("returns null when more than one identifier is given", () => {
-    expect(resolveContact({ phone: "16505551234", username: "joao.silva" })).toBeNull();
+    expect(resolveContact({ phone: "16505551234", username: "john.smith" })).toBeNull();
   });
 });
 ```
@@ -989,7 +989,7 @@ function req(body: unknown): Request {
 
 describe("POST /api/v1/business/username/validate", () => {
   it("returns valid=true with empty reasons for a good username", async () => {
-    const res = await POST(req({ username: "joao.silva" }));
+    const res = await POST(req({ username: "john.smith" }));
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ valid: true, reasons: [] });
   });
@@ -1083,12 +1083,12 @@ function req(body: unknown): Request {
 
 describe("POST /api/v1/business/contact/resolve", () => {
   it("resolves a username identifier", async () => {
-    const res = await POST(req({ username: "joao.silva" }));
+    const res = await POST(req({ username: "john.smith" }));
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({
-      id: "joao.silva",
+      id: "john.smith",
       type: "username",
-      username: "joao.silva",
+      username: "john.smith",
       phone: null,
       bsuid: null,
       displayName: null,
@@ -1104,7 +1104,7 @@ describe("POST /api/v1/business/contact/resolve", () => {
   });
 
   it("400s with missing_identifier when more than one field is given", async () => {
-    const res = await POST(req({ phone: "16505551234", username: "joao.silva" }));
+    const res = await POST(req({ phone: "16505551234", username: "john.smith" }));
     expect(res.status).toBe(400);
     expect((await res.json()).error.code).toBe("missing_identifier");
   });
@@ -1448,7 +1448,7 @@ Add five new entries to `paths` (right before the `"/api/v1/openapi.json"` entry
         summary: "Validate a WhatsApp Business Platform username",
         requestBody: jsonBody(
           { $ref: "#/components/schemas/UsernameValidateInput" },
-          { username: "joao.silva" },
+          { username: "john.smith" },
         ),
         responses: {
           "200": {
@@ -1465,7 +1465,7 @@ Add five new entries to `paths` (right before the `"/api/v1/openapi.json"` entry
         summary: "Resolve a contact from exactly one of bsuid, phone, or username",
         requestBody: jsonBody(
           { $ref: "#/components/schemas/ContactResolveInput" },
-          { username: "joao.silva" },
+          { username: "john.smith" },
         ),
         responses: {
           "200": {

@@ -68,10 +68,10 @@ export const openApiDocument: { openapi: string; info: object; servers: object[]
               "application/json": {
                 schema: { $ref: "#/components/schemas/UsernameLink" },
                 example: {
-                  username: "joao.silva",
+                  username: "john.smith",
                   key: "AB12",
-                  link: "https://wa.me/joao.silva?text=hello",
-                  shortLink: `${siteConfig.url}/joao.silva`,
+                  link: "https://wa.me/john.smith?text=hello",
+                  shortLink: `${siteConfig.url}/john.smith`,
                   notice: "As of 2026-07-04, wa.me/<username> links do not yet open a chat for most accounts...",
                 },
               },
@@ -207,7 +207,7 @@ export const openApiDocument: { openapi: string; info: object; servers: object[]
         summary: "Validate a WhatsApp Business Platform username",
         requestBody: jsonBody(
           { $ref: "#/components/schemas/UsernameValidateInput" },
-          { username: "joao.silva" },
+          { username: "john.smith" },
         ),
         responses: {
           "200": {
@@ -224,7 +224,7 @@ export const openApiDocument: { openapi: string; info: object; servers: object[]
         summary: "Resolve a contact from exactly one of bsuid, phone, or username",
         requestBody: jsonBody(
           { $ref: "#/components/schemas/ContactResolveInput" },
-          { username: "joao.silva" },
+          { username: "john.smith" },
         ),
         responses: {
           "200": {

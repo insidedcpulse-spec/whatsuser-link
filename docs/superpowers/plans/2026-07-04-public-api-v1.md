@@ -543,7 +543,7 @@ import { siteConfig } from "@/config/site";
 
 describe("buildShortLink", () => {
   it("appends the username to the site URL", () => {
-    expect(buildShortLink("joao.silva")).toBe(`${siteConfig.url}/joao.silva`);
+    expect(buildShortLink("john.smith")).toBe(`${siteConfig.url}/john.smith`);
   });
 
   it("never produces a double slash even if siteConfig.url has a trailing slash", () => {
@@ -614,7 +614,7 @@ import { describe, expect, it } from "vitest";
 import { generateQr } from "@/lib/qr/generate-qr";
 
 const BASE = {
-  content: "https://wa.me/joao.silva",
+  content: "https://wa.me/john.smith",
   size: 256,
   color: "#000000",
   background: "#ffffff",
@@ -726,29 +726,29 @@ function req(query: string): Request {
 
 describe("GET /api/v1/username-link", () => {
   it("generates link, shortLink, and notice for a valid username", async () => {
-    const res = await GET(req("?username=joao.silva"));
+    const res = await GET(req("?username=john.smith"));
     expect(res.status).toBe(200);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
     const body = await res.json();
-    expect(body.username).toBe("joao.silva");
-    expect(body.link).toBe("https://wa.me/joao.silva");
-    expect(body.shortLink).toContain("/joao.silva");
+    expect(body.username).toBe("john.smith");
+    expect(body.link).toBe("https://wa.me/john.smith");
+    expect(body.shortLink).toContain("/john.smith");
     expect(body.notice).toContain("wa.me");
     expect(body.key).toBeUndefined();
   });
 
   it("echoes key and encodes text", async () => {
-    const res = await GET(req("?username=joao.silva&key=AB12&text=hello world"));
+    const res = await GET(req("?username=john.smith&key=AB12&text=hello world"));
     const body = await res.json();
     expect(body.key).toBe("AB12");
-    expect(body.link).toBe("https://wa.me/joao.silva?text=hello%20world");
+    expect(body.link).toBe("https://wa.me/john.smith?text=hello%20world");
   });
 
   it("sanitizes input like the UI does (@ prefix, uppercase)", async () => {
-    const res = await GET(req("?username=@Joao.Silva"));
+    const res = await GET(req("?username=@John.Smith"));
     const body = await res.json();
     expect(res.status).toBe(200);
-    expect(body.username).toBe("joao.silva");
+    expect(body.username).toBe("john.smith");
   });
 
   it("400s with missing_username when the param is absent", async () => {
@@ -767,7 +767,7 @@ describe("GET /api/v1/username-link", () => {
   });
 
   it("400s with key_invalid_format for a bad key", async () => {
-    const res = await GET(req("?username=joao.silva&key=x"));
+    const res = await GET(req("?username=john.smith&key=x"));
     const body = await res.json();
     expect(body.error.code).toBe("key_invalid_format");
   });
@@ -1009,7 +1009,7 @@ function req(path: string, query: string): Request {
 
 describe("GET /api/v1/validate/username", () => {
   it("returns valid=true for a good username", async () => {
-    const res = await getUsername(req("username", "?username=joao.silva"));
+    const res = await getUsername(req("username", "?username=john.smith"));
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ valid: true, errors: [] });
   });
@@ -1024,7 +1024,7 @@ describe("GET /api/v1/validate/username", () => {
   });
 
   it("sanitizes before validating (uppercase @handle passes)", async () => {
-    const res = await getUsername(req("username", "?username=@Joao.Silva"));
+    const res = await getUsername(req("username", "?username=@John.Smith"));
     expect((await res.json()).valid).toBe(true);
   });
 
@@ -1199,7 +1199,7 @@ function req(query: string): Request {
 
 describe("GET /api/v1/qr", () => {
   it("returns a PNG for a valid username", async () => {
-    const res = await GET(req("?username=joao.silva"));
+    const res = await GET(req("?username=john.smith"));
     expect(res.status).toBe(200);
     expect(res.headers.get("Content-Type")).toBe("image/png");
     expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
@@ -1214,7 +1214,7 @@ describe("GET /api/v1/qr", () => {
   });
 
   it("400s when both username and phone are given", async () => {
-    const res = await GET(req("?username=joao&phone=351912345678"));
+    const res = await GET(req("?username=john&phone=351912345678"));
     expect(res.status).toBe(400);
     expect((await res.json()).error.code).toBe("missing_target");
   });
@@ -1232,22 +1232,22 @@ describe("GET /api/v1/qr", () => {
   });
 
   it("400s on bad format", async () => {
-    const res = await GET(req("?username=joao.silva&format=gif"));
+    const res = await GET(req("?username=john.smith&format=gif"));
     expect((await res.json()).error.code).toBe("invalid_format");
   });
 
   it("400s on out-of-range size", async () => {
-    const res = await GET(req("?username=joao.silva&size=4096"));
+    const res = await GET(req("?username=john.smith&size=4096"));
     expect((await res.json()).error.code).toBe("invalid_size");
   });
 
   it("400s on malformed color", async () => {
-    const res = await GET(req("?username=joao.silva&color=red"));
+    const res = await GET(req("?username=john.smith&color=red"));
     expect((await res.json()).error.code).toBe("invalid_color");
   });
 
   it("accepts bg=transparent", async () => {
-    const res = await GET(req("?username=joao.silva&bg=transparent"));
+    const res = await GET(req("?username=john.smith&bg=transparent"));
     expect(res.status).toBe(200);
   });
 });
@@ -1488,10 +1488,10 @@ export const openApiDocument: { openapi: string; info: object; servers: object[]
               "application/json": {
                 schema: { $ref: "#/components/schemas/UsernameLink" },
                 example: {
-                  username: "joao.silva",
+                  username: "john.smith",
                   key: "AB12",
-                  link: "https://wa.me/joao.silva?text=hello",
-                  shortLink: `${siteConfig.url}/joao.silva`,
+                  link: "https://wa.me/john.smith?text=hello",
+                  shortLink: `${siteConfig.url}/john.smith`,
                   notice: "As of 2026-07-04, wa.me/<username> links do not yet open a chat for most accounts...",
                 },
               },
@@ -1814,12 +1814,12 @@ export async function generateMetadata({
 }
 
 const ENDPOINTS = [
-  { path: "/api/v1/username-link?username=joao.silva&key=AB12&text=hello", descKey: "usernameLink" },
+  { path: "/api/v1/username-link?username=john.smith&key=AB12&text=hello", descKey: "usernameLink" },
   { path: "/api/v1/phone-link?phone=351912345678&text=hello", descKey: "phoneLink" },
-  { path: "/api/v1/validate/username?username=joao.silva", descKey: "validateUsername" },
+  { path: "/api/v1/validate/username?username=john.smith", descKey: "validateUsername" },
   { path: "/api/v1/validate/key?key=AB12", descKey: "validateKey" },
   { path: "/api/v1/validate/phone?phone=351912345678", descKey: "validatePhone" },
-  { path: "/api/v1/qr?username=joao.silva&format=svg&color=25d366", descKey: "qr" },
+  { path: "/api/v1/qr?username=john.smith&format=svg&color=25d366", descKey: "qr" },
   { path: "/api/v1/openapi.json", descKey: "openapi" },
 ] as const;
 
@@ -1839,12 +1839,12 @@ export default async function DevelopersPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "developers" });
 
-  const curlExample = `curl "${siteConfig.url}/api/v1/username-link?username=joao.silva"`;
+  const curlExample = `curl "${siteConfig.url}/api/v1/username-link?username=john.smith"`;
   const jsExample = `const res = await fetch(
-  "${siteConfig.url}/api/v1/username-link?username=joao.silva"
+  "${siteConfig.url}/api/v1/username-link?username=john.smith"
 );
 const data = await res.json();
-console.log(data.link); // https://wa.me/joao.silva`;
+console.log(data.link); // https://wa.me/john.smith`;
   const errorExample = `{
   "error": {
     "code": "username_length",
@@ -2002,9 +2002,9 @@ describe("[locale]/[username] redirect route", () => {
   });
 
   it("still 307-redirects a valid locale + username", async () => {
-    const res = await call("en", "joao.silva");
+    const res = await call("en", "john.smith");
     expect(res.status).toBe(307);
-    expect(res.headers.get("location")).toBe("https://wa.me/joao.silva");
+    expect(res.headers.get("location")).toBe("https://wa.me/john.smith");
   });
 });
 ```
@@ -2052,14 +2052,14 @@ Expected: deployment READY, aliased to `https://whatsusernames.link`.
 
 ```bash
 BASE="https://whatsusernames.link"
-curl -sS "$BASE/api/v1/username-link?username=joao.silva" | head -c 400; echo
+curl -sS "$BASE/api/v1/username-link?username=john.smith" | head -c 400; echo
 curl -sS "$BASE/api/v1/phone-link?phone=351912345678&text=ola" | head -c 400; echo
 curl -sS "$BASE/api/v1/validate/username?username=ab" | head -c 400; echo
 curl -sS "$BASE/api/v1/validate/key?key=AB12" | head -c 400; echo
 curl -sS "$BASE/api/v1/validate/phone?phone=123" | head -c 400; echo
-curl -sS -o /tmp/qr.png -w "%{http_code} %{content_type}\n" "$BASE/api/v1/qr?username=joao.silva"
+curl -sS -o /tmp/qr.png -w "%{http_code} %{content_type}\n" "$BASE/api/v1/qr?username=john.smith"
 curl -sS "$BASE/api/v1/openapi.json" | head -c 200; echo
-curl -sSI "$BASE/api/v1/username-link?username=joao.silva" | grep -iE "access-control|cache-control|x-ratelimit"
+curl -sSI "$BASE/api/v1/username-link?username=john.smith" | grep -iE "access-control|cache-control|x-ratelimit"
 ```
 
 Expected: correct JSON bodies, `200 image/png` for QR, CORS + cache headers present, `X-RateLimit-*` present (absent only if Upstash not configured).

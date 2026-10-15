@@ -14,9 +14,9 @@ describe("[locale]/[username] redirect route", () => {
   });
 
   it("still 307-redirects a valid locale + username", async () => {
-    const res = await call("en", "joao.silva");
+    const res = await call("en", "john.smith");
     expect(res.status).toBe(307);
-    expect(res.headers.get("location")).toBe("https://wa.me/joao.silva");
+    expect(res.headers.get("location")).toBe("https://wa.me/john.smith");
   });
 
   it.each(["about", "privacy", "faq", "contact", "legal", "terms", "dashboard", "developers"])(

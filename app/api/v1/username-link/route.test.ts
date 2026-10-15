@@ -7,29 +7,29 @@ function req(query: string): Request {
 
 describe("GET /api/v1/username-link", () => {
   it("generates link, shortLink, and notice for a valid username", async () => {
-    const res = await GET(req("?username=joao.silva"));
+    const res = await GET(req("?username=john.smith"));
     expect(res.status).toBe(200);
     expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
     const body = await res.json();
-    expect(body.username).toBe("joao.silva");
-    expect(body.link).toBe("https://wa.me/joao.silva");
-    expect(body.shortLink).toContain("/joao.silva");
+    expect(body.username).toBe("john.smith");
+    expect(body.link).toBe("https://wa.me/john.smith");
+    expect(body.shortLink).toContain("/john.smith");
     expect(body.notice).toContain("wa.me");
     expect(body.key).toBeUndefined();
   });
 
   it("echoes key and encodes text", async () => {
-    const res = await GET(req("?username=joao.silva&key=AB12&text=hello world"));
+    const res = await GET(req("?username=john.smith&key=AB12&text=hello world"));
     const body = await res.json();
     expect(body.key).toBe("AB12");
-    expect(body.link).toBe("https://wa.me/joao.silva?text=hello%20world");
+    expect(body.link).toBe("https://wa.me/john.smith?text=hello%20world");
   });
 
   it("sanitizes input like the UI does (@ prefix, uppercase)", async () => {
-    const res = await GET(req("?username=@Joao.Silva"));
+    const res = await GET(req("?username=@John.Smith"));
     const body = await res.json();
     expect(res.status).toBe(200);
-    expect(body.username).toBe("joao.silva");
+    expect(body.username).toBe("john.smith");
   });
 
   it("400s with missing_username when the param is absent", async () => {
@@ -48,7 +48,7 @@ describe("GET /api/v1/username-link", () => {
   });
 
   it("400s with key_invalid_format for a bad key", async () => {
-    const res = await GET(req("?username=joao.silva&key=x"));
+    const res = await GET(req("?username=john.smith&key=x"));
     const body = await res.json();
     expect(body.error.code).toBe("key_invalid_format");
   });

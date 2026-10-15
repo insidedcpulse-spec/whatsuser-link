@@ -18,8 +18,8 @@
     <g font-family="monospace" font-size="24">
       <text x="36" y="110" fill="#8696a0">$ curl \</text>
       <text x="72" y="150" fill="#e9edef">"https://whatsusernames.link</text>
-      <text x="96" y="190" fill="#e9edef">/api/v1/username-link?username=joao"</text>
-      <text x="36" y="250" fill="#25D366">{"link": "https://wa.me/joao", ...}</text>
+      <text x="96" y="190" fill="#e9edef">/api/v1/username-link?username=john"</text>
+      <text x="36" y="250" fill="#25D366">{"link": "https://wa.me/john", ...}</text>
       <text x="36" y="296" fill="#8696a0">200 OK · JSON · CORS · no API key</text>
     </g>
   </g>

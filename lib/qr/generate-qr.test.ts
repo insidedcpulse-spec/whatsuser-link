@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { generateQr } from "@/lib/qr/generate-qr";
 
 const BASE = {
-  content: "https://wa.me/joao.silva",
+  content: "https://wa.me/john.smith",
   size: 256,
   color: "#000000",
   background: "#ffffff",

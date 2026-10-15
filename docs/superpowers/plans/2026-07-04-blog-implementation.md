@@ -725,7 +725,7 @@ heroImageAlt: "Ilustração de uma chave, simbolizando a Username Key do WhatsAp
 
 ## O problema que a Username Key resolve
 
-Um username sozinho não é garantidamente único em todo o mundo — se muita gente quiser "joao.silva" ou "loja.maria", o WhatsApp precisa de uma forma de distinguir contas com o mesmo nome. É para isso que serve a Username Key: um código curto, atribuído pela WhatsApp, que acompanha o teu username e identifica a tua conta especificamente, mesmo que outra pessoa tenha escolhido o mesmo nome.
+Um username sozinho não é garantidamente único em todo o mundo — se muita gente quiser "john.smith" ou "loja.maria", o WhatsApp precisa de uma forma de distinguir contas com o mesmo nome. É para isso que serve a Username Key: um código curto, atribuído pela WhatsApp, que acompanha o teu username e identifica a tua conta especificamente, mesmo que outra pessoa tenha escolhido o mesmo nome.
 
 ## Como funciona, na prática
 
@@ -774,7 +774,7 @@ heroImageAlt: "Ilustração de uma corrente partida junto a um código QR, simbo
 
 ## O que as pessoas esperam (e o que ainda não existe)
 
-Quem já usou `wa.me/351912345678` para partilhar um contacto de WhatsApp por número de telefone espera, razoavelmente, que exista um equivalente para usernames — algo como `wa.me/joao.silva`, que abrisse logo uma conversa. **Esse formato ainda não existe oficialmente.** A WhatsApp lançou os usernames como identificador de perfil, mas não publicou (até à data desta publicação) uma especificação de link público que abra automaticamente um chat a partir do username, do mesmo modo que já acontece com o número.
+Quem já usou `wa.me/351912345678` para partilhar um contacto de WhatsApp por número de telefone espera, razoavelmente, que exista um equivalente para usernames — algo como `wa.me/john.smith`, que abrisse logo uma conversa. **Esse formato ainda não existe oficialmente.** A WhatsApp lançou os usernames como identificador de perfil, mas não publicou (até à data desta publicação) uma especificação de link público que abra automaticamente um chat a partir do username, do mesmo modo que já acontece com o número.
 
 ## Porque isto importa para quem partilha um link
 

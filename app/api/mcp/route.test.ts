@@ -47,7 +47,7 @@ describe("POST /api/mcp", () => {
         jsonrpc: "2.0",
         id: 3,
         method: "tools/call",
-        params: { name: "validate_username", arguments: { username: "joao.silva" } },
+        params: { name: "validate_username", arguments: { username: "john.smith" } },
       }),
     );
     expect(res.status).toBe(200);
@@ -62,7 +62,7 @@ describe("POST /api/mcp", () => {
         jsonrpc: "2.0",
         id: 4,
         method: "tools/call",
-        params: { name: "qr_code", arguments: { username: "joao.silva" } },
+        params: { name: "qr_code", arguments: { username: "john.smith" } },
       }),
     );
     expect(res.status).toBe(200);
@@ -80,13 +80,13 @@ describe("POST /api/mcp batch requests", () => {
           jsonrpc: "2.0",
           id: 1,
           method: "tools/call",
-          params: { name: "validate_username", arguments: { username: "joao.silva" } },
+          params: { name: "validate_username", arguments: { username: "john.smith" } },
         },
         {
           jsonrpc: "2.0",
           id: 2,
           method: "tools/call",
-          params: { name: "validate_username", arguments: { username: "joao.silva" } },
+          params: { name: "validate_username", arguments: { username: "john.smith" } },
         },
       ]),
     );

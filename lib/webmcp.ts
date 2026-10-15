@@ -54,7 +54,7 @@ export const WEBMCP_TOOLS: WebMcpToolDefinition[] = [
     parameters: {
       type: "object",
       properties: {
-        username: { type: "string", description: "WhatsApp @username handle (e.g. techcorp or joao.silva)" },
+        username: { type: "string", description: "WhatsApp @username handle (e.g. techcorp or john.smith)" },
         key: { type: "string", description: "Optional 4-character Username Key for identity confirmation" },
         message: { type: "string", description: "Optional pre-filled message text" }
       },

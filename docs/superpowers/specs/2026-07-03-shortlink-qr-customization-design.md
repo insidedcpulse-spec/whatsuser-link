@@ -15,7 +15,7 @@ Evoluir o produto (specs anteriores: MVP `2026-07-02-whatsuser-link-mvp-design.m
 ## O que muda (visão geral)
 
 1. **Short link stateless**: `whatsuser.link/<username>` redireciona (307) para `wa.me/u/<username>`. Sem base de dados, sem novo serviço — uma route handler.
-2. **Fix de middleware**: regex de exclusão de ficheiros estáticos era `.*\..*` (qualquer ponto), o que quebraria usernames com ponto (ex. `joao.silva`). Passa a excluir só extensões estáticas conhecidas.
+2. **Fix de middleware**: regex de exclusão de ficheiros estáticos era `.*\..*` (qualquer ponto), o que quebraria usernames com ponto (ex. `john.smith`). Passa a excluir só extensões estáticas conhecidas.
 3. **QR customizável**: cor (color picker livre, default `#25D366`), logo genérico de chat opcional no centro, fundo transparente opcional, download em PNG/JPEG/SVG/PDF.
 4. **Profile card**: reestilização do bloco username+key já existente (não é um elemento novo) com visual mais "cartão de perfil".
 5. **Copiar tudo**: novo botão que copia username, key e link curto num único texto formatado — adicional aos botões de copiar já existentes, não os substitui.
@@ -71,7 +71,7 @@ matcher: [
 ]
 ```
 
-Isto permite que `/joao.silva` (username com ponto) passe pelo middleware normalmente, em vez de ser tratado como pedido de ficheiro estático e cair em 404.
+Isto permite que `/john.smith` (username com ponto) passe pelo middleware normalmente, em vez de ser tratado como pedido de ficheiro estático e cair em 404.
 
 ### Fecho do buraco residual em `validate-username.ts`
 
@@ -150,7 +150,7 @@ Novas chaves de tradução em `messages/{en,pt,es}.json`, namespace `result`: `c
 ## Testing
 
 - `utils/validate-username.test.ts`: novos casos cobrindo as extensões estáticas adicionadas a `RESERVED_DOMAIN_SUFFIXES` (ex. `"alguem.js"` → inválido, `reservedDomain`).
-- Sem teste automatizado para a route handler do short link (é I/O de rede — `NextResponse.redirect`) nem para a UI do QR (canvas/SVG só testável fiavelmente em browser real) — verificação por smoke test manual/Playwright na VPS, como feito nas rondas anteriores: `curl -I http://2.25.169.27:3000/rf1985` (espera `307` + `location: https://wa.me/u/rf1985`), `curl -I http://2.25.169.27:3000/joao.silva` (espera passar pelo middleware sem 404 de ficheiro estático), download manual dos 4 formatos e inspeção visual de cor/logo/transparência.
+- Sem teste automatizado para a route handler do short link (é I/O de rede — `NextResponse.redirect`) nem para a UI do QR (canvas/SVG só testável fiavelmente em browser real) — verificação por smoke test manual/Playwright na VPS, como feito nas rondas anteriores: `curl -I http://2.25.169.27:3000/rf1985` (espera `307` + `location: https://wa.me/u/rf1985`), `curl -I http://2.25.169.27:3000/john.smith` (espera passar pelo middleware sem 404 de ficheiro estático), download manual dos 4 formatos e inspeção visual de cor/logo/transparência.
 - `pnpm test`, `tsc --noEmit`, `pnpm lint`, `pnpm build` continuam obrigatórios como nas rondas anteriores.
 
 ## Migração / risco

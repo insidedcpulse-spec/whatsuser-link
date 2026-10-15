@@ -28,19 +28,19 @@ import { sanitizeUsernameInput, validateUsername } from "@/utils/validate-userna
 
 describe("sanitizeUsernameInput", () => {
   it("removes leading @", () => {
-    expect(sanitizeUsernameInput("@joao.silva")).toBe("joao.silva");
+    expect(sanitizeUsernameInput("@john.smith")).toBe("john.smith");
   });
 
   it("removes spaces", () => {
-    expect(sanitizeUsernameInput("joao silva")).toBe("joaosilva");
+    expect(sanitizeUsernameInput("john smith")).toBe("johnsmith");
   });
 
   it("lowercases input", () => {
-    expect(sanitizeUsernameInput("JoaoSilva")).toBe("joaosilva");
+    expect(sanitizeUsernameInput("JohnSmith")).toBe("johnsmith");
   });
 
   it("strips invalid characters", () => {
-    expect(sanitizeUsernameInput("joao!silva#123")).toBe("joaosilva123");
+    expect(sanitizeUsernameInput("john!smith#123")).toBe("johnsmith123");
   });
 });
 
@@ -66,13 +66,13 @@ describe("validateUsername", () => {
   });
 
   it("rejects a username starting with www.", () => {
-    const result = validateUsername("www.joao");
+    const result = validateUsername("www.john");
     expect(result.valid).toBe(false);
     expect(result.errors).toContain("errors.startsWithWww");
   });
 
   it("rejects a username ending in a domain suffix", () => {
-    const result = validateUsername("joaosilva.com");
+    const result = validateUsername("johnsmith.com");
     expect(result.valid).toBe(false);
     expect(result.errors).toContain("errors.reservedDomain");
   });
@@ -90,7 +90,7 @@ describe("validateUsername", () => {
   });
 
   it("accepts a valid alphanumeric username with dot and underscore", () => {
-    expect(validateUsername("joao.silva_99").valid).toBe(true);
+    expect(validateUsername("john.smith_99").valid).toBe(true);
   });
 });
 ```
@@ -311,16 +311,16 @@ import { createWhatsAppLink } from "@/services/link-service";
 
 describe("createWhatsAppLink", () => {
   it("returns a generated link for a valid username without a key", () => {
-    const result = createWhatsAppLink("joao.silva", undefined, "Olá!");
+    const result = createWhatsAppLink("john.smith", undefined, "Olá!");
     expect(result.success).toBe(true);
     if (result.success) {
-      expect(result.link.url).toBe("https://wa.me/u/joao.silva?text=Ol%C3%A1!");
+      expect(result.link.url).toBe("https://wa.me/u/john.smith?text=Ol%C3%A1!");
       expect(result.link.usernameKey).toBeUndefined();
     }
   });
 
   it("returns a generated link including the username key when valid", () => {
-    const result = createWhatsAppLink("joao.silva", "4821");
+    const result = createWhatsAppLink("john.smith", "4821");
     expect(result.success).toBe(true);
     if (result.success) {
       expect(result.link.usernameKey).toBe("4821");
@@ -336,7 +336,7 @@ describe("createWhatsAppLink", () => {
   });
 
   it("returns validation errors for an invalid username key", () => {
-    const result = createWhatsAppLink("joao.silva", "12");
+    const result = createWhatsAppLink("john.smith", "12");
     expect(result.success).toBe(false);
     if (!result.success) {
       expect(result.errors).toContain("keyErrors.invalidFormat");

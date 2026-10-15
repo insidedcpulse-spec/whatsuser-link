@@ -10,7 +10,7 @@ function req(body: unknown): Request {
 
 describe("POST /api/v1/business/username/validate", () => {
   it("returns valid=true with empty reasons for a good username", async () => {
-    const res = await POST(req({ username: "joao.silva" }));
+    const res = await POST(req({ username: "john.smith" }));
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ valid: true, reasons: [] });
   });

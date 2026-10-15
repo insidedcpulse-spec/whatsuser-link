@@ -29,10 +29,10 @@ describe("resolveContact", () => {
   });
 
   it("resolves a username input", () => {
-    expect(resolveContact({ username: "joao.silva" })).toEqual({
-      id: "joao.silva",
+    expect(resolveContact({ username: "john.smith" })).toEqual({
+      id: "john.smith",
       type: "username",
-      username: "joao.silva",
+      username: "john.smith",
       phone: null,
       bsuid: null,
       displayName: null,
@@ -46,6 +46,6 @@ describe("resolveContact", () => {
   });
 
   it("returns null when more than one identifier is given", () => {
-    expect(resolveContact({ phone: "16505551234", username: "joao.silva" })).toBeNull();
+    expect(resolveContact({ phone: "16505551234", username: "john.smith" })).toBeNull();
   });
 });

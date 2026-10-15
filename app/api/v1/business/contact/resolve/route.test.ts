@@ -10,12 +10,12 @@ function req(body: unknown): Request {
 
 describe("POST /api/v1/business/contact/resolve", () => {
   it("resolves a username identifier", async () => {
-    const res = await POST(req({ username: "joao.silva" }));
+    const res = await POST(req({ username: "john.smith" }));
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({
-      id: "joao.silva",
+      id: "john.smith",
       type: "username",
-      username: "joao.silva",
+      username: "john.smith",
       phone: null,
       bsuid: null,
       displayName: null,
@@ -31,7 +31,7 @@ describe("POST /api/v1/business/contact/resolve", () => {
   });
 
   it("400s with missing_identifier when more than one field is given", async () => {
-    const res = await POST(req({ phone: "16505551234", username: "joao.silva" }));
+    const res = await POST(req({ phone: "16505551234", username: "john.smith" }));
     expect(res.status).toBe(400);
     expect((await res.json()).error.code).toBe("missing_identifier");
   });

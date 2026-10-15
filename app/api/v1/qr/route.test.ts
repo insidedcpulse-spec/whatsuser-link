@@ -7,7 +7,7 @@ function req(query: string): Request {
 
 describe("GET /api/v1/qr", () => {
   it("returns a PNG for a valid username", async () => {
-    const res = await GET(req("?username=joao.silva"));
+    const res = await GET(req("?username=john.smith"));
     expect(res.status).toBe(200);
     expect(res.headers.get("Content-Type")).toBe("image/png");
     expect(res.headers.get("Access-Control-Allow-Origin")).toBe("*");
@@ -22,7 +22,7 @@ describe("GET /api/v1/qr", () => {
   });
 
   it("400s when both username and phone are given", async () => {
-    const res = await GET(req("?username=joao&phone=351912345678"));
+    const res = await GET(req("?username=john&phone=351912345678"));
     expect(res.status).toBe(400);
     expect((await res.json()).error.code).toBe("missing_target");
   });
@@ -40,22 +40,22 @@ describe("GET /api/v1/qr", () => {
   });
 
   it("400s on bad format", async () => {
-    const res = await GET(req("?username=joao.silva&format=gif"));
+    const res = await GET(req("?username=john.smith&format=gif"));
     expect((await res.json()).error.code).toBe("invalid_format");
   });
 
   it("400s on out-of-range size", async () => {
-    const res = await GET(req("?username=joao.silva&size=4096"));
+    const res = await GET(req("?username=john.smith&size=4096"));
     expect((await res.json()).error.code).toBe("invalid_size");
   });
 
   it("400s on malformed color", async () => {
-    const res = await GET(req("?username=joao.silva&color=red"));
+    const res = await GET(req("?username=john.smith&color=red"));
     expect((await res.json()).error.code).toBe("invalid_color");
   });
 
   it("accepts bg=transparent", async () => {
-    const res = await GET(req("?username=joao.silva&bg=transparent"));
+    const res = await GET(req("?username=john.smith&bg=transparent"));
     expect(res.status).toBe(200);
   });
 });

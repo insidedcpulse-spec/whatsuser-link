@@ -111,12 +111,12 @@ Exactly one of `bsuid`, `phone`, `username` required. No real Meta lookup — no
 
 ```json
 // in
-{ "username": "joao.silva" }
+{ "username": "john.smith" }
 // out 200
 {
-  "id": "joao.silva",
+  "id": "john.smith",
   "type": "username",
-  "username": "joao.silva",
+  "username": "john.smith",
   "phone": null,
   "bsuid": null,
   "displayName": null,

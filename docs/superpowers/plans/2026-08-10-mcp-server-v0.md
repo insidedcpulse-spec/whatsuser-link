@@ -167,13 +167,13 @@ function text(result: ReturnType<typeof validateUsernameTool>) {
 
 describe("validateUsernameTool", () => {
   it("returns valid:true for a valid username", () => {
-    const result = validateUsernameTool({ username: "joao.silva" });
+    const result = validateUsernameTool({ username: "john.smith" });
     expect(result.isError).toBeUndefined();
     expect(text(result)).toEqual({ valid: true, errors: [] });
   });
 
   it("sanitizes input like the REST route (@ prefix, uppercase)", () => {
-    const result = validateUsernameTool({ username: "@Joao.Silva" });
+    const result = validateUsernameTool({ username: "@John.Smith" });
     expect(text(result).valid).toBe(true);
   });
 
@@ -351,25 +351,25 @@ function text(result: Awaited<ReturnType<typeof usernameLinkTool>>) {
 
 describe("usernameLinkTool", () => {
   it("generates link, shortLink, and notice for a valid username", () => {
-    const result = usernameLinkTool({ username: "joao.silva" });
+    const result = usernameLinkTool({ username: "john.smith" });
     const body = text(result);
-    expect(body.username).toBe("joao.silva");
-    expect(body.link).toBe("https://wa.me/joao.silva");
-    expect(body.shortLink).toContain("/joao.silva");
+    expect(body.username).toBe("john.smith");
+    expect(body.link).toBe("https://wa.me/john.smith");
+    expect(body.shortLink).toContain("/john.smith");
     expect(body.notice).toContain("wa.me");
     expect(body.key).toBeUndefined();
   });
 
   it("echoes key and encodes text", () => {
-    const result = usernameLinkTool({ username: "joao.silva", key: "AB12", text: "hello world" });
+    const result = usernameLinkTool({ username: "john.smith", key: "AB12", text: "hello world" });
     const body = text(result);
     expect(body.key).toBe("AB12");
-    expect(body.link).toBe("https://wa.me/joao.silva?text=hello%20world");
+    expect(body.link).toBe("https://wa.me/john.smith?text=hello%20world");
   });
 
   it("sanitizes input like the UI does (@ prefix, uppercase)", () => {
-    const result = usernameLinkTool({ username: "@Joao.Silva" });
-    expect(text(result).username).toBe("joao.silva");
+    const result = usernameLinkTool({ username: "@John.Smith" });
+    expect(text(result).username).toBe("john.smith");
   });
 
   it("errors with missing_username when username is empty", () => {
@@ -385,7 +385,7 @@ describe("usernameLinkTool", () => {
   });
 
   it("returns a mapped error code for an invalid key", () => {
-    const result = usernameLinkTool({ username: "joao.silva", key: "x" });
+    const result = usernameLinkTool({ username: "john.smith", key: "x" });
     expect(result.isError).toBe(true);
     expect(text(result).code).toBe("key_invalid_format");
   });
@@ -566,7 +566,7 @@ function errorBody(result: Awaited<ReturnType<typeof qrCodeTool>>) {
 
 describe("qrCodeTool", () => {
   it("returns a base64 PNG image block for a valid username", async () => {
-    const result = await qrCodeTool({ username: "joao.silva" });
+    const result = await qrCodeTool({ username: "john.smith" });
     expect(result.isError).toBeUndefined();
     const block = result.content[0] as { type: string; data: string; mimeType: string };
     expect(block.type).toBe("image");
@@ -581,14 +581,14 @@ describe("qrCodeTool", () => {
   });
 
   it("returns SVG markup as text when format is svg", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", format: "svg" });
+    const result = await qrCodeTool({ username: "john.smith", format: "svg" });
     const block = result.content[0] as { type: string; text: string };
     expect(block.type).toBe("text");
     expect(block.text).toContain("<svg");
   });
 
   it("errors when both username and phone are provided", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", phone: "15550001234" });
+    const result = await qrCodeTool({ username: "john.smith", phone: "15550001234" });
     expect(result.isError).toBe(true);
     expect(errorBody(result).code).toBe("missing_target");
   });
@@ -600,13 +600,13 @@ describe("qrCodeTool", () => {
   });
 
   it("errors on an out-of-range size", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", size: 50 });
+    const result = await qrCodeTool({ username: "john.smith", size: 50 });
     expect(result.isError).toBe(true);
     expect(errorBody(result).code).toBe("invalid_size");
   });
 
   it("errors on an invalid color", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", color: "zzzzzz" });
+    const result = await qrCodeTool({ username: "john.smith", color: "zzzzzz" });
     expect(result.isError).toBe(true);
     expect(errorBody(result).code).toBe("invalid_color");
   });
@@ -786,7 +786,7 @@ describe("POST /api/mcp", () => {
         jsonrpc: "2.0",
         id: 3,
         method: "tools/call",
-        params: { name: "validate_username", arguments: { username: "joao.silva" } },
+        params: { name: "validate_username", arguments: { username: "john.smith" } },
       }),
     );
     expect(res.status).toBe(200);
@@ -801,7 +801,7 @@ describe("POST /api/mcp", () => {
         jsonrpc: "2.0",
         id: 4,
         method: "tools/call",
-        params: { name: "qr_code", arguments: { username: "joao.silva" } },
+        params: { name: "qr_code", arguments: { username: "john.smith" } },
       }),
     );
     expect(res.status).toBe(200);
@@ -1110,11 +1110,11 @@ Run: `pnpm dev` in one terminal, then in another:
 curl -s -X POST http://localhost:3000/api/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"username_link","arguments":{"username":"joao.silva"}}}' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"username_link","arguments":{"username":"john.smith"}}}' \
   | python3 -m json.tool
 ```
 
-Expected: HTTP 200, JSON-RPC result whose `result.content[0].text` parses to `{"username":"joao.silva","link":"https://wa.me/joao.silva","shortLink":"...","notice":"..."}`. Stop the dev server after checking (Ctrl-C).
+Expected: HTTP 200, JSON-RPC result whose `result.content[0].text` parses to `{"username":"john.smith","link":"https://wa.me/john.smith","shortLink":"...","notice":"..."}`. Stop the dev server after checking (Ctrl-C).
 
 - [ ] **Step 6: Update the spec status**
 

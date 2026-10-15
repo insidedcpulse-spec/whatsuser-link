@@ -28,12 +28,12 @@ export async function generateMetadata({
 }
 
 const ENDPOINTS = [
-  { path: "/api/v1/username-link?username=joao.silva&key=AB12&text=hello", descKey: "usernameLink" },
+  { path: "/api/v1/username-link?username=john.smith&key=AB12&text=hello", descKey: "usernameLink" },
   { path: "/api/v1/phone-link?phone=351912345678&text=hello", descKey: "phoneLink" },
-  { path: "/api/v1/validate/username?username=joao.silva", descKey: "validateUsername" },
+  { path: "/api/v1/validate/username?username=john.smith", descKey: "validateUsername" },
   { path: "/api/v1/validate/key?key=AB12", descKey: "validateKey" },
   { path: "/api/v1/validate/phone?phone=351912345678", descKey: "validatePhone" },
-  { path: "/api/v1/qr?username=joao.silva&format=svg&color=25d366", descKey: "qr" },
+  { path: "/api/v1/qr?username=john.smith&format=svg&color=25d366", descKey: "qr" },
   { path: "/api/v1/openapi.json", descKey: "openapi" },
 ] as const;
 
@@ -51,12 +51,12 @@ const BUSINESS_ENDPOINTS = [
   {
     path: "/api/v1/business/username/validate",
     descKey: "businessUsernameValidate",
-    exampleBody: `{ "username": "joao.silva" }`,
+    exampleBody: `{ "username": "john.smith" }`,
   },
   {
     path: "/api/v1/business/contact/resolve",
     descKey: "businessContactResolve",
-    exampleBody: `{ "username": "joao.silva" }`,
+    exampleBody: `{ "username": "john.smith" }`,
   },
   {
     path: "/api/v1/business/webhook/normalize",
@@ -81,12 +81,12 @@ export default async function DevelopersPage({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "developers" });
 
-  const curlExample = `curl "${siteConfig.url}/api/v1/username-link?username=joao.silva"`;
+  const curlExample = `curl "${siteConfig.url}/api/v1/username-link?username=john.smith"`;
   const jsExample = `const res = await fetch(
-  "${siteConfig.url}/api/v1/username-link?username=joao.silva"
+  "${siteConfig.url}/api/v1/username-link?username=john.smith"
 );
 const data = await res.json();
-console.log(data.link); // https://wa.me/joao.silva`;
+console.log(data.link); // https://wa.me/john.smith`;
   const curlBusinessExample = `curl -X POST "${siteConfig.url}/api/v1/business/bsuid/validate" \\
   -H "Content-Type: application/json" \\
   -d '{"bsuid": "US.13491208655302741918"}'`;

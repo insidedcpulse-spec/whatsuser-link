@@ -7,7 +7,7 @@ function errorBody(result: Awaited<ReturnType<typeof qrCodeTool>>) {
 
 describe("qrCodeTool", () => {
   it("returns a base64 PNG image block for a valid username", async () => {
-    const result = await qrCodeTool({ username: "joao.silva" });
+    const result = await qrCodeTool({ username: "john.smith" });
     expect(result.isError).toBeUndefined();
     const block = result.content[0] as { type: string; data: string; mimeType: string };
     expect(block.type).toBe("image");
@@ -22,14 +22,14 @@ describe("qrCodeTool", () => {
   });
 
   it("returns SVG markup as text when format is svg", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", format: "svg" });
+    const result = await qrCodeTool({ username: "john.smith", format: "svg" });
     const block = result.content[0] as { type: string; text: string };
     expect(block.type).toBe("text");
     expect(block.text).toContain("<svg");
   });
 
   it("errors when both username and phone are provided", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", phone: "15550001234" });
+    const result = await qrCodeTool({ username: "john.smith", phone: "15550001234" });
     expect(result.isError).toBe(true);
     expect(errorBody(result).code).toBe("missing_target");
   });
@@ -41,13 +41,13 @@ describe("qrCodeTool", () => {
   });
 
   it("errors on an out-of-range size", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", size: 50 });
+    const result = await qrCodeTool({ username: "john.smith", size: 50 });
     expect(result.isError).toBe(true);
     expect(errorBody(result).code).toBe("invalid_size");
   });
 
   it("errors on an invalid color", async () => {
-    const result = await qrCodeTool({ username: "joao.silva", color: "zzzzzz" });
+    const result = await qrCodeTool({ username: "john.smith", color: "zzzzzz" });
     expect(result.isError).toBe(true);
     expect(errorBody(result).code).toBe("invalid_color");
   });

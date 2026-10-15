@@ -54,10 +54,10 @@ Params: `username` (required), `key` (optional, WhatsApp Username Key), `text` (
 
 ```json
 {
-  "username": "joao.silva",
+  "username": "john.smith",
   "key": "AB12",
-  "link": "https://wa.me/joao.silva?text=...",
-  "shortLink": "https://whatsusernames.link/joao.silva",
+  "link": "https://wa.me/john.smith?text=...",
+  "shortLink": "https://whatsusernames.link/john.smith",
   "notice": "As of 2026-07-04, wa.me username links do not yet resolve for all accounts. Verify before relying on them. See https://whatsusernames.link/llms.txt"
 }
 ```

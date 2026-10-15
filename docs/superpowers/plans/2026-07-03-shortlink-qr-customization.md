@@ -121,7 +121,7 @@ export const config = {
 };
 ```
 
-The previous regex excluded any path containing a dot anywhere, which would have made a short link like `/joao.silva` skip next-intl's middleware entirely (and 404, since the `[locale]` rewrite never happens). The new regex only excludes paths that *end* in a known static-file extension.
+The previous regex excluded any path containing a dot anywhere, which would have made a short link like `/john.smith` skip next-intl's middleware entirely (and 404, since the `[locale]` rewrite never happens). The new regex only excludes paths that *end* in a known static-file extension.
 
 - [ ] **Step 2: Type-check**
 
@@ -722,11 +722,11 @@ Expected: `root: 200`.
 
 ```bash
 curl -s -o /dev/null -w "rf1985: %{http_code} -> %{redirect_url}\n" http://localhost:3000/rf1985
-curl -s -o /dev/null -w "joao.silva: %{http_code} -> %{redirect_url}\n" http://localhost:3000/joao.silva
+curl -s -o /dev/null -w "john.smith: %{http_code} -> %{redirect_url}\n" http://localhost:3000/john.smith
 curl -s -o /dev/null -w "invalid-short: %{http_code}\n" http://localhost:3000/ab
 ```
 
-Expected: `rf1985: 307 -> https://wa.me/u/rf1985`, `joao.silva: 307 -> https://wa.me/u/joao.silva` (confirms the middleware fix from Task 2 — a dotted username no longer 404s), `invalid-short: 404` (username too short).
+Expected: `rf1985: 307 -> https://wa.me/u/rf1985`, `john.smith: 307 -> https://wa.me/u/john.smith` (confirms the middleware fix from Task 2 — a dotted username no longer 404s), `invalid-short: 404` (username too short).
 
 - [ ] **Step 7: Verify static assets still work after the middleware matcher change**
 
