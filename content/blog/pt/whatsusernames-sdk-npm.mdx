@@ -25,8 +25,8 @@ import { createClient } from "whatsusernames-sdk";
 
 const wa = createClient();
 
-const { link, shortLink } = await wa.usernameLink({ username: "joao.silva" });
-const qr = await wa.qr({ username: "joao.silva", format: "svg" });
+const { link, shortLink } = await wa.usernameLink({ username: "john.smith" });
+const qr = await wa.qr({ username: "john.smith", format: "svg" });
 // qr.body é um Uint8Array, qr.contentType é "image/svg+xml"
 ```
 
@@ -36,7 +36,7 @@ E para a Business Platform:
 const parsed = await wa.business.bsuid.parse({ bsuid: "US.13491208655302741918" });
 // { countryCode: "US", id: "13491208655302741918", isParent: false }
 
-const contact = await wa.business.contact.resolve({ username: "joao.silva" });
+const contact = await wa.business.contact.resolve({ username: "john.smith" });
 
 const normalized = await wa.business.webhook.normalize(rawCloudApiWebhookPayload);
 ```

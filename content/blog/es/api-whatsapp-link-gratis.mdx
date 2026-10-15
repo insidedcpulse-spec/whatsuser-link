@@ -37,16 +37,16 @@ La documentación completa está en [whatsusernames.link/developers](https://wha
 Generar un enlace a partir de un username, con curl:
 
 ```bash
-curl "https://whatsusernames.link/api/v1/username-link?username=joao.silva"
+curl "https://whatsusernames.link/api/v1/username-link?username=john.smith"
 ```
 
 Respuesta:
 
 ```json
 {
-  "username": "joao.silva",
-  "link": "https://wa.me/joao.silva",
-  "shortLink": "https://whatsusernames.link/joao.silva",
+  "username": "john.smith",
+  "link": "https://wa.me/john.smith",
+  "shortLink": "https://whatsusernames.link/john.smith",
   "notice": "As of 2026-07-04, wa.me/<username> links do not yet open a chat for most accounts..."
 }
 ```
@@ -64,7 +64,7 @@ console.log(data.link); // https://wa.me/351912345678?text=hola
 Un código QR verde de WhatsApp en SVG, listo para incluir en una página:
 
 ```
-https://whatsusernames.link/api/v1/qr?username=joao.silva&format=svg&color=25d366
+https://whatsusernames.link/api/v1/qr?username=john.smith&format=svg&color=25d366
 ```
 
 ## Límites de uso y errores
