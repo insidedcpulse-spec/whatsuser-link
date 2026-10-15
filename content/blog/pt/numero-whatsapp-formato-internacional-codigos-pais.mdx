@@ -26,8 +26,8 @@ O resultado vai direto para o link: `https://wa.me/447911123456`. O nosso [gerad
 | Portugal | 351 | 912 345 678 | 351912345678 |
 | Brasil | 55 | (11) 91234-5678 | 5511912345678 |
 | Espanha | 34 | 612 34 56 78 | 34612345678 |
-| México | 52 | 55 1234 5678 | 525512345678 |
-| Argentina | 54 | os móveis levam um 9 depois do 54 | 549… |
+| México (móvel) | 52 | 55 1234 5678 | 5215512345678 (ver abaixo) |
+| Argentina (móvel) | 54 | 011 15 1234-5678 | 5491112345678 (ver abaixo) |
 | Estados Unidos / Canadá | 1 | (415) 555-0132 | 14155550132 |
 | Reino Unido | 44 | 07911 123456 | 447911123456 |
 | Alemanha | 49 | 0151 23456789 | 4915123456789 |
@@ -38,6 +38,13 @@ O resultado vai direto para o link: `https://wa.me/447911123456`. O nosso [gerad
 | Cabo Verde | 238 | 991 23 45 | 2389912345 |
 
 Confirma sempre o plano de numeração do país a que ligas; a tabela mostra o padrão comum dos telemóveis.
+
+## Casos especiais: México e Argentina
+
+- **México:** o WhatsApp identifica os móveis mexicanos como `52` + `1` + o número de 10 dígitos (13 dígitos, por exemplo `5215512345678`). Um link escrito como `52` + 10 dígitos costuma redirecionar para a conversa certa, mas a forma `521` é a mais segura para móveis. Os fixos usam `52` + 10 dígitos.
+- **Argentina:** nos móveis, tira o `0` inicial do indicativo de zona e o prefixo móvel `15`, e insere um `9` depois do indicativo do país: `011 15 1234-5678` passa a `54` + `9` + `11` + `12345678` = `5491112345678`.
+
+Estas regras vêm da documentação de integradores de WhatsApp e não de uma página oficial do WhatsApp, por isso testa sempre um link real de cada país antes de imprimir ou publicar.
 
 ## Erros comuns
 
