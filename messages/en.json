@@ -629,7 +629,7 @@
       "Pay once, $4.99, securely with Stripe.",
       "Download a ZIP with one PNG QR per link plus links.csv."
     ],
-    "homeCtaText": "Upload a CSV and get up to 500 wa.me links and QR codes in one ZIP — for events, menus, business cards and campaigns. $4.99 one-time.",
+    "homeCtaText": "Need hundreds of codes at once? Upload a CSV and instantly download up to 500 wa.me links and QR codes in a single ZIP. Perfect for restaurant menus (one per table), team business cards, events and marketing campaigns. No subscription: just $4.99, one-time.",
     "consent": "I request immediate delivery of this digital product and understand that once the download starts I lose my 14-day right of withdrawal. I accept the Terms of Service.",
     "useCasesTitle": "What people use bulk WhatsApp QR codes for",
     "useCases": [
@@ -681,7 +681,12 @@
         "question": "Can I get a refund?",
         "answer": "If the ZIP fails to generate or your payment is charged by mistake, contact us and we will refund you. Because the product is delivered digitally and immediately, the 14-day right of withdrawal does not apply once the download starts, as stated at purchase."
       }
-    ]
+    ],
+    "homeCtaTitle": "📦 Bulk generator: WhatsApp links & QR codes",
+    "homeCtaButton": "🚀 Create my batch in seconds →",
+    "exampleLink": "See an example CSV",
+    "exampleDownload": "Download example CSV",
+    "exampleCsv": "phone,message\n351912345678,Hello! I'd like to book a table\n5511912345678,\"Hi, I saw your flyer\"\n34612345678\njoao.silva"
   },
   "cookies": {
     "title": "Cookies & privacy",

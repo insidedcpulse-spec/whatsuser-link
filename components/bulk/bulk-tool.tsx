@@ -82,6 +82,18 @@ export function BulkTool({ sessionId }: { sessionId?: string }) {
         rows={8}
         className="w-full rounded-lg border bg-background p-3 font-mono text-sm"
       />
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+        <button
+          type="button"
+          onClick={() => setCsv(t("exampleCsv"))}
+          className="underline underline-offset-2"
+        >
+          {t("exampleLink")}
+        </button>
+        <a href="/whatsapp-links-example.csv" download className="underline underline-offset-2">
+          {t("exampleDownload")}
+        </a>
+      </div>
       <input
         type="file"
         accept=".csv,text/csv,text/plain"

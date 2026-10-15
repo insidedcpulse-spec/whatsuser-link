@@ -29,14 +29,14 @@ export default async function Home() {
         {/* Paid bulk generator CTA, directly below the username generator */}
         <section className="w-full max-w-4xl rounded-2xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
           <div className="flex-1">
-            <p className="font-semibold">📦 {tBulk("title")}</p>
+            <p className="font-semibold">{tBulk("homeCtaTitle")}</p>
             <p className="mt-1 text-sm text-muted-foreground">{tBulk("homeCtaText")}</p>
           </div>
           <Link
             href="/bulk"
             className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg bg-emerald-600 px-5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
           >
-            📦 {tBulk("title")} →
+            {tBulk("homeCtaButton")}
           </Link>
         </section>
 

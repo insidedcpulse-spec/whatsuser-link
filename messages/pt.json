@@ -629,7 +629,7 @@
       "Paga uma vez, $4.99, em segurança com Stripe.",
       "Descarrega um ZIP com um QR PNG por link mais o links.csv."
     ],
-    "homeCtaText": "Carrega um CSV e recebe até 500 links wa.me e QR Codes num ZIP — para eventos, menus, cartões de visita e campanhas. $4.99 pagamento único.",
+    "homeCtaText": "Precisas de gerar centenas de códigos de uma só vez? Carrega um ficheiro CSV e descarrega instantaneamente até 500 links wa.me e QR Codes num único ficheiro ZIP. Perfeito para menus de restaurantes (por mesa), cartões de visita de equipas, eventos e campanhas de marketing. Sem mensalidades: apenas $4.99, pagamento único.",
     "consent": "Peço a entrega imediata deste produto digital e compreendo que, depois de iniciar o download, perco o meu direito de livre resolução de 14 dias. Aceito os Termos de Serviço.",
     "useCasesTitle": "Para que servem os QR Codes de WhatsApp em massa",
     "useCases": [
@@ -681,7 +681,12 @@
         "question": "Posso pedir reembolso?",
         "answer": "Se o ZIP não for gerado ou o pagamento for cobrado por engano, contacta-nos e reembolsamos. Como o produto é digital e entregue de imediato, o direito de livre resolução de 14 dias não se aplica depois de iniciado o download, conforme indicado na compra."
       }
-    ]
+    ],
+    "homeCtaTitle": "📦 Gerador em lote: Links e QR Codes de WhatsApp",
+    "homeCtaButton": "🚀 Criar o meu lote em segundos →",
+    "exampleLink": "Ver exemplo de CSV",
+    "exampleDownload": "Descarregar CSV de exemplo",
+    "exampleCsv": "phone,message\n351912345678,Olá! Queria reservar uma mesa\n5511912345678,\"Olá, vi o vosso flyer\"\n34612345678\njoao.silva"
   },
   "cookies": {
     "title": "Cookies e privacidade",
