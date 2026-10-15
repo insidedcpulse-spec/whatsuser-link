@@ -4,6 +4,12 @@ import { BULK_APP_TAG, BULK_PRICE_LOOKUP_KEY, getStripe } from "@/lib/bulk/strip
 
 export const runtime = "nodejs";
 
+const CHECKOUT_NOTICE: Record<string, string> = {
+  en: "Digital product delivered immediately. By paying you lose your 14-day withdrawal right once the download starts. No VAT charged.",
+  pt: "Produto digital entregue de imediato. Ao pagar, perdes o direito de livre resolução de 14 dias quando o download começar. Sem IVA.",
+  es: "Producto digital entregado de inmediato. Al pagar pierdes el derecho de desistimiento de 14 días cuando empiece la descarga. Sin IVA.",
+};
+
 export async function POST(request: Request) {
   try {
     const stripe = getStripe();
@@ -22,6 +28,8 @@ export async function POST(request: Request) {
       mode: "payment",
       line_items: [{ price: price.id, quantity: 1 }],
       adaptive_pricing: { enabled: true },
+      automatic_tax: { enabled: false }, // seller is VAT-exempt (below threshold): price is final
+      custom_text: { submit: { message: CHECKOUT_NOTICE[locale] ?? CHECKOUT_NOTICE.en } },
       locale: locale as "en" | "pt" | "es",
       metadata: { app: BULK_APP_TAG, consent_immediate_delivery: new Date().toISOString() },
       success_url: `${origin}${prefix}/bulk?session_id={CHECKOUT_SESSION_ID}`,

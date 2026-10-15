@@ -142,7 +142,7 @@
       {
         "heading": "Como funciona",
         "body": [
-          "Não existe sistema de contas. Os geradores gratuitos correm no teu navegador e o que introduzes nunca é enviado nem guardado nos nossos servidores; o Pack em Massa pago, opcional, envia o teu CSV ao nosso servidor apenas para criar o ZIP e não o guarda. Vê a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por publicidade (Adsterra e Google AdSense) e pelo Pack em Massa pago opcional."
+          "Não existe sistema de contas. Os geradores gratuitos correm no teu navegador e o que introduzes nunca é enviado nem guardado nos nossos servidores; o Pack em Massa pago, opcional, envia o teu CSV ao nosso servidor apenas para criar o ZIP e não o guarda. Vê a nossa Política de Privacidade para detalhes. O site é gratuito e financiado por anúncios Google AdSense (só mostrados com o teu consentimento) e pelo Pack em Massa pago opcional."
         ]
       },
       {
@@ -404,26 +404,25 @@
         {
           "heading": "Cookies e armazenamento local",
           "body": [
-            "Não definimos cookies de rastreio. A tua preferência de tema claro/escuro é guardada apenas no armazenamento local do teu navegador e nunca sai do teu dispositivo.",
-            "Na página do Pack em Massa, uma cópia de rascunho do teu CSV fica no armazenamento local do teu navegador (chave \"bulk-csv\") para sobreviver ao redirecionamento para o Stripe. Nunca sai do teu dispositivo, exceto quando clicas em descarregar, e podes apagá-la limpando os dados do site. O Stripe pode definir os seus próprios cookies na página de checkout, segundo a sua política."
+            "Só usamos armazenamento estritamente necessário e que não exige consentimento: a tua preferência de tema claro/escuro, a tua escolha de cookies (chave \"cookie-consent\") e, na página do Pack em Massa, uma cópia de rascunho do teu CSV (chave \"bulk-csv\"). Tudo fica no armazenamento local do teu navegador e podes apagá-lo limpando os dados do site. Não definimos cookies de analítica nem de rastreio. O Stripe pode definir os seus próprios cookies na página de checkout, segundo a sua política."
           ]
         },
         {
           "heading": "Publicidade e Cookies",
           "body": [
-            "Este site utiliza o Google AdSense, um serviço de publicidade de terceiros fornecido pela Google LLC. Fornecedores terceiros, incluindo a Google, utilizam cookies para exibir anúncios com base em visitas anteriores dos utilizadores a este website ou a outros websites. A utilização de cookies de publicidade pela Google permite que esta e os seus parceiros exibam anúncios aos utilizadores com base na sua visita ao WhatsUsernames.link e/ou a outros sites na Internet. Os utilizadores podem desativar a publicidade personalizada visitando as Definições de Anúncios da Google (https://adssettings.google.com) ou através de www.aboutads.info."
+            "Os anúncios são opcionais. O Google AdSense (Google LLC / Google Ireland Limited) só é carregado se clicares em \"Aceitar tudo\" ou ativares a Publicidade nas definições; se rejeitares, nenhum script de anúncios da Google é carregado e nenhum cookie publicitário é definido. A Google pode então usar cookies para mostrar anúncios com base nas tuas visitas a este e a outros sites. Podes mudar a escolha a qualquer momento em \"Definições de cookies\" no rodapé e recusar a publicidade personalizada em https://adssettings.google.com ou www.aboutads.info."
           ]
         },
         {
           "heading": "Análise (Analytics)",
           "body": [
-            "Atualmente não corremos nenhum script de analytics ou rastreio próprio. Se isto mudar, esta política será atualizada primeiro."
+            "Não usamos analítica de terceiros nem cookies de analítica. Para proteger a API de abusos e medir a utilização agregada (por exemplo, quantos links são gerados), os nossos servidores guardam contadores e um identificador pseudónimo: um hash unidirecional do teu endereço IP e do user-agent do navegador combinado com um segredo (salt), que não pode ser revertido para o teu IP. Base legal: interesse legítimo em segurança e estatísticas do serviço (RGPD, art. 6.º, n.º 1, alínea f). Os dados ficam no Upstash Redis."
           ]
         },
         {
           "heading": "Os teus direitos",
           "body": [
-            "Nos geradores gratuitos não guardamos nada que possamos aceder, corrigir ou apagar. Nas compras do Pack em Massa, os registos de pagamento e fiscais ficam no Stripe; os únicos dados que guardamos são um identificador temporário da Sessão de Checkout que expira em 48 horas. Para exercer os teus direitos RGPD ou colocar uma questão, envia-nos um email."
+            "Ao abrigo do RGPD tens direito de acesso, retificação, apagamento, limitação e oposição ao tratamento dos teus dados pessoais, à portabilidade e a retirar o consentimento a qualquer momento. Nos geradores gratuitos não guardamos nada que possa ser acedido ou apagado. Nas compras, os registos de pagamento e fiscais ficam no Stripe; só guardamos um identificador da Sessão de Checkout que expira em 48 horas. Para exercer os teus direitos, envia-nos um email. Podes ainda apresentar reclamação à Comissão Nacional de Proteção de Dados (CNPD, www.cnpd.pt) ou à autoridade do teu país."
           ]
         },
         {
@@ -441,7 +440,7 @@
         {
           "heading": "Contacto",
           "body": [
-            "Dúvidas sobre esta política? Envia email para insidedcpulse@gmail.com."
+            "Responsável pelo tratamento: o operador de whatsusernames.link, empresário em nome individual com sede em Portugal. Questões sobre esta política? Escreve para insidedcpulse@gmail.com."
           ]
         }
       ]
@@ -466,7 +465,7 @@
         {
           "heading": "Pack de Links e QR em Massa (pago)",
           "body": [
-            "O Pack em Massa custa $4.99 USD num pagamento único, cobrado pelo Stripe. No checkout o Stripe pode mostrar e cobrar o equivalente na tua moeda local (Stripe Adaptive Pricing), incluindo a respetiva taxa de câmbio. Podem aplicar-se impostos consoante o teu país. Não há subscrição nem renovação automática.",
+            "O Pack em Massa custa $4.99 USD num pagamento único, cobrado pelo Stripe. O preço é final: não é cobrado IVA porque o vendedor beneficia do regime de isenção de IVA para pequenos negócios. O Stripe pode mostrar e cobrar o equivalente na tua moeda local (Stripe Adaptive Pricing), incluindo a respetiva taxa de câmbio. Não há subscrição nem renovação automática.",
             "Após o pagamento podes descarregar o ZIP até 5 vezes em 48 horas. O acesso está ligado à tua sessão de pagamento; se a perderes, contacta-nos. És responsável pelo conteúdo do teu CSV."
           ]
         },
@@ -683,5 +682,19 @@
         "answer": "Se o ZIP não for gerado ou o pagamento for cobrado por engano, contacta-nos e reembolsamos. Como o produto é digital e entregue de imediato, o direito de livre resolução de 14 dias não se aplica depois de iniciado o download, conforme indicado na compra."
       }
     ]
+  },
+  "cookies": {
+    "title": "Cookies e privacidade",
+    "text": "Usamos armazenamento estritamente necessário para o site funcionar. Com a tua autorização, carregamos também o Google AdSense para mostrar anúncios, que pode definir cookies. Podes mudar a tua escolha a qualquer momento.",
+    "policyLink": "Política de Privacidade",
+    "accept": "Aceitar tudo",
+    "reject": "Rejeitar tudo",
+    "customize": "Personalizar",
+    "save": "Guardar escolhas",
+    "necessaryTitle": "Estritamente necessários",
+    "necessaryDesc": "tema, a tua escolha de consentimento e o rascunho do Pack em Massa. Sempre ativos.",
+    "adsTitle": "Publicidade",
+    "adsDesc": "Anúncios Google AdSense, que podem usar cookies e tecnologias semelhantes.",
+    "settingsLink": "Definições de cookies"
   }
 }

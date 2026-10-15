@@ -142,7 +142,7 @@
       {
         "heading": "How it's run",
         "body": [
-          "There's no account system. The free generators run in your browser and what you enter is never sent to or stored on our servers; the optional paid Bulk Pack sends your CSV to our server only to build your ZIP and does not store it. See our Privacy Policy for details. The site is free to use and funded by ads (Adsterra and Google AdSense) and by the optional paid Bulk Pack."
+          "There's no account system. The free generators run in your browser and what you enter is never sent to or stored on our servers; the optional paid Bulk Pack sends your CSV to our server only to build your ZIP and does not store it. See our Privacy Policy for details. The site is free to use and funded by Google AdSense ads (only shown with your consent) and by the optional paid Bulk Pack."
         ]
       },
       {
@@ -404,26 +404,25 @@
         {
           "heading": "Cookies and local storage",
           "body": [
-            "We don't set tracking cookies ourselves. Your light/dark theme preference is saved only in your browser's local storage and never leaves your device.",
-            "On the Bulk Pack page, a draft copy of your CSV is kept in your browser's local storage (key \"bulk-csv\") so it survives the redirect to Stripe. It never leaves your device except when you click download, and you can erase it by clearing your site data. Stripe may set its own cookies on its checkout page, under its own policy."
+            "We only use storage that is strictly necessary and does not require consent: your light/dark theme preference, your cookie choice (key \"cookie-consent\"), and, on the Bulk Pack page, a draft copy of your CSV (key \"bulk-csv\"). All of it stays in your browser's local storage and you can erase it by clearing your site data. We set no analytics or tracking cookies. Stripe may set its own cookies on its checkout page, under its own policy."
           ]
         },
         {
           "heading": "Advertising & Cookies",
           "body": [
-            "This site uses Google AdSense, a third-party advertising service provided by Google LLC. Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables it and its partners to serve ads to users based on their visit to WhatsUsernames.link and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com) or via www.aboutads.info."
+            "Ads are optional. Google AdSense (Google LLC / Google Ireland Limited) is loaded only if you click \"Accept all\" or enable Advertising in the settings; if you reject, no Google ad script is loaded and no ad cookies are set. Google may then use cookies to show ads based on your visits to this and other sites. You can change your choice at any time with \"Cookie settings\" in the footer, and opt out of personalized advertising at https://adssettings.google.com or www.aboutads.info."
           ]
         },
         {
           "heading": "Analytics",
           "body": [
-            "We don't currently run any first-party analytics or tracking script. If this changes, this policy will be updated first."
+            "We run no third-party analytics and set no analytics cookies. To protect the API from abuse and to measure aggregate usage (for example, how many links are generated), our servers keep counters and a pseudonymous identifier: a one-way hash of your IP address and browser user-agent combined with a secret salt, which cannot be reversed into your IP. Legal basis: our legitimate interest in security and service statistics (GDPR Art. 6(1)(f)). Data is stored in Upstash Redis."
           ]
         },
         {
           "heading": "Your rights",
           "body": [
-            "For the free generators we hold nothing to access, correct or delete. For Bulk Pack purchases, payment and tax records are held by Stripe; the only data we hold is a temporary Checkout Session identifier that expires in 48 hours. To exercise your GDPR rights or ask a question, email us."
+            "Under the GDPR you have the right to access, rectify, erase, restrict and object to the processing of your personal data, to data portability and to withdraw consent at any time. For the free generators we hold nothing to access or delete. For purchases, payment and tax records are held by Stripe; we hold only a Checkout Session identifier that expires in 48 hours. To exercise your rights, email us. You may also lodge a complaint with the Portuguese data protection authority (CNPD, www.cnpd.pt) or your local authority."
           ]
         },
         {
@@ -441,7 +440,7 @@
         {
           "heading": "Contact",
           "body": [
-            "Questions about this policy? Email insidedcpulse@gmail.com."
+            "Data controller: the operator of whatsusernames.link, an individual entrepreneur based in Portugal. Questions about this policy? Email insidedcpulse@gmail.com."
           ]
         }
       ]
@@ -466,7 +465,7 @@
         {
           "heading": "Bulk Link & QR Pack (paid)",
           "body": [
-            "The Bulk Pack costs a one-time $4.99 USD, charged by Stripe. At checkout Stripe may show and charge the equivalent in your local currency (Stripe Adaptive Pricing), including its exchange rate. Taxes may apply depending on your country. There is no subscription and no automatic renewal.",
+            "The Bulk Pack costs a one-time $4.99 USD, charged by Stripe. The price is final: no VAT is charged because the seller benefits from the small-business VAT exemption. Stripe may show and charge the equivalent in your local currency (Stripe Adaptive Pricing), including its exchange rate. There is no subscription and no automatic renewal.",
             "After payment you may download the ZIP up to 5 times within 48 hours. Access is tied to your payment session; if you lose it, contact us. You are responsible for the contents of your CSV."
           ]
         },
@@ -683,5 +682,19 @@
         "answer": "If the ZIP fails to generate or your payment is charged by mistake, contact us and we will refund you. Because the product is delivered digitally and immediately, the 14-day right of withdrawal does not apply once the download starts, as stated at purchase."
       }
     ]
+  },
+  "cookies": {
+    "title": "Cookies & privacy",
+    "text": "We use storage that is strictly necessary to run the site. With your permission we also load Google AdSense to show ads, which may set cookies. You can change your choice at any time.",
+    "policyLink": "Privacy Policy",
+    "accept": "Accept all",
+    "reject": "Reject all",
+    "customize": "Customize",
+    "save": "Save choices",
+    "necessaryTitle": "Strictly necessary",
+    "necessaryDesc": "theme, your consent choice and the Bulk Pack draft. Always on.",
+    "adsTitle": "Advertising",
+    "adsDesc": "Google AdSense ads, which may use cookies and similar technologies.",
+    "settingsLink": "Cookie settings"
   }
 }

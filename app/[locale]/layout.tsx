@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { JsonLdScript } from "@/components/json-ld-script";
+import { CookieConsent } from "@/components/cookie-consent";
 import { Navbar } from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import { routing } from "@/i18n/routing";
@@ -83,7 +84,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <link rel="alternate" type="application/rss+xml" title="WhatsUsernames.link RSS Feed" href="/rss.xml" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5219655673819952" crossOrigin="anonymous"></script>
+        <meta name="google-adsense-account" content="ca-pub-5219655673819952" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <JsonLdScript data={getSoftwareApplicationJsonLd(t("description"))} />
@@ -97,6 +98,7 @@ export default async function LocaleLayout({
               {children}
             </div>
             <Toaster />
+            <CookieConsent />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

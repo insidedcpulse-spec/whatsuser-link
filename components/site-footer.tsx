@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { CookieSettingsLink } from "@/components/cookie-consent";
 import { Link } from "@/i18n/navigation";
 import { ShieldCheck, Code2, BookOpen, Lock } from "lucide-react";
 
@@ -112,6 +113,9 @@ export async function SiteFooter() {
                 <Link href="/terms-of-service" className="hover:text-foreground transition-colors">
                   {t("termsLink")}
                 </Link>
+              </li>
+              <li>
+                <CookieSettingsLink className="hover:text-foreground transition-colors" />
               </li>
             </ul>
           </div>
