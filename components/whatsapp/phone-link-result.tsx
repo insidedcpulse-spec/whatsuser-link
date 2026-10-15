@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
+import { BulkUpsell } from "@/components/bulk/bulk-upsell";
 import { Button } from "@/components/ui/button";
 import { QrCodeDisplay } from "@/components/whatsapp/qr-code-display";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
@@ -46,6 +47,8 @@ export function PhoneLinkResult({ link, onReset }: PhoneLinkResultProps) {
       <Button variant="ghost" onClick={onReset}>
         {t("resetButton")}
       </Button>
+
+      <BulkUpsell />
     </div>
   );
 }

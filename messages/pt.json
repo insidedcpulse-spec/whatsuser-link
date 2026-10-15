@@ -686,7 +686,9 @@
     "homeCtaButton": "🚀 Criar o meu lote em segundos →",
     "exampleLink": "Ver exemplo de CSV",
     "exampleDownload": "Descarregar CSV de exemplo",
-    "exampleCsv": "phone,message\n351912345678,Olá! Queria reservar uma mesa\n5511912345678,\"Olá, vi o vosso flyer\"\n34612345678\njoao.silva"
+    "exampleCsv": "phone,message\n351912345678,Olá! Queria reservar uma mesa\n5511912345678,\"Olá, vi o vosso flyer\"\n34612345678\njoao.silva",
+    "resultUpsell": "Tens de gerar dezenas ou centenas de links ou QR Codes para uma empresa, evento ou menu?",
+    "resultUpsellCta": "Experimenta o gerador em lote por apenas $4.99 →"
   },
   "cookies": {
     "title": "Cookies e privacidade",
