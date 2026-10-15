@@ -585,5 +585,27 @@
     "styleCreative": "Criativo e Studio",
     "generateBtn": "Gerar Ideias de Usernames",
     "resultsTitle": "Ideias de Usernames Válidos"
+  },
+  "bulk": {
+    "title": "Gerador de Links e QR Codes de WhatsApp em Massa",
+    "subtitle": "Carrega um CSV e recebe até 500 links e QR Codes de WhatsApp num ZIP. $4.99 pagamento único, sem conta.",
+    "metaTitle": "Gerador em Massa de Links e QR Codes de WhatsApp (CSV)",
+    "metaDescription": "Gera até 500 links e QR Codes de WhatsApp a partir de um CSV em segundos. $4.99 pagamento único, sem conta.",
+    "inputLabel": "Cola ou carrega o teu CSV (número ou username, mensagem opcional — até {max} linhas)",
+    "placeholder": "351912345678,Olá!\njoao.silva\n+55 11 91234-5678,Olá, quero a oferta",
+    "upload": "Carregar ficheiro CSV",
+    "summary": "{valid} válidas, {invalid} inválidas",
+    "buy": "Comprar e gerar — $4.99",
+    "redirecting": "A abrir checkout…",
+    "checkoutError": "Não foi possível abrir o checkout. Tenta novamente.",
+    "download": "Descarregar ZIP",
+    "generating": "A gerar…",
+    "downloadError": "Não foi possível gerar o ZIP. Tenta novamente.",
+    "paid": "Obrigado! Assim que o pagamento estiver confirmado, descarrega o ZIP abaixo (até 5 downloads, válido 48h).",
+    "steps": [
+      "Cola ou carrega o teu CSV. A pré-visualização é grátis.",
+      "Paga uma vez, $4.99, em segurança com Stripe.",
+      "Descarrega um ZIP com um QR PNG por link mais o links.csv."
+    ]
   }
 }

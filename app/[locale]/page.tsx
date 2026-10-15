@@ -13,6 +13,7 @@ import { UsernameIdeaGenerator } from "@/components/whatsapp/username-idea-gener
 
 export default async function Home() {
   const tGuide = await getTranslations("guide");
+  const tBulk = await getTranslations("bulk");
 
   return (
     <div className="flex min-h-screen flex-col justify-between">
@@ -49,6 +50,12 @@ export default async function Home() {
             className="inline-flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 px-5 py-2.5 text-sm font-medium text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 transition-colors shadow-xs"
           >
             📖 {tGuide("linkLabel")} →
+          </Link>
+          <Link
+            href="/bulk"
+            className="mt-3 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-emerald-700 transition-colors shadow-xs"
+          >
+            📦 {tBulk("title")} →
           </Link>
         </div>
       </main>

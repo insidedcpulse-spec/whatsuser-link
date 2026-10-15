@@ -585,5 +585,27 @@
     "styleCreative": "Creative & Studio",
     "generateBtn": "Generate Username Ideas",
     "resultsTitle": "Available Username Format Ideas"
+  },
+  "bulk": {
+    "title": "Bulk WhatsApp Link & QR Generator",
+    "subtitle": "Upload a CSV and get up to 500 WhatsApp links and QR codes in one ZIP. $4.99 one-time, no account.",
+    "metaTitle": "Bulk WhatsApp Link & QR Code Generator (CSV)",
+    "metaDescription": "Generate up to 500 WhatsApp links and QR codes from a CSV in seconds. One-time $4.99, no account needed.",
+    "inputLabel": "Paste or upload your CSV (phone or username, optional message — up to {max} rows)",
+    "placeholder": "351912345678,Hello!\njoao.silva\n+55 11 91234-5678,Hi, I want the offer",
+    "upload": "Upload CSV file",
+    "summary": "{valid} valid, {invalid} invalid",
+    "buy": "Buy & generate — $4.99",
+    "redirecting": "Opening checkout…",
+    "checkoutError": "Could not open checkout. Please try again.",
+    "download": "Download ZIP",
+    "generating": "Generating…",
+    "downloadError": "Could not generate the ZIP. Please try again.",
+    "paid": "Thanks! Once your payment is confirmed, download the ZIP below (up to 5 downloads, valid 48h).",
+    "steps": [
+      "Paste or upload your CSV. The preview is free.",
+      "Pay once, $4.99, securely with Stripe.",
+      "Download a ZIP with one PNG QR per link plus links.csv."
+    ]
   }
 }
